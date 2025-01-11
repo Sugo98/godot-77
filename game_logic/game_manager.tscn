@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://game_logic/game_manager.gd" id="1_176oy"]
 [ext_resource type="PackedScene" uid="uid://c5mfo6eaopvch" path="res://game_logic/main_menu.tscn" id="2_he43h"]
-[ext_resource type="Script" path="res://game_logic/gui_warrior_test.gd" id="3_h3vbm"]
+[ext_resource type="PackedScene" uid="uid://e3w2l0sl2g7m" path="res://dice.tscn" id="3_enq2r"]
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_176oy")
@@ -10,7 +10,30 @@ main_menu_scene = ExtResource("2_he43h")
 
 [node name="MainCanvas" type="CanvasLayer" parent="."]
 
-[node name="GridContainer" type="GridContainer" parent="MainCanvas"]
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("3_h3vbm")
+[node name="Dice" parent="MainCanvas" instance=ExtResource("3_enq2r")]
+offset_left = 64.0
+offset_top = 55.0
+offset_right = 64.0
+offset_bottom = 247.0
+character_class = 1
+
+[node name="Dice2" parent="MainCanvas" instance=ExtResource("3_enq2r")]
+offset_left = 64.0
+offset_top = 290.0
+offset_right = 64.0
+offset_bottom = 482.0
+character_class = 2
+
+[node name="Dice3" parent="MainCanvas" instance=ExtResource("3_enq2r")]
+offset_left = 64.0
+offset_top = 542.0
+offset_right = 64.0
+offset_bottom = 734.0
+character_class = 3
+
+[node name="Dice4" parent="MainCanvas" instance=ExtResource("3_enq2r")]
+offset_left = 64.0
+offset_top = 795.0
+offset_right = 64.0
+offset_bottom = 987.0
+character_class = 4

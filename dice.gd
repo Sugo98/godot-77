@@ -1,16 +1,51 @@
-class_name Dice extends Node2D
+class_name Dice extends Node
 
-var faces : Array[DiceFace2]
+var faces : Array[DiceFace]
+@export var character_class : Global.CharacterClass
+@onready var dice_slots: VBoxContainer = $DiceSlots
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	set_slot_owner()
 	faces.resize(6)
-	for i in range(6):
+	load_basic_dice()
+	add_faces_to_slots(0,1)
+
+func load_basic_dice():
+	var i = 0
+	for path in Global.basic_dice_faces:
 		var new_face = DiceFace.new()
-		new_face.init( load("res://dice_faces/shield.tres") )
+		new_face.init( load(path) )
+		new_face.set_hero_owner( character_class )
+		new_face.dice_owner = self
+		print(character_class)
 		faces[i] = new_face
-	add_child(faces[0])
+		i += 1
+	var new_face = DiceFace.new()
+	new_face.init( load(Global.basic_dice_faces[0]) )
+	faces[5] = new_face
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+func add_faces_to_slots(a:int, b:int):
+	free_all_faces()
+	dice_slots.get_child(0).add_child( faces[a] )
+	dice_slots.get_child(1).add_child( faces[b] )
+
+func free_all_faces():
+	for face in faces:
+		var parent = face.get_parent()
+		if parent:
+			parent.remove_child(face)
+
+func throw_dice():
+	var result = range(6)
+	result.shuffle()
+	add_faces_to_slots(result[0], result[1])
+
+func set_slot_owner():
+	for slot : DiceSlot in dice_slots.get_children():
+		print( character_class )
+		slot.set_hero_owner( character_class )

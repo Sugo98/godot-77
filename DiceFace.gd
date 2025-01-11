@@ -2,6 +2,8 @@ class_name DiceFace
 extends TextureRect
 
 @export var data: FaceData
+var dice_owner : Dice
+var hero_owner : Global.CharacterClass
 
 func init(d: FaceData) -> void:
 	data = d
@@ -48,3 +50,17 @@ func make_drag_preview(at_position: Vector2):
 	c.add_child(t)
 	
 	return c
+
+func set_hero_owner(o : Global.CharacterClass) -> void :
+	hero_owner = o
+
+func _gui_input(event):
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
+			come_back_home()
+
+func come_back_home():
+	for slot in dice_owner.dice_slots.get_children():
+		if slot.get_child_count() == 0:
+			reparent(slot)
+			return
