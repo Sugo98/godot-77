@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_kgj4m")
-type = 0
+type = 1
 name = "sword 1"
 description = "Deals 1 damage"
 texture = ExtResource("2_ptka7")
