@@ -3,44 +3,60 @@
 [ext_resource type="Script" path="res://game_logic/game_manager.gd" id="1_176oy"]
 [ext_resource type="PackedScene" uid="uid://c5mfo6eaopvch" path="res://game_logic/main_menu.tscn" id="2_he43h"]
 [ext_resource type="Script" path="res://game_logic/gui_warrior_test.gd" id="3_h3vbm"]
-[ext_resource type="Script" path="res://game_logic/gui_enemy_test.gd" id="4_jbi0l"]
+[ext_resource type="Script" path="res://DiceSlot.gd" id="5_pfd34"]
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_176oy")
 main_menu_scene = ExtResource("2_he43h")
 
 [node name="GUI Characters" type="CanvasLayer" parent="."]
+
+[node name="Enemy" type="PanelContainer" parent="GUI Characters"]
+custom_minimum_size = Vector2(64, 64)
+offset_left = 467.0
+offset_top = 37.0
+offset_right = 531.0
+offset_bottom = 101.0
+script = ExtResource("5_pfd34")
+type = 1
+
+[node name="Wood" type="PanelContainer" parent="GUI Characters"]
+custom_minimum_size = Vector2(64, 64)
+offset_left = 334.0
+offset_top = 510.0
+offset_right = 398.0
+offset_bottom = 574.0
+script = ExtResource("5_pfd34")
+type = 3
+
+[node name="Food" type="PanelContainer" parent="GUI Characters"]
+custom_minimum_size = Vector2(64, 64)
+offset_left = 631.0
+offset_top = 506.0
+offset_right = 695.0
+offset_bottom = 570.0
+script = ExtResource("5_pfd34")
+type = 2
+
+[node name="Road" type="PanelContainer" parent="GUI Characters"]
+custom_minimum_size = Vector2(64, 64)
+offset_left = 1007.0
+offset_top = 286.0
+offset_right = 1071.0
+offset_bottom = 350.0
+script = ExtResource("5_pfd34")
+type = 5
+
+[node name="Caravan" type="PanelContainer" parent="GUI Characters"]
+custom_minimum_size = Vector2(64, 64)
+offset_left = 790.0
+offset_top = 289.0
+offset_right = 854.0
+offset_bottom = 353.0
+script = ExtResource("5_pfd34")
+type = 4
+
+[node name="GridContainer" type="GridContainer" parent="GUI Characters"]
+offset_right = 40.0
+offset_bottom = 40.0
 script = ExtResource("3_h3vbm")
-
-[node name="Warrior" type="Panel" parent="GUI Characters"]
-offset_left = 133.0
-offset_top = 97.0
-offset_right = 222.0
-offset_bottom = 251.0
-
-[node name="WarriorDices" type="GridContainer" parent="GUI Characters"]
-unique_name_in_owner = true
-offset_left = 144.0
-offset_top = 107.0
-offset_right = 217.0
-offset_bottom = 241.0
-
-[node name="GUI Enemy" type="CanvasLayer" parent="."]
-script = ExtResource("4_jbi0l")
-
-[node name="Enemy" type="Panel" parent="GUI Enemy"]
-anchors_preset = -1
-anchor_right = 0.017
-anchor_bottom = 0.031
-offset_left = 557.0
-offset_top = 74.0
-offset_right = 704.416
-offset_bottom = 145.912
-
-[node name="EnemySlots" type="GridContainer" parent="GUI Enemy"]
-unique_name_in_owner = true
-offset_left = 583.0
-offset_top = 88.0
-offset_right = 697.0
-offset_bottom = 149.0
-columns = 2

@@ -1,9 +1,14 @@
-class_name FaceData
-extends Resource
+class_name FaceData extends Resource
 
-enum Type {ANY, SWORD, SHIELD}
-
-@export var type: Type
 @export var name: String
 @export_multiline var description: String
 @export var texture: Texture2D
+
+@export var character_class : Global.CharacterClass
+
+@export_category("Basic Values")
+@export var sword : int
+@export var shield : int
+@export var food : int
+@export var wood : int
+@export var wheel : int

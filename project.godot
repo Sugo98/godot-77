@@ -14,3 +14,7 @@ config/name="jam77"
 run/main_scene="res://game_logic/game_manager.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://game_logic/global_script.gd"

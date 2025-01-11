@@ -12,8 +12,26 @@ func _ready():
 	texture = data.texture
 	tooltip_text = "%s\n%s" % [data.name, data.description]
 
+func can_be_placed(slot : DiceSlot.Type):
+	match slot:
+		DiceSlot.Type.ENEMY:
+			return data.sword
+		DiceSlot.Type.FOOD:
+			return data.food
+		DiceSlot.Type.WOOD:
+			return data.wood
+		DiceSlot.Type.CARAVAN:
+			return (data.shield or data.wheel) 
+		DiceSlot.Type.ROAD:
+			return data.wheel
+
+func _process(delta:float) -> void:
+	if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		modulate.a=1
+
 func _get_drag_data(at_position: Vector2):
 	set_drag_preview(make_drag_preview(at_position))
+	modulate.a = 0
 	return self
 
 func make_drag_preview(at_position: Vector2):
@@ -22,7 +40,8 @@ func make_drag_preview(at_position: Vector2):
 	t.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	t.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	t.custom_minimum_size = size
-	t.modulate.a = 0.5 # transparency
+	t.modulate.a = 1 # transparency
+	t.z_index = 1
 	t.position = Vector2(-at_position)
 	
 	var c = Control.new()

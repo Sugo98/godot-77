@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="FaceData" load_steps=3 format=3 uid="uid://lwygecyvymak"]
+
+[ext_resource type="Script" path="res://dice_faces/face_data.gd" id="1_m27fq"]
+[ext_resource type="Texture2D" uid="uid://cm2e8eatgk5dw" path="res://assets/food.png" id="2_un45i"]
+
+[resource]
+script = ExtResource("1_m27fq")
+name = "food1"
+type = 0
+description = ""
+texture = ExtResource("2_un45i")
+character_class = 0
+sword = 0
+shield = 0
+food = 1
+wood = 0
+wheel = 0

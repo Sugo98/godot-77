@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://e3w2l0sl2g7m"]
+
+[ext_resource type="Script" path="res://dice.gd" id="1_5jc4y"]
+
+[node name="Dice" type="Node2D"]
+position = Vector2(379, 248)
+script = ExtResource("1_5jc4y")
