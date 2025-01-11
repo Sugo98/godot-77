@@ -1,8 +1,46 @@
-[gd_scene load_steps=3 format=3 uid="uid://s4kpj2dhsx5g"]
+[gd_scene load_steps=5 format=3 uid="uid://s4kpj2dhsx5g"]
 
 [ext_resource type="Script" path="res://game_logic/game_manager.gd" id="1_176oy"]
 [ext_resource type="PackedScene" uid="uid://c5mfo6eaopvch" path="res://game_logic/main_menu.tscn" id="2_he43h"]
+[ext_resource type="Script" path="res://game_logic/gui_warrior_test.gd" id="3_h3vbm"]
+[ext_resource type="Script" path="res://game_logic/gui_enemy_test.gd" id="4_jbi0l"]
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_176oy")
 main_menu_scene = ExtResource("2_he43h")
+
+[node name="GUI Characters" type="CanvasLayer" parent="."]
+script = ExtResource("3_h3vbm")
+
+[node name="Warrior" type="Panel" parent="GUI Characters"]
+offset_left = 133.0
+offset_top = 97.0
+offset_right = 222.0
+offset_bottom = 251.0
+
+[node name="WarriorDices" type="GridContainer" parent="GUI Characters"]
+unique_name_in_owner = true
+offset_left = 144.0
+offset_top = 107.0
+offset_right = 217.0
+offset_bottom = 241.0
+
+[node name="GUI Enemy" type="CanvasLayer" parent="."]
+script = ExtResource("4_jbi0l")
+
+[node name="Enemy" type="Panel" parent="GUI Enemy"]
+anchors_preset = -1
+anchor_right = 0.017
+anchor_bottom = 0.031
+offset_left = 557.0
+offset_top = 74.0
+offset_right = 704.416
+offset_bottom = 145.912
+
+[node name="EnemySlots" type="GridContainer" parent="GUI Enemy"]
+unique_name_in_owner = true
+offset_left = 583.0
+offset_top = 88.0
+offset_right = 697.0
+offset_bottom = 149.0
+columns = 2
