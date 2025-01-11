@@ -2,11 +2,11 @@ extends GridContainer
 
 var dice_slots = 5
 var faces_loaded = [
-	"res://dice_faces/sword.tres",
-	"res://dice_faces/shield.tres",
-	"res://dice_faces/food.tres",
-	"res://dice_faces/wood.tres",
-	"res://dice_faces/wheel.tres"
+	"res://resources/dice_faces/sword.tres",
+	"res://resources/dice_faces/shield.tres",
+	"res://resources/dice_faces/food.tres",
+	"res://resources/dice_faces/wood.tres",
+	"res://resources/dice_faces/wheel.tres"
 ]
 
 func _ready():

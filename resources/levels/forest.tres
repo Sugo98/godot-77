@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=2 format=3 uid="uid://bqpl571qkgwsx"]
+
+[ext_resource type="Script" path="res://resources/levels/level_data.gd" id="1_rqwrv"]
+
+[resource]
+script = ExtResource("1_rqwrv")
+name = ""
+description = ""
+character_class = 0
+road_slots = 2
+food_slots = 1
+wood_slots = 2

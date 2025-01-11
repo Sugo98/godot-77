@@ -1,62 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://s4kpj2dhsx5g"]
+[gd_scene load_steps=4 format=3 uid="uid://s4kpj2dhsx5g"]
 
 [ext_resource type="Script" path="res://game_logic/game_manager.gd" id="1_176oy"]
 [ext_resource type="PackedScene" uid="uid://c5mfo6eaopvch" path="res://game_logic/main_menu.tscn" id="2_he43h"]
 [ext_resource type="Script" path="res://game_logic/gui_warrior_test.gd" id="3_h3vbm"]
-[ext_resource type="Script" path="res://DiceSlot.gd" id="5_pfd34"]
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_176oy")
 main_menu_scene = ExtResource("2_he43h")
 
-[node name="GUI Characters" type="CanvasLayer" parent="."]
+[node name="MainCanvas" type="CanvasLayer" parent="."]
 
-[node name="Enemy" type="PanelContainer" parent="GUI Characters"]
-custom_minimum_size = Vector2(64, 64)
-offset_left = 467.0
-offset_top = 37.0
-offset_right = 531.0
-offset_bottom = 101.0
-script = ExtResource("5_pfd34")
-type = 1
-
-[node name="Wood" type="PanelContainer" parent="GUI Characters"]
-custom_minimum_size = Vector2(64, 64)
-offset_left = 334.0
-offset_top = 510.0
-offset_right = 398.0
-offset_bottom = 574.0
-script = ExtResource("5_pfd34")
-type = 3
-
-[node name="Food" type="PanelContainer" parent="GUI Characters"]
-custom_minimum_size = Vector2(64, 64)
-offset_left = 631.0
-offset_top = 506.0
-offset_right = 695.0
-offset_bottom = 570.0
-script = ExtResource("5_pfd34")
-type = 2
-
-[node name="Road" type="PanelContainer" parent="GUI Characters"]
-custom_minimum_size = Vector2(64, 64)
-offset_left = 1007.0
-offset_top = 286.0
-offset_right = 1071.0
-offset_bottom = 350.0
-script = ExtResource("5_pfd34")
-type = 5
-
-[node name="Caravan" type="PanelContainer" parent="GUI Characters"]
-custom_minimum_size = Vector2(64, 64)
-offset_left = 790.0
-offset_top = 289.0
-offset_right = 854.0
-offset_bottom = 353.0
-script = ExtResource("5_pfd34")
-type = 4
-
-[node name="GridContainer" type="GridContainer" parent="GUI Characters"]
+[node name="GridContainer" type="GridContainer" parent="MainCanvas"]
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("3_h3vbm")

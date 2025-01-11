@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="FaceData" load_steps=3 format=3 uid="uid://y2p3ya5exgod"]
 
-[ext_resource type="Script" path="res://dice_faces/face_data.gd" id="1_kgj4m"]
+[ext_resource type="Script" path="res://resources/dice_faces/face_data.gd" id="1_kgj4m"]
 [ext_resource type="Texture2D" uid="uid://b282bf5nf1bg8" path="res://assets/sword.png" id="2_ptka7"]
 
 [resource]

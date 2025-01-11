@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="FaceData" load_steps=3 format=3 uid="uid://ba1460x2hqnym"]
 
-[ext_resource type="Script" path="res://dice_faces/face_data.gd" id="1_vkryp"]
+[ext_resource type="Script" path="res://resources/dice_faces/face_data.gd" id="1_vkryp"]
 [ext_resource type="Texture2D" uid="uid://0rm36mk3ibqa" path="res://assets/wheel.png" id="2_js376"]
 
 [resource]

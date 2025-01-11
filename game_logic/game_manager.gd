@@ -25,3 +25,6 @@ func load_menu() -> void:
 func start_game() -> void:
 	main_menu.queue_free()
 	print(main_menu)
+	var level = load("res://game_logic/basic_level.tscn").instantiate()
+	level.init(load("res://resources/levels/forest.tres"))
+	$MainCanvas.add_child(level)

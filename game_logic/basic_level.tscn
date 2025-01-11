@@ -1,0 +1,159 @@
+[gd_scene load_steps=3 format=3 uid="uid://tkb6vimwhpij"]
+
+[ext_resource type="Script" path="res://game_logic/basic_level_logic.gd" id="1_n52b6"]
+[ext_resource type="Script" path="res://DiceSlot.gd" id="2_ghtwx"]
+
+[node name="BasicLevel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_n52b6")
+
+[node name="EnemySlots" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Enemy" type="PanelContainer" parent="EnemySlots"]
+custom_minimum_size = Vector2(64, 64)
+offset_left = 450.0
+offset_top = 150.0
+offset_right = 514.0
+offset_bottom = 214.0
+script = ExtResource("2_ghtwx")
+type = 1
+
+[node name="Enemy2" type="PanelContainer" parent="EnemySlots"]
+custom_minimum_size = Vector2(64, 64)
+offset_left = 538.0
+offset_top = 150.0
+offset_right = 602.0
+offset_bottom = 214.0
+script = ExtResource("2_ghtwx")
+type = 1
+
+[node name="Enemy3" type="PanelContainer" parent="EnemySlots"]
+custom_minimum_size = Vector2(64, 64)
+offset_left = 617.0
+offset_top = 151.0
+offset_right = 681.0
+offset_bottom = 215.0
+script = ExtResource("2_ghtwx")
+type = 1
+
+[node name="WoodSlots" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Wood" type="PanelContainer" parent="WoodSlots"]
+custom_minimum_size = Vector2(64, 64)
+offset_left = 256.0
+offset_top = 472.0
+offset_right = 320.0
+offset_bottom = 536.0
+script = ExtResource("2_ghtwx")
+type = 3
+
+[node name="Wood2" type="PanelContainer" parent="WoodSlots"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+offset_left = 340.0
+offset_top = 510.0
+offset_right = 404.0
+offset_bottom = 574.0
+script = ExtResource("2_ghtwx")
+type = 3
+
+[node name="FoodSlots" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Food" type="PanelContainer" parent="FoodSlots"]
+custom_minimum_size = Vector2(64, 64)
+offset_left = 706.0
+offset_top = 521.0
+offset_right = 770.0
+offset_bottom = 585.0
+script = ExtResource("2_ghtwx")
+type = 2
+
+[node name="Food2" type="PanelContainer" parent="FoodSlots"]
+custom_minimum_size = Vector2(64, 64)
+offset_left = 789.0
+offset_top = 492.0
+offset_right = 853.0
+offset_bottom = 556.0
+script = ExtResource("2_ghtwx")
+type = 2
+
+[node name="RoadSlots" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Road" type="PanelContainer" parent="RoadSlots"]
+custom_minimum_size = Vector2(64, 64)
+offset_left = 907.0
+offset_top = 277.0
+offset_right = 971.0
+offset_bottom = 341.0
+script = ExtResource("2_ghtwx")
+type = 5
+
+[node name="Road2" type="PanelContainer" parent="RoadSlots"]
+custom_minimum_size = Vector2(64, 64)
+offset_left = 983.0
+offset_top = 276.0
+offset_right = 1047.0
+offset_bottom = 340.0
+script = ExtResource("2_ghtwx")
+type = 5
+
+[node name="CaravanSlots" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Caravan" type="PanelContainer" parent="CaravanSlots"]
+custom_minimum_size = Vector2(64, 64)
+offset_left = 501.0
+offset_top = 339.0
+offset_right = 565.0
+offset_bottom = 403.0
+script = ExtResource("2_ghtwx")
+type = 4
+
+[node name="Caravan2" type="PanelContainer" parent="CaravanSlots"]
+custom_minimum_size = Vector2(64, 64)
+offset_left = 581.0
+offset_top = 340.0
+offset_right = 645.0
+offset_bottom = 404.0
+script = ExtResource("2_ghtwx")
+type = 4
