@@ -22,8 +22,7 @@ func _drop_data(_at_position: Vector2, data: Variant):
 		var item = get_child(0)
 		if item == data:
 			return
-		item.reparent(data.get_parent())
-	print("slot_owner ",hero_owner, " face_owner ", data.hero_owner)
+		item.come_back_home()
 	if hero_owner != data.hero_owner:
 		data.dice_owner.call_home_other_face(data)
 	data.reparent(self)

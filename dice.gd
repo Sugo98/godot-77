@@ -7,9 +7,10 @@ var faces : Array[DiceFace]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	set_slot_owner()
 	faces.resize(6)
 	load_basic_dice()
+	set_slots_owner()
+	set_faces_owner()
 	throw_dice()
 
 func load_basic_dice():
@@ -17,7 +18,6 @@ func load_basic_dice():
 	for path in Global.basic_dice_faces:
 		var new_face = DiceFace.new()
 		new_face.init( load(path) )
-		new_face.set_hero_owner( character_class )
 		new_face.dice_owner = self
 		faces[i] = new_face
 		i += 1
@@ -46,9 +46,14 @@ func add_faces_to_slots(a:int, b:int):
 	dice_slots.get_child(0).add_child( faces[a] )
 	dice_slots.get_child(1).add_child( faces[b] )
 
-func set_slot_owner():
+func set_slots_owner():
 	for slot : DiceSlot in dice_slots.get_children():
 		slot.set_hero_owner( character_class )
+
+func set_faces_owner():
+	for face in faces:
+		face.set_hero_owner(character_class)
+		face.dice_owner = self
 
 func call_home_other_face(data):
 	for face in faces:
