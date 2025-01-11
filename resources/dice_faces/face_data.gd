@@ -12,3 +12,5 @@ class_name FaceData extends Resource
 @export var food : int
 @export var wood : int
 @export var wheel : int
+
+@export var special_effect : Callable

@@ -14,7 +14,6 @@ func _can_drop_data(_at_position: Vector2, data: Variant):
 	if data is not DiceFace:
 		return false
 	if type == Type.HERO:
-		print(hero_owner, data.hero_owner)
 		return (hero_owner == data.hero_owner)
 	return data.can_be_placed(type)
 
@@ -24,6 +23,9 @@ func _drop_data(_at_position: Vector2, data: Variant):
 		if item == data:
 			return
 		item.reparent(data.get_parent())
+	print("slot_owner ",hero_owner, " face_owner ", data.hero_owner)
+	if hero_owner != data.hero_owner:
+		data.dice_owner.call_home_other_face(data)
 	data.reparent(self)
 
 func set_hero_owner(o : Global.CharacterClass) -> void :
