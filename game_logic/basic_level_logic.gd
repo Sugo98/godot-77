@@ -11,6 +11,7 @@ var game_manager : GameManager
 
 @onready var road_label: Label = $RoadLabel
 @onready var animation_timer: Timer = $AnimationTimer
+@onready var blocker: Control = $Blocker
 
 var enemy_slots : Array[DiceSlot]
 var enemy_pivots: Array[Node]
@@ -22,7 +23,7 @@ var caravan_slots: Array[DiceSlot]
 @export var enemy_scene : PackedScene
 var heroes_manager : HeroesManager
 var active_enemies : Dictionary
-var basic_wait_time : float = 0.5
+var basic_wait_time : float = 2.5
 
 var data : LevelData
 var road : int
@@ -38,6 +39,7 @@ func _ready() -> void:
 	fill_array()
 	show_slots()
 	decrase_road(0) #update road label
+	blocker.hide()
 
 func show_slots(): 
 	for slot : DiceSlot in wood_slots:
@@ -74,6 +76,7 @@ func debug_spawn_enemy():
 	spawn_enemy()
 
 func solve_turn():
+	blocker.show()
 	await solve_hunger()
 	await solve_food_slots()
 	await solve_wood_slots()
@@ -82,6 +85,7 @@ func solve_turn():
 	await solve_road_slots()
 	await update_danger()
 	reset_turn()
+	blocker.hide()
 
 func solve_hunger():
 	heroes_manager.eat(1)
