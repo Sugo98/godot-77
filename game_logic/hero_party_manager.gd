@@ -12,6 +12,7 @@ var health : int
 var food : int
 var wood : int
 var shield : int
+var xp : int = 5
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -36,10 +37,17 @@ func prepare_for_merchant():
 	for hero in heroes:
 		hero.prepare_for_merchant()
 
+func after_shopping(balance : int):
+	xp -= balance
+	update_all_labels()
+	for hero in heroes:
+		hero.save_new_dice()
+
 func update_all_labels():
 	heroes_ui.update_food(food)
 	heroes_ui.update_health(health)
 	heroes_ui.update_wood(wood)
+	heroes_ui.update_xp(xp)
 
 func eat(x : int):
 	food -= x
@@ -73,7 +81,7 @@ func increase_shield(x):
 func repair(x, pos):
 	if wood >= repair_cost:
 		wood -= repair_cost
-		health += 1
+		health += x
 	update_all_labels()
 	Utils.create_text_feedback("-" + str(repair_cost) +" Wood", pos)
 	await get_tree().create_timer(0.3).timeout

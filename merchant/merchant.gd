@@ -3,6 +3,7 @@ class_name Merchant extends Control
 @onready var market_slots: Control = $MerchantSlots
 @onready var prices_labels: Control = $Prices
 @onready var balance_label: Label = $Balance
+@onready var confirm_button: Button = $Confirm
 
 var game_manager : GameManager
 var heroes_manager : HeroesManager
@@ -27,9 +28,10 @@ func _ready() -> void:
 
 func reset_market():
 	for i in range(market_slots.get_child_count()):
+		if not selling_faces[i].is_inside_tree():
+			market_slots.get_child(i).add_child(selling_faces[i])
 		selling_faces[i].reparent(market_slots.get_child(i))
 		selling_faces[i].draggable = true
-		market_slots.get_child(i).add_child(selling_faces[i])
 		prices_labels.get_child(i).text = "XP: " + str(selling_faces[i].data.xp_cost) 
 	
 	heroes_manager.prepare_for_merchant()
@@ -37,11 +39,13 @@ func reset_market():
 	update_balance()
 
 func _on_confirm_pressed() -> void:
-	pass # Replace with function body.
+	heroes_manager.after_shopping(balance)
+	game_manager.go_to_next_level()
 
 func face_leaves(id):
 	balance += selling_faces[id].data.xp_cost
 	update_balance()
 
 func update_balance():
+	confirm_button.disabled = balance > heroes_manager.xp
 	balance_label.text = "Balance: " + str(balance)

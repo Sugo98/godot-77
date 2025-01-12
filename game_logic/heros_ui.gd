@@ -6,6 +6,7 @@ class_name HeroesUI extends Control
 @onready var health_label: Label = $Health
 @onready var food_label: Label = $Food
 @onready var wood_label: Label = $Wood
+@onready var xp_label: Label = $XP
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -23,3 +24,6 @@ func update_food(x:int):
 
 func update_wood(x:int):
 	wood_label.text = "Wood: " + str(x)
+
+func update_xp(x:int):
+	xp_label.text = "XP: " + str(x)

@@ -33,9 +33,9 @@ func load_basic_dice():
 		new_face.dice_owner = self
 		faces[i] = new_face
 		i += 1
-	var new_face = DiceFace.new()
-	new_face.init( load(Global.basic_dice_faces[0]) )
-	faces[5] = new_face
+	var last_face = DiceFace.new()
+	last_face.init( load(Global.basic_dice_faces[0]) )
+	faces[5] = last_face
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -82,3 +82,7 @@ func call_home_other_face(data):
 			continue
 		if face.is_inside_tree():
 			face.come_back_home()
+
+func save_new_dice():
+	for i in range(6):
+		faces[i] = slots_for_merchant.get_child(i).get_child(0)
