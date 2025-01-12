@@ -154,9 +154,9 @@ mouse_filter = 2
 [node name="Road" type="PanelContainer" parent="RoadSlots"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
-offset_left = 1587.0
+offset_left = 1525.0
 offset_top = 478.0
-offset_right = 1651.0
+offset_right = 1589.0
 offset_bottom = 542.0
 script = ExtResource("2_ghtwx")
 type = 5
@@ -164,9 +164,9 @@ type = 5
 [node name="Road2" type="PanelContainer" parent="RoadSlots"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
-offset_left = 1663.0
+offset_left = 1601.0
 offset_top = 477.0
-offset_right = 1727.0
+offset_right = 1665.0
 offset_bottom = 541.0
 script = ExtResource("2_ghtwx")
 type = 5
@@ -215,12 +215,12 @@ offset_bottom = 913.0
 text = "SolveTurn"
 
 [node name="RoadLabel" type="Label" parent="."]
-offset_left = 1610.0
-offset_top = 398.0
-offset_right = 1717.0
-offset_bottom = 440.0
+offset_left = 1718.0
+offset_top = 489.0
+offset_right = 1825.0
+offset_bottom = 531.0
 theme_override_font_sizes/font_size = 30
-text = "Road: 5"
+text = "Distance: 5"
 
 [node name="AnimationTimer" type="Timer" parent="."]
 

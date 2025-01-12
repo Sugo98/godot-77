@@ -106,6 +106,8 @@ func solve_wood_slots():
 		if slot.get_child_count() == 0:
 			continue
 		var face : DiceFace = slot.get_child(0)
+		Utils.create_text_feedback("+" + str(face.data.wood) +" Wood", slot.global_position)
+		face.hide()
 		heroes_manager.increase_wood(face.data.wood)
 		await wait_time(basic_wait_time)
 
@@ -114,8 +116,13 @@ func solve_caravan_slots():
 		if slot.get_child_count() == 0:
 			continue
 		var face : DiceFace = slot.get_child(0)
-		heroes_manager.increase_shield(face.data.shield)
-		heroes_manager.repair(face.data.wheel)
+		if face.data.shield:
+			Utils.create_text_feedback("+" + str(face.data.shield) +" Shield", slot.global_position)
+			face.hide()
+			heroes_manager.increase_shield(face.data.shield)
+		if face.data.wheel:
+			face.hide()
+			heroes_manager.repair(face.data.wheel, slot.global_position)
 		await wait_time(basic_wait_time)
 
 func solve_enemies_slots():
@@ -138,12 +145,14 @@ func solve_road_slots():
 		if slot.get_child_count() == 0:
 			continue
 		var face : DiceFace = slot.get_child(0)
+		Utils.create_text_feedback("-" + str(face.data.wheel) +" Distance", slot.global_position)
+		face.hide()
 		decrase_road(face.data.wheel)
 		await wait_time(basic_wait_time)
 
 func decrase_road(x):
 	road -= x
-	road_label.text = "Road: " + str(road)
+	road_label.text = "Distance: " + str(road)
 	if road <= 0:
 		next_level()
 

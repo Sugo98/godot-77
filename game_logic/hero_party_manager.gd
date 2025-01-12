@@ -66,8 +66,11 @@ func inflict_damage(x):
 func increase_shield(x):
 	shield += x
 
-func repair(x):
+func repair(x, pos):
 	if wood >= repair_cost:
 		wood -= repair_cost
 		health += 1
 	update_all_labels()
+	Utils.create_text_feedback("-" + str(repair_cost) +" Wood", pos)
+	await get_tree().create_timer(0.3).timeout
+	Utils.create_text_feedback("+" + str(x) +" HP", pos)
