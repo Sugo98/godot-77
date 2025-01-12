@@ -10,3 +10,4 @@ texture = ExtResource("2_gkn5u")
 size = 0
 max_hp = 2
 attack = 1
+xp_value = 2

@@ -11,6 +11,7 @@ var data : MerchantData
 
 var selling_faces : Array[DiceFace]
 var balance : int = 0
+var shopping_is_ended := false
 
 func init(d : MerchantData):
 	data = d
@@ -23,7 +24,7 @@ func _ready() -> void:
 		new_face.init(face_data)
 		selling_faces.append(new_face)
 		market_slots.get_child(i).shopkeeper = self
-	
+	shopping_is_ended = false
 	reset_market()
 
 func reset_market():
@@ -39,10 +40,13 @@ func reset_market():
 	update_balance()
 
 func _on_confirm_pressed() -> void:
+	shopping_is_ended = true
 	heroes_manager.after_shopping(balance)
 	game_manager.go_to_next_level()
 
 func face_leaves(id):
+	if shopping_is_ended:
+		return
 	balance += selling_faces[id].data.xp_cost
 	update_balance()
 

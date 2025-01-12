@@ -12,7 +12,7 @@ var health : int
 var food : int
 var wood : int
 var shield : int
-var xp : int = 5
+var xp : int = 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -77,6 +77,10 @@ func inflict_damage(x):
 
 func increase_shield(x):
 	shield += x
+
+func gain_xp(x):
+	xp += x
+	update_all_labels()
 
 func repair(x, pos):
 	if wood >= repair_cost:

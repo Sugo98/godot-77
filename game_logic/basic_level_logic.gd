@@ -135,6 +135,7 @@ func solve_enemies_slots():
 			var face : DiceFace = slot.get_child(0)
 			damage = face.data.sword
 		if enemy.inflict_damage(damage):
+			heroes_manager.gain_xp(enemy.data.xp_value)
 			kill_enemy(enemy)
 		else:
 			heroes_manager.inflict_damage(enemy.data.attack)
@@ -193,7 +194,7 @@ func update_danger():
 	if spawn == true:
 		danger_threshold -= data.danger_shrink
 	if danger_threshold <= 0:
-		danger_threshold == 1
+		danger_threshold = 1
 
 func wait_time(t):
 	animation_timer.set_wait_time(t)

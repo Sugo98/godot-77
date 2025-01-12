@@ -9,3 +9,4 @@ enum Size{Small, Big, Huge}
 @export var size : Size
 @export var max_hp : int
 @export var attack : int
+@export var xp_value : int
