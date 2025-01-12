@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dvgh36dfckm3n"]
+
+[ext_resource type="Script" path="res://resources/enemies/enemies_data.gd" id="1_hlwrs"]
+[ext_resource type="Texture2D" uid="uid://carugwdj4af1a" path="res://assets/enemies/skeleton.png" id="2_mnu8m"]
+
+[resource]
+script = ExtResource("1_hlwrs")
+name = "Skeleton"
+texture = ExtResource("2_mnu8m")
+max_hp = 1
+attack = 1

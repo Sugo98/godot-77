@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://delt0qchgjv4n"]
+
+[ext_resource type="Script" path="res://resources/enemies/enemies_data.gd" id="1_kdytd"]
+[ext_resource type="Texture2D" uid="uid://d3or3fctoo6tu" path="res://assets/enemies/wolf.png" id="2_m1w2t"]
+
+[resource]
+script = ExtResource("1_kdytd")
+name = "Wolf"
+texture = ExtResource("2_m1w2t")
+max_hp = 1
+attack = 2

@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://tkb6vimwhpij"]
+[gd_scene load_steps=4 format=3 uid="uid://tkb6vimwhpij"]
 
 [ext_resource type="Script" path="res://game_logic/basic_level_logic.gd" id="1_n52b6"]
+[ext_resource type="PackedScene" uid="uid://yvwkwgojt1ab" path="res://enemies logic/enemy.tscn" id="2_beh15"]
 [ext_resource type="Script" path="res://dice_logic/DiceSlot.gd" id="2_ghtwx"]
 
 [node name="BasicLevel" type="Control"]
@@ -12,8 +13,9 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_n52b6")
+enemy_scene = ExtResource("2_beh15")
 
-[node name="EnemySlots" type="Control" parent="."]
+[node name="EnemyZone" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,35 +24,55 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Enemy" type="PanelContainer" parent="EnemySlots"]
+[node name="EnemySlots" type="Control" parent="EnemyZone"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Enemy" type="PanelContainer" parent="EnemyZone/EnemySlots"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
-offset_left = 789.0
-offset_top = 210.0
-offset_right = 853.0
-offset_bottom = 274.0
+offset_left = 736.0
+offset_top = 314.0
+offset_right = 800.0
+offset_bottom = 378.0
 script = ExtResource("2_ghtwx")
 type = 1
 
-[node name="Enemy2" type="PanelContainer" parent="EnemySlots"]
+[node name="Enemy2" type="PanelContainer" parent="EnemyZone/EnemySlots"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
-offset_left = 877.0
-offset_top = 210.0
-offset_right = 941.0
-offset_bottom = 274.0
+offset_left = 934.0
+offset_top = 314.0
+offset_right = 998.0
+offset_bottom = 378.0
 script = ExtResource("2_ghtwx")
 type = 1
 
-[node name="Enemy3" type="PanelContainer" parent="EnemySlots"]
+[node name="Enemy3" type="PanelContainer" parent="EnemyZone/EnemySlots"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
-offset_left = 956.0
-offset_top = 211.0
-offset_right = 1020.0
-offset_bottom = 275.0
+offset_left = 1115.0
+offset_top = 317.0
+offset_right = 1179.0
+offset_bottom = 381.0
 script = ExtResource("2_ghtwx")
 type = 1
+
+[node name="EnemyPivots" type="Node2D" parent="EnemyZone"]
+
+[node name="Pivot1" type="Marker2D" parent="EnemyZone/EnemyPivots"]
+position = Vector2(769, 266)
+
+[node name="Pivot2" type="Marker2D" parent="EnemyZone/EnemyPivots"]
+position = Vector2(966, 266)
+
+[node name="Pivot3" type="Marker2D" parent="EnemyZone/EnemyPivots"]
+position = Vector2(1145, 268)
 
 [node name="WoodSlots" type="Control" parent="."]
 layout_mode = 1
@@ -167,3 +189,13 @@ offset_right = 1062.0
 offset_bottom = 587.0
 script = ExtResource("2_ghtwx")
 type = 4
+
+[node name="DebugSpawn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 896.0
+offset_top = 399.0
+offset_right = 1008.0
+offset_bottom = 430.0
+text = "SpawnEnemy"
+
+[connection signal="pressed" from="DebugSpawn" to="." method="debug_spawn_enemy"]

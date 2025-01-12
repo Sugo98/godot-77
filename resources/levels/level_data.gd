@@ -6,6 +6,10 @@ class_name LevelData extends Resource
 
 @export var character_class : Global.CharacterClass
 
+@export_category("Enemy")
+@export var enemy : Array[EnemyData]
+@export var enemy_probability : Array[int]
+
 @export_category("Basic Values")
 @export var road_slots : int
 @export var food_slots : int
