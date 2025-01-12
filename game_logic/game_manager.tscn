@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c5mfo6eaopvch" path="res://game_logic/main_menu.tscn" id="2_he43h"]
 [ext_resource type="PackedScene" uid="uid://tkb6vimwhpij" path="res://game_logic/basic_level.tscn" id="3_7l85e"]
 [ext_resource type="PackedScene" uid="uid://e3w2l0sl2g7m" path="res://dice_logic/dice.tscn" id="3_enq2r"]
-[ext_resource type="PackedScene" uid="uid://d10hgb5arwxkb" path="res://game_logic/heros_ui.tscn" id="4_mipyf"]
+[ext_resource type="PackedScene" path="res://game_logic/heros_ui.tscn" id="4_mipyf"]
 [ext_resource type="Script" path="res://game_logic/hero_party_manager.gd" id="4_nubql"]
 
 [node name="GameManager" type="Node" node_paths=PackedStringArray("heroes_manager")]

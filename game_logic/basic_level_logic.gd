@@ -14,7 +14,6 @@ var food_slots: Array[DiceSlot]
 var road_slots: Array[DiceSlot]
 var caravan_slots: Array[DiceSlot]
 
-
 @export var enemy_scene : PackedScene
 var heroes_manager : HeroesManager
 
@@ -47,6 +46,7 @@ func fill_array():
 	food_slots = parse_slots(food_slots_container) as Array[DiceSlot]
 	road_slots = parse_slots(road_slots_container) as Array[DiceSlot]
 	caravan_slots = parse_slots(caravan_slots_container) as Array[DiceSlot]
+
 func parse_slots(slots_container) -> Array[DiceSlot]:
 	var array : Array[DiceSlot]
 	for slot in slots_container.get_children():
@@ -57,7 +57,7 @@ func init(d : LevelData):
 	data = d
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func debug_spawn_enemy():
@@ -78,7 +78,6 @@ func spawn_enemy():
 			active_enemies.append(new_enemy)
 			return
 
-
 func solve_turn():
 	solve_hunger()
 	solve_caravan_slots()
@@ -89,10 +88,13 @@ func solve_turn():
 
 func solve_hunger():
 	heroes_manager.eat(1)
+
 func solve_caravan_slots():
 	pass
+
 func solve_enemies_slots():
 	pass
+
 func solve_food_slots():
 	for slot:DiceSlot in food_slots:
 		if slot.get_child_count() == 0:
@@ -103,5 +105,6 @@ func solve_food_slots():
 
 func solve_wood_slots():
 	pass
+
 func solve_road_slots():
 	pass

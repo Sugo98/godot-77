@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://merchant/dice_merchant.gd" id="1_ceqnj"]
 [ext_resource type="PackedScene" uid="uid://e3w2l0sl2g7m" path="res://dice_logic/dice.tscn" id="2_0ytg1"]
-[ext_resource type="Script" path="res://dice_logic/DiceSlot.gd" id="3_d6nub"]
+[ext_resource type="Script" path="res://dice_logic/dice_slot.gd" id="3_d6nub"]
 
 [node name="DiceMerchant" type="Control"]
 layout_mode = 3

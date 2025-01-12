@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://game_logic/basic_level_logic.gd" id="1_n52b6"]
 [ext_resource type="PackedScene" uid="uid://yvwkwgojt1ab" path="res://enemies logic/enemy.tscn" id="2_beh15"]
-[ext_resource type="Script" path="res://dice_logic/DiceSlot.gd" id="2_ghtwx"]
+[ext_resource type="Script" path="res://dice_logic/dice_slot.gd" id="2_ghtwx"]
 
 [node name="BasicLevel" type="Control"]
 layout_mode = 3

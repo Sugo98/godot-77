@@ -27,7 +27,7 @@ func can_be_placed(slot : DiceSlot.Type):
 		DiceSlot.Type.ROAD:
 			return data.wheel
 
-func _process(delta:float) -> void:
+func _process(_delta: float) -> void:
 	if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		modulate.a=1
 

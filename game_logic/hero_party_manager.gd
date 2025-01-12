@@ -35,5 +35,5 @@ func increase_food(x):
 	heroes_ui.update_food(food)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
