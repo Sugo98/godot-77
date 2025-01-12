@@ -15,12 +15,18 @@ func _ready() -> void:
 	if ("GameManager" == self.get_parent().get_parent().get_name()):
 		slots_for_merchant.set_visible(false)
 		set_slots_owner(dice_slots)
-		throw_dice()
+		roll_dice()
 	if ("DiceMerchant" == self.get_parent().get_parent().get_name()):
 		dice_slots.set_visible(false)
 		debug_button.set_visible(false)
 		set_slots_owner(slots_for_merchant)
 		load_for_merchant()
+
+func prepare_for_level():
+	slots_for_merchant.set_visible(false)
+	dice_slots.set_visible(true)
+	set_slots_owner(dice_slots)
+	roll_dice()
 
 func load_basic_dice():
 	var i = 0
@@ -44,7 +50,7 @@ func free_all_faces():
 		if parent:
 			parent.remove_child(face)
 
-func throw_dice():
+func roll_dice():
 	var result = range(6)
 	result.shuffle()
 	add_faces_to_slots([result[0], result[1]])

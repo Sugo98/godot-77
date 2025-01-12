@@ -1,57 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://s4kpj2dhsx5g"]
+[gd_scene load_steps=5 format=3 uid="uid://s4kpj2dhsx5g"]
 
 [ext_resource type="Script" path="res://game_logic/game_manager.gd" id="1_176oy"]
 [ext_resource type="PackedScene" uid="uid://c5mfo6eaopvch" path="res://game_logic/main_menu.tscn" id="2_he43h"]
 [ext_resource type="PackedScene" uid="uid://tkb6vimwhpij" path="res://game_logic/basic_level.tscn" id="3_7l85e"]
-[ext_resource type="PackedScene" uid="uid://e3w2l0sl2g7m" path="res://dice_logic/dice.tscn" id="3_enq2r"]
-[ext_resource type="PackedScene" path="res://game_logic/heros_ui.tscn" id="4_mipyf"]
-[ext_resource type="Script" path="res://game_logic/hero_party_manager.gd" id="4_nubql"]
+[ext_resource type="PackedScene" uid="uid://ojh8x0lm12fe" path="res://game_logic/heroes_pary.tscn" id="4_jdtd5"]
 
-[node name="GameManager" type="Node" node_paths=PackedStringArray("heroes_manager")]
+[node name="GameManager" type="Node" node_paths=PackedStringArray("main_canvas")]
 script = ExtResource("1_176oy")
 main_menu_scene = ExtResource("2_he43h")
 level_scene = ExtResource("3_7l85e")
-heroes_manager = NodePath("MainCanvas/HeroesPary")
+heroes_manager_scene = ExtResource("4_jdtd5")
+main_canvas = NodePath("MainCanvas")
 
 [node name="MainCanvas" type="CanvasLayer" parent="."]
-
-[node name="Dice" parent="MainCanvas" instance=ExtResource("3_enq2r")]
-offset_left = 64.0
-offset_top = 55.0
-offset_right = 64.0
-offset_bottom = 247.0
-character_class = 1
-
-[node name="Dice2" parent="MainCanvas" instance=ExtResource("3_enq2r")]
-offset_left = 64.0
-offset_top = 290.0
-offset_right = 64.0
-offset_bottom = 482.0
-character_class = 2
-
-[node name="Dice3" parent="MainCanvas" instance=ExtResource("3_enq2r")]
-offset_left = 64.0
-offset_top = 542.0
-offset_right = 64.0
-offset_bottom = 734.0
-character_class = 3
-
-[node name="Dice4" parent="MainCanvas" instance=ExtResource("3_enq2r")]
-offset_left = 64.0
-offset_top = 795.0
-offset_right = 64.0
-offset_bottom = 987.0
-character_class = 4
-
-[node name="HeroesPary" type="Node" parent="MainCanvas" node_paths=PackedStringArray("heroes_ui")]
-script = ExtResource("4_nubql")
-max_health = 10
-max_food = 20
-max_wood = 30
-heroes_ui = NodePath("HerosUI")
-
-[node name="HerosUI" parent="MainCanvas/HeroesPary" instance=ExtResource("4_mipyf")]
-offset_left = -167.0
-offset_top = 103.0
-offset_right = 159.0
-offset_bottom = 231.0

@@ -5,6 +5,7 @@ class_name Enemy extends Node2D
 @export var attack_label: Label
 @export var sprite2D: Sprite2D
 
+var dice_slot : DiceSlot
 var hp : int
 
 func init(d: EnemyData) -> void:
@@ -20,3 +21,11 @@ func _ready():
 func update_label():
 	hp_label.text = "HP: " + str(hp) + "/" + str(data.max_hp)
 	attack_label.text = "ATK: " + str(data.attack)
+
+func inflict_damage(damage) -> bool:
+	#return true if the enemy is killed
+	hp -= damage
+	update_label()
+	if hp <= 0:
+		return true
+	return false

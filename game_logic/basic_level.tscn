@@ -4,19 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://yvwkwgojt1ab" path="res://enemies logic/enemy.tscn" id="2_beh15"]
 [ext_resource type="Script" path="res://dice_logic/dice_slot.gd" id="2_ghtwx"]
 
-[node name="BasicLevel" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
+[node name="BasicLevel" type="Node"]
 script = ExtResource("1_n52b6")
 enemy_scene = ExtResource("2_beh15")
 
 [node name="EnemyZone" type="Control" parent="."]
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -34,6 +27,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="Enemy" type="PanelContainer" parent="EnemyZone/EnemySlots"]
+visible = false
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
 offset_left = 736.0
@@ -44,6 +38,7 @@ script = ExtResource("2_ghtwx")
 type = 1
 
 [node name="Enemy2" type="PanelContainer" parent="EnemyZone/EnemySlots"]
+visible = false
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
 offset_left = 934.0
@@ -54,6 +49,7 @@ script = ExtResource("2_ghtwx")
 type = 1
 
 [node name="Enemy3" type="PanelContainer" parent="EnemyZone/EnemySlots"]
+visible = false
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
 offset_left = 1115.0
@@ -75,7 +71,7 @@ position = Vector2(966, 266)
 position = Vector2(1145, 268)
 
 [node name="WoodSlots" type="Control" parent="."]
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -104,7 +100,7 @@ script = ExtResource("2_ghtwx")
 type = 3
 
 [node name="FoodSlots" type="Control" parent="."]
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -133,7 +129,7 @@ script = ExtResource("2_ghtwx")
 type = 2
 
 [node name="RoadSlots" type="Control" parent="."]
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -162,7 +158,7 @@ script = ExtResource("2_ghtwx")
 type = 5
 
 [node name="CaravanSlots" type="Control" parent="."]
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -191,7 +187,6 @@ script = ExtResource("2_ghtwx")
 type = 4
 
 [node name="DebugSpawn" type="Button" parent="."]
-layout_mode = 0
 offset_left = 896.0
 offset_top = 399.0
 offset_right = 1008.0
@@ -199,7 +194,6 @@ offset_bottom = 430.0
 text = "SpawnEnemy"
 
 [node name="SolveTurn" type="Button" parent="."]
-layout_mode = 0
 offset_left = 962.0
 offset_top = 859.0
 offset_right = 1048.0

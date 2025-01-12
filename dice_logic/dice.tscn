@@ -75,4 +75,4 @@ custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 script = ExtResource("2_qx407")
 
-[connection signal="pressed" from="Button" to="." method="throw_dice"]
+[connection signal="pressed" from="Button" to="." method="roll_dice"]

@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://ojh8x0lm12fe"]
+
+[ext_resource type="Script" path="res://game_logic/hero_party_manager.gd" id="1_6rxhw"]
+[ext_resource type="PackedScene" uid="uid://d10hgb5arwxkb" path="res://game_logic/heros_ui.tscn" id="2_1v2m8"]
+[ext_resource type="PackedScene" uid="uid://e3w2l0sl2g7m" path="res://dice_logic/dice.tscn" id="3_q2okv"]
+
+[node name="HeroesPary" type="Node" node_paths=PackedStringArray("heroes_ui", "heroes_container")]
+script = ExtResource("1_6rxhw")
+max_health = 10
+max_food = 20
+max_wood = 30
+heroes_ui = NodePath("HeroesUI")
+heroes_container = NodePath("Heroes")
+repair_cost = 2
+
+[node name="HeroesUI" parent="." instance=ExtResource("2_1v2m8")]
+offset_left = -167.0
+offset_top = 103.0
+offset_right = 159.0
+offset_bottom = 231.0
+
+[node name="Heroes" type="Node" parent="."]
+
+[node name="Dice" parent="Heroes" instance=ExtResource("3_q2okv")]
+offset_left = 64.0
+offset_top = 55.0
+offset_right = 64.0
+offset_bottom = 247.0
+character_class = 1
+
+[node name="Dice2" parent="Heroes" instance=ExtResource("3_q2okv")]
+offset_left = 64.0
+offset_top = 290.0
+offset_right = 64.0
+offset_bottom = 482.0
+character_class = 2
+
+[node name="Dice3" parent="Heroes" instance=ExtResource("3_q2okv")]
+offset_left = 64.0
+offset_top = 542.0
+offset_right = 64.0
+offset_bottom = 734.0
+character_class = 3
+
+[node name="Dice4" parent="Heroes" instance=ExtResource("3_q2okv")]
+offset_left = 64.0
+offset_top = 795.0
+offset_right = 64.0
+offset_bottom = 987.0
+character_class = 4

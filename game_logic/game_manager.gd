@@ -2,10 +2,14 @@ class_name GameManager extends Node
 
 @export var main_menu_scene : PackedScene
 @export var level_scene: PackedScene
-@export var heroes_manager : HeroesManager
-var active_level : LevelLogic
+@export var heroes_manager_scene : PackedScene
 
-var main_menu
+@export var main_canvas : CanvasLayer
+
+var active_level : LevelLogic
+var heroes_manager : HeroesManager
+
+var main_menu : MainMenu 
 
 func check_warnings():
 	var warnings : Array = []
@@ -15,6 +19,8 @@ func check_warnings():
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	check_warnings()
+	heroes_manager = heroes_manager_scene.instantiate()
+	main_menu =  main_menu_scene.instantiate()
 	load_menu()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -22,15 +28,16 @@ func _process(_delta: float) -> void:
 	pass
 
 func load_menu() -> void:
-	main_menu =  main_menu_scene.instantiate()
-	add_child(main_menu)
+	main_menu.game_manager = self
+	main_canvas.add_child(main_menu)
 
 func start_game() -> void:
-	main_menu.queue_free()
+	main_canvas.remove_child(main_menu)
+	main_canvas.add_child(heroes_manager)
 	load_level( load( "res://resources/levels/plain.tres" ))
 
 func load_level(data : LevelData) -> void:
 	var level : LevelLogic = level_scene.instantiate()
 	level.init(data)
 	level.heroes_manager = heroes_manager
-	$MainCanvas.add_child(level)
+	main_canvas.add_child(level)

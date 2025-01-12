@@ -43,7 +43,7 @@ func make_drag_preview(at_position: Vector2):
 	t.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	t.custom_minimum_size = size
 	t.modulate.a = 1 # transparency
-	t.z_index = 1
+	t.z_index = 100
 	t.position = Vector2(-at_position)
 	
 	var c = Control.new()
