@@ -1,0 +1,65 @@
+[gd_scene load_steps=2 format=3 uid="uid://d10hgb5arwxkb"]
+
+[ext_resource type="Script" path="res://game_logic/heros_ui.gd" id="1_g3g64"]
+
+[node name="HerosUI" type="Control"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = -560.0
+offset_bottom = -400.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g3g64")
+
+[node name="Health" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -87.0
+offset_right = 87.0
+offset_bottom = 42.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Healt: 10/10"
+horizontal_alignment = 1
+
+[node name="Food" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.5
+offset_top = -21.0
+offset_right = 91.5
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Food: 20 / 20"
+horizontal_alignment = 1
+
+[node name="Wood" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -91.5
+offset_top = -42.0
+offset_right = 91.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Food: 20 / 20"
+horizontal_alignment = 1

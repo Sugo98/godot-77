@@ -18,5 +18,5 @@ func _ready():
 	update_label()
 
 func update_label():
-	hp_label.text = str(hp) + "/" + str(data.max_hp)
+	hp_label.text = "HP: " + str(hp) + "/" + str(data.max_hp)
 	attack_label.text = "ATK: " + str(data.attack)

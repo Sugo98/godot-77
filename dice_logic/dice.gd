@@ -16,7 +16,7 @@ func _ready() -> void:
 	print(self.get_parent().get_parent())
 	if ("GameManager" == self.get_parent().get_parent().get_name()):
 		slots_for_merchant.set_visible(false)
-		throw_dice(2)
+		throw_dice()
 	if ("DiceMerchant" == self.get_parent().get_parent().get_name()):
 		dice_slots.set_visible(false)
 		debug_button.set_visible(false)
@@ -44,7 +44,7 @@ func free_all_faces():
 		if parent:
 			parent.remove_child(face)
 
-func throw_dice(n_faces: int):
+func throw_dice():
 	var result = range(6)
 	result.shuffle()
 	add_faces_to_slots([result[0], result[1]])

@@ -1,6 +1,9 @@
 class_name GameManager extends Node
 
 @export var main_menu_scene : PackedScene
+@export var level_scene: PackedScene
+@export var heroes_manager : HeroesManager
+var active_level : LevelLogic
 
 var main_menu
 
@@ -24,7 +27,10 @@ func load_menu() -> void:
 
 func start_game() -> void:
 	main_menu.queue_free()
-	
-	var level = load("res://game_logic/basic_level.tscn").instantiate()
-	level.init(load("res://resources/levels/forest.tres"))
+	load_level( load( "res://resources/levels/plain.tres" ))
+
+func load_level(data : LevelData) -> void:
+	var level : LevelLogic = level_scene.instantiate()
+	level.init(data)
+	level.heroes_manager = heroes_manager
 	$MainCanvas.add_child(level)

@@ -1,12 +1,15 @@
-[gd_resource type="Resource" script_class="LevelData" load_steps=2 format=3 uid="uid://g46vae27pvqv"]
+[gd_resource type="Resource" script_class="LevelData" load_steps=3 format=3 uid="uid://g46vae27pvqv"]
 
 [ext_resource type="Script" path="res://resources/levels/level_data.gd" id="1_7m182"]
+[ext_resource type="Script" path="res://resources/enemies/enemies_data.gd" id="1_kis5l"]
 
 [resource]
 script = ExtResource("1_7m182")
 name = ""
 description = ""
 character_class = 0
-street_slots = 1
+enemy = Array[ExtResource("1_kis5l")]([])
+enemy_probability = Array[int]([])
+road_slots = 2
 food_slots = 2
-wood_slots = 2
+wood_slots = 1
