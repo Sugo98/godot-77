@@ -6,7 +6,6 @@
 [resource]
 script = ExtResource("1_vkryp")
 name = "wheel1"
-type = 0
 description = ""
 texture = ExtResource("2_js376")
 character_class = 0
@@ -15,3 +14,5 @@ shield = 0
 food = 0
 wood = 0
 wheel = 1
+xp_cost = 1
+special_effect = Callable()

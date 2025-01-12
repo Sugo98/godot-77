@@ -17,7 +17,7 @@ var shield : int
 func _ready() -> void:
 	maximize_variables()
 	parse_heroes()
-	prepare_for_level()
+	#prepare_for_level()
 
 func maximize_variables():
 	health = max_health

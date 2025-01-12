@@ -13,4 +13,7 @@ class_name FaceData extends Resource
 @export var wood : int
 @export var wheel : int
 
+@export_category("Shop")
+@export var xp_cost : int
+
 @export var special_effect : Callable

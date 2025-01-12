@@ -1,9 +1,11 @@
 class_name DiceFace
 extends TextureRect
 
-@export var data: FaceData
+@export var data : FaceData
+
 var dice_owner : Dice
 var hero_owner : Global.CharacterClass
+var draggable : bool = true
 
 func init(d: FaceData) -> void:
 	data = d
@@ -32,6 +34,8 @@ func _process(_delta: float) -> void:
 		modulate.a=1
 
 func _get_drag_data(at_position: Vector2):
+	if not draggable:
+		return false
 	set_drag_preview(make_drag_preview(at_position))
 	modulate.a = 0
 	return self

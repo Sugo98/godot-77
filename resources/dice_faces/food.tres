@@ -6,7 +6,6 @@
 [resource]
 script = ExtResource("1_m27fq")
 name = "food1"
-type = 0
 description = ""
 texture = ExtResource("2_un45i")
 character_class = 0
@@ -15,3 +14,5 @@ shield = 0
 food = 1
 wood = 0
 wheel = 0
+xp_cost = 1
+special_effect = Callable()

@@ -10,19 +10,19 @@ var faces : Array[DiceFace]
 func _ready() -> void:
 	faces.resize(6)
 	load_basic_dice()
-	set_faces_owner()
 
 func prepare_for_level():
 	slots_for_merchant.set_visible(false)
 	dice_slots.set_visible(true)
 	set_slots_owner(dice_slots)
+	set_faces_owner()
 	roll_dice()
 
 func prepare_for_merchant():
 	slots_for_merchant.set_visible(true)
 	dice_slots.set_visible(false)
 	debug_button.set_visible(false)
-	set_slots_owner(dice_slots)
+	set_slots_owner(slots_for_merchant)
 	load_for_merchant()
 
 func load_basic_dice():
@@ -57,12 +57,14 @@ func add_faces_to_slots(f: Array[int]):
 	free_all_slots()
 	var child = 0
 	for i in f:
+		faces[i].draggable = true
 		dice_slots.get_child(child).add_child(faces[i])
 		child += 1
 
 func load_for_merchant():
 	free_all_slots()
 	for i in range(6):
+		faces[i].draggable = false
 		slots_for_merchant.get_child(i).add_child(faces[i])
 
 func set_slots_owner(slots: Variant):

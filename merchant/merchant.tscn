@@ -10,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_67ih7")
 
 [node name="MerchantSlots" type="Control" parent="."]
@@ -17,6 +18,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="MerchantSlots"]
 custom_minimum_size = Vector2(64, 64)
@@ -26,6 +28,7 @@ offset_top = 270.0
 offset_right = 1216.0
 offset_bottom = 334.0
 script = ExtResource("2_3iqb7")
+type = 6
 
 [node name="PanelContainer2" type="PanelContainer" parent="MerchantSlots"]
 custom_minimum_size = Vector2(64, 64)
@@ -35,6 +38,7 @@ offset_top = 388.0
 offset_right = 1355.0
 offset_bottom = 452.0
 script = ExtResource("2_3iqb7")
+type = 6
 
 [node name="PanelContainer3" type="PanelContainer" parent="MerchantSlots"]
 custom_minimum_size = Vector2(64, 64)
@@ -44,6 +48,7 @@ offset_top = 474.0
 offset_right = 1178.0
 offset_bottom = 538.0
 script = ExtResource("2_3iqb7")
+type = 6
 
 [node name="PanelContainer4" type="PanelContainer" parent="MerchantSlots"]
 custom_minimum_size = Vector2(64, 64)
@@ -53,3 +58,73 @@ offset_top = 561.0
 offset_right = 1384.0
 offset_bottom = 625.0
 script = ExtResource("2_3iqb7")
+type = 6
+
+[node name="Prices" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Prices"]
+layout_mode = 0
+offset_left = 1246.0
+offset_top = 281.0
+offset_right = 1290.0
+offset_bottom = 322.0
+theme_override_font_sizes/font_size = 30
+
+[node name="Label2" type="Label" parent="Prices"]
+layout_mode = 0
+offset_left = 1385.0
+offset_top = 398.0
+offset_right = 1429.0
+offset_bottom = 439.0
+theme_override_font_sizes/font_size = 30
+
+[node name="Label3" type="Label" parent="Prices"]
+layout_mode = 0
+offset_left = 1219.0
+offset_top = 485.0
+offset_right = 1263.0
+offset_bottom = 526.0
+theme_override_font_sizes/font_size = 30
+
+[node name="Label4" type="Label" parent="Prices"]
+layout_mode = 0
+offset_left = 1405.0
+offset_top = 581.0
+offset_right = 1449.0
+offset_bottom = 622.0
+theme_override_font_sizes/font_size = 30
+
+[node name="Balance" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1439.0
+offset_top = 190.0
+offset_right = 1604.0
+offset_bottom = 260.0
+
+[node name="Confirm" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1300.0
+offset_top = 750.0
+offset_right = 1500.0
+offset_bottom = 850.0
+theme_override_font_sizes/font_size = 30
+text = "Confirm"
+
+[node name="Reset" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1068.0
+offset_top = 750.0
+offset_right = 1268.0
+offset_bottom = 850.0
+theme_override_font_sizes/font_size = 30
+text = "Reset"
+
+[connection signal="child_order_changed" from="MerchantSlots/PanelContainer" to="MerchantSlots/PanelContainer" method="face_leaves"]
+[connection signal="child_order_changed" from="MerchantSlots/PanelContainer2" to="MerchantSlots/PanelContainer2" method="face_leaves"]
+[connection signal="child_order_changed" from="MerchantSlots/PanelContainer3" to="MerchantSlots/PanelContainer3" method="face_leaves"]
+[connection signal="child_order_changed" from="MerchantSlots/PanelContainer4" to="MerchantSlots/PanelContainer4" method="face_leaves"]
+[connection signal="pressed" from="Confirm" to="." method="_on_confirm_pressed"]
+[connection signal="pressed" from="Reset" to="." method="reset_market"]
