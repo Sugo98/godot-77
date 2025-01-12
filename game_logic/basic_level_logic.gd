@@ -23,7 +23,7 @@ var caravan_slots: Array[DiceSlot]
 @export var enemy_scene : PackedScene
 var heroes_manager : HeroesManager
 var active_enemies : Dictionary
-var basic_wait_time : float = 2.5
+var basic_wait_time : float = 0.5
 
 var data : LevelData
 var road : int
@@ -96,6 +96,8 @@ func solve_food_slots():
 		if slot.get_child_count() == 0:
 			continue
 		var face : DiceFace = slot.get_child(0)
+		Utils.create_text_feedback("+" + str(face.data.food) +" Food", slot.global_position)
+		face.hide()
 		heroes_manager.increase_food(face.data.food)
 		await wait_time(basic_wait_time)
 
@@ -112,7 +114,6 @@ func solve_caravan_slots():
 		if slot.get_child_count() == 0:
 			continue
 		var face : DiceFace = slot.get_child(0)
-		print( face.data.shield )
 		heroes_manager.increase_shield(face.data.shield)
 		heroes_manager.repair(face.data.wheel)
 		await wait_time(basic_wait_time)
@@ -186,9 +187,7 @@ func update_danger():
 		danger_threshold == 1
 
 func wait_time(t):
-	print("timer start " + str(t))
 	animation_timer.set_wait_time(t)
 	animation_timer.start()
 	await animation_timer.timeout
-	print("timer_over")
 	return

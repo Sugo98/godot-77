@@ -44,8 +44,9 @@ func load_basic_dice():
 func _process(_delta: float) -> void:
 	pass
 
-func free_all_faces():
+func free_all_slots():
 	for face in faces:
+		face.show()
 		var parent = face.get_parent()
 		if parent:
 			parent.remove_child(face)
@@ -56,14 +57,14 @@ func roll_dice():
 	add_faces_to_slots([result[0], result[1]])
 
 func add_faces_to_slots(f: Array[int]):
-	free_all_faces()
+	free_all_slots()
 	var child = 0
 	for i in f:
 		dice_slots.get_child(child).add_child(faces[i])
 		child += 1
 
 func load_for_merchant():
-	free_all_faces()
+	free_all_slots()
 	for i in range(6):
 		slots_for_merchant.get_child(i).add_child(faces[i])
 

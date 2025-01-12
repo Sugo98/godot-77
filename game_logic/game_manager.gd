@@ -18,6 +18,7 @@ func check_warnings():
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Utils.main_canvas = main_canvas
 	check_warnings()
 	heroes_manager = heroes_manager_scene.instantiate()
 	main_menu =  main_menu_scene.instantiate()

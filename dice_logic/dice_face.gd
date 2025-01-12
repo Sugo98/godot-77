@@ -60,6 +60,7 @@ func _gui_input(event):
 			come_back_home()
 
 func come_back_home():
+	show()
 	if hero_owner == get_parent().hero_owner:
 		return
 	for slot in dice_owner.dice_slots.get_children():
