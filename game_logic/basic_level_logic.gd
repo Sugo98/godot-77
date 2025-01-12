@@ -10,6 +10,7 @@ var game_manager : GameManager
 @onready var caravan_slots_container: Control = $CaravanSlots
 
 @onready var road_label: Label = $RoadLabel
+@onready var animation_timer: Timer = $AnimationTimer
 
 var enemy_slots : Array[DiceSlot]
 var enemy_pivots: Array[Node]
@@ -21,6 +22,7 @@ var caravan_slots: Array[DiceSlot]
 @export var enemy_scene : PackedScene
 var heroes_manager : HeroesManager
 var active_enemies : Dictionary
+var basic_wait_time : float = 0.5
 
 var data : LevelData
 var road : int
@@ -72,17 +74,34 @@ func debug_spawn_enemy():
 	spawn_enemy()
 
 func solve_turn():
-	solve_hunger()
-	solve_food_slots()
-	solve_wood_slots()
-	solve_caravan_slots()
-	solve_enemies_slots()
-	solve_road_slots()
-	update_danger()
+	await solve_hunger()
+	await solve_food_slots()
+	await solve_wood_slots()
+	await solve_caravan_slots()
+	await solve_enemies_slots()
+	await solve_road_slots()
+	await update_danger()
 	reset_turn()
 
 func solve_hunger():
 	heroes_manager.eat(1)
+	await wait_time(basic_wait_time)
+
+func solve_food_slots():
+	for slot:DiceSlot in food_slots:
+		if slot.get_child_count() == 0:
+			continue
+		var face : DiceFace = slot.get_child(0)
+		heroes_manager.increase_food(face.data.food)
+		await wait_time(basic_wait_time)
+
+func solve_wood_slots():
+	for slot:DiceSlot in wood_slots:
+		if slot.get_child_count() == 0:
+			continue
+		var face : DiceFace = slot.get_child(0)
+		heroes_manager.increase_wood(face.data.wood)
+		await wait_time(basic_wait_time)
 
 func solve_caravan_slots():
 	for slot:DiceSlot in caravan_slots:
@@ -92,6 +111,7 @@ func solve_caravan_slots():
 		print( face.data.shield )
 		heroes_manager.increase_shield(face.data.shield)
 		heroes_manager.repair(face.data.wheel)
+		await wait_time(basic_wait_time)
 
 func solve_enemies_slots():
 	for slot:DiceSlot in enemy_slots:
@@ -106,20 +126,7 @@ func solve_enemies_slots():
 			kill_enemy(enemy)
 		else:
 			heroes_manager.inflict_damage(enemy.data.attack)
-
-func solve_food_slots():
-	for slot:DiceSlot in food_slots:
-		if slot.get_child_count() == 0:
-			continue
-		var face : DiceFace = slot.get_child(0)
-		heroes_manager.increase_food(face.data.food)
-
-func solve_wood_slots():
-	for slot:DiceSlot in wood_slots:
-		if slot.get_child_count() == 0:
-			continue
-		var face : DiceFace = slot.get_child(0)
-		heroes_manager.increase_wood(face.data.wood)
+		await wait_time(basic_wait_time)
 
 func solve_road_slots():
 	for slot:DiceSlot in road_slots:
@@ -127,6 +134,7 @@ func solve_road_slots():
 			continue
 		var face : DiceFace = slot.get_child(0)
 		decrase_road(face.data.wheel)
+		await wait_time(basic_wait_time)
 
 func decrase_road(x):
 	road -= x
@@ -151,6 +159,7 @@ func spawn_enemy():
 			enemy_slots[i].show()
 			new_enemy.dice_slot = enemy_slots[i]
 			active_enemies[ enemy_slots[i] ] = new_enemy
+			await wait_time(basic_wait_time)
 			return
 
 func kill_enemy(enemy : Enemy):
@@ -158,6 +167,7 @@ func kill_enemy(enemy : Enemy):
 	slot.hide()
 	enemy.queue_free()
 	active_enemies.erase(slot)
+	await wait_time(basic_wait_time)
 
 func update_danger():
 	danger += data.base_danger + randi_range(0, data.random_danger)
@@ -170,3 +180,11 @@ func update_danger():
 		danger_threshold -= data.danger_shrink
 	if danger_threshold <= 0:
 		danger_threshold == 1
+
+func wait_time(t):
+	print("timer start " + str(t))
+	animation_timer.set_wait_time(t)
+	animation_timer.start()
+	await animation_timer.timeout
+	print("timer_over")
+	return
