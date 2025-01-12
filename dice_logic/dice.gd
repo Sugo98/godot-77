@@ -10,16 +10,16 @@ var faces : Array[DiceFace]
 func _ready() -> void:
 	faces.resize(6)
 	load_basic_dice()
-	set_slots_owner()
 	set_faces_owner()
-	print(self.get_parent())
-	print(self.get_parent().get_parent())
+	
 	if ("GameManager" == self.get_parent().get_parent().get_name()):
 		slots_for_merchant.set_visible(false)
+		set_slots_owner(dice_slots)
 		throw_dice()
 	if ("DiceMerchant" == self.get_parent().get_parent().get_name()):
 		dice_slots.set_visible(false)
 		debug_button.set_visible(false)
+		set_slots_owner(slots_for_merchant)
 		load_for_merchant()
 
 func load_basic_dice():
@@ -61,8 +61,8 @@ func load_for_merchant():
 	for i in range(6):
 		slots_for_merchant.get_child(i).add_child(faces[i])
 
-func set_slots_owner():
-	for slot : DiceSlot in dice_slots.get_children():
+func set_slots_owner(slots: Variant):
+	for slot : DiceSlot in slots.get_children():
 		slot.set_hero_owner(character_class)
 
 func set_faces_owner():

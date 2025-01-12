@@ -1,4 +1,5 @@
-class_name DiceSlot extends PanelContainer
+class_name DiceSlot
+extends PanelContainer
 
 enum Type {HERO, ENEMY, FOOD, WOOD, CARAVAN, ROAD}
 

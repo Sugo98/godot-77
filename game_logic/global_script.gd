@@ -9,3 +9,7 @@ const basic_dice_faces = [
 	"res://resources/dice_faces/wood.tres",
 	"res://resources/dice_faces/wheel.tres",
 ]
+
+const merchant_dice_faces = [
+	"res://resources/dice_faces/wheel.tres"
+]
