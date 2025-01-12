@@ -3,6 +3,8 @@ class_name Dice extends Node
 var faces : Array[DiceFace]
 @export var character_class : Global.CharacterClass
 @onready var dice_slots: VBoxContainer = $DiceSlots
+@onready var slots_for_merchant: HBoxContainer = $SlotsForMerchants
+@onready var debug_button: Button = $Button
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,7 +12,15 @@ func _ready() -> void:
 	load_basic_dice()
 	set_slots_owner()
 	set_faces_owner()
-	throw_dice()
+	print(self.get_parent())
+	print(self.get_parent().get_parent())
+	if ("GameManager" == self.get_parent().get_parent().get_name()):
+		slots_for_merchant.set_visible(false)
+		throw_dice(2)
+	if ("DiceMerchant" == self.get_parent().get_parent().get_name()):
+		dice_slots.set_visible(false)
+		debug_button.set_visible(false)
+		load_for_merchant()
 
 func load_basic_dice():
 	var i = 0
@@ -25,7 +35,7 @@ func load_basic_dice():
 	faces[5] = new_face
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func free_all_faces():
@@ -34,19 +44,26 @@ func free_all_faces():
 		if parent:
 			parent.remove_child(face)
 
-func throw_dice():
+func throw_dice(n_faces: int):
 	var result = range(6)
 	result.shuffle()
-	add_faces_to_slots(result[0], result[1])
+	add_faces_to_slots([result[0], result[1]])
 
-func add_faces_to_slots(a:int, b:int):
+func add_faces_to_slots(f: Array[int]):
 	free_all_faces()
-	dice_slots.get_child(0).add_child( faces[a] )
-	dice_slots.get_child(1).add_child( faces[b] )
+	var child = 0
+	for i in f:
+		dice_slots.get_child(child).add_child(faces[i])
+		child += 1
+
+func load_for_merchant():
+	free_all_faces()
+	for i in range(6):
+		slots_for_merchant.get_child(i).add_child(faces[i])
 
 func set_slots_owner():
 	for slot : DiceSlot in dice_slots.get_children():
-		slot.set_hero_owner( character_class )
+		slot.set_hero_owner(character_class)
 
 func set_faces_owner():
 	for face in faces:

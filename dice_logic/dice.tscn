@@ -39,4 +39,40 @@ offset_bottom = 131.0
 text = "Throw
 Dice"
 
+[node name="SlotsForMerchants" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 24
+
+[node name="PanelContainer" type="PanelContainer" parent="SlotsForMerchants"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_qx407")
+
+[node name="PanelContainer2" type="PanelContainer" parent="SlotsForMerchants"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_qx407")
+
+[node name="PanelContainer3" type="PanelContainer" parent="SlotsForMerchants"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_qx407")
+
+[node name="PanelContainer4" type="PanelContainer" parent="SlotsForMerchants"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_qx407")
+
+[node name="PanelContainer5" type="PanelContainer" parent="SlotsForMerchants"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_qx407")
+
+[node name="PanelContainer6" type="PanelContainer" parent="SlotsForMerchants"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_qx407")
+
 [connection signal="pressed" from="Button" to="." method="throw_dice"]
