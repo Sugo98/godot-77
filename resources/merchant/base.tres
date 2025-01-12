@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MerchantData" load_steps=8 format=3 uid="uid://c8udnpwlpodlw"]
+
+[ext_resource type="Script" path="res://resources/dice_faces/face_data.gd" id="1_6sqqx"]
+[ext_resource type="Resource" uid="uid://lwygecyvymak" path="res://resources/dice_faces/food.tres" id="2_yddae"]
+[ext_resource type="Resource" uid="uid://bif1yeu2j1v60" path="res://resources/dice_faces/shield.tres" id="3_xaaf6"]
+[ext_resource type="Resource" uid="uid://y2p3ya5exgod" path="res://resources/dice_faces/sword.tres" id="4_cp6l5"]
+[ext_resource type="Resource" uid="uid://ba1460x2hqnym" path="res://resources/dice_faces/wheel.tres" id="5_c715x"]
+[ext_resource type="Resource" uid="uid://cum5nexpjpays" path="res://resources/dice_faces/wood.tres" id="6_7ryr0"]
+[ext_resource type="Script" path="res://resources/merchant/merchant_data.gd" id="7_46egx"]
+
+[resource]
+script = ExtResource("7_46egx")
+name = "Base"
+description = "This is the basic merchant, can only sell basic faces"
+face = Array[ExtResource("1_6sqqx")]([ExtResource("2_yddae"), ExtResource("3_xaaf6"), ExtResource("4_cp6l5"), ExtResource("5_c715x"), ExtResource("6_7ryr0")])
+face_probability = Array[int]([2, 2, 2, 2, 2, 2])

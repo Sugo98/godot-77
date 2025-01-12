@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://btf6snukdg0gw"]
+
+[ext_resource type="Script" path="res://merchant/merchant.gd" id="1_67ih7"]
+[ext_resource type="Script" path="res://dice_logic/dice_slot.gd" id="2_3iqb7"]
+
+[node name="Merchant" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_67ih7")
+
+[node name="MerchantSlots" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PanelContainer" type="PanelContainer" parent="MerchantSlots"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 1152.0
+offset_top = 270.0
+offset_right = 1216.0
+offset_bottom = 334.0
+script = ExtResource("2_3iqb7")
+
+[node name="PanelContainer2" type="PanelContainer" parent="MerchantSlots"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 1291.0
+offset_top = 388.0
+offset_right = 1355.0
+offset_bottom = 452.0
+script = ExtResource("2_3iqb7")
+
+[node name="PanelContainer3" type="PanelContainer" parent="MerchantSlots"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 1114.0
+offset_top = 474.0
+offset_right = 1178.0
+offset_bottom = 538.0
+script = ExtResource("2_3iqb7")
+
+[node name="PanelContainer4" type="PanelContainer" parent="MerchantSlots"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 1320.0
+offset_top = 561.0
+offset_right = 1384.0
+offset_bottom = 625.0
+script = ExtResource("2_3iqb7")

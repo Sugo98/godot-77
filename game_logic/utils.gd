@@ -8,7 +8,6 @@ func random_pick( elements , probabilities ) :
 	for i in range(n-1):
 		p[i+1] += p[i]
 	var k = randi_range(0,p[n-1])
-	print(k, p)
 	for i in range(n):
 		if k <= p[i]:
 			return elements[i]

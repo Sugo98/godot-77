@@ -11,22 +11,19 @@ func _ready() -> void:
 	faces.resize(6)
 	load_basic_dice()
 	set_faces_owner()
-	
-	if ("GameManager" == self.get_parent().get_parent().get_name()):
-		slots_for_merchant.set_visible(false)
-		set_slots_owner(dice_slots)
-		roll_dice()
-	if ("DiceMerchant" == self.get_parent().get_parent().get_name()):
-		dice_slots.set_visible(false)
-		debug_button.set_visible(false)
-		set_slots_owner(slots_for_merchant)
-		load_for_merchant()
 
 func prepare_for_level():
 	slots_for_merchant.set_visible(false)
 	dice_slots.set_visible(true)
 	set_slots_owner(dice_slots)
 	roll_dice()
+
+func prepare_for_merchant():
+	slots_for_merchant.set_visible(true)
+	dice_slots.set_visible(false)
+	debug_button.set_visible(false)
+	set_slots_owner(dice_slots)
+	load_for_merchant()
 
 func load_basic_dice():
 	var i = 0

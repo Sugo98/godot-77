@@ -32,6 +32,10 @@ func prepare_for_level():
 	for hero in heroes:
 		hero.prepare_for_level()
 
+func prepare_for_merchant():
+	for hero in heroes:
+		hero.prepare_for_merchant()
+
 func update_all_labels():
 	heroes_ui.update_food(food)
 	heroes_ui.update_health(health)

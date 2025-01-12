@@ -1,6 +1,6 @@
 class_name Global extends Node
 
-enum CharacterClass{Any,Fighter,Wizard,Ranger,MasterMind}
+enum CharacterClass {Any,Fighter,Wizard,Ranger,MasterMind}
 
 const basic_dice_faces = [
 	"res://resources/dice_faces/sword.tres",
@@ -8,8 +8,4 @@ const basic_dice_faces = [
 	"res://resources/dice_faces/food.tres",
 	"res://resources/dice_faces/wood.tres",
 	"res://resources/dice_faces/wheel.tres",
-]
-
-const merchant_dice_faces = [
-	"res://resources/dice_faces/wheel.tres"
 ]
