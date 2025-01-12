@@ -4,7 +4,6 @@ var faces : Array[DiceFace]
 @export var character_class : Global.CharacterClass
 @onready var dice_slots: VBoxContainer = $DiceSlots
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	faces.resize(6)
@@ -28,7 +27,6 @@ func load_basic_dice():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
 
 func free_all_faces():
 	for face in faces:

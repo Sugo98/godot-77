@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://game_logic/game_manager.gd" id="1_176oy"]
 [ext_resource type="PackedScene" uid="uid://c5mfo6eaopvch" path="res://game_logic/main_menu.tscn" id="2_he43h"]
-[ext_resource type="PackedScene" uid="uid://e3w2l0sl2g7m" path="res://dice.tscn" id="3_enq2r"]
+[ext_resource type="PackedScene" uid="uid://e3w2l0sl2g7m" path="res://dice_logic/dice.tscn" id="3_enq2r"]
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_176oy")
