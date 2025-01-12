@@ -127,17 +127,17 @@ func solve_caravan_slots():
 
 func solve_enemies_slots():
 	for slot:DiceSlot in enemy_slots:
-		if not active_enemies.has(slot):
+		if not active_enemies.has(slot): #if there is no enemy skip
 			continue
 		var enemy = active_enemies[slot]
-		var damage = 0
-		if slot.get_child_count():
+		var damage = 0 #enemy damage
+		if slot.get_child_count(): #if there is a dice
 			var face : DiceFace = slot.get_child(0)
 			damage = face.data.sword
-		if enemy.inflict_damage(damage):
+		if enemy.inflict_damage(damage): #if the enemy hit_points drop to 0
 			heroes_manager.gain_xp(enemy.data.xp_value)
 			kill_enemy(enemy)
-		else:
+		else: #if the enemy survive counter-attack
 			heroes_manager.inflict_damage(enemy.data.attack)
 		await wait_time(basic_wait_time)
 
