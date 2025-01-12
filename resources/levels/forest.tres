@@ -1,17 +1,17 @@
-[gd_resource type="Resource" script_class="LevelData" load_steps=5 format=3 uid="uid://bqpl571qkgwsx"]
+[gd_resource type="Resource" script_class="LevelData" load_steps=4 format=3 uid="uid://bqpl571qkgwsx"]
 
 [ext_resource type="Script" path="res://resources/enemies/enemies_data.gd" id="1_0onpo"]
 [ext_resource type="Script" path="res://resources/levels/level_data.gd" id="1_rqwrv"]
-[ext_resource type="Resource" uid="uid://delt0qchgjv4n" path="res://resources/enemies/wolf.tres" id="2_lm72o"]
-[ext_resource type="Resource" uid="uid://cym70r58r53w" path="res://resources/enemies/goblin.tres" id="2_rw3sg"]
+[ext_resource type="Resource" uid="uid://dvgh36dfckm3n" path="res://resources/enemies/skeleton.tres" id="2_x3op1"]
 
 [resource]
 script = ExtResource("1_rqwrv")
 name = null
 description = null
 character_class = null
-enemy = Array[ExtResource("1_0onpo")]([ExtResource("2_rw3sg"), ExtResource("2_lm72o")])
-enemy_probability = Array[float]([8.0, 2.0])
-road_slots = 2
+length_of_the_road = 6
+enemy = Array[ExtResource("1_0onpo")]([ExtResource("2_x3op1")])
+enemy_probability = Array[int]([1])
+road_slots = 1
 food_slots = 1
 wood_slots = 2

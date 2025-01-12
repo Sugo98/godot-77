@@ -7,6 +7,8 @@ class_name LevelLogic extends Node
 @onready var road_slots_container: Control = $RoadSlots
 @onready var caravan_slots_container: Control = $CaravanSlots
 
+@onready var road_label: Label = $RoadLabel
+
 var enemy_slots : Array[DiceSlot]
 var enemy_pivots: Array[Node]
 var wood_slots: Array[DiceSlot]
@@ -16,14 +18,15 @@ var caravan_slots: Array[DiceSlot]
 
 @export var enemy_scene : PackedScene
 var heroes_manager : HeroesManager
-
 var active_enemies : Dictionary
 
 var data : LevelData
-# Called when the node enters the scene tree for the first time.
+var road : int
+
 func _ready() -> void:
 	fill_array()
 	show_slots()
+	decrase_road(0) #update road label
 
 func show_slots(): 
 	for slot : DiceSlot in wood_slots:
@@ -58,6 +61,7 @@ func parse_slots(slots_container) -> Array[DiceSlot]:
 
 func init(d : LevelData):
 	data = d
+	road = data.length_of_the_road
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -135,7 +139,20 @@ func solve_wood_slots():
 		heroes_manager.increase_wood(face.data.wood)
 
 func solve_road_slots():
-	pass
+	for slot:DiceSlot in road_slots:
+		if slot.get_child_count() == 0:
+			continue
+		var face : DiceFace = slot.get_child(0)
+		decrase_road(face.data.wheel)
+
+func decrase_road(x):
+	road -= x
+	road_label.text = "Road: " + str(road)
+	if road <= 0:
+		next_level()
+
+func next_level():
+	print("Next Level")
 
 func reset_turn():
 	heroes_manager.reset_turn()

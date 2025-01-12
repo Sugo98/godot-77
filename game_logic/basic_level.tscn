@@ -200,5 +200,13 @@ offset_right = 1048.0
 offset_bottom = 913.0
 text = "SolveTurn"
 
+[node name="RoadLabel" type="Label" parent="."]
+offset_left = 1610.0
+offset_top = 398.0
+offset_right = 1717.0
+offset_bottom = 440.0
+theme_override_font_sizes/font_size = 30
+text = "Road: 5"
+
 [connection signal="pressed" from="DebugSpawn" to="." method="debug_spawn_enemy"]
 [connection signal="pressed" from="SolveTurn" to="." method="solve_turn"]
