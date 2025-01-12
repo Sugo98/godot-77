@@ -78,8 +78,8 @@ func debug_spawn_enemy():
 func solve_turn():
 	blocker.show()
 	await solve_hunger()
-	await solve_food_slots()
 	await solve_wood_slots()
+	await solve_food_slots()
 	await solve_caravan_slots()
 	await solve_enemies_slots()
 	await solve_road_slots()
@@ -91,16 +91,6 @@ func solve_hunger():
 	heroes_manager.eat(1)
 	await wait_time(basic_wait_time)
 
-func solve_food_slots():
-	for slot:DiceSlot in food_slots:
-		if slot.get_child_count() == 0:
-			continue
-		var face : DiceFace = slot.get_child(0)
-		Utils.create_text_feedback("+" + str(face.data.food) +" Food", slot.global_position)
-		face.hide()
-		heroes_manager.increase_food(face.data.food)
-		await wait_time(basic_wait_time)
-
 func solve_wood_slots():
 	for slot:DiceSlot in wood_slots:
 		if slot.get_child_count() == 0:
@@ -109,6 +99,16 @@ func solve_wood_slots():
 		Utils.create_text_feedback("+" + str(face.data.wood) +" Wood", slot.global_position)
 		face.hide()
 		heroes_manager.increase_wood(face.data.wood)
+		await wait_time(basic_wait_time)
+
+func solve_food_slots():
+	for slot:DiceSlot in food_slots:
+		if slot.get_child_count() == 0:
+			continue
+		var face : DiceFace = slot.get_child(0)
+		Utils.create_text_feedback("+" + str(face.data.food) +" Food", slot.global_position)
+		face.hide()
+		heroes_manager.increase_food(face.data.food)
 		await wait_time(basic_wait_time)
 
 func solve_caravan_slots():

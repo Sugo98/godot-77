@@ -13,6 +13,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1152.0
+offset_top = 113.0
+offset_right = -63.0
+offset_bottom = -521.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -30,10 +34,10 @@ mouse_filter = 2
 visible = false
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
-offset_left = 827.0
-offset_top = 300.0
-offset_right = 891.0
-offset_bottom = 364.0
+offset_left = 238.0
+offset_top = 297.0
+offset_right = 302.0
+offset_bottom = 361.0
 script = ExtResource("2_ghtwx")
 type = 1
 
@@ -41,10 +45,10 @@ type = 1
 visible = false
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
-offset_left = 1025.0
-offset_top = 300.0
-offset_right = 1089.0
-offset_bottom = 364.0
+offset_left = 436.0
+offset_top = 297.0
+offset_right = 500.0
+offset_bottom = 361.0
 script = ExtResource("2_ghtwx")
 type = 1
 
@@ -52,10 +56,10 @@ type = 1
 visible = false
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
-offset_left = 1206.0
-offset_top = 300.0
-offset_right = 1270.0
-offset_bottom = 364.0
+offset_left = 617.0
+offset_top = 297.0
+offset_right = 681.0
+offset_bottom = 361.0
 script = ExtResource("2_ghtwx")
 type = 1
 
@@ -63,32 +67,36 @@ type = 1
 visible = false
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
-offset_left = 639.0
-offset_top = 300.0
-offset_right = 703.0
-offset_bottom = 364.0
+offset_left = 50.0
+offset_top = 297.0
+offset_right = 114.0
+offset_bottom = 361.0
 script = ExtResource("2_ghtwx")
 type = 1
 
 [node name="EnemyPivots" type="Node2D" parent="EnemyZone"]
 
 [node name="Pivot1" type="Marker2D" parent="EnemyZone/EnemyPivots"]
-position = Vector2(860, 240)
+position = Vector2(267, 229)
 
 [node name="Pivot2" type="Marker2D" parent="EnemyZone/EnemyPivots"]
-position = Vector2(1057, 240)
+position = Vector2(464, 229)
 
 [node name="Pivot3" type="Marker2D" parent="EnemyZone/EnemyPivots"]
-position = Vector2(1236, 240)
+position = Vector2(643, 229)
 
 [node name="Pivot4" type="Marker2D" parent="EnemyZone/EnemyPivots"]
-position = Vector2(669, 240)
+position = Vector2(76, 229)
 
 [node name="WoodSlots" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 490.0
+offset_top = 763.0
+offset_right = -1149.0
+offset_bottom = -98.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -96,20 +104,20 @@ mouse_filter = 2
 [node name="Wood" type="PanelContainer" parent="WoodSlots"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
-offset_left = 595.0
-offset_top = 787.0
-offset_right = 659.0
-offset_bottom = 851.0
+offset_left = 63.0
+offset_top = 58.0
+offset_right = 127.0
+offset_bottom = 122.0
 script = ExtResource("2_ghtwx")
 type = 3
 
 [node name="Wood2" type="PanelContainer" parent="WoodSlots"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-offset_left = 679.0
-offset_top = 825.0
-offset_right = 743.0
-offset_bottom = 889.0
+offset_left = 147.0
+offset_top = 96.0
+offset_right = 211.0
+offset_bottom = 160.0
 script = ExtResource("2_ghtwx")
 type = 3
 
@@ -118,6 +126,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 838.0
+offset_top = 755.0
+offset_right = -782.0
+offset_bottom = -94.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -125,20 +137,20 @@ mouse_filter = 2
 [node name="Food" type="PanelContainer" parent="FoodSlots"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
-offset_left = 1323.0
-offset_top = 839.0
-offset_right = 1387.0
-offset_bottom = 903.0
+offset_left = 73.0
+offset_top = 107.0
+offset_right = 137.0
+offset_bottom = 171.0
 script = ExtResource("2_ghtwx")
 type = 2
 
 [node name="Food2" type="PanelContainer" parent="FoodSlots"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
-offset_left = 1406.0
-offset_top = 810.0
-offset_right = 1470.0
-offset_bottom = 874.0
+offset_left = 156.0
+offset_top = 78.0
+offset_right = 220.0
+offset_bottom = 142.0
 script = ExtResource("2_ghtwx")
 type = 2
 
@@ -147,6 +159,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1268.0
+offset_top = 572.0
+offset_right = -108.0
+offset_bottom = -313.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -154,20 +170,20 @@ mouse_filter = 2
 [node name="Road" type="PanelContainer" parent="RoadSlots"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
-offset_left = 1525.0
-offset_top = 478.0
-offset_right = 1589.0
-offset_bottom = 542.0
+offset_left = 75.0
+offset_top = 68.0
+offset_right = 139.0
+offset_bottom = 132.0
 script = ExtResource("2_ghtwx")
 type = 5
 
 [node name="Road2" type="PanelContainer" parent="RoadSlots"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
-offset_left = 1601.0
-offset_top = 477.0
-offset_right = 1665.0
-offset_bottom = 541.0
+offset_left = 151.0
+offset_top = 67.0
+offset_right = 215.0
+offset_bottom = 131.0
 script = ExtResource("2_ghtwx")
 type = 5
 
@@ -176,6 +192,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 625.0
+offset_top = 373.0
+offset_right = -946.0
+offset_bottom = -431.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -183,44 +203,38 @@ mouse_filter = 2
 [node name="Caravan" type="PanelContainer" parent="CaravanSlots"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
-offset_left = 918.0
-offset_top = 522.0
-offset_right = 982.0
-offset_bottom = 586.0
+offset_left = 94.0
+offset_top = 102.0
+offset_right = 158.0
+offset_bottom = 166.0
 script = ExtResource("2_ghtwx")
 type = 4
 
 [node name="Caravan2" type="PanelContainer" parent="CaravanSlots"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
-offset_left = 998.0
-offset_top = 523.0
-offset_right = 1062.0
-offset_bottom = 587.0
+offset_left = 174.0
+offset_top = 103.0
+offset_right = 238.0
+offset_bottom = 167.0
 script = ExtResource("2_ghtwx")
 type = 4
 
 [node name="DebugSpawn" type="Button" parent="."]
-offset_left = 896.0
-offset_top = 399.0
-offset_right = 1008.0
-offset_bottom = 430.0
+offset_left = 1330.0
+offset_top = 103.0
+offset_right = 1442.0
+offset_bottom = 134.0
 text = "SpawnEnemy"
 
 [node name="SolveTurn" type="Button" parent="."]
-offset_left = 962.0
-offset_top = 859.0
-offset_right = 1048.0
-offset_bottom = 913.0
-text = "SolveTurn"
-
-[node name="RoadLabel" type="Label" parent="."]
-offset_left = 1718.0
-offset_top = 489.0
-offset_right = 1825.0
-offset_bottom = 531.0
-theme_override_font_sizes/font_size = 30
-text = "Distance: 5"
+offset_left = 875.0
+offset_top = 118.0
+offset_right = 1124.0
+offset_bottom = 264.0
+theme_override_font_sizes/font_size = 50
+text = "Solve
+Turn"
 
 [node name="AnimationTimer" type="Timer" parent="."]
 
@@ -232,6 +246,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="RoadLabel" type="Label" parent="."]
+offset_left = 1568.0
+offset_top = 651.0
+offset_right = 1727.0
+offset_bottom = 693.0
+theme_override_font_sizes/font_size = 30
+text = "Distance: 5"
 
 [connection signal="pressed" from="DebugSpawn" to="." method="debug_spawn_enemy"]
 [connection signal="pressed" from="SolveTurn" to="." method="solve_turn"]

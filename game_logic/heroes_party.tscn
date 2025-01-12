@@ -14,10 +14,10 @@ heroes_container = NodePath("Heroes")
 repair_cost = 2
 
 [node name="HeroesUI" parent="." instance=ExtResource("2_1v2m8")]
-offset_left = 808.0
-offset_top = 645.0
-offset_right = 1134.0
-offset_bottom = 825.0
+offset_left = 569.0
+offset_top = 86.0
+offset_right = 895.0
+offset_bottom = 266.0
 
 [node name="Heroes" type="Node" parent="."]
 
