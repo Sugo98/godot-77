@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://game_logic/game_manager.gd" id="1_176oy"]
 [ext_resource type="PackedScene" uid="uid://c5mfo6eaopvch" path="res://game_logic/main_menu.tscn" id="2_he43h"]
 [ext_resource type="PackedScene" uid="uid://tkb6vimwhpij" path="res://game_logic/basic_level.tscn" id="3_7l85e"]
-[ext_resource type="PackedScene" uid="uid://ojh8x0lm12fe" path="res://game_logic/heroes_pary.tscn" id="4_jdtd5"]
+[ext_resource type="PackedScene" uid="uid://ojh8x0lm12fe" path="res://game_logic/heroes_party.tscn" id="4_jdtd5"]
 
 [node name="GameManager" type="Node" node_paths=PackedStringArray("main_canvas")]
 script = ExtResource("1_176oy")

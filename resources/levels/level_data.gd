@@ -4,8 +4,6 @@ class_name LevelData extends Resource
 @export_multiline var description: String
 @export var back_ground_texture: Texture2D
 
-@export var character_class : Global.CharacterClass
-
 @export_category("Necessary Road")
 @export var length_of_the_road : int
 

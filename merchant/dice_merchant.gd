@@ -1,6 +1,7 @@
 class_name Merchant extends Control
 
 @onready var market_slots: VBoxContainer = $MainCanvas/MarketSlots
+var heroes_manager : HeroesManager
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

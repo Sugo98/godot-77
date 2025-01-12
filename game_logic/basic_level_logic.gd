@@ -1,5 +1,7 @@
 class_name LevelLogic extends Node
 
+var game_manager : GameManager
+
 @onready var enemy_slots_container : Control = $EnemyZone/EnemySlots
 @onready var enemy_pivots_container: Node2D = $EnemyZone/EnemyPivots
 @onready var wood_slots_container: Control = $WoodSlots
@@ -23,6 +25,10 @@ var active_enemies : Dictionary
 var data : LevelData
 var road : int
 
+func init(d : LevelData):
+	data = d
+	road = data.length_of_the_road
+	
 func _ready() -> void:
 	fill_array()
 	show_slots()
@@ -58,14 +64,6 @@ func parse_slots(slots_container) -> Array[DiceSlot]:
 	for slot in slots_container.get_children():
 		array.append( slot as DiceSlot)
 	return array
-
-func init(d : LevelData):
-	data = d
-	road = data.length_of_the_road
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
 
 func debug_spawn_enemy():
 	spawn_enemy()
@@ -152,7 +150,7 @@ func decrase_road(x):
 		next_level()
 
 func next_level():
-	print("Next Level")
+	game_manager.go_to_next_level()
 
 func reset_turn():
 	heroes_manager.reset_turn()

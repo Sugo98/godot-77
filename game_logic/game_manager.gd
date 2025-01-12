@@ -40,4 +40,9 @@ func load_level(data : LevelData) -> void:
 	var level : LevelLogic = level_scene.instantiate()
 	level.init(data)
 	level.heroes_manager = heroes_manager
+	level.game_manager = self
 	main_canvas.add_child(level)
+	heroes_manager.prepare_for_level()
+
+func go_to_next_level():
+	pass	

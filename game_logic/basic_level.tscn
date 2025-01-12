@@ -30,10 +30,10 @@ mouse_filter = 2
 visible = false
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
-offset_left = 736.0
-offset_top = 314.0
-offset_right = 800.0
-offset_bottom = 378.0
+offset_left = 827.0
+offset_top = 300.0
+offset_right = 891.0
+offset_bottom = 364.0
 script = ExtResource("2_ghtwx")
 type = 1
 
@@ -41,10 +41,10 @@ type = 1
 visible = false
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
-offset_left = 934.0
-offset_top = 314.0
-offset_right = 998.0
-offset_bottom = 378.0
+offset_left = 1025.0
+offset_top = 300.0
+offset_right = 1089.0
+offset_bottom = 364.0
 script = ExtResource("2_ghtwx")
 type = 1
 
@@ -52,23 +52,37 @@ type = 1
 visible = false
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
-offset_left = 1115.0
-offset_top = 317.0
-offset_right = 1179.0
-offset_bottom = 381.0
+offset_left = 1206.0
+offset_top = 300.0
+offset_right = 1270.0
+offset_bottom = 364.0
+script = ExtResource("2_ghtwx")
+type = 1
+
+[node name="Enemy4" type="PanelContainer" parent="EnemyZone/EnemySlots"]
+visible = false
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 639.0
+offset_top = 300.0
+offset_right = 703.0
+offset_bottom = 364.0
 script = ExtResource("2_ghtwx")
 type = 1
 
 [node name="EnemyPivots" type="Node2D" parent="EnemyZone"]
 
 [node name="Pivot1" type="Marker2D" parent="EnemyZone/EnemyPivots"]
-position = Vector2(769, 266)
+position = Vector2(860, 240)
 
 [node name="Pivot2" type="Marker2D" parent="EnemyZone/EnemyPivots"]
-position = Vector2(966, 266)
+position = Vector2(1057, 240)
 
 [node name="Pivot3" type="Marker2D" parent="EnemyZone/EnemyPivots"]
-position = Vector2(1145, 268)
+position = Vector2(1236, 240)
+
+[node name="Pivot4" type="Marker2D" parent="EnemyZone/EnemyPivots"]
+position = Vector2(669, 240)
 
 [node name="WoodSlots" type="Control" parent="."]
 layout_mode = 3
