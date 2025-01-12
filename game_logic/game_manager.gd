@@ -34,7 +34,7 @@ func load_menu() -> void:
 func start_game() -> void:
 	main_canvas.remove_child(main_menu)
 	main_canvas.add_child(heroes_manager)
-	load_level( load( "res://resources/levels/plain.tres" ))
+	load_level( load( "res://resources/levels/forest.tres" ))
 
 func load_level(data : LevelData) -> void:
 	var level : LevelLogic = level_scene.instantiate()

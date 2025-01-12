@@ -24,10 +24,13 @@ var active_enemies : Dictionary
 
 var data : LevelData
 var road : int
+var danger : int
+var danger_threshold : int
 
 func init(d : LevelData):
 	data = d
 	road = data.length_of_the_road
+	danger_threshold = data.danger_threshold
 	
 func _ready() -> void:
 	fill_array()
@@ -68,25 +71,6 @@ func parse_slots(slots_container) -> Array[DiceSlot]:
 func debug_spawn_enemy():
 	spawn_enemy()
 
-func spawn_enemy():
-	var enemy_data = Utils.random_pick( data.enemy , data.enemy_probability )
-	var new_enemy = enemy_scene.instantiate()
-	new_enemy.init(enemy_data)
-	for i in range( enemy_pivots.size() ):
-		var pivot : Marker2D = enemy_pivots[i]
-		if pivot.get_child_count() == 0:
-			pivot.add_child(new_enemy)
-			enemy_slots[i].show()
-			new_enemy.dice_slot = enemy_slots[i]
-			active_enemies[ enemy_slots[i] ] = new_enemy
-			return
-
-func kill_enemy(enemy : Enemy):
-	var slot = enemy.dice_slot
-	slot.hide()
-	enemy.queue_free()
-	active_enemies.erase(slot)
-
 func solve_turn():
 	solve_hunger()
 	solve_food_slots()
@@ -94,6 +78,7 @@ func solve_turn():
 	solve_caravan_slots()
 	solve_enemies_slots()
 	solve_road_slots()
+	update_danger()
 	reset_turn()
 
 func solve_hunger():
@@ -154,3 +139,34 @@ func next_level():
 
 func reset_turn():
 	heroes_manager.reset_turn()
+
+func spawn_enemy():
+	var enemy_data = Utils.random_pick( data.enemy , data.enemy_probability )
+	var new_enemy = enemy_scene.instantiate()
+	new_enemy.init(enemy_data)
+	for i in range( enemy_pivots.size() ):
+		var pivot : Marker2D = enemy_pivots[i]
+		if pivot.get_child_count() == 0:
+			pivot.add_child(new_enemy)
+			enemy_slots[i].show()
+			new_enemy.dice_slot = enemy_slots[i]
+			active_enemies[ enemy_slots[i] ] = new_enemy
+			return
+
+func kill_enemy(enemy : Enemy):
+	var slot = enemy.dice_slot
+	slot.hide()
+	enemy.queue_free()
+	active_enemies.erase(slot)
+
+func update_danger():
+	danger += data.base_danger + randi_range(0, data.random_danger)
+	var spawn := false
+	while danger >= danger_threshold:
+		danger -= danger_threshold
+		spawn_enemy()
+		spawn = true
+	if spawn == true:
+		danger_threshold -= data.danger_shrink
+	if danger_threshold <= 0:
+		danger_threshold == 1

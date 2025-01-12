@@ -6,12 +6,20 @@
 
 [resource]
 script = ExtResource("1_rqwrv")
-name = null
-description = null
-character_class = null
+name = ""
+description = ""
 length_of_the_road = 6
 enemy = Array[ExtResource("1_0onpo")]([ExtResource("2_x3op1")])
 enemy_probability = Array[int]([1])
+initial_enemy = Array[ExtResource("1_0onpo")]([])
+base_danger = 10
+random_danger = 0
+danger_threshold = 20
+danger_shrink = 1
 road_slots = 1
-food_slots = 1
+food_slots = 2
 wood_slots = 2
+mod_wood = 0
+mod_food = 0
+broken_bridge = false
+dragon_level = false
