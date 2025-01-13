@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="FaceData" load_steps=3 format=3 uid="uid://dmguvvdxbnuye"]
+
+[ext_resource type="Script" path="res://resources/dice_faces/face_data.gd" id="1_akjiu"]
+[ext_resource type="Texture2D" uid="uid://jgs4lnb3bdqm" path="res://assets/dice_faces/dado spada scudo.png" id="2_rbn4o"]
+
+[resource]
+script = ExtResource("1_akjiu")
+name = "Sword & Shield 1"
+description = "Can be used as a Sword or as a Shield"
+texture = ExtResource("2_rbn4o")
+character_class = 0
+xp_cost = 2
+sword = 1
+shield = 1
+food = 0
+wood = 0
+wheel = 0
+fire_ball = 0
+smoke = 0
+jolly = 0
+spikes = 0
+stun = false
+wall_ice = false
+wood_discount = false

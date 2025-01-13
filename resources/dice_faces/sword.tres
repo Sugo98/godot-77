@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="FaceData" load_steps=3 format=3 uid="uid://y2p3ya5exgod"]
 
 [ext_resource type="Script" path="res://resources/dice_faces/face_data.gd" id="1_kgj4m"]
-[ext_resource type="Texture2D" uid="uid://b282bf5nf1bg8" path="res://assets/dice_faces/sword.png" id="2_ptka7"]
+[ext_resource type="Texture2D" uid="uid://di4dif5mvbeol" path="res://assets/dice_faces/dado spada1.png" id="2_npc46"]
 
 [resource]
 script = ExtResource("1_kgj4m")
-name = "sword 1"
+name = "Sword 1"
 description = "Deals 1 damage"
-texture = ExtResource("2_ptka7")
+texture = ExtResource("2_npc46")
 character_class = 0
 xp_cost = 1
 sword = 1

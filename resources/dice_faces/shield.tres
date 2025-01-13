@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="FaceData" load_steps=3 format=3 uid="uid://bif1yeu2j1v60"]
 
 [ext_resource type="Script" path="res://resources/dice_faces/face_data.gd" id="1_h6r7e"]
-[ext_resource type="Texture2D" uid="uid://cfvweassj8opx" path="res://assets/dice_faces/shield.png" id="2_e4uhs"]
+[ext_resource type="Texture2D" uid="uid://deb77xweywh36" path="res://assets/dice_faces/dado scudo.png" id="2_ctpkn"]
 
 [resource]
 script = ExtResource("1_h6r7e")
-name = "shield 1"
+name = "Shield 1"
 description = "Protects from 1 damage"
-texture = ExtResource("2_e4uhs")
+texture = ExtResource("2_ctpkn")
 character_class = 0
 xp_cost = 1
 sword = 0

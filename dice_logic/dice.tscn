@@ -23,12 +23,12 @@ theme_override_constants/separation = 16
 alignment = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="DiceSlots"]
-custom_minimum_size = Vector2(64, 64)
+custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
 script = ExtResource("2_qx407")
 
 [node name="PanelContainer2" type="PanelContainer" parent="DiceSlots"]
-custom_minimum_size = Vector2(64, 64)
+custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
 script = ExtResource("2_qx407")
 
@@ -44,37 +44,37 @@ grow_vertical = 2
 theme_override_constants/separation = 24
 
 [node name="PanelContainer" type="PanelContainer" parent="SlotsForMerchants"]
-custom_minimum_size = Vector2(64, 64)
+custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
 script = ExtResource("2_qx407")
 is_shopping = true
 
 [node name="PanelContainer2" type="PanelContainer" parent="SlotsForMerchants"]
-custom_minimum_size = Vector2(64, 64)
+custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
 script = ExtResource("2_qx407")
 is_shopping = true
 
 [node name="PanelContainer3" type="PanelContainer" parent="SlotsForMerchants"]
-custom_minimum_size = Vector2(64, 64)
+custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
 script = ExtResource("2_qx407")
 is_shopping = true
 
 [node name="PanelContainer4" type="PanelContainer" parent="SlotsForMerchants"]
-custom_minimum_size = Vector2(64, 64)
+custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
 script = ExtResource("2_qx407")
 is_shopping = true
 
 [node name="PanelContainer5" type="PanelContainer" parent="SlotsForMerchants"]
-custom_minimum_size = Vector2(64, 64)
+custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
 script = ExtResource("2_qx407")
 is_shopping = true
 
 [node name="PanelContainer6" type="PanelContainer" parent="SlotsForMerchants"]
-custom_minimum_size = Vector2(64, 64)
+custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
 script = ExtResource("2_qx407")
 is_shopping = true

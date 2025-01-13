@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="FaceData" load_steps=3 format=3 uid="uid://ccg8o7bml3mqp"]
+
+[ext_resource type="Script" path="res://resources/dice_faces/face_data.gd" id="1_o8wsh"]
+[ext_resource type="Texture2D" uid="uid://di4dif5mvbeol" path="res://assets/dice_faces/dado spada1.png" id="2_5hk7g"]
+
+[resource]
+script = ExtResource("1_o8wsh")
+name = "Sword 1"
+description = "Deals 1 damage"
+texture = ExtResource("2_5hk7g")
+character_class = 0
+xp_cost = 1
+sword = 1
+shield = 0
+food = 0
+wood = 0
+wheel = 0
+fire_ball = 0
+smoke = 0
+jolly = 0
+spikes = 0
+stun = false
+wall_ice = false
+wood_discount = false
