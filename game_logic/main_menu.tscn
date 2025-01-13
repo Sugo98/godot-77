@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5mfo6eaopvch"]
+[gd_scene load_steps=4 format=3 uid="uid://c5mfo6eaopvch"]
 
 [ext_resource type="Script" path="res://game_logic/main_menu.gd" id="1_m3nt4"]
+[ext_resource type="AudioStream" uid="uid://bs3v4l4ecfx3r" path="res://assets/music/Town_-_Castle_Gates.ogg" id="2_sp5x1"]
+[ext_resource type="AudioStream" uid="uid://cmvpunesy6b3t" path="res://assets/sound fx/hitHurt.wav" id="3_wk7ht"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -42,91 +44,131 @@ layout_mode = 2
 text = "Settings"
 horizontal_alignment = 1
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="Settings Menu"]
+[node name="GameSetting" type="VBoxContainer" parent="Settings Menu"]
 layout_mode = 2
 
-[node name="Game" type="Label" parent="Settings Menu/VBoxContainer2"]
+[node name="Game" type="Label" parent="Settings Menu/GameSetting"]
 layout_mode = 2
 text = "Game Settings"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Settings Menu/VBoxContainer2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Settings Menu/GameSetting"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Settings Menu/VBoxContainer2/HBoxContainer"]
+[node name="Label" type="Label" parent="Settings Menu/GameSetting/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
 text = "Animation Speed"
 
-[node name="Button" type="Button" parent="Settings Menu/VBoxContainer2/HBoxContainer"]
+[node name="Button" type="Button" parent="Settings Menu/GameSetting/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Slow"
 
-[node name="Button2" type="Button" parent="Settings Menu/VBoxContainer2/HBoxContainer"]
+[node name="Button2" type="Button" parent="Settings Menu/GameSetting/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Medium"
 
-[node name="Button3" type="Button" parent="Settings Menu/VBoxContainer2/HBoxContainer"]
+[node name="Button3" type="Button" parent="Settings Menu/GameSetting/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Fast"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Settings Menu"]
+[node name="AudioSetting" type="VBoxContainer" parent="Settings Menu"]
 layout_mode = 2
 
-[node name="Audio" type="Label" parent="Settings Menu/VBoxContainer"]
+[node name="Audio" type="Label" parent="Settings Menu/AudioSetting"]
 layout_mode = 2
 text = "Audio Settings"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Settings Menu/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Settings Menu/AudioSetting"]
+custom_minimum_size = Vector2(30, 35)
 layout_mode = 2
+size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="Settings Menu/VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="Settings Menu/AudioSetting/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Master"
 
-[node name="HSlider" type="HSlider" parent="Settings Menu/VBoxContainer/HBoxContainer"]
+[node name="MasterSlider" type="HSlider" parent="Settings Menu/AudioSetting/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 1
 size_flags_stretch_ratio = 3.0
 max_value = 1.0
 step = 0.01
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Settings Menu/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="Settings Menu/AudioSetting"]
+custom_minimum_size = Vector2(30, 35)
 layout_mode = 2
+size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="Settings Menu/VBoxContainer/HBoxContainer2"]
+[node name="Label" type="Label" parent="Settings Menu/AudioSetting/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Music"
 
-[node name="HSlider" type="HSlider" parent="Settings Menu/VBoxContainer/HBoxContainer2"]
+[node name="MusicSlider" type="HSlider" parent="Settings Menu/AudioSetting/HBoxContainer2"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 4
 size_flags_stretch_ratio = 3.0
 max_value = 1.0
 step = 0.01
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="Settings Menu/VBoxContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="Settings Menu/AudioSetting"]
+custom_minimum_size = Vector2(30, 35)
 layout_mode = 2
+size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="Settings Menu/VBoxContainer/HBoxContainer3"]
+[node name="SFX" type="Button" parent="Settings Menu/AudioSetting/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "SFX        "
+alignment = 0
+
+[node name="SFXSlider" type="HSlider" parent="Settings Menu/AudioSetting/HBoxContainer3"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-text = "SFX
-"
-
-[node name="HSlider" type="HSlider" parent="Settings Menu/VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-size_flags_horizontal = 3
+size_flags_vertical = 4
 size_flags_stretch_ratio = 3.0
 max_value = 1.0
 step = 0.01
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Settings Menu"]
+layout_mode = 2
+alignment = 1
+
+[node name="Close" type="Button" parent="Settings Menu/HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "Close"
+
+[node name="Reset" type="Button" parent="Settings Menu/HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "Reset"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_sp5x1")
+bus = &"Music"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_wk7ht")
+bus = &"SFX"
 
 [connection signal="pressed" from="Game Menu/StartGame" to="." method="_on_start_game_pressed"]
-[connection signal="pressed" from="Game Menu/Option" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="Game Menu/Option" to="." method="open_settings"]
+[connection signal="value_changed" from="Settings Menu/AudioSetting/HBoxContainer/MasterSlider" to="." method="_on_master_slider_value_changed"]
+[connection signal="value_changed" from="Settings Menu/AudioSetting/HBoxContainer2/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="pressed" from="Settings Menu/AudioSetting/HBoxContainer3/SFX" to="." method="_on_debug_pressed"]
+[connection signal="value_changed" from="Settings Menu/AudioSetting/HBoxContainer3/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="Settings Menu/HBoxContainer/Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="Settings Menu/HBoxContainer/Reset" to="." method="_on_reset_pressed"]
