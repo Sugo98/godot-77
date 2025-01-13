@@ -17,9 +17,14 @@ func _ready():
 	tooltip_text = "%s\n%s" % [data.name, data.description]
 
 func can_be_placed(slot : DiceSlot.Type):
+	if data.jolly:
+		return true
 	match slot:
 		DiceSlot.Type.ENEMY:
-			return data.sword
+			return (data.sword or 
+					data.fire_ball or
+					data.wall_ice or
+					data.smoke)
 		DiceSlot.Type.FOOD:
 			return data.food
 		DiceSlot.Type.WOOD:

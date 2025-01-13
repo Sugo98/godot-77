@@ -6,6 +6,7 @@ class_name HeroesManager extends Node
 @export var heroes_ui: HeroesUI
 @export var heroes_container : Node
 @export var repair_cost : int
+@export var repair_discounted_cost : int
 
 var heroes: Array[Dice]
 var health : int
@@ -69,6 +70,8 @@ func reset_turn():
 	shield = 0
 
 func inflict_damage(x):
+	if x<= 0:
+		return
 	while( shield and x):
 		shield -= 1
 		x -= 1
@@ -82,11 +85,14 @@ func gain_xp(x):
 	xp += x
 	update_all_labels()
 
-func repair(x, pos):
-	if wood >= repair_cost:
-		wood -= repair_cost
-		health += x
+func repair(x, discount:bool, pos):
+	var c = repair_discounted_cost if discount else repair_cost 
+	if wood < c:
+		Utils.create_text_feedback("Not Enough Wood", pos)
+		return
+	wood -= c
+	health += x
 	update_all_labels()
-	Utils.create_text_feedback("-" + str(repair_cost) +" Wood", pos)
+	Utils.create_text_feedback("-" + str(c) +" Wood", pos)
 	await get_tree().create_timer(0.3).timeout
 	Utils.create_text_feedback("+" + str(x) +" HP", pos)
