@@ -28,3 +28,6 @@ class_name LevelData extends Resource
 @export var road_obstacle : int
 @export var broken_bridge : bool = false
 @export var dragon_level : bool = false
+
+@export_category("Audio")
+@export var soundtrack : AudioStream
