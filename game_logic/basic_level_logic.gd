@@ -121,8 +121,8 @@ func solve_caravan_slots():
 		if face.data.shield or face.data.jolly:
 			var x = face.data.shield + face.data.jolly
 			Utils.create_text_feedback("+" + str(x) +" Shield", slot.global_position)
-			face.hide()
 			heroes_manager.increase_shield(x)
+			heroes_manager.increase_spikes(face.data.spikes)
 		if face.data.wheel:
 			face.hide()
 			heroes_manager.repair(face.data.wheel, face.data.wood_discount, slot.global_position)
@@ -130,36 +130,20 @@ func solve_caravan_slots():
 
 func solve_enemies_slots():
 	if there_is_wall_ice():
-		for slot in active_enemies:
-			active_enemies[slot].freeze()
-		await wait_time(basic_wait_time)
-		return
-	var smoke = there_is_smoke()
-	if smoke:
-		for slot in active_enemies:
-			active_enemies[slot].smoke(smoke)
-		await wait_time(basic_wait_time)
+		await freeze_all_enemies()
+	await solve_area_effects()
 	for slot:DiceSlot in enemy_slots:
 		if not active_enemies.has(slot): #if there is no enemy skip
 			continue
 		var enemy = active_enemies[slot]
-		var damage = 0 #enemy damage
-		var stun := false
 		if slot.get_child_count(): #if there is a dice
-			var face : DiceFace = slot.get_child(0)
-			face.hide()
-			damage = face.data.sword + face.data.jolly
-			stun = face.data.stun
-			if face.data.fire_ball:
-				cast_fire_ball(face.data.fire_ball)
-			if face.data.food:
-				Utils.create_text_feedback("+" + str(face.data.food) +" Food", slot.global_position)
-				heroes_manager.increase_food(face.data.food)
-		if enemy.inflict_damage(damage): #if the enemy hit_points drop to 0
-			heroes_manager.gain_xp(enemy.data.xp_value)
-			kill_enemy(enemy)
-		elif not stun: #if the enemy survive counter-attack
-			heroes_manager.inflict_damage(enemy.turn_atk)
+			var face = slot.get_child(0)
+			await resolve_attack_dice(face, enemy)
+		if enemy.is_alive: #counter_attack
+			var dmg = enemy.attack()
+			if dmg:
+				heroes_manager.suffer_damage(dmg)
+			check_spikes(enemy)
 		await wait_time(basic_wait_time)
 	for slot in active_enemies:
 		active_enemies[slot].reset_stats()
@@ -204,8 +188,9 @@ func spawn_enemy():
 
 func kill_enemy(enemy : Enemy):
 	var slot = enemy.dice_slot
-	slot.hide()
-	enemy.queue_free()
+	heroes_manager.gain_xp(enemy.data.xp_value)
+	enemy.is_alive = false
+	enemy.kill()
 	active_enemies.erase(slot)
 	await wait_time(basic_wait_time)
 
@@ -244,11 +229,45 @@ func there_is_wall_ice() -> bool:
 			return true
 	return false
 
-func there_is_smoke() -> int:
-	var smoke :int = 0
+func freeze_all_enemies() -> void:
+	for slot in active_enemies:
+		active_enemies[slot].freeze()
+	await wait_time(basic_wait_time)
+	return
+
+func solve_area_effects() -> void:
+	var tot_smoke :int = 0
 	for slot:DiceSlot in enemy_slots:
 		if slot.get_child_count()==0: #if there are no dice
 			continue
 		var face : DiceFace = slot.get_child(0)
-		smoke += face.data.smoke
-	return smoke
+		if face.data.smoke:
+			face.hide()
+			tot_smoke += face.data.smoke
+		if face.data.fire_ball:
+			face.hide()
+			cast_fire_ball(face.data.fire_ball)
+	# RESOLVE TOTAL 
+	if tot_smoke:
+		for slot in active_enemies:
+			active_enemies[slot].smoke(tot_smoke)
+		await wait_time(basic_wait_time)
+
+func resolve_attack_dice(face:DiceFace, enemy:Enemy) :
+	face.hide()
+	var damage = face.data.sword + face.data.jolly
+	if face.data.stun:
+		enemy.stun = true
+	if face.data.food:
+		Utils.create_text_feedback("+" + str(face.data.food) +" Food", face.global_position)
+		heroes_manager.increase_food(face.data.food)
+	if enemy.inflict_damage(damage):
+		kill_enemy(enemy)
+	await wait_time(basic_wait_time)
+
+func check_spikes(enemy : Enemy):
+	var spikes = heroes_manager.spikes
+	if not spikes:
+		return
+	if enemy.inflict_damage(spikes):
+		kill_enemy(enemy)

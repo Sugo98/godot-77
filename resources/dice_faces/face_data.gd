@@ -21,8 +21,7 @@ class_name FaceData extends Resource
 @export var fire_ball : int
 @export var smoke : int
 @export var jolly : int #alambicco
+@export var spikes : int
 @export var stun: bool
 @export var wall_ice : bool
 @export var wood_discount : bool
-
-@export var special_effect : Callable

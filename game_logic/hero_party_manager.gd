@@ -13,6 +13,7 @@ var health : int
 var food : int
 var wood : int
 var shield : int
+var spikes : int
 var xp : int = 3
 
 # Called when the node enters the scene tree for the first time.
@@ -68,8 +69,9 @@ func reset_turn():
 	for hero in heroes:
 		hero.roll_dice()
 	shield = 0
+	spikes = 0
 
-func inflict_damage(x):
+func suffer_damage(x):
 	if x<= 0:
 		return
 	while( shield and x):
@@ -80,6 +82,9 @@ func inflict_damage(x):
 
 func increase_shield(x):
 	shield += x
+
+func increase_spikes(x):
+	spikes += x
 
 func gain_xp(x):
 	xp += x
