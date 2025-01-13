@@ -2,6 +2,9 @@ class_name LevelLogic extends Node
 
 var game_manager : GameManager
 
+var bridge_discounted_cost = Global.bridge_discount_repair_cost
+var bridge_cost = Global.bridge_repair_cost
+
 @onready var enemy_slots_container : Control = $EnemyZone/EnemySlots
 @onready var enemy_pivots_container: Node2D = $EnemyZone/EnemyPivots
 @onready var wood_slots_container: Control = $WoodSlots
@@ -38,6 +41,7 @@ func init(d : LevelData):
 func _ready() -> void:
 	fill_array()
 	show_slots()
+	spawn_initial_enemy()
 	decrase_road(0) #update road label
 	blocker.hide()
 
@@ -73,7 +77,7 @@ func parse_slots(slots_container) -> Array[DiceSlot]:
 	return array
 
 func debug_spawn_enemy():
-	spawn_enemy()
+	spawn_random_enemy()
 
 func solve_turn():
 	blocker.show()
@@ -86,6 +90,8 @@ func solve_turn():
 	await update_danger()
 	reset_turn()
 	blocker.hide()
+	if road <= 0:
+		next_level()
 
 func solve_hunger():
 	heroes_manager.eat(1)
@@ -96,7 +102,8 @@ func solve_wood_slots():
 		if slot.get_child_count() == 0:
 			continue
 		var face : DiceFace = slot.get_child(0)
-		var x = face.data.wood + face.data.jolly
+		var x = face.data.wood + face.data.jolly + data.mod_wood
+		if x < 0 : x = 0
 		Utils.create_text_feedback("+" + str(x) +" Wood", slot.global_position)
 		face.hide()
 		heroes_manager.increase_wood(x)
@@ -107,7 +114,8 @@ func solve_food_slots():
 		if slot.get_child_count() == 0:
 			continue
 		var face : DiceFace = slot.get_child(0)
-		var x = face.data.food + face.data.jolly
+		var x = face.data.food + face.data.jolly + data.mod_food
+		if x < 0 : x = 0
 		Utils.create_text_feedback("+" + str(x) +" Food", slot.global_position)
 		face.hide()
 		heroes_manager.increase_food(x)
@@ -122,7 +130,11 @@ func solve_caravan_slots():
 			var x = face.data.shield + face.data.jolly
 			Utils.create_text_feedback("+" + str(x) +" Shield", slot.global_position)
 			heroes_manager.increase_shield(x)
-			heroes_manager.increase_spikes(face.data.spikes)
+			var y = face.data.spikes
+			if y:
+				heroes_manager.increase_spikes(y)
+				if x: await  wait_time(0.3)
+				Utils.create_text_feedback("+" + str(y) +" Spikes", slot.global_position)
 		if face.data.wheel:
 			face.hide()
 			heroes_manager.repair(face.data.wheel, face.data.wood_discount, slot.global_position)
@@ -144,36 +156,58 @@ func solve_enemies_slots():
 			if dmg:
 				heroes_manager.suffer_damage(dmg)
 			check_spikes(enemy)
+			if enemy.is_alive:
+				await enemy_steal(enemy)
 		await wait_time(basic_wait_time)
 	for slot in active_enemies:
 		active_enemies[slot].reset_stats()
 
 func solve_road_slots():
+	var obstacle = data.road_obstacle
 	for slot:DiceSlot in road_slots:
 		if slot.get_child_count() == 0:
 			continue
 		var face : DiceFace = slot.get_child(0)
 		var x = face.data.wheel + face.data.jolly
-		Utils.create_text_feedback("-" + str(x) +" Distance", slot.global_position)
+		
+		var is_wood_enough : bool = true
+		if data.broken_bridge:
+			var c = bridge_discounted_cost if face.data.wood_discount else bridge_cost
+			is_wood_enough = heroes_manager.can_repair_bridge(c, slot.global_position)
+			await wait_time(0.25)
+		
+		if is_wood_enough:
+			while( obstacle and x):
+				obstacle -= 1
+				x -= 1
+			Utils.create_text_feedback("-" + str(x) +" Distance", slot.global_position)
+			decrase_road(x)
+
 		face.hide()
-		decrase_road(x)
+		print("Face Hide")
 		await wait_time(basic_wait_time)
 
 func decrase_road(x):
 	road -= x
 	road_label.text = "Distance: " + str(road)
-	if road <= 0:
-		next_level()
 
 func next_level():
 	game_manager.go_to_next_level()
 
 func reset_turn():
+	print("Reset Turn")
 	heroes_manager.reset_turn()
 
-func spawn_enemy():
+func spawn_random_enemy():
 	var enemy_data = Utils.random_pick( data.enemy , data.enemy_probability )
-	var new_enemy = enemy_scene.instantiate()
+	spawn_enemy(enemy_data)
+
+func spawn_initial_enemy():
+	for enemy_data in data.initial_enemy:
+		spawn_enemy(enemy_data)
+
+func spawn_enemy(enemy_data : EnemyData):
+	var new_enemy : Enemy = enemy_scene.instantiate()
 	new_enemy.init(enemy_data)
 	for i in range( enemy_pivots.size() ):
 		var pivot : Marker2D = enemy_pivots[i]
@@ -199,7 +233,7 @@ func update_danger():
 	var spawn := false
 	while danger >= danger_threshold:
 		danger -= danger_threshold
-		spawn_enemy()
+		spawn_random_enemy()
 		spawn = true
 	if spawn == true:
 		danger_threshold -= data.danger_shrink
@@ -271,3 +305,15 @@ func check_spikes(enemy : Enemy):
 		return
 	if enemy.inflict_damage(spikes):
 		kill_enemy(enemy)
+
+func enemy_steal(enemy : Enemy):
+	var x = enemy.data.steal_food
+	if x:
+		heroes_manager.increase_food(-x)
+		Utils.create_text_feedback("-" + str(x) +" Food", heroes_manager.caravan_position)
+		await wait_time(0.3)
+	x = enemy.data.steal_wood
+	if x:
+		heroes_manager.increase_wood(-x)
+		Utils.create_text_feedback("-" + str(x) +" Wood", heroes_manager.caravan_position)
+		

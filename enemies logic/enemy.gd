@@ -11,6 +11,7 @@ var dice_slot : DiceSlot
 var hp : int
 var turn_atk: int
 var stun: bool
+var shield : int
 var is_alive: bool = true
 
 func init(d: EnemyData) -> void:
@@ -25,6 +26,7 @@ func _ready():
 
 func reset_stats():
 	turn_atk = data.attack
+	shield = data.shield
 	stun = false
 
 func update_label():
@@ -32,6 +34,9 @@ func update_label():
 	attack_label.text = "ATK: " + str(data.attack)
 
 func inflict_damage(damage) -> bool: #return true if the enemy is killed
+	while( shield and damage):
+		shield -= 1
+		damage -= 1
 	red_flash()
 	hp -= damage
 	update_label()

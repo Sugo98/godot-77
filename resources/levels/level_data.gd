@@ -24,5 +24,6 @@ class_name LevelData extends Resource
 @export_category("Modifier")
 @export var mod_wood : int
 @export var mod_food : int
+@export var road_obstacle : int
 @export var broken_bridge : bool = false
 @export var dragon_level : bool = false

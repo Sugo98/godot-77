@@ -45,11 +45,13 @@ func _on_confirm_pressed() -> void:
 	game_manager.go_to_next_level()
 
 func face_leaves(id):
-	if shopping_is_ended:
+	if not selling_faces[id]:
 		return
 	balance += selling_faces[id].data.xp_cost
 	update_balance()
 
 func update_balance():
+	if not confirm_button:
+		return
 	confirm_button.disabled = balance > heroes_manager.xp
 	balance_label.text = "Balance: " + str(balance)

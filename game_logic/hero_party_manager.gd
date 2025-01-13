@@ -8,6 +8,9 @@ class_name HeroesManager extends Node
 @export var repair_cost : int
 @export var repair_discounted_cost : int
 
+@onready var caravan_position : Vector2 = $CaravanPosition.global_position
+
+
 var heroes: Array[Dice]
 var health : int
 var food : int
@@ -101,3 +104,12 @@ func repair(x, discount:bool, pos):
 	Utils.create_text_feedback("-" + str(c) +" Wood", pos)
 	await get_tree().create_timer(0.3).timeout
 	Utils.create_text_feedback("+" + str(x) +" HP", pos)
+
+func can_repair_bridge(cost : int, pos) -> bool:
+	if wood < cost:
+		Utils.create_text_feedback("Not Enough Wood", pos)
+		return false
+	else:
+		Utils.create_text_feedback("-" + str(cost) +" Wood", pos)
+		wood -= cost
+		return true

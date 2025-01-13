@@ -21,5 +21,6 @@ food_slots = 2
 wood_slots = 2
 mod_wood = 0
 mod_food = 0
+road_obstacle = 1
 broken_bridge = false
 dragon_level = false
