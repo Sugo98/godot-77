@@ -4,7 +4,7 @@ var faces : Array[DiceFace]
 @export var character_class : Global.CharacterClass
 @onready var dice_slots: VBoxContainer = $DiceSlots
 @onready var slots_for_merchant: HBoxContainer = $SlotsForMerchants
-@onready var debug_button: Button = $Button
+@onready var sprite_2d: Sprite2D = $Sprite2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,6 +14,7 @@ func _ready() -> void:
 func prepare_for_level():
 	slots_for_merchant.set_visible(false)
 	dice_slots.set_visible(true)
+	sprite_2d.show()
 	set_slots_owner(dice_slots)
 	set_faces_owner()
 	roll_dice()
@@ -21,7 +22,7 @@ func prepare_for_level():
 func prepare_for_merchant():
 	slots_for_merchant.set_visible(true)
 	dice_slots.set_visible(false)
-	debug_button.set_visible(false)
+	sprite_2d.hide()
 	set_slots_owner(slots_for_merchant)
 	load_for_merchant()
 

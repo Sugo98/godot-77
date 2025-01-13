@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://e3w2l0sl2g7m"]
+[gd_scene load_steps=4 format=3 uid="uid://e3w2l0sl2g7m"]
 
 [ext_resource type="Script" path="res://dice_logic/dice.gd" id="1_5jc4y"]
 [ext_resource type="Script" path="res://dice_logic/dice_slot.gd" id="2_qx407"]
+[ext_resource type="Texture2D" uid="uid://c0yr0uw61pg1n" path="res://assets/heroes/eroe ranger 1.png" id="3_tfa44"]
 
 [node name="Dice" type="Control"]
 custom_minimum_size = Vector2(0, 192)
@@ -15,8 +16,9 @@ script = ExtResource("1_5jc4y")
 [node name="DiceSlots" type="VBoxContainer" parent="."]
 custom_minimum_size = Vector2(0, 192)
 layout_mode = 2
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 222.0
+offset_right = 286.0
+offset_bottom = 192.0
 theme_override_constants/separation = 16
 alignment = 1
 
@@ -29,15 +31,6 @@ script = ExtResource("2_qx407")
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 script = ExtResource("2_qx407")
-
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 194.0
-offset_top = 60.0
-offset_right = 259.0
-offset_bottom = 131.0
-text = "Throw
-Dice"
 
 [node name="SlotsForMerchants" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -86,4 +79,8 @@ layout_mode = 2
 script = ExtResource("2_qx407")
 is_shopping = true
 
-[connection signal="pressed" from="Button" to="." method="roll_dice"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(28, 0)
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("3_tfa44")
+centered = false
