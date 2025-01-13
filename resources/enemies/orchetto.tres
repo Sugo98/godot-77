@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3 uid="uid://cym70r58r53w"]
+
+[ext_resource type="Script" path="res://resources/enemies/enemies_data.gd" id="1_obsek"]
+[ext_resource type="Texture2D" uid="uid://ddj4546cugum2" path="res://assets/enemies/orchetto/orchetti DEF1.png" id="2_y5eb6"]
+
+[resource]
+script = ExtResource("1_obsek")
+name = "Orchetto"
+texture = ExtResource("2_y5eb6")
+size = 0
+max_hp = 2
+attack = 1
+xp_value = 1
+steal_food = 0
+steal_wood = 0
+shield = 0

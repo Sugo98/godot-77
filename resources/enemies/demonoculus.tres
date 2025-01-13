@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3 uid="uid://b445cj5f1iino"]
+
+[ext_resource type="Script" path="res://resources/enemies/enemies_data.gd" id="1_08lut"]
+[ext_resource type="Texture2D" uid="uid://dyor7a2s1g2ka" path="res://assets/enemies/demonoculus/demonoculus1 DEF.png" id="2_08ybn"]
+
+[resource]
+script = ExtResource("1_08lut")
+name = "Demonoculus"
+texture = ExtResource("2_08ybn")
+size = 0
+max_hp = 1
+attack = 1
+xp_value = 1
+steal_food = 0
+steal_wood = 0
+shield = 0
