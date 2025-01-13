@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://resources/journey/journey.gd" id="1_8y6au"]
 [ext_resource type="Resource" uid="uid://c8udnpwlpodlw" path="res://resources/merchant/merchant_1.tres" id="2_qcw7b"]
-[ext_resource type="Resource" uid="uid://g46vae27pvqv" path="res://resources/levels/plain1.tres" id="3_2ahoa"]
+[ext_resource type="Resource" uid="uid://g46vae27pvqv" path="res://resources/levels/plain1.tres" id="3_3ogp4"]
 [ext_resource type="Resource" uid="uid://bqpl571qkgwsx" path="res://resources/levels/forest.tres" id="3_7wcbj"]
 [ext_resource type="Resource" uid="uid://dl4mrbth680gt" path="res://resources/merchant/merchant_2.tres" id="4_igsae"]
 [ext_resource type="Resource" uid="uid://bd71cnmmq5sw2" path="res://resources/levels/swamp.tres" id="5_ephrb"]
 
 [resource]
 script = ExtResource("1_8y6au")
-stops = Array[Resource]([ExtResource("2_qcw7b"), ExtResource("3_2ahoa"), ExtResource("4_igsae"), ExtResource("3_7wcbj"), ExtResource("4_igsae"), ExtResource("5_ephrb")])
+stops = Array[Resource]([ExtResource("2_qcw7b"), ExtResource("3_3ogp4"), ExtResource("4_igsae"), ExtResource("3_7wcbj"), ExtResource("4_igsae"), ExtResource("5_ephrb")])
