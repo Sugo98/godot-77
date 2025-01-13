@@ -12,6 +12,7 @@ const offset_x = 100
 @onready var food_slots_container: Control = $FoodSlots
 @onready var road_slots_container: Control = $RoadSlots
 @onready var caravan_slots_container: Control = $CaravanSlots
+@onready var back_ground_music: AudioStreamPlayer = $BackGroundMusic
 
 @onready var road_label: Label = $RoadLabel
 @onready var animation_timer: Timer = $AnimationTimer
@@ -44,7 +45,10 @@ func _ready() -> void:
 	show_slots()
 	spawn_initial_enemy()
 	decrase_road(0) #update road label
+	start_playng_music()
 	blocker.hide()
+	back_ground_music.stream = data.soundtrack
+	back_ground_music.play()
 
 func show_slots(): 
 	for slot : DiceSlot in wood_slots:
@@ -88,6 +92,7 @@ func debug_spawn_enemy():
 
 func solve_turn():
 	blocker.show()
+	basic_wait_time = Utils.basic_wait_time
 	await solve_hunger()
 	await solve_wood_slots()
 	await solve_food_slots()
@@ -349,3 +354,7 @@ func check_end() -> bool:
 		return active_enemies.is_empty()
 	else:
 		return (road <= 0)
+
+func start_playng_music():
+	back_ground_music.stream = data.soundtrack
+	back_ground_music.play()

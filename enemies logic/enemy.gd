@@ -4,6 +4,7 @@ class_name Enemy extends Node2D
 @export var hp_label: Label
 @export var attack_label: Label
 @export var sprite2D: Sprite2D
+@export var attack_sfx : AudioStreamPlayer
 
 @export var attack_animation_x : int = 75
 
@@ -76,6 +77,7 @@ func attack() -> int:
 	var tween = get_tree().create_tween()
 	tween.tween_property(sprite2D, "position:x", -attack_animation_x ,0.1)
 	tween.tween_property(sprite2D, "position:x", 0 ,0.1)
+	play_attack_sfx(0.1)
 	return turn_atk
 
 func red_flash() -> void:
@@ -89,4 +91,8 @@ func eneter_animation() -> void:
 	var tween = get_tree().create_tween()
 	tween.tween_property(sprite2D, "position:x", 0 ,0.1)
 	tween.parallel().tween_property(sprite2D, "modulate:a", 1 ,0.15)
-	
+
+func play_attack_sfx(delay : float):
+	await get_tree().create_timer(delay).timeout
+	attack_sfx.pitch_scale = randf_range(0.6,1.2)
+	attack_sfx.play()

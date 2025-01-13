@@ -17,3 +17,5 @@ func create_text_feedback(text : String, position : Vector2):
 	var new_feedback = TextFeedback.new()
 	main_canvas.add_child(new_feedback)
 	new_feedback.init(text, position)
+
+var basic_wait_time : float = 0.5

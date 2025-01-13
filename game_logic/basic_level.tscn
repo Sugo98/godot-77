@@ -257,5 +257,8 @@ offset_bottom = 767.0
 theme_override_font_sizes/font_size = 30
 text = "Distance: 5"
 
+[node name="BackGroundMusic" type="AudioStreamPlayer" parent="."]
+bus = &"Music"
+
 [connection signal="pressed" from="DebugSpawn" to="." method="debug_spawn_enemy"]
 [connection signal="pressed" from="SolveTurn" to="." method="solve_turn"]
