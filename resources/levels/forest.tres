@@ -1,27 +1,29 @@
-[gd_resource type="Resource" script_class="LevelData" load_steps=4 format=3 uid="uid://bqpl571qkgwsx"]
+[gd_resource type="Resource" script_class="LevelData" load_steps=6 format=3 uid="uid://bqpl571qkgwsx"]
 
 [ext_resource type="Script" path="res://resources/enemies/enemies_data.gd" id="1_0onpo"]
 [ext_resource type="Script" path="res://resources/levels/level_data.gd" id="1_rqwrv"]
-[ext_resource type="Resource" uid="uid://dvgh36dfckm3n" path="res://resources/enemies/sbm2.tres" id="2_x3op1"]
+[ext_resource type="Resource" uid="uid://delt0qchgjv4n" path="res://resources/enemies/wolf.tres" id="2_abe1t"]
+[ext_resource type="Resource" uid="uid://djp26ovl0jjf7" path="res://resources/enemies/bat.tres" id="3_vatw8"]
+[ext_resource type="Resource" uid="uid://cym70r58r53w" path="res://resources/enemies/orchetto.tres" id="4_f5s26"]
 
 [resource]
 script = ExtResource("1_rqwrv")
-name = ""
-description = ""
-length_of_the_road = 6
+name = "Forest"
+description = "You enter a shady wood..."
+length_of_the_road = 4
 boss_level = false
-enemy = Array[ExtResource("1_0onpo")]([ExtResource("2_x3op1")])
-enemy_probability = Array[int]([1])
-initial_enemy = Array[ExtResource("1_0onpo")]([])
+enemy = Array[ExtResource("1_0onpo")]([ExtResource("2_abe1t"), ExtResource("3_vatw8"), ExtResource("4_f5s26")])
+enemy_probability = Array[int]([3, 3, 3])
+initial_enemy = Array[ExtResource("1_0onpo")]([ExtResource("2_abe1t")])
 base_danger = 10
 random_danger = 0
 danger_threshold = 20
 danger_shrink = 1
 road_slots = 1
-food_slots = 2
-wood_slots = 2
-mod_wood = 0
+food_slots = 1
+wood_slots = 1
+mod_wood = 1
 mod_food = 0
-road_obstacle = 1
+road_obstacle = 0
 broken_bridge = false
 dragon_level = false

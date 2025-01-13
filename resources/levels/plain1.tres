@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=6 format=3 uid="uid://g46vae27pvqv"]
+
+[ext_resource type="Script" path="res://resources/enemies/enemies_data.gd" id="1_8wblf"]
+[ext_resource type="Resource" uid="uid://b445cj5f1iino" path="res://resources/enemies/demonoculus.tres" id="2_on5ee"]
+[ext_resource type="Resource" uid="uid://cym70r58r53w" path="res://resources/enemies/orchetto.tres" id="3_eouep"]
+[ext_resource type="Script" path="res://resources/levels/level_data.gd" id="4_vjvg1"]
+[ext_resource type="AudioStream" uid="uid://boppptxo32qo2" path="res://assets/music/Town_-_Enchanted_Village.ogg" id="5_n27o5"]
+
+[resource]
+script = ExtResource("4_vjvg1")
+name = "Plain 1"
+description = ""
+length_of_the_road = 3
+boss_level = false
+enemy = Array[ExtResource("1_8wblf")]([ExtResource("2_on5ee"), ExtResource("3_eouep")])
+enemy_probability = Array[int]([5, 5])
+initial_enemy = Array[ExtResource("1_8wblf")]([ExtResource("3_eouep")])
+base_danger = 10
+random_danger = 0
+danger_threshold = 20
+danger_shrink = 1
+road_slots = 2
+food_slots = 2
+wood_slots = 2
+mod_wood = 0
+mod_food = 0
+road_obstacle = 0
+broken_bridge = false
+dragon_level = false
+soundtrack = ExtResource("5_n27o5")
