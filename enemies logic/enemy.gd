@@ -7,7 +7,7 @@ class_name Enemy extends Node2D
 
 @export var attack_animation_x : int = 75
 
-var dice_slot : DiceSlot
+var dice_slots : Array[DiceSlot]
 var hp : int
 var turn_atk: int
 var stun: bool
@@ -23,6 +23,7 @@ func _ready():
 	sprite2D.texture = data.texture
 	hp = data.max_hp
 	update_label()
+	eneter_animation()
 
 func reset_stats():
 	turn_atk = data.attack
@@ -67,7 +68,8 @@ func kill() -> void :
 	var tween = get_tree().create_tween()
 	tween.tween_property(sprite2D, "modulate:a", 0 ,1)
 	await tween.finished
-	dice_slot.hide()
+	for slot in dice_slots:
+		slot.hide()
 	queue_free()
 
 func attack() -> int:
@@ -80,3 +82,11 @@ func red_flash() -> void:
 	var tween = get_tree().create_tween()
 	tween.tween_property(sprite2D, "modulate", Color.RED ,0.1)
 	tween.tween_property(sprite2D, "modulate", Color.WHITE ,0.1)
+
+func eneter_animation() -> void:
+	sprite2D.position.x = 50
+	sprite2D.modulate.a = 0
+	var tween = get_tree().create_tween()
+	tween.tween_property(sprite2D, "position:x", 0 ,0.1)
+	tween.parallel().tween_property(sprite2D, "modulate:a", 1 ,0.15)
+	

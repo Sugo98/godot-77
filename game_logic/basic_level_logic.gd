@@ -2,8 +2,9 @@ class_name LevelLogic extends Node
 
 var game_manager : GameManager
 
-var bridge_discounted_cost = Global.bridge_discount_repair_cost
-var bridge_cost = Global.bridge_repair_cost
+const bridge_discounted_cost = Global.bridge_discount_repair_cost
+const bridge_cost = Global.bridge_repair_cost
+const offset_x = 100
 
 @onready var enemy_slots_container : Control = $EnemyZone/EnemySlots
 @onready var enemy_pivots_container: Node2D = $EnemyZone/EnemyPivots
@@ -56,11 +57,17 @@ func show_slots():
 			slot.show()
 		else:
 			slot.hide()
-	for slot : DiceSlot in road_slots:
-		if slot.get_index() < data.road_slots:
-			slot.show()
-		else:
-			slot.hide()
+	if not data.boss_level:
+		for slot : DiceSlot in road_slots:
+			if slot.get_index() < data.road_slots:
+				slot.show()
+			else:
+				slot.hide()
+	else:
+		road_slots_container.hide()
+		road_label.hide()
+		enemy_slots_container.position += Vector2.DOWN * 150
+		enemy_pivots_container.position += Vector2.DOWN * 150
 
 func fill_array():
 	enemy_slots = parse_slots(enemy_slots_container)
@@ -89,9 +96,9 @@ func solve_turn():
 	await solve_road_slots()
 	await update_danger()
 	reset_turn()
+	if check_end():
+		await next_level()
 	blocker.hide()
-	if road <= 0:
-		next_level()
 
 func solve_hunger():
 	heroes_manager.eat(1)
@@ -147,11 +154,11 @@ func solve_enemies_slots():
 	for slot:DiceSlot in enemy_slots:
 		if not active_enemies.has(slot): #if there is no enemy skip
 			continue
-		var enemy = active_enemies[slot]
+		var enemy : Enemy = active_enemies[slot]
 		if slot.get_child_count(): #if there is a dice
 			var face = slot.get_child(0)
 			await resolve_attack_dice(face, enemy)
-		if enemy.is_alive: #counter_attack
+		if enemy.is_alive and slot == enemy.dice_slots.back(): #counter_attack
 			var dmg = enemy.attack()
 			if dmg:
 				heroes_manager.suffer_damage(dmg)
@@ -192,6 +199,7 @@ func decrase_road(x):
 	road_label.text = "Distance: " + str(road)
 
 func next_level():
+	await wait_time(2)
 	game_manager.go_to_next_level()
 
 func reset_turn():
@@ -199,10 +207,15 @@ func reset_turn():
 	heroes_manager.reset_turn()
 
 func spawn_random_enemy():
+	if data.boss_level:
+		return
 	var enemy_data = Utils.random_pick( data.enemy , data.enemy_probability )
 	spawn_enemy(enemy_data)
 
 func spawn_initial_enemy():
+	if data.boss_level:
+		spawn_big_enemy(data.initial_enemy[0])
+		return
 	for enemy_data in data.initial_enemy:
 		spawn_enemy(enemy_data)
 
@@ -215,18 +228,32 @@ func spawn_enemy(enemy_data : EnemyData):
 			pivot.add_child(new_enemy)
 			new_enemy.reset_stats()
 			enemy_slots[i].show()
-			new_enemy.dice_slot = enemy_slots[i]
+			new_enemy.dice_slots.append(enemy_slots[i])
 			active_enemies[ enemy_slots[i] ] = new_enemy
 			await wait_time(basic_wait_time)
 			return
 
+func spawn_big_enemy(enemy_data : EnemyData):
+	var new_enemy : Enemy = enemy_scene.instantiate()
+	new_enemy.init(enemy_data)
+	var size = enemy_data.size
+	enemy_pivots[0].add_child(new_enemy)
+	new_enemy.reset_stats()
+	for i in range(size+1):
+		enemy_slots[i].show()
+		new_enemy.dice_slots.append(enemy_slots[i])
+		active_enemies[ enemy_slots[i] ] = new_enemy
+	new_enemy.position.x += offset_x * size
+	await wait_time(basic_wait_time)
+	return
+
 func kill_enemy(enemy : Enemy):
-	var slot = enemy.dice_slot
+	var slots = enemy.dice_slots
 	heroes_manager.gain_xp(enemy.data.xp_value)
 	enemy.is_alive = false
-	enemy.kill()
-	active_enemies.erase(slot)
-	await wait_time(basic_wait_time)
+	await enemy.kill()
+	for slot in slots:
+		active_enemies.erase(slot)
 
 func update_danger():
 	danger += data.base_danger + randi_range(0, data.random_danger)
@@ -317,3 +344,8 @@ func enemy_steal(enemy : Enemy):
 		heroes_manager.increase_wood(-x)
 		Utils.create_text_feedback("-" + str(x) +" Wood", heroes_manager.caravan_position)
 		
+func check_end() -> bool:
+	if data.boss_level:
+		return active_enemies.is_empty()
+	else:
+		return (road <= 0)

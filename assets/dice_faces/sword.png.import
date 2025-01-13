@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfvweassj8opx"
-path="res://.godot/imported/shield.png-46d74908b0ac118b50397d7021ae31f8.ctex"
+uid="uid://b282bf5nf1bg8"
+path="res://.godot/imported/sword.png-65de276f3a0aadb65e1b837bbc519c99.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/shield.png"
-dest_files=["res://.godot/imported/shield.png-46d74908b0ac118b50397d7021ae31f8.ctex"]
+source_file="res://assets/dice_faces/sword.png"
+dest_files=["res://.godot/imported/sword.png-65de276f3a0aadb65e1b837bbc519c99.ctex"]
 
 [params]
 

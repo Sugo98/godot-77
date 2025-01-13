@@ -13,10 +13,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1152.0
-offset_top = 113.0
-offset_right = -63.0
-offset_bottom = -521.0
+offset_left = 1173.0
+offset_top = 137.0
+offset_right = -42.0
+offset_bottom = -497.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -26,6 +26,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -10.0
+offset_right = 51.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -34,9 +36,9 @@ mouse_filter = 2
 visible = false
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
-offset_left = 238.0
+offset_left = 62.0
 offset_top = 297.0
-offset_right = 302.0
+offset_right = 126.0
 offset_bottom = 361.0
 script = ExtResource("2_ghtwx")
 type = 1
@@ -45,9 +47,9 @@ type = 1
 visible = false
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
-offset_left = 436.0
+offset_left = 260.0
 offset_top = 297.0
-offset_right = 500.0
+offset_right = 324.0
 offset_bottom = 361.0
 script = ExtResource("2_ghtwx")
 type = 1
@@ -56,9 +58,9 @@ type = 1
 visible = false
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
-offset_left = 617.0
+offset_left = 441.0
 offset_top = 297.0
-offset_right = 681.0
+offset_right = 505.0
 offset_bottom = 361.0
 script = ExtResource("2_ghtwx")
 type = 1
@@ -67,9 +69,9 @@ type = 1
 visible = false
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
-offset_left = 50.0
+offset_left = 642.0
 offset_top = 297.0
-offset_right = 114.0
+offset_right = 706.0
 offset_bottom = 361.0
 script = ExtResource("2_ghtwx")
 type = 1
@@ -77,16 +79,16 @@ type = 1
 [node name="EnemyPivots" type="Node2D" parent="EnemyZone"]
 
 [node name="Pivot1" type="Marker2D" parent="EnemyZone/EnemyPivots"]
-position = Vector2(267, 229)
+position = Vector2(91, 229)
 
 [node name="Pivot2" type="Marker2D" parent="EnemyZone/EnemyPivots"]
-position = Vector2(464, 229)
+position = Vector2(288, 229)
 
 [node name="Pivot3" type="Marker2D" parent="EnemyZone/EnemyPivots"]
-position = Vector2(643, 229)
+position = Vector2(467, 229)
 
 [node name="Pivot4" type="Marker2D" parent="EnemyZone/EnemyPivots"]
-position = Vector2(76, 229)
+position = Vector2(668, 229)
 
 [node name="WoodSlots" type="Control" parent="."]
 layout_mode = 3

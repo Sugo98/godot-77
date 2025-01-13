@@ -9,6 +9,7 @@ script = ExtResource("1_rqwrv")
 name = ""
 description = ""
 length_of_the_road = 6
+boss_level = false
 enemy = Array[ExtResource("1_0onpo")]([ExtResource("2_x3op1")])
 enemy_probability = Array[int]([1])
 initial_enemy = Array[ExtResource("1_0onpo")]([])

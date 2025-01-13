@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cm2e8eatgk5dw"
-path="res://.godot/imported/food.png-9e0d53514077999544b4b907e2400ef3.ctex"
+uid="uid://cfvweassj8opx"
+path="res://.godot/imported/shield.png-c92ebae05afbdbdd6e5d8330ff073c4a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/food.png"
-dest_files=["res://.godot/imported/food.png-9e0d53514077999544b4b907e2400ef3.ctex"]
+source_file="res://assets/dice_faces/shield.png"
+dest_files=["res://.godot/imported/shield.png-c92ebae05afbdbdd6e5d8330ff073c4a.ctex"]
 
 [params]
 

@@ -1,18 +1,20 @@
-[gd_resource type="Resource" script_class="LevelData" load_steps=5 format=3 uid="uid://g46vae27pvqv"]
+[gd_resource type="Resource" script_class="LevelData" load_steps=6 format=3 uid="uid://g46vae27pvqv"]
 
 [ext_resource type="Script" path="res://resources/levels/level_data.gd" id="1_7m182"]
 [ext_resource type="Script" path="res://resources/enemies/enemies_data.gd" id="1_kis5l"]
 [ext_resource type="Resource" uid="uid://cym70r58r53w" path="res://resources/enemies/goblin.tres" id="2_wlwpd"]
 [ext_resource type="Resource" uid="uid://delt0qchgjv4n" path="res://resources/enemies/wolf.tres" id="3_avcmi"]
+[ext_resource type="Resource" uid="uid://dncssya7ud4yx" path="res://resources/enemies/troll.tres" id="4_xbqib"]
 
 [resource]
 script = ExtResource("1_7m182")
 name = ""
 description = ""
 length_of_the_road = 1
+boss_level = true
 enemy = Array[ExtResource("1_kis5l")]([ExtResource("2_wlwpd"), ExtResource("3_avcmi")])
 enemy_probability = Array[int]([5, 5])
-initial_enemy = Array[ExtResource("1_kis5l")]([ExtResource("3_avcmi"), ExtResource("3_avcmi"), ExtResource("2_wlwpd"), ExtResource("2_wlwpd")])
+initial_enemy = Array[ExtResource("1_kis5l")]([ExtResource("4_xbqib")])
 base_danger = 10
 random_danger = 0
 danger_threshold = 20

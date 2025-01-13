@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="FaceData" load_steps=3 format=3 uid="uid://bif1yeu2j1v60"]
 
 [ext_resource type="Script" path="res://resources/dice_faces/face_data.gd" id="1_h6r7e"]
-[ext_resource type="Texture2D" uid="uid://cfvweassj8opx" path="res://assets/shield.png" id="2_e4uhs"]
+[ext_resource type="Texture2D" uid="uid://cfvweassj8opx" path="res://assets/dice_faces/shield.png" id="2_e4uhs"]
 
 [resource]
 script = ExtResource("1_h6r7e")

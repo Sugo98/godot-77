@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3 uid="uid://dncssya7ud4yx"]
+
+[ext_resource type="Script" path="res://resources/enemies/enemies_data.gd" id="1_n7rj0"]
+[ext_resource type="Texture2D" uid="uid://cvhoqwsdt22b" path="res://assets/enemies/orchetti DEF1.png" id="2_gd26g"]
+
+[resource]
+script = ExtResource("1_n7rj0")
+name = "Troll"
+texture = ExtResource("2_gd26g")
+size = 1
+max_hp = 10
+attack = 2
+xp_value = 15
+steal_food = 0
+steal_wood = 0
+shield = 0
