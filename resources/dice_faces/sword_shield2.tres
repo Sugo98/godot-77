@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="FaceData" load_steps=2 format=3 uid="uid://bfvibgeujjkey"]
+
+[ext_resource type="Script" path="res://resources/dice_faces/face_data.gd" id="1_wa6rs"]
+
+[resource]
+script = ExtResource("1_wa6rs")
+name = "Sword & Shield 1"
+description = "Can be used as a Sword or as a Shield"
+character_class = 0
+xp_cost = 5
+sword = 2
+shield = 2
+food = 0
+wood = 0
+wheel = 0
+fire_ball = 0
+smoke = 0
+jolly = 0
+spikes = 0
+stun = false
+wall_ice = false
+wood_discount = false

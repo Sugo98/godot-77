@@ -20,12 +20,21 @@ func init(d : MerchantData):
 func _ready() -> void:
 	for i in range(market_slots.get_child_count()):
 		var new_face = DiceFace.new()
-		var face_data = Utils.random_pick( data.face , data.face_probability )
+		var is_a_duplicate := true
+		var face_data : FaceData
+		while is_a_duplicate:
+			face_data = Utils.random_pick( data.face , data.face_probability )
+			is_a_duplicate = check_if_is_a_duplicate(face_data)
 		new_face.init(face_data)
 		selling_faces.append(new_face)
 		market_slots.get_child(i).shopkeeper = self
 	shopping_is_ended = false
 	reset_market()
+
+func check_if_is_a_duplicate(face_data : FaceData) -> bool:
+	for face in selling_faces:
+		if face.data == face_data: return true
+	return false
 
 func reset_market():
 	for i in range(market_slots.get_child_count()):

@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="FaceData" load_steps=3 format=3 uid="uid://bglgiofndcjvy"]
+
+[ext_resource type="Script" path="res://resources/dice_faces/face_data.gd" id="1_pagou"]
+[ext_resource type="Texture2D" uid="uid://bfj4kh0ge21bj" path="res://assets/dice_faces/dado alambicco.png" id="2_665m1"]
+
+[resource]
+script = ExtResource("1_pagou")
+name = "Alembic 1"
+description = ""
+texture = ExtResource("2_665m1")
+character_class = 4
+xp_cost = 2
+sword = 0
+shield = 0
+food = 0
+wood = 0
+wheel = 0
+fire_ball = 0
+smoke = 1
+jolly = 0
+spikes = 0
+stun = false
+wall_ice = false
+wood_discount = false
+carrot = false

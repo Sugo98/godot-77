@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="FaceData" load_steps=2 format=3 uid="uid://dkme44mnes75d"]
+
+[ext_resource type="Script" path="res://resources/dice_faces/face_data.gd" id="1_6gchk"]
+
+[resource]
+script = ExtResource("1_6gchk")
+name = "Sword 1"
+description = "Deals 1 damage"
+character_class = 1
+xp_cost = 6
+sword = 0
+shield = 2
+food = 0
+wood = 0
+wheel = 0
+fire_ball = 0
+smoke = 0
+jolly = 0
+spikes = 2
+stun = false
+wall_ice = false
+wood_discount = false
+carrot = false

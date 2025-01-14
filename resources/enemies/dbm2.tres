@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3 uid="uid://vy04pu6vbjto"]
 
 [ext_resource type="Script" path="res://resources/enemies/enemies_data.gd" id="1_rel8b"]
-[ext_resource type="Texture2D" uid="uid://etug87vk7flg" path="res://assets/enemies/sandman.png" id="2_wmhsw"]
+[ext_resource type="Texture2D" uid="uid://5elk0bu4okaw" path="res://assets/enemies/sandman.png" id="2_yb1hj"]
 
 [resource]
 script = ExtResource("1_rel8b")
 name = "Bandit"
-texture = ExtResource("2_wmhsw")
+texture = ExtResource("2_yb1hj")
 size = 0
 max_hp = 6
 attack = 3

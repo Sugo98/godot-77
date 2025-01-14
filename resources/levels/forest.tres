@@ -10,14 +10,14 @@
 script = ExtResource("1_rqwrv")
 name = "Forest"
 description = "You enter a shady wood..."
-length_of_the_road = 4
+length_of_the_road = 5
 boss_level = false
 enemy = Array[ExtResource("1_0onpo")]([ExtResource("2_gpb6o"), ExtResource("2_abe1t"), ExtResource("3_vatw8")])
 enemy_probability = Array[int]([2, 5, 3])
 initial_enemy = Array[ExtResource("1_0onpo")]([ExtResource("3_vatw8"), ExtResource("3_vatw8"), ExtResource("3_vatw8"), ExtResource("3_vatw8")])
 base_danger = 10
 random_danger = 10
-danger_threshold = 32
+danger_threshold = 30
 danger_shrink = 2
 road_slots = 1
 food_slots = 1

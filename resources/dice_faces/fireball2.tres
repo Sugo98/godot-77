@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="FaceData" load_steps=3 format=3 uid="uid://n152liii5xmv"]
+
+[ext_resource type="Script" path="res://resources/dice_faces/face_data.gd" id="1_k4xns"]
+[ext_resource type="Texture2D" uid="uid://co7qaut5rghjb" path="res://assets/dice_faces/dado teschio di fuoco.png" id="2_jltdi"]
+
+[resource]
+script = ExtResource("1_k4xns")
+name = "Fireball 2"
+description = "A powerful spell: deals 2 damage to each opponent"
+texture = ExtResource("2_jltdi")
+character_class = 2
+xp_cost = 6
+sword = 0
+shield = 0
+food = 0
+wood = 0
+wheel = 0
+fire_ball = 2
+smoke = 0
+jolly = 0
+spikes = 0
+stun = false
+wall_ice = false
+wood_discount = false
+carrot = false

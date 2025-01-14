@@ -2,7 +2,9 @@ class_name Dice extends Node
 
 var faces : Array[DiceFace]
 @export var character_class : Global.CharacterClass
-@onready var dice_slots: VBoxContainer = $DiceSlots
+@export var hero_texture : Texture2D
+
+@onready var dice_slots: BoxContainer = $DiceSlots
 @onready var slots_for_merchant: HBoxContainer = $SlotsForMerchants
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
@@ -10,6 +12,7 @@ var faces : Array[DiceFace]
 func _ready() -> void:
 	faces.resize(6)
 	load_basic_dice()
+	sprite_2d.texture = hero_texture
 
 func prepare_for_level():
 	slots_for_merchant.set_visible(false)
@@ -35,7 +38,7 @@ func load_basic_dice():
 		faces[i] = new_face
 		i += 1
 	var last_face = DiceFace.new()
-	last_face.init( load(Global.basic_dice_faces[0]) )
+	last_face.init( load(Global.sixth_face[ character_class ]) )
 	faces[5] = last_face
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

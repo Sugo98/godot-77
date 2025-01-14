@@ -1,16 +1,21 @@
-[gd_resource type="Resource" script_class="MerchantData" load_steps=8 format=3 uid="uid://c8udnpwlpodlw"]
+[gd_resource type="Resource" script_class="MerchantData" load_steps=13 format=3 uid="uid://c8udnpwlpodlw"]
 
 [ext_resource type="Script" path="res://resources/dice_faces/face_data.gd" id="1_6sqqx"]
-[ext_resource type="Resource" uid="uid://lwygecyvymak" path="res://resources/dice_faces/food.tres" id="2_yddae"]
-[ext_resource type="Resource" uid="uid://bif1yeu2j1v60" path="res://resources/dice_faces/shield.tres" id="3_xaaf6"]
-[ext_resource type="Resource" uid="uid://y2p3ya5exgod" path="res://resources/dice_faces/sword.tres" id="4_cp6l5"]
-[ext_resource type="Resource" uid="uid://ba1460x2hqnym" path="res://resources/dice_faces/wheel.tres" id="5_c715x"]
-[ext_resource type="Resource" uid="uid://cum5nexpjpays" path="res://resources/dice_faces/wood.tres" id="6_7ryr0"]
+[ext_resource type="Resource" uid="uid://0ytgm0o526jp" path="res://resources/dice_faces/carrot1.tres" id="2_f82qd"]
+[ext_resource type="Resource" uid="uid://cj00ouftbmlph" path="res://resources/dice_faces/wood2.tres" id="2_v2y72"]
+[ext_resource type="Resource" uid="uid://dnq2kcx58ubr" path="res://resources/dice_faces/food2.tres" id="3_2rq0i"]
+[ext_resource type="Resource" uid="uid://cb0aovtu2a8bv" path="res://resources/dice_faces/wheel2.tres" id="4_jsq3v"]
+[ext_resource type="Resource" uid="uid://dmguvvdxbnuye" path="res://resources/dice_faces/sword_shield1.tres" id="4_md8pg"]
+[ext_resource type="Resource" uid="uid://bglgiofndcjvy" path="res://resources/dice_faces/alembic1.tres" id="5_hmn2g"]
+[ext_resource type="Resource" uid="uid://52lrgu0mni1x" path="res://resources/dice_faces/club1.tres" id="6_wdxq7"]
+[ext_resource type="Resource" uid="uid://bo0pvxnpmd7mb" path="res://resources/dice_faces/cupcake1.tres" id="7_1ee6n"]
 [ext_resource type="Script" path="res://resources/merchant/merchant_data.gd" id="7_46egx"]
+[ext_resource type="Resource" uid="uid://bmpo4kp5p1sa2" path="res://resources/dice_faces/animal_companion1.tres" id="9_2al47"]
+[ext_resource type="Resource" uid="uid://bd3rc8gy67nvh" path="res://resources/dice_faces/gear1.tres" id="10_02guo"]
 
 [resource]
 script = ExtResource("7_46egx")
 name = "Base"
 description = "This is the basic merchant, can only sell basic faces"
-face = Array[ExtResource("1_6sqqx")]([ExtResource("2_yddae"), ExtResource("3_xaaf6"), ExtResource("4_cp6l5"), ExtResource("5_c715x"), ExtResource("6_7ryr0")])
-face_probability = Array[int]([2, 2, 2, 2, 2, 2])
+face = Array[ExtResource("1_6sqqx")]([ExtResource("2_v2y72"), ExtResource("3_2rq0i"), ExtResource("4_jsq3v"), ExtResource("4_md8pg"), ExtResource("6_wdxq7"), ExtResource("7_1ee6n"), ExtResource("2_f82qd"), ExtResource("9_2al47"), ExtResource("10_02guo"), ExtResource("5_hmn2g")])
+face_probability = Array[int]([2, 2, 2, 2, 1, 1, 1, 1, 1, 1])

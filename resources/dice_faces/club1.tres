@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="FaceData" load_steps=3 format=3 uid="uid://52lrgu0mni1x"]
+
+[ext_resource type="Script" path="res://resources/dice_faces/face_data.gd" id="1_7r0p6"]
+[ext_resource type="Texture2D" uid="uid://0jv1rtfqhcp4" path="res://assets/dice_faces/mazza.png" id="2_8ncx1"]
+
+[resource]
+script = ExtResource("1_7r0p6")
+name = "Sword 1"
+description = "Deals 1 damage"
+texture = ExtResource("2_8ncx1")
+character_class = 1
+xp_cost = 3
+sword = 1
+shield = 0
+food = 0
+wood = 0
+wheel = 0
+fire_ball = 0
+smoke = 0
+jolly = 0
+spikes = 0
+stun = true
+wall_ice = false
+wood_discount = false
+carrot = false

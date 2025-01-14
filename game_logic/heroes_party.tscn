@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://ojh8x0lm12fe"]
+[gd_scene load_steps=7 format=3 uid="uid://ojh8x0lm12fe"]
 
 [ext_resource type="Script" path="res://game_logic/hero_party_manager.gd" id="1_6rxhw"]
 [ext_resource type="PackedScene" uid="uid://d10hgb5arwxkb" path="res://game_logic/heros_ui.tscn" id="2_1v2m8"]
 [ext_resource type="PackedScene" uid="uid://e3w2l0sl2g7m" path="res://dice_logic/dice.tscn" id="3_q2okv"]
+[ext_resource type="Texture2D" uid="uid://du7fsdcx1ljr1" path="res://assets/heroes/guerriera DEF.png" id="4_lhd3d"]
+[ext_resource type="Texture2D" uid="uid://c1s0sxxrjxw0v" path="res://assets/heroes/maga DEF.png" id="5_hk1u8"]
+[ext_resource type="Texture2D" uid="uid://c0yr0uw61pg1n" path="res://assets/heroes/eroe ranger 1.png" id="6_tpl4r"]
 
 [node name="HeroesParty" type="Node" node_paths=PackedStringArray("heroes_ui", "heroes_container")]
 script = ExtResource("1_6rxhw")
@@ -28,6 +31,7 @@ offset_top = 55.0
 offset_right = 64.0
 offset_bottom = 247.0
 character_class = 1
+hero_texture = ExtResource("4_lhd3d")
 
 [node name="Wizard" parent="Heroes" instance=ExtResource("3_q2okv")]
 offset_left = 64.0
@@ -35,6 +39,7 @@ offset_top = 290.0
 offset_right = 64.0
 offset_bottom = 482.0
 character_class = 2
+hero_texture = ExtResource("5_hk1u8")
 
 [node name="Ranger" parent="Heroes" instance=ExtResource("3_q2okv")]
 offset_left = 64.0
@@ -42,6 +47,7 @@ offset_top = 542.0
 offset_right = 64.0
 offset_bottom = 734.0
 character_class = 3
+hero_texture = ExtResource("6_tpl4r")
 
 [node name="MasterMind" parent="Heroes" instance=ExtResource("3_q2okv")]
 offset_left = 64.0
@@ -49,6 +55,7 @@ offset_top = 795.0
 offset_right = 64.0
 offset_bottom = 987.0
 character_class = 4
+hero_texture = ExtResource("4_lhd3d")
 
 [node name="CaravanPosition" type="Marker2D" parent="."]
 position = Vector2(929, 559)

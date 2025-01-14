@@ -6,7 +6,7 @@ class_name GameManager extends Node
 @export var heroes_manager_scene : PackedScene
 @export var main_canvas : CanvasLayer
 
-@export var journey : Resource
+@export var journey : Journey
 
 
 var actual_stop : Node

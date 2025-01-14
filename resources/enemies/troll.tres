@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3 uid="uid://dncssya7ud4yx"]
 
 [ext_resource type="Script" path="res://resources/enemies/enemies_data.gd" id="1_n7rj0"]
-[ext_resource type="Texture2D" uid="uid://c7d821nhetl5" path="res://assets/enemies/troll temp.png" id="2_is20y"]
+[ext_resource type="Texture2D" uid="uid://b48721w7mglm0" path="res://assets/enemies/troll temp.png" id="2_uu7bb"]
 
 [resource]
 script = ExtResource("1_n7rj0")
 name = "Troll"
-texture = ExtResource("2_is20y")
+texture = ExtResource("2_uu7bb")
 size = 1
 max_hp = 10
 attack = 3

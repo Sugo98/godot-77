@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="FaceData" load_steps=3 format=3 uid="uid://hlmlxhtcunna"]
+[gd_resource type="Resource" script_class="FaceData" load_steps=3 format=3 uid="uid://cm6tucnh81sqn"]
 
 [ext_resource type="Script" path="res://resources/dice_faces/face_data.gd" id="1_upy1j"]
 [ext_resource type="Texture2D" uid="uid://npn6bvle2m4i" path="res://assets/dice_faces/dado spada2.png" id="2_4k8r4"]
@@ -9,7 +9,7 @@ name = "Sword 2"
 description = "Deals 2 damages"
 texture = ExtResource("2_4k8r4")
 character_class = 0
-xp_cost = 2
+xp_cost = 3
 sword = 2
 shield = 0
 food = 0

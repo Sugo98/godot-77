@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="LevelData" load_steps=5 format=3 uid="uid://bd71cnmmq5sw2"]
+[gd_resource type="Resource" script_class="LevelData" load_steps=7 format=3 uid="uid://bd71cnmmq5sw2"]
 
 [ext_resource type="Script" path="res://resources/enemies/enemies_data.gd" id="1_w1voo"]
 [ext_resource type="Resource" uid="uid://di25an6yjvkqu" path="res://resources/enemies/sbm1.tres" id="2_bdae0"]
 [ext_resource type="Resource" uid="uid://dvgh36dfckm3n" path="res://resources/enemies/pbm1.tres" id="3_3sjg1"]
 [ext_resource type="Script" path="res://resources/levels/level_data.gd" id="3_tmbrf"]
+[ext_resource type="Resource" uid="uid://dk8nkp1gblgwu" path="res://resources/enemies/bat.tres" id="4_5y4vs"]
+[ext_resource type="Resource" uid="uid://brcausig1ijvi" path="res://resources/enemies/orchetto.tres" id="5_l25db"]
 
 [resource]
 script = ExtResource("3_tmbrf")
@@ -11,13 +13,13 @@ name = "Swamp"
 description = "A dark swamp appears before you"
 length_of_the_road = 4
 boss_level = false
-enemy = Array[ExtResource("1_w1voo")]([ExtResource("2_bdae0"), ExtResource("3_3sjg1")])
-enemy_probability = Array[int]([5, 5])
-initial_enemy = Array[ExtResource("1_w1voo")]([ExtResource("2_bdae0")])
+enemy = Array[ExtResource("1_w1voo")]([ExtResource("2_bdae0"), ExtResource("3_3sjg1"), ExtResource("4_5y4vs")])
+enemy_probability = Array[int]([4, 4, 2])
+initial_enemy = Array[ExtResource("1_w1voo")]([ExtResource("2_bdae0"), ExtResource("5_l25db")])
 base_danger = 10
 random_danger = 10
-danger_threshold = 50
-danger_shrink = 1
+danger_threshold = 40
+danger_shrink = 4
 road_slots = 2
 food_slots = 2
 wood_slots = 2

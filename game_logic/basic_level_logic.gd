@@ -99,14 +99,16 @@ func solve_turn():
 	await solve_caravan_slots()
 	await solve_enemies_slots()
 	await solve_road_slots()
-	await update_danger()
 	reset_turn()
 	if check_end():
 		await next_level()
+	else:
+		await update_danger()
 	blocker.hide()
 
 func solve_hunger():
-	heroes_manager.eat(1)
+	heroes_manager.eat(Global.food_consumption)
+	Utils.create_text_feedback("-" + str(Global.food_consumption) +" Food", heroes_manager.caravan_position)
 	await wait_time(basic_wait_time)
 
 func solve_wood_slots():
@@ -117,8 +119,12 @@ func solve_wood_slots():
 		var x = face.data.wood + face.data.jolly + data.mod_wood
 		if x < 0 : x = 0
 		Utils.create_text_feedback("+" + str(x) +" Wood", slot.global_position)
-		face.hide()
 		heroes_manager.increase_wood(x)
+		if face.data.carrot:
+			await wait_time(basic_wait_time/2)
+			Utils.create_text_feedback("+" + str(1) +" Food", slot.global_position)
+			heroes_manager.increase_food(1)
+		face.hide()
 		await wait_time(basic_wait_time)
 
 func solve_food_slots():
@@ -204,7 +210,7 @@ func decrase_road(x):
 	road_label.text = "Distance: " + str(road)
 
 func next_level():
-	await wait_time(2)
+	await wait_time(0.5)
 	game_manager.go_to_next_level()
 
 func reset_turn():

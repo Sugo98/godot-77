@@ -1,16 +1,20 @@
-[gd_resource type="Resource" script_class="MerchantData" load_steps=8 format=3 uid="uid://dnk3v72rl022a"]
+[gd_resource type="Resource" script_class="MerchantData" load_steps=12 format=3 uid="uid://dnk3v72rl022a"]
 
 [ext_resource type="Script" path="res://resources/dice_faces/face_data.gd" id="1_o2ryf"]
-[ext_resource type="Resource" path="res://resources/dice_faces/alembic.tres" id="2_hc6kh"]
-[ext_resource type="Resource" path="res://resources/dice_faces/animal_companion.tres" id="3_i40f7"]
-[ext_resource type="Resource" uid="uid://die51sm74wnvd" path="res://resources/dice_faces/fireball.tres" id="4_xd5yh"]
-[ext_resource type="Resource" path="res://resources/dice_faces/sword2.tres" id="5_g8sdf"]
-[ext_resource type="Resource" path="res://resources/dice_faces/sword_shield.tres" id="6_47qan"]
+[ext_resource type="Resource" uid="uid://chxtgmaewyafy" path="res://resources/dice_faces/sword3.tres" id="2_5xsvm"]
+[ext_resource type="Resource" uid="uid://bmwm8hqhglabq" path="res://resources/dice_faces/shield3.tres" id="3_ca2fv"]
+[ext_resource type="Resource" uid="uid://dgg8n0tkcgtuu" path="res://resources/dice_faces/wood3.tres" id="4_8eqto"]
+[ext_resource type="Resource" uid="uid://14vk1lqn65jt" path="res://resources/dice_faces/food3.tres" id="5_5vwik"]
+[ext_resource type="Resource" uid="uid://cm6tucnh81sqn" path="res://resources/dice_faces/sword2.tres" id="5_g8sdf"]
 [ext_resource type="Script" path="res://resources/merchant/merchant_data.gd" id="7_46o4l"]
+[ext_resource type="Resource" uid="uid://dkme44mnes75d" path="res://resources/dice_faces/spike2.tres" id="7_qtpav"]
+[ext_resource type="Resource" uid="uid://bg80is5q2sqat" path="res://resources/dice_faces/cupcake2.tres" id="8_kttsy"]
+[ext_resource type="Resource" uid="uid://bemc3m0l3b8f4" path="res://resources/dice_faces/animal_companion2.tres" id="9_yybo5"]
+[ext_resource type="Resource" uid="uid://bi8xia0jb2pta" path="res://resources/dice_faces/gear2.tres" id="10_iblle"]
 
 [resource]
 script = ExtResource("7_46o4l")
 name = "Lvl 2 Merchant"
 description = ""
-face = Array[ExtResource("1_o2ryf")]([ExtResource("2_hc6kh"), ExtResource("3_i40f7"), ExtResource("4_xd5yh"), ExtResource("5_g8sdf"), ExtResource("6_47qan")])
-face_probability = Array[int]([2, 2, 2, 2, 2])
+face = Array[ExtResource("1_o2ryf")]([ExtResource("2_5xsvm"), ExtResource("3_ca2fv"), ExtResource("4_8eqto"), ExtResource("5_5vwik"), ExtResource("5_g8sdf"), ExtResource("7_qtpav"), ExtResource("8_kttsy"), ExtResource("9_yybo5"), ExtResource("10_iblle")])
+face_probability = Array[int]([2, 2, 2, 2, 2, 1, 1, 1, 1])

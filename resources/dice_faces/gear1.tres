@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="FaceData" load_steps=3 format=3 uid="uid://bd3rc8gy67nvh"]
+
+[ext_resource type="Script" path="res://resources/dice_faces/face_data.gd" id="1_md0yp"]
+[ext_resource type="Texture2D" uid="uid://coafhgayk225v" path="res://assets/dice_faces/ingranaggio.png" id="2_lr6qs"]
+
+[resource]
+script = ExtResource("1_md0yp")
+name = "Wheel 1"
+description = "Advances of 1 on the road"
+texture = ExtResource("2_lr6qs")
+character_class = 4
+xp_cost = 2
+sword = 0
+shield = 0
+food = 0
+wood = 0
+wheel = 1
+fire_ball = 0
+smoke = 0
+jolly = 0
+spikes = 0
+stun = false
+wall_ice = false
+wood_discount = true
+carrot = false

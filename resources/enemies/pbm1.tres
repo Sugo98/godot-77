@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3 uid="uid://dvgh36dfckm3n"]
 
 [ext_resource type="Script" path="res://resources/enemies/enemies_data.gd" id="1_eu56b"]
-[ext_resource type="Texture2D" uid="uid://carugwdj4af1a" path="res://assets/enemies/skeleton.png" id="2_4rfim"]
+[ext_resource type="Texture2D" uid="uid://eauu05w1q1xn" path="res://assets/enemies/skeleton.png" id="2_qks07"]
 
 [resource]
 script = ExtResource("1_eu56b")
 name = "Skeleton"
-texture = ExtResource("2_4rfim")
+texture = ExtResource("2_qks07")
 size = 0
 max_hp = 2
 attack = 1

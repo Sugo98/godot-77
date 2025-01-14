@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="FaceData" load_steps=2 format=3 uid="uid://bmwm8hqhglabq"]
+
+[ext_resource type="Script" path="res://resources/dice_faces/face_data.gd" id="1_86e04"]
+
+[resource]
+script = ExtResource("1_86e04")
+name = "Shield 2"
+description = "Protects from 1 damage"
+character_class = 0
+xp_cost = 6
+sword = 0
+shield = 3
+food = 0
+wood = 0
+wheel = 0
+fire_ball = 0
+smoke = 0
+jolly = 0
+spikes = 0
+stun = false
+wall_ice = false
+wood_discount = false

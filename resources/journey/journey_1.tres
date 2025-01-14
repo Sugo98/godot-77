@@ -1,12 +1,17 @@
-[gd_resource type="Resource" script_class="Journey" load_steps=7 format=3 uid="uid://bryhx73j76qjm"]
+[gd_resource type="Resource" script_class="Journey" load_steps=12 format=3 uid="uid://bryhx73j76qjm"]
 
 [ext_resource type="Script" path="res://resources/journey/journey.gd" id="1_8y6au"]
 [ext_resource type="Resource" uid="uid://c8udnpwlpodlw" path="res://resources/merchant/merchant_1.tres" id="2_qcw7b"]
 [ext_resource type="Resource" uid="uid://g46vae27pvqv" path="res://resources/levels/plain1.tres" id="3_3ogp4"]
 [ext_resource type="Resource" uid="uid://bqpl571qkgwsx" path="res://resources/levels/forest.tres" id="3_7wcbj"]
 [ext_resource type="Resource" uid="uid://dl4mrbth680gt" path="res://resources/merchant/merchant_2.tres" id="4_igsae"]
+[ext_resource type="Resource" uid="uid://c5psbamdgasq7" path="res://resources/levels/mountain.tres" id="5_1ydcv"]
 [ext_resource type="Resource" uid="uid://bd71cnmmq5sw2" path="res://resources/levels/swamp.tres" id="5_ephrb"]
+[ext_resource type="Resource" uid="uid://dgqhdu4oculn5" path="res://resources/levels/plain2.tres" id="6_qk8bs"]
+[ext_resource type="Resource" uid="uid://buq0vkbg12j3d" path="res://resources/levels/desert.tres" id="7_c6rrx"]
+[ext_resource type="Resource" uid="uid://dpnw1nmfj80fk" path="res://resources/levels/plain3.tres" id="8_s0fht"]
+[ext_resource type="Resource" uid="uid://dnk3v72rl022a" path="res://resources/merchant/merchant_3.tres" id="9_elnk5"]
 
 [resource]
 script = ExtResource("1_8y6au")
-stops = Array[Resource]([ExtResource("2_qcw7b"), ExtResource("3_3ogp4"), ExtResource("4_igsae"), ExtResource("3_7wcbj"), ExtResource("4_igsae"), ExtResource("5_ephrb")])
+stops = Array[Resource]([ExtResource("3_3ogp4"), ExtResource("2_qcw7b"), ExtResource("3_7wcbj"), ExtResource("2_qcw7b"), ExtResource("5_ephrb"), ExtResource("4_igsae"), ExtResource("5_1ydcv"), ExtResource("4_igsae"), ExtResource("6_qk8bs"), ExtResource("9_elnk5"), ExtResource("7_c6rrx"), ExtResource("9_elnk5"), ExtResource("8_s0fht")])

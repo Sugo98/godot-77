@@ -1,8 +1,7 @@
-[gd_resource type="Resource" script_class="LevelData" load_steps=6 format=3 uid="uid://c5psbamdgasq7"]
+[gd_resource type="Resource" script_class="LevelData" load_steps=5 format=3 uid="uid://c5psbamdgasq7"]
 
 [ext_resource type="Script" path="res://resources/enemies/enemies_data.gd" id="1_5jvxm"]
-[ext_resource type="Resource" path="res://resources/enemies/demonoculus.tres" id="2_o84n0"]
-[ext_resource type="Resource" uid="uid://brcausig1ijvi" path="res://resources/enemies/orchetto.tres" id="3_t0xxy"]
+[ext_resource type="Resource" uid="uid://dncssya7ud4yx" path="res://resources/enemies/troll.tres" id="2_k7cio"]
 [ext_resource type="Script" path="res://resources/levels/level_data.gd" id="4_uiqia"]
 [ext_resource type="AudioStream" uid="uid://boppptxo32qo2" path="res://assets/music/Town_-_Enchanted_Village.ogg" id="5_cbdn5"]
 
@@ -10,15 +9,15 @@
 script = ExtResource("4_uiqia")
 name = "Plain 1"
 description = ""
-length_of_the_road = 3
-boss_level = false
-enemy = Array[ExtResource("1_5jvxm")]([ExtResource("2_o84n0"), ExtResource("3_t0xxy")])
-enemy_probability = Array[int]([5, 5])
-initial_enemy = Array[ExtResource("1_5jvxm")]([ExtResource("3_t0xxy")])
-base_danger = 10
+length_of_the_road = 0
+boss_level = true
+enemy = Array[ExtResource("1_5jvxm")]([])
+enemy_probability = Array[int]([])
+initial_enemy = Array[ExtResource("1_5jvxm")]([ExtResource("2_k7cio")])
+base_danger = 0
 random_danger = 0
 danger_threshold = 20
-danger_shrink = 1
+danger_shrink = 0
 road_slots = 2
 food_slots = 2
 wood_slots = 2

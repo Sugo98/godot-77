@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3 uid="uid://p4lax3an5o0y"]
 
 [ext_resource type="Script" path="res://resources/enemies/enemies_data.gd" id="1_gm1yk"]
-[ext_resource type="Texture2D" uid="uid://bub3efkghcb71" path="res://assets/enemies/skeleton2.png" id="2_1rs58"]
+[ext_resource type="Texture2D" uid="uid://dhwxoyr5iwnml" path="res://assets/enemies/Magic_Armour.png" id="2_v1ev8"]
 
 [resource]
 script = ExtResource("1_gm1yk")
 name = "Skeleton"
-texture = ExtResource("2_1rs58")
+texture = ExtResource("2_v1ev8")
 size = 0
 max_hp = 3
 attack = 3

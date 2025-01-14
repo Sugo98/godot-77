@@ -1,7 +1,7 @@
 class_name DiceFace
 extends TextureRect
 
-@export var data : FaceData
+var data : FaceData
 
 var dice_owner : Dice
 var hero_owner : Global.CharacterClass
@@ -9,12 +9,14 @@ var draggable : bool = true
 
 func init(d: FaceData) -> void:
 	data = d
+	if data : hero_owner = data.character_class
 
 func _ready():
 	expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-	texture = data.texture
-	tooltip_text = "%s\n%s" % [data.name, data.description]
+	if data :
+		texture = data.texture
+		tooltip_text = "%s\n%s" % [data.name, data.description]
 
 func can_be_placed(slot : DiceSlot.Type):
 	if data.jolly:

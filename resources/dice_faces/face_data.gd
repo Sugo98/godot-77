@@ -25,3 +25,4 @@ class_name FaceData extends Resource
 @export var stun: bool
 @export var wall_ice : bool
 @export var wood_discount : bool
+@export var carrot : bool

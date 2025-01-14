@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="FaceData" load_steps=2 format=3 uid="uid://dgg8n0tkcgtuu"]
+
+[ext_resource type="Script" path="res://resources/dice_faces/face_data.gd" id="1_g7mi3"]
+
+[resource]
+script = ExtResource("1_g7mi3")
+name = "Wood 3"
+description = "Recovers 3 wood"
+character_class = 0
+xp_cost = 6
+sword = 0
+shield = 0
+food = 0
+wood = 3
+wheel = 0
+fire_ball = 0
+smoke = 0
+jolly = 0
+spikes = 0
+stun = false
+wall_ice = false
+wood_discount = false

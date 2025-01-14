@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="FaceData" load_steps=3 format=3 uid="uid://die51sm74wnvd"]
+
+[ext_resource type="Script" path="res://resources/dice_faces/face_data.gd" id="1_yi78f"]
+[ext_resource type="Texture2D" uid="uid://6jeuxamo66pj" path="res://assets/dice_faces/dado fuoo.png" id="2_iytqv"]
+
+[resource]
+script = ExtResource("1_yi78f")
+name = "Fireball"
+description = "A powerful spell: deals 1 damage to each opponent"
+texture = ExtResource("2_iytqv")
+character_class = 2
+xp_cost = 3
+sword = 0
+shield = 0
+food = 0
+wood = 0
+wheel = 0
+fire_ball = 1
+smoke = 0
+jolly = 0
+spikes = 0
+stun = false
+wall_ice = false
+wood_discount = false
+carrot = false

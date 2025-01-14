@@ -1,16 +1,21 @@
-[gd_resource type="Resource" script_class="MerchantData" load_steps=8 format=3 uid="uid://dl4mrbth680gt"]
+[gd_resource type="Resource" script_class="MerchantData" load_steps=13 format=3 uid="uid://dl4mrbth680gt"]
 
 [ext_resource type="Script" path="res://resources/dice_faces/face_data.gd" id="1_8pyq3"]
-[ext_resource type="Resource" uid="uid://bglgiofndcjvy" path="res://resources/dice_faces/alembic.tres" id="2_cira3"]
-[ext_resource type="Resource" path="res://resources/dice_faces/animal_companion.tres" id="3_witwi"]
-[ext_resource type="Resource" uid="uid://die51sm74wnvd" path="res://resources/dice_faces/fireball.tres" id="4_n8j77"]
-[ext_resource type="Resource" path="res://resources/dice_faces/sword2.tres" id="5_fq6ie"]
-[ext_resource type="Resource" path="res://resources/dice_faces/sword_shield.tres" id="6_cua1n"]
+[ext_resource type="Resource" uid="uid://dmlfjam111pd3" path="res://resources/dice_faces/shield2.tres" id="3_a03t4"]
+[ext_resource type="Resource" uid="uid://cb0aovtu2a8bv" path="res://resources/dice_faces/wheel2.tres" id="4_bgij4"]
+[ext_resource type="Resource" uid="uid://cm6tucnh81sqn" path="res://resources/dice_faces/sword2.tres" id="5_fq6ie"]
+[ext_resource type="Resource" uid="uid://t4ahw7tykhom" path="res://resources/dice_faces/food_wood2.tres" id="5_j0ykr"]
+[ext_resource type="Resource" uid="uid://w2aaegfci17v" path="res://resources/dice_faces/club2.tres" id="6_cbqt8"]
 [ext_resource type="Script" path="res://resources/merchant/merchant_data.gd" id="7_gm7j4"]
+[ext_resource type="Resource" uid="uid://cu51eaqtrx11j" path="res://resources/dice_faces/spike1.tres" id="7_msjln"]
+[ext_resource type="Resource" uid="uid://n152liii5xmv" path="res://resources/dice_faces/fireball2.tres" id="8_brcf6"]
+[ext_resource type="Resource" uid="uid://nsyoxc2qxtdy" path="res://resources/dice_faces/wall_ice.tres" id="9_nepb0"]
+[ext_resource type="Resource" uid="uid://dghprjmrvkfn4" path="res://resources/dice_faces/carrot2.tres" id="10_r8rvu"]
+[ext_resource type="Resource" uid="uid://bpxsxy0kk81ka" path="res://resources/dice_faces/alembic2.tres" id="11_0kglq"]
 
 [resource]
 script = ExtResource("7_gm7j4")
 name = "Lvl 2 Merchant"
 description = ""
-face = Array[ExtResource("1_8pyq3")]([ExtResource("2_cira3"), ExtResource("3_witwi"), ExtResource("4_n8j77"), ExtResource("5_fq6ie"), ExtResource("6_cua1n")])
-face_probability = Array[int]([2, 2, 2, 2, 2])
+face = Array[ExtResource("1_8pyq3")]([ExtResource("5_fq6ie"), ExtResource("3_a03t4"), ExtResource("4_bgij4"), ExtResource("5_j0ykr"), ExtResource("6_cbqt8"), ExtResource("7_msjln"), ExtResource("8_brcf6"), ExtResource("9_nepb0"), ExtResource("10_r8rvu"), ExtResource("11_0kglq")])
+face_probability = Array[int]([2, 2, 2, 2, 1, 1, 1, 1, 1, 1])

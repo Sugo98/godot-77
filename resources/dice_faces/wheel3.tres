@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="FaceData" load_steps=2 format=3 uid="uid://cjn7e2pxy6mib"]
+
+[ext_resource type="Script" path="res://resources/dice_faces/face_data.gd" id="1_qqdbx"]
+
+[resource]
+script = ExtResource("1_qqdbx")
+name = "Wheel 2"
+description = "Advances of 2 on the road"
+character_class = 0
+xp_cost = 6
+sword = 0
+shield = 0
+food = 0
+wood = 0
+wheel = 3
+fire_ball = 0
+smoke = 0
+jolly = 0
+spikes = 0
+stun = false
+wall_ice = false
+wood_discount = false

@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3 uid="uid://delt0qchgjv4n"]
 
 [ext_resource type="Script" path="res://resources/enemies/enemies_data.gd" id="1_kdytd"]
-[ext_resource type="Texture2D" uid="uid://d3or3fctoo6tu" path="res://assets/enemies/wolf.png" id="2_m1w2t"]
+[ext_resource type="Texture2D" uid="uid://bmivjwi6ymjoe" path="res://assets/enemies/mastino infernale DEF.png" id="2_8e35x"]
 
 [resource]
 script = ExtResource("1_kdytd")
 name = "Wolf"
-texture = ExtResource("2_m1w2t")
+texture = ExtResource("2_8e35x")
 size = 0
 max_hp = 1
 attack = 2
