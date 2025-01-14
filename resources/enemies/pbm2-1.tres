@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3 uid="uid://dylhd37l11lma"]
+
+[ext_resource type="Script" path="res://resources/enemies/enemies_data.gd" id="1_06a2b"]
+[ext_resource type="Texture2D" uid="uid://carugwdj4af1a" path="res://assets/enemies/skeleton.png" id="2_k80i5"]
+
+[resource]
+script = ExtResource("1_06a2b")
+name = "Skeleton"
+texture = ExtResource("2_k80i5")
+size = 0
+max_hp = 2
+attack = 1
+xp_value = 1
+steal_food = 0
+steal_wood = 0
+shield = 0

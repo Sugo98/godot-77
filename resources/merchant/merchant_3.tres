@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MerchantData" load_steps=8 format=3 uid="uid://dnk3v72rl022a"]
+
+[ext_resource type="Script" path="res://resources/dice_faces/face_data.gd" id="1_o2ryf"]
+[ext_resource type="Resource" path="res://resources/dice_faces/alembic.tres" id="2_hc6kh"]
+[ext_resource type="Resource" path="res://resources/dice_faces/animal_companion.tres" id="3_i40f7"]
+[ext_resource type="Resource" uid="uid://die51sm74wnvd" path="res://resources/dice_faces/fireball.tres" id="4_xd5yh"]
+[ext_resource type="Resource" path="res://resources/dice_faces/sword2.tres" id="5_g8sdf"]
+[ext_resource type="Resource" path="res://resources/dice_faces/sword_shield.tres" id="6_47qan"]
+[ext_resource type="Script" path="res://resources/merchant/merchant_data.gd" id="7_46o4l"]
+
+[resource]
+script = ExtResource("7_46o4l")
+name = "Lvl 2 Merchant"
+description = ""
+face = Array[ExtResource("1_o2ryf")]([ExtResource("2_hc6kh"), ExtResource("3_i40f7"), ExtResource("4_xd5yh"), ExtResource("5_g8sdf"), ExtResource("6_47qan")])
+face_probability = Array[int]([2, 2, 2, 2, 2])

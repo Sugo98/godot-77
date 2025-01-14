@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3 uid="uid://c4er4h6rh0vk"]
+
+[ext_resource type="Script" path="res://resources/enemies/enemies_data.gd" id="1_ykowt"]
+[ext_resource type="Texture2D" uid="uid://cp6xoedgsw6up" path="res://assets/enemies/beaver.png" id="2_hwl6k"]
+
+[resource]
+script = ExtResource("1_ykowt")
+name = "Castoro"
+texture = ExtResource("2_hwl6k")
+size = 0
+max_hp = 4
+attack = 2
+xp_value = 3
+steal_food = 0
+steal_wood = 1
+shield = 0
