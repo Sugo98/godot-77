@@ -166,7 +166,6 @@ func solve_enemies_slots():
 	await solve_single_enemy_slots()
 
 func solve_single_enemy_slots():
-	print(active_enemies)
 	for slot in active_enemies:
 		var enemy : Enemy = active_enemies[slot]
 		if slot.get_child_count(): #if there is a dice
@@ -174,7 +173,6 @@ func solve_single_enemy_slots():
 			await resolve_attack_dice(face, enemy)
 		#counter_attack
 		if enemy.can_attack(slot) : await enemy_attack(enemy)
-		print(active_enemies)
 
 func solve_road_slots():
 	var obstacle = data.road_obstacle
@@ -211,8 +209,12 @@ func next_level():
 
 func reset_turn():
 	heroes_manager.reset_turn()
-	for slot in active_enemies:
-		active_enemies[slot].reset_turn()
+	for slot in enemy_slots:
+		if not active_enemies.has(slot):
+			continue
+		var enemy : Enemy = active_enemies[slot]
+		enemy.reset_turn()
+		if enemy.is_queued_for_deletion() : active_enemies.erase(slot)
 
 func spawn_random_enemy():
 	if data.boss_level:
@@ -259,8 +261,6 @@ func kill_enemy(enemy : Enemy):
 	var slots = enemy.dice_slots
 	heroes_manager.gain_xp(enemy.data.xp_value)
 	await enemy.kill()
-	for slot in slots:
-		active_enemies.erase(slot)
 
 func update_danger():
 	danger += data.base_danger + randi_range(0, data.random_danger)
