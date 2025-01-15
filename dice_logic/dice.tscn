@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://e3w2l0sl2g7m"]
+[gd_scene load_steps=5 format=3 uid="uid://e3w2l0sl2g7m"]
 
 [ext_resource type="Script" path="res://dice_logic/dice.gd" id="1_5jc4y"]
 [ext_resource type="Script" path="res://dice_logic/dice_slot.gd" id="2_qx407"]
+[ext_resource type="Theme" uid="uid://ypak5t8xrvk8" path="res://assets/theme/slot_dice.tres" id="2_ul5lb"]
 [ext_resource type="Texture2D" uid="uid://c0yr0uw61pg1n" path="res://assets/heroes/eroe ranger 1.png" id="3_tfa44"]
 
 [node name="Dice" type="Control"]
@@ -34,11 +35,13 @@ alignment = 1
 [node name="PanelContainer" type="PanelContainer" parent="DiceSlots"]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
+theme = ExtResource("2_ul5lb")
 script = ExtResource("2_qx407")
 
 [node name="PanelContainer2" type="PanelContainer" parent="DiceSlots"]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
+theme = ExtResource("2_ul5lb")
 script = ExtResource("2_qx407")
 
 [node name="SlotsForMerchants" type="HBoxContainer" parent="."]
@@ -55,36 +58,42 @@ theme_override_constants/separation = 24
 [node name="PanelContainer" type="PanelContainer" parent="SlotsForMerchants"]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
+theme = ExtResource("2_ul5lb")
 script = ExtResource("2_qx407")
 is_shopping = true
 
 [node name="PanelContainer2" type="PanelContainer" parent="SlotsForMerchants"]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
+theme = ExtResource("2_ul5lb")
 script = ExtResource("2_qx407")
 is_shopping = true
 
 [node name="PanelContainer3" type="PanelContainer" parent="SlotsForMerchants"]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
+theme = ExtResource("2_ul5lb")
 script = ExtResource("2_qx407")
 is_shopping = true
 
 [node name="PanelContainer4" type="PanelContainer" parent="SlotsForMerchants"]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
+theme = ExtResource("2_ul5lb")
 script = ExtResource("2_qx407")
 is_shopping = true
 
 [node name="PanelContainer5" type="PanelContainer" parent="SlotsForMerchants"]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
+theme = ExtResource("2_ul5lb")
 script = ExtResource("2_qx407")
 is_shopping = true
 
 [node name="PanelContainer6" type="PanelContainer" parent="SlotsForMerchants"]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
+theme = ExtResource("2_ul5lb")
 script = ExtResource("2_qx407")
 is_shopping = true
 

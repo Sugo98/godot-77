@@ -7,6 +7,12 @@ var game_manager : GameManager
 @export var music_stream_player: AudioStreamPlayer
 @export var sfx_stream_player : AudioStreamPlayer
 
+@onready var animation_buttons = {
+	"slow" : %SlowAnimation,
+	"medium" : %MediumAnimation,
+	"fast" : %FastAnimation
+}
+
 var master_bus
 var music_bus
 var sfx_bus
@@ -18,6 +24,7 @@ func _ready() -> void:
 	music_bus = AudioServer.get_bus_index("Music")
 	sfx_bus = AudioServer.get_bus_index("SFX")
 	prepare_menu()
+	_on_slow_animation_pressed()
 
 func prepare_menu() :
 	settings_menu.hide()
@@ -74,3 +81,23 @@ func _on_en_lan_pressed() -> void:
 
 func _on_it_lan_pressed() -> void:
 	TranslationServer.set_locale("it")
+
+
+func _on_slow_animation_pressed() -> void:
+	Utils.basic_wait_time = Global.slow_animation_time
+	animation_buttons["slow"].theme_type_variation = ""
+	animation_buttons["medium"].theme_type_variation = "Inactive"
+	animation_buttons["fast"].theme_type_variation = "Inactive"
+
+func _on_medium_animation_pressed() -> void:
+	Utils.basic_wait_time = Global.medium_animation_time
+	animation_buttons["slow"].theme_type_variation = "Inactive"
+	animation_buttons["medium"].theme_type_variation = ""
+	animation_buttons["fast"].theme_type_variation = "Inactive"
+
+
+func _on_fast_animation_pressed() -> void:
+	Utils.basic_wait_time = Global.fast_animation_time
+	animation_buttons["slow"].theme_type_variation = "Inactive"
+	animation_buttons["medium"].theme_type_variation = "Inactive"
+	animation_buttons["fast"].theme_type_variation = ""

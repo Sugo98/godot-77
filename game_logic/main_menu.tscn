@@ -60,14 +60,21 @@ text = "SETTINGS_UPP"
 [node name="SettingMenu" type="PanelContainer" parent="."]
 layout_mode = 0
 offset_left = 997.0
-offset_top = 130.0
+offset_top = 85.0
 offset_right = 1845.0
-offset_bottom = 909.0
+offset_bottom = 975.0
 
 [node name="Settings Menu" type="VBoxContainer" parent="SettingMenu"]
 layout_mode = 2
 
-[node name="Option" type="Label" parent="SettingMenu/Settings Menu"]
+[node name="MarginContainer" type="MarginContainer" parent="SettingMenu/Settings Menu"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Option" type="Label" parent="SettingMenu/Settings Menu/MarginContainer"]
 layout_mode = 2
 theme = ExtResource("2_dlwf6")
 theme_type_variation = &"HeaderLarge"
@@ -88,6 +95,7 @@ text = "GAME_SETTINGS"
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="SettingMenu/Settings Menu/GameSettings/GameSetting"]
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 
 [node name="AnimationSpeed" type="Label" parent="SettingMenu/Settings Menu/GameSettings/GameSetting/HBoxContainer"]
@@ -101,19 +109,22 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 3.0
 
-[node name="Button" type="Button" parent="SettingMenu/Settings Menu/GameSettings/GameSetting/HBoxContainer/PanelContainer"]
+[node name="SlowAnimation" type="Button" parent="SettingMenu/Settings Menu/GameSettings/GameSetting/HBoxContainer/PanelContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 32
 text = "SLOW"
 
-[node name="Button2" type="Button" parent="SettingMenu/Settings Menu/GameSettings/GameSetting/HBoxContainer/PanelContainer"]
+[node name="MediumAnimation" type="Button" parent="SettingMenu/Settings Menu/GameSettings/GameSetting/HBoxContainer/PanelContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 32
 text = "MEDIUM"
 
-[node name="Button3" type="Button" parent="SettingMenu/Settings Menu/GameSettings/GameSetting/HBoxContainer/PanelContainer"]
+[node name="FastAnimation" type="Button" parent="SettingMenu/Settings Menu/GameSettings/GameSetting/HBoxContainer/PanelContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 32
@@ -121,6 +132,7 @@ text = "FAST"
 
 [node name="AudioSettings" type="MarginContainer" parent="SettingMenu/Settings Menu"]
 layout_mode = 2
+theme_override_constants/margin_top = 32
 
 [node name="AudioSetting" type="VBoxContainer" parent="SettingMenu/Settings Menu/AudioSettings"]
 layout_mode = 2
@@ -196,9 +208,11 @@ size_flags_vertical = 4
 size_flags_stretch_ratio = 3.0
 max_value = 1.0
 step = 0.01
+value = 0.5
 
 [node name="Language" type="MarginContainer" parent="SettingMenu/Settings Menu"]
 layout_mode = 2
+theme_override_constants/margin_top = 32
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SettingMenu/Settings Menu/Language"]
 layout_mode = 2
@@ -282,6 +296,9 @@ bus = &"SFX"
 
 [connection signal="pressed" from="GameMenu/Game Menu/StartGame" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="GameMenu/Game Menu/Option" to="." method="open_settings"]
+[connection signal="pressed" from="SettingMenu/Settings Menu/GameSettings/GameSetting/HBoxContainer/PanelContainer/SlowAnimation" to="." method="_on_slow_animation_pressed"]
+[connection signal="pressed" from="SettingMenu/Settings Menu/GameSettings/GameSetting/HBoxContainer/PanelContainer/MediumAnimation" to="." method="_on_medium_animation_pressed"]
+[connection signal="pressed" from="SettingMenu/Settings Menu/GameSettings/GameSetting/HBoxContainer/PanelContainer/FastAnimation" to="." method="_on_fast_animation_pressed"]
 [connection signal="pressed" from="SettingMenu/Settings Menu/Language/VBoxContainer/HBoxContainer/HBoxContainer/Settings Menu_LanguageSection#EN_lan" to="." method="_on_en_lan_pressed"]
 [connection signal="pressed" from="SettingMenu/Settings Menu/Language/VBoxContainer/HBoxContainer/HBoxContainer/Settings Menu_LanguageSection#IT_lan" to="." method="_on_it_lan_pressed"]
 [connection signal="pressed" from="SettingMenu/Settings Menu/CloseButtons/HBoxContainer/Close" to="." method="_on_close_pressed"]

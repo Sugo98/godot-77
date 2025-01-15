@@ -23,3 +23,7 @@ const bridge_repair_cost : int = 2
 const bridge_discount_repair_cost : int = 1
 
 const food_consumption : int = 2
+
+const fast_animation_time : float = 0.25
+const medium_animation_time : float = 0.5
+const slow_animation_time : float = 1
