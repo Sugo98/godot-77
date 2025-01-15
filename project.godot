@@ -29,3 +29,7 @@ window/stretch/mode="canvas_items"
 
 theme/custom="res://assets/theme/basic_theme.tres"
 theme/custom_font="res://assets/theme/fonts/Helvetica.ttf"
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://assets/localization/dictionary.en.translation", "res://assets/localization/dictionary.it.translation")

@@ -48,14 +48,14 @@ custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 theme = ExtResource("2_dlwf6")
 theme_type_variation = &"MainMenuButton"
-text = "START GAME"
+text = "START_GAME"
 
 [node name="Option" type="Button" parent="GameMenu/Game Menu"]
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 theme = ExtResource("2_dlwf6")
 theme_type_variation = &"MainMenuButton"
-text = "SETTINGS"
+text = "SETTINGS_UPP"
 
 [node name="SettingMenu" type="PanelContainer" parent="."]
 layout_mode = 0
@@ -63,7 +63,6 @@ offset_left = 1152.0
 offset_top = 244.0
 offset_right = 1536.0
 offset_bottom = 643.0
-theme_override_constants/separation = 10
 
 [node name="Settings Menu" type="VBoxContainer" parent="SettingMenu"]
 layout_mode = 2
@@ -72,7 +71,7 @@ layout_mode = 2
 layout_mode = 2
 theme = ExtResource("2_dlwf6")
 theme_type_variation = &"HeaderLarge"
-text = "Settings"
+text = "SETTINGS_LOW"
 horizontal_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="SettingMenu/Settings Menu"]
@@ -85,17 +84,16 @@ layout_mode = 2
 layout_mode = 2
 theme = ExtResource("2_dlwf6")
 theme_type_variation = &"HeaderMedium"
-text = "Game Settings"
+text = "GAME_SETTINGS"
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="SettingMenu/Settings Menu/MarginContainer/GameSetting"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="SettingMenu/Settings Menu/MarginContainer/GameSetting/HBoxContainer"]
+[node name="AnimationSpeed" type="Label" parent="SettingMenu/Settings Menu/MarginContainer/GameSetting/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Animation
-Speed"
+text = "ANIMATION_SPEED"
 horizontal_alignment = 1
 
 [node name="PanelContainer" type="HBoxContainer" parent="SettingMenu/Settings Menu/MarginContainer/GameSetting/HBoxContainer"]
@@ -107,19 +105,19 @@ size_flags_stretch_ratio = 3.0
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 32
-text = "Slow"
+text = "SLOW"
 
 [node name="Button2" type="Button" parent="SettingMenu/Settings Menu/MarginContainer/GameSetting/HBoxContainer/PanelContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 32
-text = "Medium"
+text = "MEDIUM"
 
 [node name="Button3" type="Button" parent="SettingMenu/Settings Menu/MarginContainer/GameSetting/HBoxContainer/PanelContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 32
-text = "Fast"
+text = "FAST"
 
 [node name="MarginContainer2" type="MarginContainer" parent="SettingMenu/Settings Menu"]
 layout_mode = 2
@@ -131,7 +129,7 @@ layout_mode = 2
 layout_mode = 2
 theme = ExtResource("2_dlwf6")
 theme_type_variation = &"HeaderMedium"
-text = "Audio Settings"
+text = "AUDIO_SETTINGS"
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="SettingMenu/Settings Menu/MarginContainer2/AudioSetting"]
@@ -162,7 +160,7 @@ size_flags_vertical = 3
 [node name="Label" type="Label" parent="SettingMenu/Settings Menu/MarginContainer2/AudioSetting/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Music"
+text = "MUSIC"
 horizontal_alignment = 1
 
 [node name="MusicSlider" type="HSlider" parent="SettingMenu/Settings Menu/MarginContainer2/AudioSetting/HBoxContainer2"]
@@ -217,7 +215,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_dlwf6")
 theme_override_font_sizes/font_size = 32
-text = "Close"
+text = "CLOSE"
 
 [node name="Reset" type="Button" parent="SettingMenu/Settings Menu/MarginContainer3/HBoxContainer"]
 custom_minimum_size = Vector2(180, 0)
@@ -225,30 +223,38 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_dlwf6")
 theme_override_font_sizes/font_size = 32
-text = "Reset"
+text = "RESET"
 
-[node name="LanguageSection" type="HBoxContainer" parent="Settings Menu"]
+[node name="Settings Menu#LanguageSection" type="HBoxContainer" parent="."]
 layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="Label" type="Label" parent="Settings Menu/LanguageSection"]
+[node name="Settings Menu_LanguageSection#Label" type="Label" parent="."]
 layout_mode = 2
 text = "LANGUAGE
 "
 
-[node name="EN_lan" type="Button" parent="Settings Menu/LanguageSection"]
+[node name="Settings Menu_LanguageSection#EN_lan" type="Button" parent="."]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
+offset_left = 1617.0
+offset_top = 140.0
+offset_right = 1848.0
+offset_bottom = 205.0
 text = "English"
 
-[node name="IT_lan" type="Button" parent="Settings Menu/LanguageSection"]
+[node name="Settings Menu_LanguageSection#IT_lan" type="Button" parent="."]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
+offset_left = 1315.0
+offset_top = 78.0
+offset_right = 1539.0
+offset_bottom = 143.0
 text = "Italiano
 "
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_sp5x1")
 bus = &"Music"
 
@@ -256,13 +262,7 @@ bus = &"Music"
 stream = ExtResource("3_wk7ht")
 bus = &"SFX"
 
-[connection signal="pressed" from="Game Menu/StartGame" to="." method="_on_start_game_pressed"]
-[connection signal="pressed" from="Game Menu/Option" to="." method="open_settings"]
-[connection signal="value_changed" from="Settings Menu/AudioSetting/HBoxContainer/MasterSlider" to="." method="_on_master_slider_value_changed"]
-[connection signal="value_changed" from="Settings Menu/AudioSetting/HBoxContainer2/MusicSlider" to="." method="_on_music_slider_value_changed"]
-[connection signal="pressed" from="Settings Menu/AudioSetting/HBoxContainer3/SFX" to="." method="_on_debug_pressed"]
-[connection signal="value_changed" from="Settings Menu/AudioSetting/HBoxContainer3/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
-[connection signal="pressed" from="Settings Menu/HBoxContainer/Close" to="." method="_on_close_pressed"]
-[connection signal="pressed" from="Settings Menu/HBoxContainer/Reset" to="." method="_on_reset_pressed"]
-[connection signal="pressed" from="Settings Menu/LanguageSection/EN_lan" to="." method="_on_en_lan_pressed"]
-[connection signal="pressed" from="Settings Menu/LanguageSection/IT_lan" to="." method="_on_it_lan_pressed"]
+[connection signal="pressed" from="GameMenu/Game Menu/StartGame" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="GameMenu/Game Menu/Option" to="." method="open_settings"]
+[connection signal="pressed" from="Settings Menu_LanguageSection#EN_lan" to="." method="_on_en_lan_pressed"]
+[connection signal="pressed" from="Settings Menu_LanguageSection#IT_lan" to="." method="_on_it_lan_pressed"]

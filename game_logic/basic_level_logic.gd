@@ -201,7 +201,7 @@ func solve_road_slots():
 			while( obstacle and x):
 				obstacle -= 1
 				x -= 1
-			Utils.create_text_feedback("-" + str(x) + " " + tr("Distance"), slot.global_position)
+			Utils.create_text_feedback("-" + str(x) + " " + tr("DISTANCE"), slot.global_position)
 			decrase_road(x)
 
 		face.hide()

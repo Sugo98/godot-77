@@ -1,0 +1,20 @@
+key,en,it
+START_GAME,START GAME,AVVIA PARTITA
+SETTINGS_UPP,SETTINGS,IMPOSTAZIONI
+SETTINGS_LOW,Settings,Impostazioni
+LANGUAGE,LANGUAGE,LINGUA
+GAME_SETTINGS,Game Settings,Impostazioni di gioco
+ANIMATION_SPEED,"Animation
+Speed","Velocità
+Animazioni"
+SLOW,Slow,Lenta
+MEDIUM,Medium,Meida
+FAST,Fast,Veloce
+AUDIO_SETTINGS,Audio Settings,Impostazioni Audio
+MUSIC,Music,Musica
+CLOSE,Close,Chiudi
+RESET,Reset,Ripristina
+DISTANCE,Distance,Distanza
+SOLVE_TURN,"Solve
+Turn","Risolvi
+Turno"
