@@ -4,6 +4,7 @@ class_name Merchant extends Control
 @onready var prices_labels: Control = $Prices
 @onready var balance_label: Label = $Balance
 @onready var confirm_button: Button = $Confirm
+@onready var background_music: AudioStreamPlayer = $BackgroundMusic
 
 @export var star_texture : Texture
 @onready var night_sky: Node2D = $NightSky
@@ -32,6 +33,7 @@ func _ready() -> void:
 		selling_faces.append(new_face)
 		market_slots.get_child(i).shopkeeper = self
 	shopping_is_ended = false
+	background_music.play()
 	create_night_sky()
 	reset_market()
 

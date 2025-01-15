@@ -333,7 +333,7 @@ func solve_area_effects() -> void:
 		var face : DiceFace = slot.get_child(0)
 		if face.data.smoke:
 			face.hide()
-			smoke_faces.append(face.data.smoke)
+			smoke_faces.append(face)
 		if face.data.fire_ball:
 			face.hide()
 			await cast_fire_ball(face.data.fire_ball)
