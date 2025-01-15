@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhwxoyr5iwnml"
-path="res://.godot/imported/Magic_Armour.png-5b001f69884df52646ac9956d91065bc.ctex"
+uid="uid://dq2iaqeu3hy1w"
+path="res://.godot/imported/orchetto corazzato DEF.png-f9911d08e0bd0954bee387106b38390d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/enemies/Magic_Armour.png"
-dest_files=["res://.godot/imported/Magic_Armour.png-5b001f69884df52646ac9956d91065bc.ctex"]
+source_file="res://assets/enemies/orchetto corazzato DEF.png"
+dest_files=["res://.godot/imported/orchetto corazzato DEF.png-f9911d08e0bd0954bee387106b38390d.ctex"]
 
 [params]
 

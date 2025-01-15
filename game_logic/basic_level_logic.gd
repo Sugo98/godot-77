@@ -34,13 +34,16 @@ var t : float = 0.5 # basic_wait_time
 var data : LevelData
 var road : int
 var danger : int
+var danger_multiplier : float
 var danger_threshold : float
 var freeze : bool
 
 func init(d : LevelData):
 	data = d
 	road = data.length_of_the_road
-	danger_threshold = data.danger_threshold_max
+	danger = data.starting_danger
+	danger_threshold = data.danger_threshold
+	danger_multiplier = 1.0
 	
 func _ready() -> void:
 	fill_array()
@@ -214,6 +217,10 @@ func next_level():
 	game_manager.go_to_next_level()
 
 func reset_turn():
+	print(danger_multiplier)
+	danger_multiplier = move_toward(danger_multiplier, data.danger_multiplier_max, data.danger_multiplier_step)
+	
+	print(danger_multiplier)
 	heroes_manager.reset_turn()
 	for slot in enemy_slots:
 		if not active_enemies.has(slot):
@@ -225,8 +232,12 @@ func reset_turn():
 func spawn_random_enemy():
 	if data.boss_level:
 		return
-	var enemy_data = Utils.random_pick( data.enemy , data.enemy_probability )
+	var enemy_data : EnemyData = Utils.random_pick( data.enemy , data.enemy_probability )
 	spawn_enemy(enemy_data)
+	reduce_danger(enemy_data.xp_value)
+
+func reduce_danger(x : int):
+	danger -= x * 10 #+ 2 * ( x * x - 1)
 
 func spawn_initial_enemy():
 	if data.boss_level:
@@ -273,14 +284,13 @@ func update_danger():
 	if freeze:
 		freeze = false
 		return
-	danger += data.base_danger + randi_range(0, data.random_danger)
-	var spawn := false
-	while danger >= danger_threshold:
-		danger -= danger_threshold
-		spawn_random_enemy()
-		spawn = true
-	if spawn == true:
-		danger_threshold = lerp(danger_threshold, data.danger_threshold_min, 0.25 )
+	danger += int( (data.base_danger + randi_range(0, data.random_danger) ) * danger_multiplier )
+	print(danger)
+	if danger >= danger_threshold:
+		while danger > 0:
+			spawn_random_enemy()
+		print(danger)
+		print("brekpoint")
 
 func wait_time(t):
 	animation_timer.set_wait_time(t)

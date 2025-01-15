@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b80vf8787q07a"
-path="res://.godot/imported/bat temp.png-6d0036820b356552081d559a7a671a20.ctex"
+uid="uid://ol6q4rte0rwb"
+path="res://.godot/imported/granchio DEF.png-f9174b00816286e13ab800668e26431a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/enemies/bat temp.png"
-dest_files=["res://.godot/imported/bat temp.png-6d0036820b356552081d559a7a671a20.ctex"]
+source_file="res://assets/enemies/granchio DEF.png"
+dest_files=["res://.godot/imported/granchio DEF.png-f9174b00816286e13ab800668e26431a.ctex"]
 
 [params]
 

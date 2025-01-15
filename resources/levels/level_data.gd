@@ -12,9 +12,10 @@ class_name LevelData extends Resource
 @export var enemy : Array[EnemyData]
 @export var enemy_probability : Array[int]
 @export var initial_enemy : Array[EnemyData]
+@export var starting_danger : int
 @export var base_danger : int
 @export var random_danger : int
-@export var danger_threshold : int
+@export var danger_threshold : float
 @export var danger_multiplier_max : float
 @export var danger_multiplier_step : float
 
