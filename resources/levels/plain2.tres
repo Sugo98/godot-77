@@ -5,23 +5,23 @@
 [ext_resource type="Resource" uid="uid://c4er4h6rh0vk" path="res://resources/enemies/gigacastoro.tres" id="2_rswli"]
 [ext_resource type="Resource" uid="uid://dylhd37l11lma" path="res://resources/enemies/pbm2-1.tres" id="3_6ma8x"]
 [ext_resource type="Script" path="res://resources/levels/level_data.gd" id="4_lt8xo"]
-[ext_resource type="Resource" uid="uid://p4lax3an5o0y" path="res://resources/enemies/pbm2-2.tres" id="4_oeut7"]
 [ext_resource type="AudioStream" uid="uid://boppptxo32qo2" path="res://assets/music/Town_-_Enchanted_Village.ogg" id="5_gglsb"]
+[ext_resource type="Resource" uid="uid://p4lax3an5o0y" path="res://resources/enemies/orchetto_corazzato.tres" id="5_mmiox"]
 
 [resource]
 script = ExtResource("4_lt8xo")
 name = "Plain 1"
 description = ""
 back_ground_texture = ExtResource("1_yi6m0")
-length_of_the_road = 6
+length_of_the_road = 5
 boss_level = false
-enemy = Array[ExtResource("1_635f0")]([ExtResource("2_rswli"), ExtResource("3_6ma8x"), ExtResource("4_oeut7")])
+enemy = Array[ExtResource("1_635f0")]([ExtResource("2_rswli"), ExtResource("3_6ma8x"), ExtResource("5_mmiox")])
 enemy_probability = Array[int]([5, 4, 1])
 initial_enemy = Array[ExtResource("1_635f0")]([ExtResource("2_rswli"), ExtResource("2_rswli")])
 base_danger = 8
 random_danger = 4
-danger_threshold_max = 20.0
-danger_threshold_min = 12.0
+danger_threshold_max = 25.0
+danger_threshold_min = 15.0
 road_slots = 2
 food_slots = 2
 wood_slots = 2

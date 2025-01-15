@@ -117,4 +117,5 @@ func can_repair_bridge(cost : int, pos) -> bool:
 	else:
 		Utils.create_text_feedback("-" + str(cost) +" Wood", pos)
 		wood -= cost
+		update_all_labels()
 		return true

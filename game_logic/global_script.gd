@@ -19,7 +19,7 @@ const sixth_face = {
 
 const caravan_repair_cost : int = 3
 const caravan_discount_repair_cost : int = 2
-const bridge_repair_cost : int = 3
-const bridge_discount_repair_cost : int = 2
+const bridge_repair_cost : int = 2
+const bridge_discount_repair_cost : int = 1
 
 const food_consumption : int = 2

@@ -35,6 +35,7 @@ var data : LevelData
 var road : int
 var danger : int
 var danger_threshold : float
+var freeze : bool
 
 func init(d : LevelData):
 	data = d
@@ -269,6 +270,9 @@ func kill_enemy(enemy : Enemy):
 	await enemy.kill()
 
 func update_danger():
+	if freeze:
+		freeze = false
+		return
 	danger += data.base_danger + randi_range(0, data.random_danger)
 	var spawn := false
 	while danger >= danger_threshold:
@@ -302,8 +306,9 @@ func there_is_wall_ice() -> bool:
 	return false
 
 func freeze_everything() -> void:
-	for slot:DiceSlot in enemy_slots:
-		if slot.get_child_count()==0:
+	freeze = true
+	for slot:DiceSlot in active_enemies:
+		if slot.get_child_count() > 0:
 			slot.get_child(0).freeze_animation()
 	for slot in active_enemies:
 		active_enemies[slot].freeze_animation()

@@ -56,7 +56,7 @@ func inflict_damage(damage:int, _type:String) -> bool: #return true if the enemy
 	return false
 
 
-func freeze():
+func freeze_animation():
 	if not tween.is_valid(): tween = create_tween()
 	tween.tween_property(sprite2D, "modulate", Color.STEEL_BLUE,t)
 
