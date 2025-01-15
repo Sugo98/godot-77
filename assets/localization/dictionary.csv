@@ -8,7 +8,7 @@ ANIMATION_SPEED,"Animation
 Speed","Velocità
 Animazioni"
 SLOW,Slow,Lenta
-MEDIUM,Medium,Meida
+MEDIUM,Medium,Media
 FAST,Fast,Veloce
 AUDIO_SETTINGS,Audio Settings,Impostazioni Audio
 MUSIC,Music,Musica
@@ -18,3 +18,9 @@ DISTANCE,Distance,Distanza
 SOLVE_TURN,"Solve
 Turn","Risolvi
 Turno"
+LANGUAGE_SETTINGS,Language Selection,Seleziona Lingua
+LANGUAGE,Language,Lingua
+ENGLISH,English,English
+ITALIAN,Italiano,Italiano
+MASTER,Master,Principale
+SFX,SFX,Effetti

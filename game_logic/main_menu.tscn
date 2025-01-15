@@ -36,7 +36,7 @@ text = "A Dice Journey"
 layout_mode = 0
 offset_left = 171.0
 offset_top = 365.0
-offset_right = 1025.0
+offset_right = 931.0
 offset_bottom = 653.0
 theme = ExtResource("2_dlwf6")
 
@@ -59,10 +59,10 @@ text = "SETTINGS_UPP"
 
 [node name="SettingMenu" type="PanelContainer" parent="."]
 layout_mode = 0
-offset_left = 1152.0
-offset_top = 244.0
-offset_right = 1536.0
-offset_bottom = 643.0
+offset_left = 997.0
+offset_top = 130.0
+offset_right = 1845.0
+offset_bottom = 909.0
 
 [node name="Settings Menu" type="VBoxContainer" parent="SettingMenu"]
 layout_mode = 2
@@ -74,76 +74,76 @@ theme_type_variation = &"HeaderLarge"
 text = "SETTINGS_LOW"
 horizontal_alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="SettingMenu/Settings Menu"]
+[node name="GameSettings" type="MarginContainer" parent="SettingMenu/Settings Menu"]
 layout_mode = 2
 
-[node name="GameSetting" type="VBoxContainer" parent="SettingMenu/Settings Menu/MarginContainer"]
+[node name="GameSetting" type="VBoxContainer" parent="SettingMenu/Settings Menu/GameSettings"]
 layout_mode = 2
 
-[node name="Game" type="Label" parent="SettingMenu/Settings Menu/MarginContainer/GameSetting"]
+[node name="Game" type="Label" parent="SettingMenu/Settings Menu/GameSettings/GameSetting"]
 layout_mode = 2
 theme = ExtResource("2_dlwf6")
 theme_type_variation = &"HeaderMedium"
 text = "GAME_SETTINGS"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="SettingMenu/Settings Menu/MarginContainer/GameSetting"]
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingMenu/Settings Menu/GameSettings/GameSetting"]
 layout_mode = 2
 
-[node name="AnimationSpeed" type="Label" parent="SettingMenu/Settings Menu/MarginContainer/GameSetting/HBoxContainer"]
+[node name="AnimationSpeed" type="Label" parent="SettingMenu/Settings Menu/GameSettings/GameSetting/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "ANIMATION_SPEED"
 horizontal_alignment = 1
 
-[node name="PanelContainer" type="HBoxContainer" parent="SettingMenu/Settings Menu/MarginContainer/GameSetting/HBoxContainer"]
+[node name="PanelContainer" type="HBoxContainer" parent="SettingMenu/Settings Menu/GameSettings/GameSetting/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 3.0
 
-[node name="Button" type="Button" parent="SettingMenu/Settings Menu/MarginContainer/GameSetting/HBoxContainer/PanelContainer"]
+[node name="Button" type="Button" parent="SettingMenu/Settings Menu/GameSettings/GameSetting/HBoxContainer/PanelContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 32
 text = "SLOW"
 
-[node name="Button2" type="Button" parent="SettingMenu/Settings Menu/MarginContainer/GameSetting/HBoxContainer/PanelContainer"]
+[node name="Button2" type="Button" parent="SettingMenu/Settings Menu/GameSettings/GameSetting/HBoxContainer/PanelContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 32
 text = "MEDIUM"
 
-[node name="Button3" type="Button" parent="SettingMenu/Settings Menu/MarginContainer/GameSetting/HBoxContainer/PanelContainer"]
+[node name="Button3" type="Button" parent="SettingMenu/Settings Menu/GameSettings/GameSetting/HBoxContainer/PanelContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 32
 text = "FAST"
 
-[node name="MarginContainer2" type="MarginContainer" parent="SettingMenu/Settings Menu"]
+[node name="AudioSettings" type="MarginContainer" parent="SettingMenu/Settings Menu"]
 layout_mode = 2
 
-[node name="AudioSetting" type="VBoxContainer" parent="SettingMenu/Settings Menu/MarginContainer2"]
+[node name="AudioSetting" type="VBoxContainer" parent="SettingMenu/Settings Menu/AudioSettings"]
 layout_mode = 2
 
-[node name="Audio" type="Label" parent="SettingMenu/Settings Menu/MarginContainer2/AudioSetting"]
+[node name="Audio" type="Label" parent="SettingMenu/Settings Menu/AudioSettings/AudioSetting"]
 layout_mode = 2
 theme = ExtResource("2_dlwf6")
 theme_type_variation = &"HeaderMedium"
 text = "AUDIO_SETTINGS"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="SettingMenu/Settings Menu/MarginContainer2/AudioSetting"]
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingMenu/Settings Menu/AudioSettings/AudioSetting"]
 custom_minimum_size = Vector2(30, 64)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="SettingMenu/Settings Menu/MarginContainer2/AudioSetting/HBoxContainer"]
+[node name="Label" type="Label" parent="SettingMenu/Settings Menu/AudioSettings/AudioSetting/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Master"
+text = "MASTER"
 horizontal_alignment = 1
 
-[node name="MasterSlider" type="HSlider" parent="SettingMenu/Settings Menu/MarginContainer2/AudioSetting/HBoxContainer"]
+[node name="MasterSlider" type="HSlider" parent="SettingMenu/Settings Menu/AudioSettings/AudioSetting/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -152,18 +152,18 @@ size_flags_stretch_ratio = 3.0
 max_value = 1.0
 step = 0.01
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="SettingMenu/Settings Menu/MarginContainer2/AudioSetting"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="SettingMenu/Settings Menu/AudioSettings/AudioSetting"]
 custom_minimum_size = Vector2(30, 64)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="SettingMenu/Settings Menu/MarginContainer2/AudioSetting/HBoxContainer2"]
+[node name="Label" type="Label" parent="SettingMenu/Settings Menu/AudioSettings/AudioSetting/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "MUSIC"
 horizontal_alignment = 1
 
-[node name="MusicSlider" type="HSlider" parent="SettingMenu/Settings Menu/MarginContainer2/AudioSetting/HBoxContainer2"]
+[node name="MusicSlider" type="HSlider" parent="SettingMenu/Settings Menu/AudioSettings/AudioSetting/HBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -172,23 +172,23 @@ size_flags_stretch_ratio = 3.0
 max_value = 1.0
 step = 0.01
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="SettingMenu/Settings Menu/MarginContainer2/AudioSetting"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="SettingMenu/Settings Menu/AudioSettings/AudioSetting"]
 custom_minimum_size = Vector2(30, 64)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="SettingMenu/Settings Menu/MarginContainer2/AudioSetting/HBoxContainer3"]
+[node name="MarginContainer" type="MarginContainer" parent="SettingMenu/Settings Menu/AudioSettings/AudioSetting/HBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_dlwf6")
 
-[node name="SFX" type="Button" parent="SettingMenu/Settings Menu/MarginContainer2/AudioSetting/HBoxContainer3/MarginContainer"]
+[node name="SFX" type="Button" parent="SettingMenu/Settings Menu/AudioSettings/AudioSetting/HBoxContainer3/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"SmallButton"
 text = "SFX"
 
-[node name="SFXSlider" type="HSlider" parent="SettingMenu/Settings Menu/MarginContainer2/AudioSetting/HBoxContainer3"]
+[node name="SFXSlider" type="HSlider" parent="SettingMenu/Settings Menu/AudioSettings/AudioSetting/HBoxContainer3"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -197,19 +197,61 @@ size_flags_stretch_ratio = 3.0
 max_value = 1.0
 step = 0.01
 
-[node name="MarginContainer3" type="MarginContainer" parent="SettingMenu/Settings Menu"]
+[node name="Language" type="MarginContainer" parent="SettingMenu/Settings Menu"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingMenu/Settings Menu/Language"]
+layout_mode = 2
+
+[node name="Language" type="Label" parent="SettingMenu/Settings Menu/Language/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_dlwf6")
+theme_type_variation = &"HeaderMedium"
+text = "LANGUAGE_SETTINGS"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingMenu/Settings Menu/Language/VBoxContainer"]
+custom_minimum_size = Vector2(0, 54)
+layout_mode = 2
+
+[node name="Settings Menu_LanguageSection#Label" type="Label" parent="SettingMenu/Settings Menu/Language/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "LANGUAGE
+"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingMenu/Settings Menu/Language/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="Settings Menu_LanguageSection#EN_lan" type="Button" parent="SettingMenu/Settings Menu/Language/VBoxContainer/HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "ENGLISH"
+
+[node name="Settings Menu_LanguageSection#IT_lan" type="Button" parent="SettingMenu/Settings Menu/Language/VBoxContainer/HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "ITALIAN"
+
+[node name="CloseButtons" type="MarginContainer" parent="SettingMenu/Settings Menu"]
 layout_mode = 2
 theme_override_constants/margin_left = 32
 theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
 
-[node name="HBoxContainer" type="HBoxContainer" parent="SettingMenu/Settings Menu/MarginContainer3"]
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingMenu/Settings Menu/CloseButtons"]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 alignment = 1
 
-[node name="Close" type="Button" parent="SettingMenu/Settings Menu/MarginContainer3/HBoxContainer"]
+[node name="Close" type="Button" parent="SettingMenu/Settings Menu/CloseButtons/HBoxContainer"]
 custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -217,7 +259,7 @@ theme = ExtResource("2_dlwf6")
 theme_override_font_sizes/font_size = 32
 text = "CLOSE"
 
-[node name="Reset" type="Button" parent="SettingMenu/Settings Menu/MarginContainer3/HBoxContainer"]
+[node name="Reset" type="Button" parent="SettingMenu/Settings Menu/CloseButtons/HBoxContainer"]
 custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -230,30 +272,6 @@ layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="Settings Menu_LanguageSection#Label" type="Label" parent="."]
-layout_mode = 2
-text = "LANGUAGE
-"
-
-[node name="Settings Menu_LanguageSection#EN_lan" type="Button" parent="."]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-offset_left = 1617.0
-offset_top = 140.0
-offset_right = 1848.0
-offset_bottom = 205.0
-text = "English"
-
-[node name="Settings Menu_LanguageSection#IT_lan" type="Button" parent="."]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-offset_left = 1315.0
-offset_top = 78.0
-offset_right = 1539.0
-offset_bottom = 143.0
-text = "Italiano
-"
-
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_sp5x1")
 bus = &"Music"
@@ -264,5 +282,7 @@ bus = &"SFX"
 
 [connection signal="pressed" from="GameMenu/Game Menu/StartGame" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="GameMenu/Game Menu/Option" to="." method="open_settings"]
-[connection signal="pressed" from="Settings Menu_LanguageSection#EN_lan" to="." method="_on_en_lan_pressed"]
-[connection signal="pressed" from="Settings Menu_LanguageSection#IT_lan" to="." method="_on_it_lan_pressed"]
+[connection signal="pressed" from="SettingMenu/Settings Menu/Language/VBoxContainer/HBoxContainer/HBoxContainer/Settings Menu_LanguageSection#EN_lan" to="." method="_on_en_lan_pressed"]
+[connection signal="pressed" from="SettingMenu/Settings Menu/Language/VBoxContainer/HBoxContainer/HBoxContainer/Settings Menu_LanguageSection#IT_lan" to="." method="_on_it_lan_pressed"]
+[connection signal="pressed" from="SettingMenu/Settings Menu/CloseButtons/HBoxContainer/Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="SettingMenu/Settings Menu/CloseButtons/HBoxContainer/Reset" to="." method="_on_reset_pressed"]
