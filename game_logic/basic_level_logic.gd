@@ -28,7 +28,7 @@ var caravan_slots: Array[DiceSlot]
 @export var enemy_scene : PackedScene
 var heroes_manager : HeroesManager
 var active_enemies : Dictionary
-var basic_wait_time : float = 0.5
+var t : float = 0.5 # basic_wait_time
 
 var data : LevelData
 var road : int
@@ -92,24 +92,24 @@ func debug_spawn_enemy():
 
 func solve_turn():
 	blocker.show()
-	basic_wait_time = Utils.basic_wait_time
+	set_basic_wait_time()
 	await solve_hunger()
 	await solve_wood_slots()
 	await solve_food_slots()
 	await solve_caravan_slots()
 	await solve_enemies_slots()
 	await solve_road_slots()
-	reset_turn()
 	if check_end():
 		await next_level()
 	else:
+		reset_turn()
 		await update_danger()
 	blocker.hide()
 
 func solve_hunger():
 	heroes_manager.eat(Global.food_consumption)
 	Utils.create_text_feedback("-" + str(Global.food_consumption) +" Food", heroes_manager.caravan_position)
-	await wait_time(basic_wait_time)
+	await wait_time(t)
 
 func solve_wood_slots():
 	for slot:DiceSlot in wood_slots:
@@ -121,11 +121,11 @@ func solve_wood_slots():
 		Utils.create_text_feedback("+" + str(x) +" Wood", slot.global_position)
 		heroes_manager.increase_wood(x)
 		if face.data.carrot:
-			await wait_time(basic_wait_time/2)
+			await wait_time(t/2)
 			Utils.create_text_feedback("+" + str(1) +" Food", slot.global_position)
 			heroes_manager.increase_food(1)
 		face.hide()
-		await wait_time(basic_wait_time)
+		await wait_time(t)
 
 func solve_food_slots():
 	for slot:DiceSlot in food_slots:
@@ -137,7 +137,7 @@ func solve_food_slots():
 		Utils.create_text_feedback("+" + str(x) +" Food", slot.global_position)
 		face.hide()
 		heroes_manager.increase_food(x)
-		await wait_time(basic_wait_time)
+		await wait_time(t)
 
 func solve_caravan_slots():
 	for slot:DiceSlot in caravan_slots:
@@ -156,30 +156,25 @@ func solve_caravan_slots():
 		if face.data.wheel:
 			face.hide()
 			heroes_manager.repair(face.data.wheel, face.data.wood_discount, slot.global_position)
-		await wait_time(basic_wait_time)
+		await wait_time(t)
 
 func solve_enemies_slots():
 	if there_is_wall_ice():
-		await freeze_all_enemies()
+		await freeze_everything()
+		return
 	await solve_area_effects()
-	for slot:DiceSlot in enemy_slots:
-		if not active_enemies.has(slot): #if there is no enemy skip
-			continue
+	await solve_single_enemy_slots()
+
+func solve_single_enemy_slots():
+	print(active_enemies)
+	for slot in active_enemies:
 		var enemy : Enemy = active_enemies[slot]
 		if slot.get_child_count(): #if there is a dice
 			var face = slot.get_child(0)
 			await resolve_attack_dice(face, enemy)
-		if enemy:
-			if enemy.is_alive and slot == enemy.dice_slots.back(): #counter_attack
-				var dmg = enemy.attack()
-				if dmg:
-					heroes_manager.suffer_damage(dmg)
-				check_spikes(enemy)
-				if enemy.is_alive and not enemy.stun:
-					await enemy_steal(enemy)
-		await wait_time(basic_wait_time)
-	for slot in active_enemies:
-		active_enemies[slot].reset_stats()
+		#counter_attack
+		if enemy.can_attack(slot) : await enemy_attack(enemy)
+		print(active_enemies)
 
 func solve_road_slots():
 	var obstacle = data.road_obstacle
@@ -193,7 +188,7 @@ func solve_road_slots():
 		if data.broken_bridge:
 			var c = bridge_discounted_cost if face.data.wood_discount else bridge_cost
 			is_wood_enough = heroes_manager.can_repair_bridge(c, slot.global_position)
-			await wait_time(0.25)
+			await wait_time(t)
 		
 		if is_wood_enough:
 			while( obstacle and x):
@@ -204,7 +199,7 @@ func solve_road_slots():
 
 		face.hide()
 		print("Face Hide")
-		await wait_time(basic_wait_time)
+		await wait_time(t)
 
 func decrase_road(x):
 	road -= x
@@ -215,8 +210,9 @@ func next_level():
 	game_manager.go_to_next_level()
 
 func reset_turn():
-	print("Reset Turn")
 	heroes_manager.reset_turn()
+	for slot in active_enemies:
+		active_enemies[slot].reset_turn()
 
 func spawn_random_enemy():
 	if data.boss_level:
@@ -238,11 +234,11 @@ func spawn_enemy(enemy_data : EnemyData):
 		var pivot : Marker2D = enemy_pivots[i]
 		if pivot.get_child_count() == 0:
 			pivot.add_child(new_enemy)
-			new_enemy.reset_stats()
+			new_enemy.reset_turn()
 			enemy_slots[i].show()
 			new_enemy.dice_slots.append(enemy_slots[i])
 			active_enemies[ enemy_slots[i] ] = new_enemy
-			await wait_time(basic_wait_time)
+			await wait_time(t)
 			return
 
 func spawn_big_enemy(enemy_data : EnemyData):
@@ -250,19 +246,18 @@ func spawn_big_enemy(enemy_data : EnemyData):
 	new_enemy.init(enemy_data)
 	var size = enemy_data.size
 	enemy_pivots[0].add_child(new_enemy)
-	new_enemy.reset_stats()
+	new_enemy.reset_turn()
 	for i in range(size+1):
 		enemy_slots[i].show()
 		new_enemy.dice_slots.append(enemy_slots[i])
 		active_enemies[ enemy_slots[i] ] = new_enemy
 	new_enemy.position.x += offset_x * size
-	await wait_time(basic_wait_time)
+	await wait_time(t)
 	return
 
 func kill_enemy(enemy : Enemy):
 	var slots = enemy.dice_slots
 	heroes_manager.gain_xp(enemy.data.xp_value)
-	enemy.is_alive = false
 	await enemy.kill()
 	for slot in slots:
 		active_enemies.erase(slot)
@@ -284,12 +279,11 @@ func wait_time(t):
 	return
 
 func cast_fire_ball(x:int) -> void:
-	for slot in enemy_slots:
-		if not active_enemies.has(slot): #if there is no enemy skip
-			continue
+	for slot in active_enemies:
 		var enemy : Enemy = active_enemies[slot]
-		if enemy.inflict_area_damage(x):
-			kill_enemy(enemy)
+		if enemy.dice_slots.back() == slot:
+			if enemy.inflict_damage(x, "fire"): kill_enemy(enemy)
+	await wait_time(t*4)
 
 func there_is_wall_ice() -> bool:
 	for slot:DiceSlot in enemy_slots:
@@ -297,63 +291,78 @@ func there_is_wall_ice() -> bool:
 			continue
 		var face : DiceFace = slot.get_child(0)
 		if face.data.wall_ice:
+			slot.remove_child(face)
 			return true
 	return false
 
-func freeze_all_enemies() -> void:
+func freeze_everything() -> void:
+	for slot:DiceSlot in enemy_slots:
+		if slot.get_child_count()==0:
+			slot.get_child(0).freeze_animation()
 	for slot in active_enemies:
-		active_enemies[slot].freeze()
-	await wait_time(basic_wait_time)
+		active_enemies[slot].freeze_animation()
+	await wait_time(2*t)
 	return
 
 func solve_area_effects() -> void:
-	var tot_smoke :int = 0
+	var smoke_faces : Array[DiceFace]
 	for slot:DiceSlot in enemy_slots:
 		if slot.get_child_count()==0: #if there are no dice
 			continue
 		var face : DiceFace = slot.get_child(0)
 		if face.data.smoke:
 			face.hide()
-			tot_smoke += face.data.smoke
+			smoke_faces.append(face.data.smoke)
 		if face.data.fire_ball:
 			face.hide()
-			cast_fire_ball(face.data.fire_ball)
-	# RESOLVE TOTAL 
-	if tot_smoke:
+			await cast_fire_ball(face.data.fire_ball)
+			slot.remove_child(face)
+	# RESOLVE TOTAL SMOKE 
+	if smoke_faces:
+		var tot_smoke :int = 0
+		for face in smoke_faces:
+			tot_smoke += face.data.smoke
+			face.get_parent().remove_child(face)
 		for slot in active_enemies:
-			active_enemies[slot].smoke(tot_smoke)
-		await wait_time(basic_wait_time)
+			var enemy : Enemy = active_enemies[slot]
+			if enemy.dice_slots.back() == slot : enemy.add_smoke(tot_smoke)
+		await wait_time(2*t)
 
 func resolve_attack_dice(face:DiceFace, enemy:Enemy) :
 	face.hide()
 	var damage = face.data.sword + face.data.jolly
 	if face.data.stun:
-		enemy.stun = true
+		enemy.set_stun(true)
 	if face.data.food:
 		Utils.create_text_feedback("+" + str(face.data.food) +" Food", face.global_position)
 		heroes_manager.increase_food(face.data.food)
-	if enemy.inflict_damage(damage):
-		kill_enemy(enemy)
-	await wait_time(basic_wait_time)
+	if enemy.inflict_damage(damage, "sword"): await kill_enemy(enemy)
+	await wait_time(t)
+
+func enemy_attack(enemy : Enemy):
+	var dmg = await enemy.attack()
+	if dmg: heroes_manager.suffer_damage(dmg)
+	check_spikes(enemy)
+	await enemy_steal(enemy)
+	await wait_time(t)
 
 func check_spikes(enemy : Enemy):
 	var spikes = heroes_manager.spikes
-	if not spikes:
-		return
-	if enemy.inflict_damage(spikes):
-		kill_enemy(enemy)
+	if not spikes: return
+	if enemy.inflict_damage(spikes, "spike"): await kill_enemy(enemy)
 
 func enemy_steal(enemy : Enemy):
 	var x = enemy.data.steal_food
 	if x:
+		await wait_time(t)
 		heroes_manager.increase_food(-x)
 		Utils.create_text_feedback("-" + str(x) +" Food", heroes_manager.caravan_position)
-		await wait_time(0.3)
 	x = enemy.data.steal_wood
 	if x:
+		await wait_time(t)
 		heroes_manager.increase_wood(-x)
 		Utils.create_text_feedback("-" + str(x) +" Wood", heroes_manager.caravan_position)
-		
+
 func check_end() -> bool:
 	if data.boss_level:
 		return active_enemies.is_empty()
@@ -363,3 +372,8 @@ func check_end() -> bool:
 func start_playng_music():
 	back_ground_music.stream = data.soundtrack
 	back_ground_music.play()
+
+func set_basic_wait_time():
+	t = Utils.basic_wait_time
+	for slot in active_enemies:
+		active_enemies[slot].t = t

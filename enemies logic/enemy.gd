@@ -2,6 +2,7 @@ class_name Enemy extends Node2D
 
 @export var data: EnemyData
 @export var hp_label: Label
+@export var ui : Control
 @export var attack_label: Label
 @export var sprite2D: Sprite2D
 @export var attack_sfx : AudioStreamPlayer
@@ -14,7 +15,8 @@ var turn_atk: int
 var stun: bool
 var shield : int
 var is_alive: bool = true
-var is_hit_area : bool
+var t : float
+var tween : Tween
 
 func init(d: EnemyData) -> void:
 	data = d
@@ -24,82 +26,85 @@ func _ready():
 		return
 	sprite2D.texture = data.texture
 	hp = data.max_hp
+	tween = create_tween()
 	update_label()
 	eneter_animation()
 
-func reset_stats():
+func reset_turn():
+	if not is_alive:
+		queue_free()
+		return
 	turn_atk = data.attack
 	shield = data.shield
-	stun = false
-	is_hit_area = false
+	sprite2D.modulate = Color.WHITE
+	set_stun(false)
+	update_label()
 
 func update_label():
 	hp_label.text = "HP: " + str(hp) + "/" + str(data.max_hp)
 	attack_label.text = "ATK: " + str(data.attack)
 
-func inflict_damage(damage) -> bool: #return true if the enemy is killed
+func inflict_damage(damage:int, _type:String) -> bool: #return true if the enemy is killed
 	while( shield and damage):
 		shield -= 1
 		damage -= 1
-	red_flash()
 	hp -= damage
+	red_flash()
 	update_label()
-	if hp <= 0:
-		return true
+	if hp <= 0: return true
 	return false
 
-func inflict_area_damage(damage) -> bool: #return true if the enemy is killed
-	if is_hit_area :
-		return false
-	red_flash()
-	hp -= damage
-	update_label()
-	is_hit_area = true
-	if hp <= 0:
-		return true
-	return false
 
 func freeze():
-	var tween = get_tree().create_tween()
-	tween.tween_property(sprite2D, "modulate:a",0.3,0.3)
-	tween.tween_property(sprite2D, "modulate:a",1,0.3)
+	if not tween.is_valid(): tween = create_tween()
+	tween.tween_property(sprite2D, "modulate", Color.STEEL_BLUE,t)
 
-func smoke(x:int):
-	var tween = get_tree().create_tween()
-	tween.tween_property(sprite2D, "modulate",Color.DIM_GRAY,0.3)
-	tween.tween_property(sprite2D, "modulate",Color.WHITE,0.3)
+func add_smoke(x:int):
+	if not tween.is_valid(): tween = create_tween()
+	tween.tween_property(sprite2D, "modulate",Color.DIM_GRAY,t)
+	tween.tween_property(sprite2D, "modulate",Color.WHITE,t)
 	turn_atk -= x
+	if turn_atk < 0 : set_stun(true)
+	update_label()
 
 func kill() -> void :
-	var tween = get_tree().create_tween()
-	tween.tween_property(sprite2D, "modulate:a", 0 ,1)
+	is_alive = false
+	if not tween.is_valid(): tween = create_tween()
+	tween.tween_property(sprite2D, "modulate:a", 0 ,t)
 	await tween.finished
+	#ui.hide()
 	for slot in dice_slots:
 		slot.hide()
-	queue_free()
 
 func attack() -> int:
-	if stun:
-		return 0
-	var tween = get_tree().create_tween()
-	tween.tween_property(sprite2D, "position:x", -attack_animation_x ,0.1)
-	tween.tween_property(sprite2D, "position:x", 0 ,0.1)
-	play_attack_sfx(0.1)
+	if not tween.is_valid(): tween = create_tween()
+	tween.tween_property(sprite2D, "position:x", -attack_animation_x ,t)
+	tween.tween_property(sprite2D, "position:x", 0 ,t)
+	play_attack_sfx(t)
+	await tween.step_finished
 	return turn_atk
 
 func red_flash() -> void:
-	var tween = get_tree().create_tween()
-	tween.tween_property(sprite2D, "modulate", Color.RED ,0.1)
-	tween.tween_property(sprite2D, "modulate", Color.WHITE ,0.1)
+	if not tween.is_valid(): tween = create_tween()
+	tween.tween_property(sprite2D, "modulate", Color.RED ,t/3)
+	tween.tween_property(sprite2D, "modulate", Color.WHITE , t/3)
 
 func eneter_animation() -> void:
 	sprite2D.position.x = 50
 	sprite2D.modulate.a = 0
-	var tween = get_tree().create_tween()
-	tween.tween_property(sprite2D, "position:x", 0 ,0.1)
-	tween.parallel().tween_property(sprite2D, "modulate:a", 1 ,0.15)
+	if not tween.is_valid(): tween = create_tween()
+	tween.tween_property(sprite2D, "position:x", 0 ,t)
+	tween.parallel().tween_property(sprite2D, "modulate:a", 1 ,t)
 
 func play_attack_sfx(delay : float):
 	await get_tree().create_timer(delay).timeout
 	attack_sfx.pitch_scale = randf_range(0.6,1.2)
 	attack_sfx.play()
+
+func set_stun(value : bool) -> void:
+	stun = value
+
+func can_attack(slot) -> bool:
+	return (is_alive and
+			slot == dice_slots.back() and
+			not stun)

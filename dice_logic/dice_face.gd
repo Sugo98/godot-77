@@ -78,3 +78,8 @@ func come_back_home():
 		if slot.get_child_count() == 0:
 			reparent(slot)
 			return
+
+func freeze_animation():
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "modulate", Color.DODGER_BLUE ,0.2)
+	

@@ -5,10 +5,11 @@
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_h7076"]
 
-[node name="Enemy" type="Node2D" node_paths=PackedStringArray("hp_label", "attack_label", "sprite2D", "attack_sfx")]
+[node name="Enemy" type="Node2D" node_paths=PackedStringArray("hp_label", "ui", "attack_label", "sprite2D", "attack_sfx")]
 script = ExtResource("2_xixe7")
-hp_label = NodePath("HPLabel")
-attack_label = NodePath("AttackLabel")
+hp_label = NodePath("UI/HPLabel")
+ui = NodePath("UI")
+attack_label = NodePath("UI/AttackLabel")
 sprite2D = NodePath("Sprite2D")
 attack_sfx = NodePath("AttackSFX")
 
@@ -17,13 +18,20 @@ position = Vector2(0, -57)
 scale = Vector2(0.3, 0.3)
 texture = SubResource("CompressedTexture2D_h7076")
 
-[node name="HPLabel" type="Label" parent="."]
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HPLabel" type="Label" parent="UI"]
+layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -47.0
+offset_left = -67.0
 offset_top = -217.0
-offset_right = 48.0
+offset_right = 28.0
 offset_bottom = -175.0
 grow_horizontal = 2
 size_flags_horizontal = 4
@@ -32,13 +40,14 @@ text = "HP 2/2
 "
 horizontal_alignment = 1
 
-[node name="AttackLabel" type="Label" parent="."]
+[node name="AttackLabel" type="Label" parent="UI"]
+layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -44.0
+offset_left = -64.0
 offset_top = -187.0
-offset_right = 45.0
+offset_right = 25.0
 offset_bottom = -145.0
 grow_horizontal = 2
 size_flags_horizontal = 4
