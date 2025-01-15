@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_ucm3x")
-name = "Alembic 1"
+name = "Alembic 2"
 description = ""
 texture = ExtResource("2_sql5u")
 character_class = 4

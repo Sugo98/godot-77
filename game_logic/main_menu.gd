@@ -65,3 +65,12 @@ func _on_reset_pressed() -> void:
 
 func _on_debug_pressed() -> void:
 	sfx_stream_player.play()
+	$AudioStreamPlayer2.play()
+
+
+func _on_en_lan_pressed() -> void:
+	TranslationServer.set_locale("en")
+
+
+func _on_it_lan_pressed() -> void:
+	TranslationServer.set_locale("it")

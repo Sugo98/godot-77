@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_wa6rs")
-name = "Sword & Shield 1"
+name = "Sword / Shield 2"
 description = "Can be used as a Sword or as a Shield"
 texture = ExtResource("2_ar1u3")
 character_class = 0

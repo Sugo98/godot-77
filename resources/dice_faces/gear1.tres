@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_md0yp")
-name = "Wheel 1"
+name = "Gears 1"
 description = "Advances of 1 on the road"
 texture = ExtResource("2_lr6qs")
 character_class = 4

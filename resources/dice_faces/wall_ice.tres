@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_85cya")
-name = "Wall Ice"
+name = "Ice Wall"
 description = "Freeze all spaces on Enemy zone"
 texture = ExtResource("2_n63l7")
 character_class = 2

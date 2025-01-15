@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_fasa6")
-name = "Animal Companion"
+name = "Animal Companion 1"
 description = "Deals 1 damage and recovers 1 food
 "
 texture = ExtResource("2_pwdqb")
@@ -23,3 +23,4 @@ spikes = 0
 stun = false
 wall_ice = false
 wood_discount = false
+carrot = false

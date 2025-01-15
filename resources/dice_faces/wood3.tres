@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_g7mi3")
 name = "Wood 3"
-description = "Recovers 3 wood"
+description = "Recovers 3 woods"
 texture = ExtResource("2_d2dka")
 character_class = 0
 xp_cost = 6

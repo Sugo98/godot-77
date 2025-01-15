@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_2glmp")
-name = "Sword 1"
+name = "Spikes 1"
 description = "Deals 1 damage"
 texture = ExtResource("2_5q51c")
 character_class = 1

@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_46h7h")
-name = "Food1"
+name = "Food 1"
 description = "Recovers 1 food"
 texture = ExtResource("2_uewim")
 character_class = 0

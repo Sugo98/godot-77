@@ -117,7 +117,7 @@ func solve_turn():
 
 func solve_hunger():
 	heroes_manager.eat(Global.food_consumption)
-	Utils.create_text_feedback("-" + str(Global.food_consumption) +" Food", heroes_manager.caravan_position)
+	Utils.create_text_feedback("-" + str(Global.food_consumption) + " " + tr("Food"), heroes_manager.caravan_position)
 	await wait_time(t)
 
 func solve_wood_slots():
@@ -127,11 +127,11 @@ func solve_wood_slots():
 		var face : DiceFace = slot.get_child(0)
 		var x = face.data.wood + face.data.jolly + data.mod_wood
 		if x < 0 : x = 0
-		Utils.create_text_feedback("+" + str(x) +" Wood", slot.global_position)
+		Utils.create_text_feedback("+" + str(x) + " " + tr("Wood"), slot.global_position)
 		heroes_manager.increase_wood(x)
 		if face.data.carrot:
 			await wait_time(t/2)
-			Utils.create_text_feedback("+" + str(1) +" Food", slot.global_position)
+			Utils.create_text_feedback("+" + str(1) + " " + tr("Food"), slot.global_position)
 			heroes_manager.increase_food(1)
 		face.hide()
 		await wait_time(t)
@@ -143,7 +143,7 @@ func solve_food_slots():
 		var face : DiceFace = slot.get_child(0)
 		var x = face.data.food + face.data.jolly + data.mod_food
 		if x < 0 : x = 0
-		Utils.create_text_feedback("+" + str(x) +" Food", slot.global_position)
+		Utils.create_text_feedback("+" + str(x) + " " + tr("Food"), slot.global_position)
 		face.hide()
 		heroes_manager.increase_food(x)
 		await wait_time(t)
@@ -155,13 +155,13 @@ func solve_caravan_slots():
 		var face : DiceFace = slot.get_child(0)
 		if face.data.shield or face.data.jolly:
 			var x = face.data.shield + face.data.jolly
-			Utils.create_text_feedback("+" + str(x) +" Shield", slot.global_position)
+			Utils.create_text_feedback("+" + str(x) + " " + tr("Shield"), slot.global_position)
 			heroes_manager.increase_shield(x)
 			var y = face.data.spikes
 			if y:
 				heroes_manager.increase_spikes(y)
 				if x: await  wait_time(0.3)
-				Utils.create_text_feedback("+" + str(y) +" Spikes", slot.global_position)
+				Utils.create_text_feedback("+" + str(y) + " " + tr("Spikes"), slot.global_position)
 		if face.data.wheel:
 			face.hide()
 			heroes_manager.repair(face.data.wheel, face.data.wood_discount, slot.global_position)
@@ -201,7 +201,7 @@ func solve_road_slots():
 			while( obstacle and x):
 				obstacle -= 1
 				x -= 1
-			Utils.create_text_feedback("-" + str(x) +" Distance", slot.global_position)
+			Utils.create_text_feedback("-" + str(x) + " " + tr("Distance"), slot.global_position)
 			decrase_road(x)
 
 		face.hide()
@@ -210,7 +210,7 @@ func solve_road_slots():
 
 func decrase_road(x):
 	road -= x
-	road_label.text = "Distance: " + str(road)
+	road_label.text = tr("Distance") + ": " + str(road)
 
 func next_level():
 	await wait_time(0.5)
@@ -355,7 +355,7 @@ func resolve_attack_dice(face:DiceFace, enemy:Enemy) :
 	if face.data.stun:
 		enemy.set_stun(true)
 	if face.data.food:
-		Utils.create_text_feedback("+" + str(face.data.food) +" Food", face.global_position)
+		Utils.create_text_feedback("+" + str(face.data.food) + " " + tr("Food"), face.global_position)
 		heroes_manager.increase_food(face.data.food)
 	if enemy.inflict_damage(damage, "sword"): await kill_enemy(enemy)
 	await wait_time(t)
@@ -377,12 +377,12 @@ func enemy_steal(enemy : Enemy):
 	if x:
 		await wait_time(t)
 		heroes_manager.increase_food(-x)
-		Utils.create_text_feedback("-" + str(x) +" Food", heroes_manager.caravan_position)
+		Utils.create_text_feedback("-" + str(x) + " " + tr("Food"), heroes_manager.caravan_position)
 	x = enemy.data.steal_wood
 	if x:
 		await wait_time(t)
 		heroes_manager.increase_wood(-x)
-		Utils.create_text_feedback("-" + str(x) +" Wood", heroes_manager.caravan_position)
+		Utils.create_text_feedback("-" + str(x) + " " + tr("Wood"), heroes_manager.caravan_position)
 
 func check_end() -> bool:
 	if data.boss_level:

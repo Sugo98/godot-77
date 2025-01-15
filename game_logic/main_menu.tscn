@@ -10,6 +10,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = 5.0
+offset_right = -8.0
+offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_m3nt4")
@@ -55,10 +59,11 @@ text = "SETTINGS"
 
 [node name="SettingMenu" type="PanelContainer" parent="."]
 layout_mode = 0
-offset_left = 1128.0
-offset_top = 274.0
-offset_right = 1849.0
-offset_bottom = 890.0
+offset_left = 1152.0
+offset_top = 244.0
+offset_right = 1536.0
+offset_bottom = 643.0
+theme_override_constants/separation = 10
 
 [node name="Settings Menu" type="VBoxContainer" parent="SettingMenu"]
 layout_mode = 2
@@ -222,7 +227,28 @@ theme = ExtResource("2_dlwf6")
 theme_override_font_sizes/font_size = 32
 text = "Reset"
 
-[node name="Music" type="AudioStreamPlayer" parent="."]
+[node name="LanguageSection" type="HBoxContainer" parent="Settings Menu"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="Settings Menu/LanguageSection"]
+layout_mode = 2
+text = "LANGUAGE
+"
+
+[node name="EN_lan" type="Button" parent="Settings Menu/LanguageSection"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "English"
+
+[node name="IT_lan" type="Button" parent="Settings Menu/LanguageSection"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Italiano
+"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_sp5x1")
 bus = &"Music"
 
@@ -230,11 +256,13 @@ bus = &"Music"
 stream = ExtResource("3_wk7ht")
 bus = &"SFX"
 
-[connection signal="pressed" from="GameMenu/Game Menu/StartGame" to="." method="_on_start_game_pressed"]
-[connection signal="pressed" from="GameMenu/Game Menu/Option" to="." method="open_settings"]
-[connection signal="value_changed" from="SettingMenu/Settings Menu/MarginContainer2/AudioSetting/HBoxContainer/MasterSlider" to="." method="_on_master_slider_value_changed"]
-[connection signal="value_changed" from="SettingMenu/Settings Menu/MarginContainer2/AudioSetting/HBoxContainer2/MusicSlider" to="." method="_on_music_slider_value_changed"]
-[connection signal="pressed" from="SettingMenu/Settings Menu/MarginContainer2/AudioSetting/HBoxContainer3/MarginContainer/SFX" to="." method="_on_debug_pressed"]
-[connection signal="value_changed" from="SettingMenu/Settings Menu/MarginContainer2/AudioSetting/HBoxContainer3/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
-[connection signal="pressed" from="SettingMenu/Settings Menu/MarginContainer3/HBoxContainer/Close" to="." method="_on_close_pressed"]
-[connection signal="pressed" from="SettingMenu/Settings Menu/MarginContainer3/HBoxContainer/Reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="Game Menu/StartGame" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="Game Menu/Option" to="." method="open_settings"]
+[connection signal="value_changed" from="Settings Menu/AudioSetting/HBoxContainer/MasterSlider" to="." method="_on_master_slider_value_changed"]
+[connection signal="value_changed" from="Settings Menu/AudioSetting/HBoxContainer2/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="pressed" from="Settings Menu/AudioSetting/HBoxContainer3/SFX" to="." method="_on_debug_pressed"]
+[connection signal="value_changed" from="Settings Menu/AudioSetting/HBoxContainer3/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="Settings Menu/HBoxContainer/Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="Settings Menu/HBoxContainer/Reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="Settings Menu/LanguageSection/EN_lan" to="." method="_on_en_lan_pressed"]
+[connection signal="pressed" from="Settings Menu/LanguageSection/IT_lan" to="." method="_on_it_lan_pressed"]

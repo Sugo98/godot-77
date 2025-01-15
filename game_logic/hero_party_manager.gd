@@ -101,21 +101,21 @@ func gain_xp(x):
 func repair(x, discount:bool, pos):
 	var c = repair_discounted_cost if discount else repair_cost 
 	if wood < c:
-		Utils.create_text_feedback("Not Enough Wood", pos)
+		Utils.create_text_feedback(tr("Not Enough Wood"), pos)
 		return
 	wood -= c
 	health += x
 	update_all_labels()
-	Utils.create_text_feedback("-" + str(c) +" Wood", pos)
+	Utils.create_text_feedback("-" + str(c) + " " + tr("Wood"), pos)
 	await get_tree().create_timer(0.3).timeout
 	Utils.create_text_feedback("+" + str(x) +" HP", pos)
 
 func can_repair_bridge(cost : int, pos) -> bool:
 	if wood < cost:
-		Utils.create_text_feedback("Not Enough Wood", pos)
+		Utils.create_text_feedback(tr("Not Enough Wood"), pos)
 		return false
 	else:
-		Utils.create_text_feedback("-" + str(cost) +" Wood", pos)
+		Utils.create_text_feedback("-" + str(cost) + " " + tr("Wood"), pos)
 		wood -= cost
 		update_all_labels()
 		return true
