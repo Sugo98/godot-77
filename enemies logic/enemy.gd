@@ -14,6 +14,7 @@ var turn_atk: int
 var stun: bool
 var shield : int
 var is_alive: bool = true
+var is_hit_area : bool
 
 func init(d: EnemyData) -> void:
 	data = d
@@ -30,6 +31,7 @@ func reset_stats():
 	turn_atk = data.attack
 	shield = data.shield
 	stun = false
+	is_hit_area = false
 
 func update_label():
 	hp_label.text = "HP: " + str(hp) + "/" + str(data.max_hp)
@@ -47,9 +49,12 @@ func inflict_damage(damage) -> bool: #return true if the enemy is killed
 	return false
 
 func inflict_area_damage(damage) -> bool: #return true if the enemy is killed
+	if is_hit_area :
+		return false
 	red_flash()
 	hp -= damage
 	update_label()
+	is_hit_area = true
 	if hp <= 0:
 		return true
 	return false
@@ -74,6 +79,8 @@ func kill() -> void :
 	queue_free()
 
 func attack() -> int:
+	if stun:
+		return 0
 	var tween = get_tree().create_tween()
 	tween.tween_property(sprite2D, "position:x", -attack_animation_x ,0.1)
 	tween.tween_property(sprite2D, "position:x", 0 ,0.1)

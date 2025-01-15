@@ -14,8 +14,6 @@ max_food = 20
 max_wood = 30
 heroes_ui = NodePath("HeroesUI")
 heroes_container = NodePath("Heroes")
-repair_cost = 2
-repair_discounted_cost = 1
 
 [node name="HeroesUI" parent="." instance=ExtResource("2_1v2m8")]
 offset_left = 569.0

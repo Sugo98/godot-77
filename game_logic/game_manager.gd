@@ -66,5 +66,6 @@ func load_merchant(data : MerchantData) -> void:
 	merchant.game_manager = self
 	actual_stop = merchant
 	main_canvas.add_child(merchant)
+	main_canvas.move_child(heroes_manager,-1)
 	heroes_manager.prepare_for_merchant()
 	

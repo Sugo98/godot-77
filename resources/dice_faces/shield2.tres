@@ -1,17 +1,17 @@
 [gd_resource type="Resource" script_class="FaceData" load_steps=3 format=3 uid="uid://dmlfjam111pd3"]
 
 [ext_resource type="Script" path="res://resources/dice_faces/face_data.gd" id="1_s35ji"]
-[ext_resource type="Texture2D" uid="uid://deb77xweywh36" path="res://assets/dice_faces/dado scudo.png" id="2_qmr7r"]
+[ext_resource type="Texture2D" uid="uid://byiyebeu0cdil" path="res://assets/dice_faces/dado scudo2.png" id="2_ak4w7"]
 
 [resource]
 script = ExtResource("1_s35ji")
-name = "Shield 1"
+name = "Shield 2"
 description = "Protects from 1 damage"
-texture = ExtResource("2_qmr7r")
+texture = ExtResource("2_ak4w7")
 character_class = 0
-xp_cost = 1
+xp_cost = 3
 sword = 0
-shield = 1
+shield = 2
 food = 0
 wood = 0
 wheel = 0
@@ -22,3 +22,4 @@ spikes = 0
 stun = false
 wall_ice = false
 wood_discount = false
+carrot = false

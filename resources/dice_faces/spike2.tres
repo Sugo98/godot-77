@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="FaceData" load_steps=2 format=3 uid="uid://dkme44mnes75d"]
+[gd_resource type="Resource" script_class="FaceData" load_steps=3 format=3 uid="uid://dkme44mnes75d"]
 
 [ext_resource type="Script" path="res://resources/dice_faces/face_data.gd" id="1_6gchk"]
+[ext_resource type="Texture2D" uid="uid://b11xwvnebje3t" path="res://assets/dice_faces/Scudo punte2.png" id="2_bcodu"]
 
 [resource]
 script = ExtResource("1_6gchk")
 name = "Sword 1"
 description = "Deals 1 damage"
+texture = ExtResource("2_bcodu")
 character_class = 1
 xp_cost = 6
 sword = 0

@@ -33,12 +33,12 @@ var basic_wait_time : float = 0.5
 var data : LevelData
 var road : int
 var danger : int
-var danger_threshold : int
+var danger_threshold : float
 
 func init(d : LevelData):
 	data = d
 	road = data.length_of_the_road
-	danger_threshold = data.danger_threshold
+	danger_threshold = data.danger_threshold_max
 	
 func _ready() -> void:
 	fill_array()
@@ -169,12 +169,12 @@ func solve_enemies_slots():
 		if slot.get_child_count(): #if there is a dice
 			var face = slot.get_child(0)
 			await resolve_attack_dice(face, enemy)
-		if enemy.is_alive and slot == enemy.dice_slots.back(): #counter_attack
+		if enemy and enemy.is_alive and slot == enemy.dice_slots.back(): #counter_attack
 			var dmg = enemy.attack()
 			if dmg:
 				heroes_manager.suffer_damage(dmg)
 			check_spikes(enemy)
-			if enemy.is_alive:
+			if enemy.is_alive and not enemy.stun:
 				await enemy_steal(enemy)
 		await wait_time(basic_wait_time)
 	for slot in active_enemies:
@@ -274,9 +274,7 @@ func update_danger():
 		spawn_random_enemy()
 		spawn = true
 	if spawn == true:
-		danger_threshold -= data.danger_shrink
-	if danger_threshold <= 0:
-		danger_threshold = 1
+		danger_threshold = lerp(danger_threshold, data.danger_threshold_min, 0.25 )
 
 func wait_time(t):
 	animation_timer.set_wait_time(t)

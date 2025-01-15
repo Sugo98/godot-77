@@ -1,11 +1,10 @@
-[gd_resource type="Resource" script_class="Journey" load_steps=6 format=3 uid="uid://cl6ei75lpbb66"]
+[gd_resource type="Resource" script_class="Journey" load_steps=5 format=3 uid="uid://cl6ei75lpbb66"]
 
 [ext_resource type="Script" path="res://resources/journey/journey.gd" id="1_fygm8"]
 [ext_resource type="Resource" uid="uid://c8udnpwlpodlw" path="res://resources/merchant/merchant_1.tres" id="2_ifwc4"]
 [ext_resource type="Resource" uid="uid://dl4mrbth680gt" path="res://resources/merchant/merchant_2.tres" id="3_kc7on"]
 [ext_resource type="Resource" uid="uid://dnk3v72rl022a" path="res://resources/merchant/merchant_3.tres" id="4_c3hsi"]
-[ext_resource type="Resource" uid="uid://drxka0jtjtgqw" path="res://resources/enemies/dragon.tres" id="5_3wp2e"]
 
 [resource]
 script = ExtResource("1_fygm8")
-stops = Array[Resource]([ExtResource("2_ifwc4"), ExtResource("3_kc7on"), ExtResource("4_c3hsi"), ExtResource("5_3wp2e")])
+stops = Array[Resource]([ExtResource("2_ifwc4"), ExtResource("2_ifwc4"), ExtResource("2_ifwc4"), ExtResource("3_kc7on"), ExtResource("3_kc7on"), ExtResource("3_kc7on"), ExtResource("4_c3hsi"), ExtResource("4_c3hsi"), ExtResource("4_c3hsi")])

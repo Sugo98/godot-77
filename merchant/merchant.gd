@@ -5,6 +5,9 @@ class_name Merchant extends Control
 @onready var balance_label: Label = $Balance
 @onready var confirm_button: Button = $Confirm
 
+@export var star_texture : Texture
+@onready var night_sky: Node2D = $NightSky
+
 var game_manager : GameManager
 var heroes_manager : HeroesManager
 var data : MerchantData
@@ -29,6 +32,7 @@ func _ready() -> void:
 		selling_faces.append(new_face)
 		market_slots.get_child(i).shopkeeper = self
 	shopping_is_ended = false
+	create_night_sky()
 	reset_market()
 
 func check_if_is_a_duplicate(face_data : FaceData) -> bool:
@@ -64,3 +68,15 @@ func update_balance():
 		return
 	confirm_button.disabled = balance > heroes_manager.xp
 	balance_label.text = "Balance: " + str(balance)
+
+func create_night_sky():
+	for i in range(400):
+		var new_star = Sprite2D.new()
+		new_star.texture = star_texture
+		new_star.global_position.x = randi_range(0,1920)
+		new_star.global_position.y = randi_range(0,1080)
+		new_star.scale.x = randf_range(0.08,0.12)
+		new_star.scale.y = randf_range(0.08,0.12)
+		new_star.rotation = randi_range(0,90)
+		new_star.modulate = Color.from_hsv(randf(), 0.1, 0.9,1)
+		night_sky.add_child(new_star)

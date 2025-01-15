@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="FaceData" load_steps=2 format=3 uid="uid://dghprjmrvkfn4"]
+[gd_resource type="Resource" script_class="FaceData" load_steps=3 format=3 uid="uid://dghprjmrvkfn4"]
 
 [ext_resource type="Script" path="res://resources/dice_faces/face_data.gd" id="1_nvlty"]
+[ext_resource type="Texture2D" uid="uid://81ib3lrofdi4" path="res://assets/dice_faces/dado radici tronco.png" id="2_w877f"]
 
 [resource]
 script = ExtResource("1_nvlty")
 name = "Wood 1"
 description = "Recovers 1 wood"
+texture = ExtResource("2_w877f")
 character_class = 3
 xp_cost = 5
 sword = 0

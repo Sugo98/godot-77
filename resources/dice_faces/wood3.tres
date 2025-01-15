@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="FaceData" load_steps=2 format=3 uid="uid://dgg8n0tkcgtuu"]
+[gd_resource type="Resource" script_class="FaceData" load_steps=3 format=3 uid="uid://dgg8n0tkcgtuu"]
 
 [ext_resource type="Script" path="res://resources/dice_faces/face_data.gd" id="1_g7mi3"]
+[ext_resource type="Texture2D" uid="uid://cyr2aagoio2eh" path="res://assets/dice_faces/dado tronco3.png" id="2_d2dka"]
 
 [resource]
 script = ExtResource("1_g7mi3")
 name = "Wood 3"
 description = "Recovers 3 wood"
+texture = ExtResource("2_d2dka")
 character_class = 0
 xp_cost = 6
 sword = 0
@@ -20,3 +22,4 @@ spikes = 0
 stun = false
 wall_ice = false
 wood_discount = false
+carrot = false

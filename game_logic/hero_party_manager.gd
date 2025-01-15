@@ -5,8 +5,10 @@ class_name HeroesManager extends Node
 @export var max_wood : int
 @export var heroes_ui: HeroesUI
 @export var heroes_container : Node
-@export var repair_cost : int
-@export var repair_discounted_cost : int
+
+
+var repair_cost : int = Global.caravan_repair_cost
+var repair_discounted_cost : int = Global.caravan_discount_repair_cost
 
 @onready var caravan_position : Vector2 = $CaravanPosition.global_position
 
@@ -17,7 +19,7 @@ var food : int
 var wood : int
 var shield : int
 var spikes : int
-var xp : int = 3
+var xp : int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

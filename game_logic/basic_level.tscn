@@ -189,6 +189,16 @@ offset_bottom = 238.0
 script = ExtResource("2_ghtwx")
 type = 5
 
+[node name="Road3" type="PanelContainer" parent="RoadSlots"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 0
+offset_left = 289.0
+offset_top = 142.0
+offset_right = 385.0
+offset_bottom = 238.0
+script = ExtResource("2_ghtwx")
+type = 5
+
 [node name="CaravanSlots" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
@@ -250,10 +260,10 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="RoadLabel" type="Label" parent="."]
-offset_left = 1575.0
-offset_top = 725.0
-offset_right = 1734.0
-offset_bottom = 767.0
+offset_left = 1469.0
+offset_top = 823.0
+offset_right = 1628.0
+offset_bottom = 865.0
 theme_override_font_sizes/font_size = 30
 text = "Distance: 5"
 

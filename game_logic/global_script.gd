@@ -13,8 +13,8 @@ const basic_dice_faces = [
 const sixth_face = {
 	CharacterClass.Fighter : "res://resources/dice_faces/sword_shield1.tres",
 	CharacterClass.Wizard : "res://resources/dice_faces/fireball1.tres",
-	CharacterClass.Ranger : "res://resources/dice_faces/carrot1.tres",
-	CharacterClass.MasterMind : "res://resources/dice_faces/wheel1.tres"
+	CharacterClass.Ranger : "res://resources/dice_faces/food_wood1.tres",
+	CharacterClass.MasterMind : "res://resources/dice_faces/gear1.tres"
 }
 
 const caravan_repair_cost : int = 3

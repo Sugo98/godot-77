@@ -1,12 +1,14 @@
-[gd_resource type="Resource" script_class="FaceData" load_steps=2 format=3 uid="uid://bemc3m0l3b8f4"]
+[gd_resource type="Resource" script_class="FaceData" load_steps=3 format=3 uid="uid://bemc3m0l3b8f4"]
 
 [ext_resource type="Script" path="res://resources/dice_faces/face_data.gd" id="1_7odx8"]
+[ext_resource type="Texture2D" uid="uid://4i81in3w83kl" path="res://assets/dice_faces/dado amici animali2.png" id="2_45hyl"]
 
 [resource]
 script = ExtResource("1_7odx8")
 name = "Animal Companion"
 description = "Deals 1 damage and recovers 1 food
 "
+texture = ExtResource("2_45hyl")
 character_class = 3
 xp_cost = 5
 sword = 2
