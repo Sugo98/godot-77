@@ -8,13 +8,14 @@
 [ext_resource type="Texture2D" uid="uid://c0yr0uw61pg1n" path="res://assets/heroes/eroe ranger 1.png" id="6_tpl4r"]
 [ext_resource type="Texture2D" uid="uid://c2i4hqf6i2g3d" path="res://assets/background/white.png" id="7_c4i2j"]
 
-[node name="HeroesParty" type="Node" node_paths=PackedStringArray("heroes_ui", "heroes_container")]
+[node name="HeroesParty" type="Node" node_paths=PackedStringArray("heroes_ui", "heroes_container", "caravan")]
 script = ExtResource("1_6rxhw")
 max_health = 10
 max_food = 20
 max_wood = 30
 heroes_ui = NodePath("HeroesUI")
 heroes_container = NodePath("Heroes")
+caravan = NodePath("Caravan")
 
 [node name="HeroesUI" parent="." instance=ExtResource("2_1v2m8")]
 offset_left = 569.0
@@ -56,12 +57,14 @@ offset_bottom = 987.0
 character_class = 4
 hero_texture = ExtResource("4_lhd3d")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Caravan" type="Node2D" parent="."]
 
-[node name="Caravan" type="Sprite2D" parent="Node2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Caravan"]
+modulate = Color(0.39, 0.19448, 0.0234, 1)
+z_index = -5
 position = Vector2(842, 458)
 scale = Vector2(400, 300)
 texture = ExtResource("7_c4i2j")
 
-[node name="FeedbackPosition" type="Marker2D" parent="Node2D"]
+[node name="FeedbackPosition" type="Marker2D" parent="Caravan"]
 position = Vector2(929, 238)

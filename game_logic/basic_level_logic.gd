@@ -237,14 +237,15 @@ func spawn_initial_enemy():
 func spawn_enemy(enemy_data : EnemyData):
 	var new_enemy : Enemy = enemy_scene.instantiate()
 	new_enemy.init(enemy_data)
-	for i in range( enemy_pivots.size() ):
+	for i in range( enemy_slots.size() ):
 		var pivot : Marker2D = enemy_pivots[i]
-		if pivot.get_child_count() == 0:
+		var slot : DiceSlot = enemy_slots[i]
+		if not active_enemies.has(slot):
 			pivot.add_child(new_enemy)
 			new_enemy.reset_turn()
 			enemy_slots[i].show()
-			new_enemy.dice_slots.append(enemy_slots[i])
-			active_enemies[ enemy_slots[i] ] = new_enemy
+			new_enemy.dice_slots.append(slot)
+			active_enemies[ slot ] = new_enemy
 			await wait_time(t)
 			return
 

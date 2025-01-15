@@ -15,7 +15,7 @@ var turn_atk: int
 var stun: bool
 var shield : int
 var is_alive: bool = true
-var t : float
+var t : float = Utils.basic_wait_time
 var tween : Tween
 
 func init(d: EnemyData) -> void:
@@ -36,7 +36,8 @@ func reset_turn():
 		return
 	turn_atk = data.attack
 	shield = data.shield
-	sprite2D.modulate = Color.WHITE
+	if not tween.is_valid(): tween = create_tween()
+	tween.tween_property(self, "modulate", Color.WHITE, 0)
 	set_stun(false)
 	update_label()
 

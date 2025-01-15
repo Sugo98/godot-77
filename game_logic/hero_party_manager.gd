@@ -11,7 +11,7 @@ class_name HeroesManager extends Node
 var repair_cost : int = Global.caravan_repair_cost
 var repair_discounted_cost : int = Global.caravan_discount_repair_cost
 
-@onready var caravan_position : Vector2 = $Node2D/FeedbackPosition.global_position
+@onready var caravan_position : Vector2 = $Caravan/FeedbackPosition.global_position
 
 
 var heroes: Array[Dice]
@@ -40,10 +40,12 @@ func parse_heroes():
 func prepare_for_level():
 	for hero in heroes:
 		hero.prepare_for_level()
+	caravan.show()
 
 func prepare_for_merchant():
 	for hero in heroes:
 		hero.prepare_for_merchant()
+	caravan.hide()
 
 func after_shopping(balance : int):
 	xp -= balance
