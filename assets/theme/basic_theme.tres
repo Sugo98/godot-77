@@ -1,0 +1,21 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://bionh2bhlri40"]
+
+[ext_resource type="Texture2D" uid="uid://cnv0tp1gakj37" path="res://assets/theme/Plain.png" id="1_cl5vj"]
+[ext_resource type="Texture2D" uid="uid://brnsw1jnkors8" path="res://assets/theme/Bridge.png" id="1_ghjwu"]
+[ext_resource type="Texture2D" uid="uid://bfksoisqamyys" path="res://assets/theme/Plus_1.png" id="2_wojhy"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gw8pl"]
+texture = ExtResource("1_ghjwu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lgjuj"]
+texture = ExtResource("1_cl5vj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c56e0"]
+texture = ExtResource("2_wojhy")
+
+[resource]
+BrokenBridge/base_type = &"PanelContainer"
+BrokenBridge/styles/panel = SubResource("StyleBoxTexture_gw8pl")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_lgjuj")
+Plus_1/base_type = &"PanelContainer"
+Plus_1/styles/panel = SubResource("StyleBoxTexture_c56e0")

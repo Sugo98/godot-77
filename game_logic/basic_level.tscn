@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://tkb6vimwhpij"]
+[gd_scene load_steps=5 format=3 uid="uid://tkb6vimwhpij"]
 
 [ext_resource type="Script" path="res://game_logic/basic_level_logic.gd" id="1_n52b6"]
 [ext_resource type="PackedScene" uid="uid://yvwkwgojt1ab" path="res://enemies logic/enemy.tscn" id="2_beh15"]
 [ext_resource type="Script" path="res://dice_logic/dice_slot.gd" id="2_ghtwx"]
+[ext_resource type="Theme" uid="uid://bionh2bhlri40" path="res://assets/theme/basic_theme.tres" id="3_il6yc"]
 
 [node name="BasicLevel" type="Node"]
 script = ExtResource("1_n52b6")
@@ -40,6 +41,7 @@ offset_left = 62.0
 offset_top = 297.0
 offset_right = 126.0
 offset_bottom = 361.0
+theme = ExtResource("3_il6yc")
 script = ExtResource("2_ghtwx")
 type = 1
 
@@ -51,6 +53,7 @@ offset_left = 260.0
 offset_top = 297.0
 offset_right = 324.0
 offset_bottom = 361.0
+theme = ExtResource("3_il6yc")
 script = ExtResource("2_ghtwx")
 type = 1
 
@@ -62,6 +65,7 @@ offset_left = 441.0
 offset_top = 297.0
 offset_right = 505.0
 offset_bottom = 361.0
+theme = ExtResource("3_il6yc")
 script = ExtResource("2_ghtwx")
 type = 1
 
@@ -73,6 +77,7 @@ offset_left = 642.0
 offset_top = 297.0
 offset_right = 706.0
 offset_bottom = 361.0
+theme = ExtResource("3_il6yc")
 script = ExtResource("2_ghtwx")
 type = 1
 
@@ -110,6 +115,7 @@ offset_left = 63.0
 offset_top = 58.0
 offset_right = 127.0
 offset_bottom = 122.0
+theme = ExtResource("3_il6yc")
 script = ExtResource("2_ghtwx")
 type = 3
 
@@ -120,6 +126,7 @@ offset_left = 172.0
 offset_top = 87.0
 offset_right = 268.0
 offset_bottom = 183.0
+theme = ExtResource("3_il6yc")
 script = ExtResource("2_ghtwx")
 type = 3
 
@@ -143,6 +150,7 @@ offset_left = 73.0
 offset_top = 107.0
 offset_right = 137.0
 offset_bottom = 171.0
+theme = ExtResource("3_il6yc")
 script = ExtResource("2_ghtwx")
 type = 2
 
@@ -153,6 +161,7 @@ offset_left = 183.0
 offset_top = 65.0
 offset_right = 279.0
 offset_bottom = 161.0
+theme = ExtResource("3_il6yc")
 script = ExtResource("2_ghtwx")
 type = 2
 
@@ -176,6 +185,7 @@ offset_left = 71.0
 offset_top = 142.0
 offset_right = 167.0
 offset_bottom = 238.0
+theme = ExtResource("3_il6yc")
 script = ExtResource("2_ghtwx")
 type = 5
 
@@ -186,6 +196,7 @@ offset_left = 178.0
 offset_top = 142.0
 offset_right = 274.0
 offset_bottom = 238.0
+theme = ExtResource("3_il6yc")
 script = ExtResource("2_ghtwx")
 type = 5
 
@@ -196,6 +207,7 @@ offset_left = 289.0
 offset_top = 142.0
 offset_right = 385.0
 offset_bottom = 238.0
+theme = ExtResource("3_il6yc")
 script = ExtResource("2_ghtwx")
 type = 5
 
@@ -219,6 +231,7 @@ offset_left = 94.0
 offset_top = 102.0
 offset_right = 158.0
 offset_bottom = 166.0
+theme = ExtResource("3_il6yc")
 script = ExtResource("2_ghtwx")
 type = 4
 
@@ -229,6 +242,7 @@ offset_left = 204.0
 offset_top = 102.0
 offset_right = 300.0
 offset_bottom = 198.0
+theme = ExtResource("3_il6yc")
 script = ExtResource("2_ghtwx")
 type = 4
 

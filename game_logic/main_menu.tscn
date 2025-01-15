@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c5mfo6eaopvch"]
+[gd_scene load_steps=5 format=3 uid="uid://c5mfo6eaopvch"]
 
 [ext_resource type="Script" path="res://game_logic/main_menu.gd" id="1_m3nt4"]
+[ext_resource type="Theme" uid="uid://bionh2bhlri40" path="res://assets/theme/basic_theme.tres" id="2_dlwf6"]
 [ext_resource type="AudioStream" uid="uid://bs3v4l4ecfx3r" path="res://assets/music/Town_-_Castle_Gates.ogg" id="2_sp5x1"]
 [ext_resource type="AudioStream" uid="uid://cmvpunesy6b3t" path="res://assets/sound fx/hitHurt.wav" id="3_wk7ht"]
 
@@ -26,10 +27,13 @@ grow_vertical = 2
 
 [node name="StartGame" type="Button" parent="Game Menu"]
 layout_mode = 2
+theme = ExtResource("2_dlwf6")
 text = "START GAME"
 
 [node name="Option" type="Button" parent="Game Menu"]
 layout_mode = 2
+theme = ExtResource("2_dlwf6")
+theme_type_variation = &"RedButton"
 text = "SETTINGS"
 
 [node name="Settings Menu" type="VBoxContainer" parent="."]

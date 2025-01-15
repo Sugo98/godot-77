@@ -54,17 +54,20 @@ func show_slots():
 	for slot : DiceSlot in wood_slots:
 		if slot.get_index() < data.wood_slots:
 			slot.show()
+			if data.mod_wood : slot.theme_type_variation = "Plus_1"
 		else:
 			slot.hide()
 	for slot : DiceSlot in food_slots:
 		if slot.get_index() < data.food_slots:
 			slot.show()
+			if data.mod_food : slot.theme_type_variation = "Plus_1"
 		else:
 			slot.hide()
 	if not data.boss_level:
 		for slot : DiceSlot in road_slots:
 			if slot.get_index() < data.road_slots:
 				slot.show()
+				if  data.broken_bridge : slot.theme_type_variation = "BrokenBridge"
 			else:
 				slot.hide()
 	else:
