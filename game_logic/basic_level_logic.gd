@@ -6,6 +6,7 @@ const bridge_discounted_cost = Global.bridge_discount_repair_cost
 const bridge_cost = Global.bridge_repair_cost
 const offset_x = 100
 
+@onready var background: Sprite2D = $Background
 @onready var enemy_slots_container : Control = $EnemyZone/EnemySlots
 @onready var enemy_pivots_container: Node2D = $EnemyZone/EnemyPivots
 @onready var wood_slots_container: Control = $WoodSlots
@@ -47,6 +48,7 @@ func _ready() -> void:
 	decrase_road(0) #update road label
 	start_playng_music()
 	blocker.hide()
+	background.texture = data.back_ground_texture
 	back_ground_music.stream = data.soundtrack
 	back_ground_music.play()
 

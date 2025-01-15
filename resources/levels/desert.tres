@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="LevelData" load_steps=8 format=3 uid="uid://buq0vkbg12j3d"]
+[gd_resource type="Resource" script_class="LevelData" load_steps=9 format=3 uid="uid://buq0vkbg12j3d"]
 
+[ext_resource type="Texture2D" uid="uid://cugtgmme47bro" path="res://assets/background/DEBUG_BG.png" id="1_0ctwp"]
 [ext_resource type="Script" path="res://resources/enemies/enemies_data.gd" id="1_nyan5"]
 [ext_resource type="Resource" uid="uid://p4lax3an5o0y" path="res://resources/enemies/pbm2-2.tres" id="2_fk6g0"]
 [ext_resource type="Resource" uid="uid://b8w5ojo0122h5" path="res://resources/enemies/dbm1.tres" id="3_owsrq"]
@@ -12,6 +13,7 @@
 script = ExtResource("4_x8qa4")
 name = "Desert"
 description = ""
+back_ground_texture = ExtResource("1_0ctwp")
 length_of_the_road = 8
 boss_level = false
 enemy = Array[ExtResource("1_nyan5")]([ExtResource("2_fk6g0"), ExtResource("3_owsrq"), ExtResource("4_csaym")])
@@ -20,12 +22,12 @@ initial_enemy = Array[ExtResource("1_nyan5")]([ExtResource("3_xu4un")])
 base_danger = 8
 random_danger = 4
 danger_threshold_max = 20.0
-danger_threshold_min = 12.0
+danger_threshold_min = 10.0
 road_slots = 2
 food_slots = 2
 wood_slots = 2
-mod_wood = -1
-mod_food = -1
+mod_wood = 0
+mod_food = 0
 road_obstacle = 0
 broken_bridge = false
 dragon_level = false

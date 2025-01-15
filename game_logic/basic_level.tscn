@@ -9,6 +9,10 @@
 script = ExtResource("1_n52b6")
 enemy_scene = ExtResource("2_beh15")
 
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -10
+centered = false
+
 [node name="EnemyZone" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
@@ -254,10 +258,10 @@ offset_bottom = 134.0
 text = "SpawnEnemy"
 
 [node name="SolveTurn" type="Button" parent="."]
-offset_left = 875.0
-offset_top = 118.0
-offset_right = 1124.0
-offset_bottom = 264.0
+offset_left = 1415.0
+offset_top = 887.0
+offset_right = 1664.0
+offset_bottom = 1033.0
 theme_override_font_sizes/font_size = 50
 text = "Solve
 Turn"

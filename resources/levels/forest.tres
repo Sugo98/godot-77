@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="LevelData" load_steps=6 format=3 uid="uid://bqpl571qkgwsx"]
+[gd_resource type="Resource" script_class="LevelData" load_steps=7 format=3 uid="uid://bqpl571qkgwsx"]
 
 [ext_resource type="Script" path="res://resources/enemies/enemies_data.gd" id="1_0onpo"]
+[ext_resource type="Texture2D" uid="uid://cugtgmme47bro" path="res://assets/background/DEBUG_BG.png" id="1_2cwi7"]
 [ext_resource type="Script" path="res://resources/levels/level_data.gd" id="1_rqwrv"]
 [ext_resource type="Resource" uid="uid://delt0qchgjv4n" path="res://resources/enemies/wolf.tres" id="2_abe1t"]
 [ext_resource type="Resource" uid="uid://dvgh36dfckm3n" path="res://resources/enemies/pbm1.tres" id="2_gpb6o"]
@@ -10,6 +11,7 @@
 script = ExtResource("1_rqwrv")
 name = "Forest"
 description = "You enter a shady wood..."
+back_ground_texture = ExtResource("1_2cwi7")
 length_of_the_road = 5
 boss_level = false
 enemy = Array[ExtResource("1_0onpo")]([ExtResource("2_gpb6o"), ExtResource("2_abe1t"), ExtResource("3_vatw8")])

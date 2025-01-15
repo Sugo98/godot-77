@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ojh8x0lm12fe"]
+[gd_scene load_steps=8 format=3 uid="uid://ojh8x0lm12fe"]
 
 [ext_resource type="Script" path="res://game_logic/hero_party_manager.gd" id="1_6rxhw"]
 [ext_resource type="PackedScene" uid="uid://d10hgb5arwxkb" path="res://game_logic/heros_ui.tscn" id="2_1v2m8"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://du7fsdcx1ljr1" path="res://assets/heroes/guerriera DEF.png" id="4_lhd3d"]
 [ext_resource type="Texture2D" uid="uid://c1s0sxxrjxw0v" path="res://assets/heroes/maga DEF.png" id="5_hk1u8"]
 [ext_resource type="Texture2D" uid="uid://c0yr0uw61pg1n" path="res://assets/heroes/eroe ranger 1.png" id="6_tpl4r"]
+[ext_resource type="Texture2D" uid="uid://c2i4hqf6i2g3d" path="res://assets/background/white.png" id="7_c4i2j"]
 
 [node name="HeroesParty" type="Node" node_paths=PackedStringArray("heroes_ui", "heroes_container")]
 script = ExtResource("1_6rxhw")
@@ -55,5 +56,12 @@ offset_bottom = 987.0
 character_class = 4
 hero_texture = ExtResource("4_lhd3d")
 
-[node name="CaravanPosition" type="Marker2D" parent="."]
-position = Vector2(929, 559)
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Caravan" type="Sprite2D" parent="Node2D"]
+position = Vector2(842, 458)
+scale = Vector2(400, 300)
+texture = ExtResource("7_c4i2j")
+
+[node name="FeedbackPosition" type="Marker2D" parent="Node2D"]
+position = Vector2(929, 238)

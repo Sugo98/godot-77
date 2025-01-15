@@ -5,12 +5,13 @@ class_name HeroesManager extends Node
 @export var max_wood : int
 @export var heroes_ui: HeroesUI
 @export var heroes_container : Node
+@export var caravan: Node2D
 
 
 var repair_cost : int = Global.caravan_repair_cost
 var repair_discounted_cost : int = Global.caravan_discount_repair_cost
 
-@onready var caravan_position : Vector2 = $CaravanPosition.global_position
+@onready var caravan_position : Vector2 = $Node2D/FeedbackPosition.global_position
 
 
 var heroes: Array[Dice]
