@@ -69,7 +69,7 @@ func update_balance():
 	if not confirm_button:
 		return
 	confirm_button.disabled = balance > heroes_manager.xp
-	balance_label.text = tr("Balance") + ": " + str(balance)
+	balance_label.text = tr("BALANCE") + ": " + str(balance)
 
 func create_night_sky():
 	for i in range(400):

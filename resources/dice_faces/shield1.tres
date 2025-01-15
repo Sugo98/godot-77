@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("1_h6r7e")
-name = "Shield 1"
-description = "Protects from 1 damage"
+name = "SHIELD_1"
+description = "SHIELD_1_DESC"
 texture = ExtResource("2_ctpkn")
 character_class = 0
 xp_cost = 1
@@ -22,3 +22,4 @@ spikes = 0
 stun = false
 wall_ice = false
 wood_discount = false
+carrot = false

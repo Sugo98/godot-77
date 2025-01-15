@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("1_md0yp")
-name = "Gears 1"
-description = "Advances of 1 on the road"
+name = "GEARS_1"
+description = "GEARS_1_DESC"
 texture = ExtResource("2_lr6qs")
 character_class = 4
 xp_cost = 2

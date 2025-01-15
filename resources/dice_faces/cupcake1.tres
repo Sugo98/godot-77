@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("1_1fsjk")
-name = "Cupcake 1"
-description = ""
+name = "CUPCAKE_1"
+description = "CUPCAKE_1_DESC"
 texture = ExtResource("2_q3ex0")
 character_class = 2
 xp_cost = 3

@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("1_nvlty")
-name = "Wood 1"
-description = "Recovers 1 wood"
+name = "CARROT_2"
+description = "CARROT_2_DESC"
 texture = ExtResource("2_w877f")
 character_class = 3
 xp_cost = 5

@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("1_7r0p6")
-name = "Sword 1"
-description = "Deals 1 damage"
+name = "CLUB_1"
+description = "CLUB_1_DESC"
 texture = ExtResource("2_8ncx1")
 character_class = 1
 xp_cost = 3

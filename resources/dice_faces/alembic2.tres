@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("1_ucm3x")
-name = "Alembic 2"
-description = ""
+name = "ALEMBIC_2"
+description = "ALEMBIC_2_DESC"
 texture = ExtResource("2_sql5u")
 character_class = 4
 xp_cost = 4

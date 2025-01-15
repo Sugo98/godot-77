@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("1_x7gff")
-name = "Wood 1"
-description = "Recovers 1 wood"
+name = "WOOD_1"
+description = "WOOD_1_DESC"
 texture = ExtResource("2_cxglx")
 character_class = 0
 xp_cost = 1
@@ -22,3 +22,4 @@ spikes = 0
 stun = false
 wall_ice = false
 wood_discount = false
+carrot = false

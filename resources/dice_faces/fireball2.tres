@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("1_k4xns")
-name = "Fireball 2"
-description = "A powerful spell: deals 2 damage to each opponent"
+name = "FIREBALL_2"
+description = "FIREBALL_2_DESC"
 texture = ExtResource("2_jltdi")
 character_class = 2
 xp_cost = 6

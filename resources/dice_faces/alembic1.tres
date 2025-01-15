@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("1_pagou")
-name = "Alembic 1"
-description = ""
+name = "ALEMBIC_1"
+description = "ALEMBIC_1_DESC"
 texture = ExtResource("2_665m1")
 character_class = 4
 xp_cost = 2

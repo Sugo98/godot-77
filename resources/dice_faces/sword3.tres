@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("1_cnmv5")
-name = "Sword 3"
-description = "Deals 3 damage"
+name = "SWORD_3"
+description = "SWORD_3_DESC"
 texture = ExtResource("2_2aa1e")
 character_class = 0
 xp_cost = 6
@@ -22,3 +22,4 @@ spikes = 0
 stun = false
 wall_ice = false
 wood_discount = false
+carrot = false

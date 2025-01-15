@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("1_s35ji")
-name = "Shield 2"
-description = "Protects from 1 damage"
+name = "SHIELD_2"
+description = "SHIELD_2_DESC"
 texture = ExtResource("2_ak4w7")
 character_class = 0
 xp_cost = 3

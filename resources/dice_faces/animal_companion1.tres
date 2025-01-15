@@ -5,9 +5,8 @@
 
 [resource]
 script = ExtResource("1_fasa6")
-name = "Animal Companion 1"
-description = "Deals 1 damage and recovers 1 food
-"
+name = "ANIMAL_COMPANION_1"
+description = "ANIMAL_COMPANION_1_DESC"
 texture = ExtResource("2_pwdqb")
 character_class = 3
 xp_cost = 3

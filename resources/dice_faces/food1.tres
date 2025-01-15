@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_46h7h")
 name = "FOOD_1"
-description = "Recovers 1 food"
+description = "FOOD_1_DESC"
 texture = ExtResource("2_uewim")
 character_class = 0
 xp_cost = 1

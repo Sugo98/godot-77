@@ -20,10 +20,10 @@ func update_health(x:int):
 	health_label.text = "HP: " + str(x) + "/" + str(max_health)
 
 func update_food(x:int):
-	food_label.text = tr("Food: ") + str(x) + "/" + str(max_food)
+	food_label.text = tr("FOOD") + ": " + str(x) + "/" + str(max_food)
 
 func update_wood(x:int):
-	wood_label.text = tr("Wood: ") + str(x)
+	wood_label.text = tr("WOOD") + ": " + str(x)
 
 func update_xp(x:int):
 	xp_label.text = "XP: " + str(x)

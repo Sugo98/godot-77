@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("1_k2uwh")
-name = "Wheel 2"
-description = "Advances of 2 on the road"
+name = "WHEEL_2"
+description = "WHEEL_2_DESC"
 texture = ExtResource("2_c2pbe")
 character_class = 0
 xp_cost = 3

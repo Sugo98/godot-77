@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("1_wa6rs")
-name = "Sword / Shield 2"
-description = "Can be used as a Sword or as a Shield"
+name = "SWORD_SHIELD_2"
+description = "SWORD_SHIELD_2_DESC"
 texture = ExtResource("2_ar1u3")
 character_class = 0
 xp_cost = 5
