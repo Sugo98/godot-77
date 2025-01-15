@@ -169,13 +169,14 @@ func solve_enemies_slots():
 		if slot.get_child_count(): #if there is a dice
 			var face = slot.get_child(0)
 			await resolve_attack_dice(face, enemy)
-		if enemy and enemy.is_alive and slot == enemy.dice_slots.back(): #counter_attack
-			var dmg = enemy.attack()
-			if dmg:
-				heroes_manager.suffer_damage(dmg)
-			check_spikes(enemy)
-			if enemy.is_alive and not enemy.stun:
-				await enemy_steal(enemy)
+		if enemy:
+			if enemy.is_alive and slot == enemy.dice_slots.back(): #counter_attack
+				var dmg = enemy.attack()
+				if dmg:
+					heroes_manager.suffer_damage(dmg)
+				check_spikes(enemy)
+				if enemy.is_alive and not enemy.stun:
+					await enemy_steal(enemy)
 		await wait_time(basic_wait_time)
 	for slot in active_enemies:
 		active_enemies[slot].reset_stats()
