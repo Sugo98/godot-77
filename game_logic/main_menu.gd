@@ -2,9 +2,10 @@ class_name MainMenu extends Control
 
 var game_manager : GameManager
 
-@onready var game_menu: VBoxContainer = $"Game Menu"
-@onready var settings_menu: VBoxContainer = $"Settings Menu"
-@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+@export var game_menu: PanelContainer
+@export var settings_menu: PanelContainer
+@export var music_stream_player: AudioStreamPlayer
+@export var sfx_stream_player : AudioStreamPlayer
 
 var master_bus
 var music_bus
@@ -20,11 +21,11 @@ func _ready() -> void:
 
 func prepare_menu() :
 	settings_menu.hide()
-	audio_stream_player.play()
+	music_stream_player.play()
 
 func _on_start_game_pressed() -> void:
 	game_manager.start_game()
-	audio_stream_player.stop()
+	music_stream_player.stop()
 	
 
 func open_settings() -> void:
@@ -63,4 +64,4 @@ func _on_reset_pressed() -> void:
 
 
 func _on_debug_pressed() -> void:
-	$AudioStreamPlayer2.play()
+	sfx_stream_player.play()
