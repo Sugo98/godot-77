@@ -28,6 +28,9 @@ func _ready():
 	update_label()
 	eneter_animation()
 	ui.init(data.attack, data.max_hp)
+	if data.size > 0:
+		ui.position.y -= 100
+		
 
 func reset_turn():
 	if not is_alive:

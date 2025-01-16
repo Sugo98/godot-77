@@ -93,16 +93,16 @@ type = 1
 [node name="EnemyPivots" type="Node2D" parent="EnemyZone"]
 
 [node name="Pivot1" type="Marker2D" parent="EnemyZone/EnemyPivots"]
-position = Vector2(104, 280)
+position = Vector2(104, 300)
 
 [node name="Pivot2" type="Marker2D" parent="EnemyZone/EnemyPivots"]
-position = Vector2(304, 280)
+position = Vector2(304, 300)
 
 [node name="Pivot3" type="Marker2D" parent="EnemyZone/EnemyPivots"]
-position = Vector2(485, 280)
+position = Vector2(485, 300)
 
 [node name="Pivot4" type="Marker2D" parent="EnemyZone/EnemyPivots"]
-position = Vector2(684, 279)
+position = Vector2(684, 299)
 
 [node name="WoodSlots" type="Control" parent="."]
 layout_mode = 1

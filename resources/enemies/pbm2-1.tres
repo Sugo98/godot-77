@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3 uid="uid://dylhd37l11lma"]
 
 [ext_resource type="Script" path="res://resources/enemies/enemies_data.gd" id="1_06a2b"]
-[ext_resource type="Texture2D" uid="uid://pg735u2gut0c" path="res://assets/enemies/skeleton2.png" id="2_vigsq"]
+[ext_resource type="Texture2D" uid="uid://jsb7k66sw30f" path="res://assets/enemies/mantide DEF.png" id="2_clgdp"]
 
 [resource]
 script = ExtResource("1_06a2b")
 name = "Wolf"
-texture = ExtResource("2_vigsq")
+texture = ExtResource("2_clgdp")
 size = 0
 max_hp = 1
 attack = 4

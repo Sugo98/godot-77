@@ -14,12 +14,12 @@ attack_sfx = NodePath("AttackSFX")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -57)
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.5, 0.5)
 texture = SubResource("CompressedTexture2D_h7076")
 
 [node name="UI" parent="." instance=ExtResource("2_o6w53")]
-offset_top = -209.0
-offset_bottom = -169.0
+offset_top = -230.0
+offset_bottom = -190.0
 
 [node name="AttackSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_nsnlr")

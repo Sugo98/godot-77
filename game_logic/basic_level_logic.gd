@@ -80,7 +80,7 @@ func show_slots():
 		road_slots_container.hide()
 		road_label.hide()
 		enemy_slots_container.position += Vector2.DOWN * 150
-		enemy_pivots_container.position += Vector2.DOWN * 150
+		enemy_pivots_container.position += Vector2.DOWN * 100
 
 func fill_array():
 	enemy_slots = parse_slots(enemy_slots_container)

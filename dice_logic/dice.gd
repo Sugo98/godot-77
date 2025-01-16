@@ -27,7 +27,6 @@ func prepare_for_level():
 func prepare_for_merchant():
 	merchant_stuff.set_visible(true)
 	level_stuff.set_visible(false)
-	sprite_2d.hide()
 	set_slots_owner(slots_for_merchant)
 	load_for_merchant()
 
