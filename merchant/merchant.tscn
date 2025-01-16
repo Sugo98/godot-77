@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://btf6snukdg0gw"]
+[gd_scene load_steps=9 format=3 uid="uid://btf6snukdg0gw"]
 
 [ext_resource type="Script" path="res://merchant/merchant.gd" id="1_67ih7"]
 [ext_resource type="Texture2D" uid="uid://bc24ducsvaw7f" path="res://assets/heroes/dadomante DEF.png" id="2_2g250"]
@@ -7,6 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://c2i4hqf6i2g3d" path="res://assets/background/white.png" id="3_uxtmc"]
 [ext_resource type="Theme" uid="uid://ypak5t8xrvk8" path="res://assets/theme/slot_dice.tres" id="5_kegug"]
 [ext_resource type="AudioStream" uid="uid://b7dhfmnidc1gy" path="res://assets/music/Level 1 (Loop).ogg" id="6_vryq3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v5xcl"]
+bg_color = Color(1, 1, 1, 0.12549)
+border_width_right = 128
+border_color = Color(1, 1, 1, 0)
+border_blend = true
 
 [node name="Merchant" type="Control"]
 layout_mode = 3
@@ -27,16 +33,16 @@ scale = Vector2(1920, 1080)
 texture = ExtResource("3_uxtmc")
 centered = false
 
+[node name="HeroZone" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1020.0
+offset_bottom = 1080.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_v5xcl")
+
 [node name="Diceomancer" type="Sprite2D" parent="."]
 position = Vector2(1617, 500)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_2g250")
-
-[node name="HeroZone" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 0.215686, 0.752941)
-scale = Vector2(960, 1080)
-texture = ExtResource("3_uxtmc")
-centered = false
 
 [node name="MerchantSlots" type="Control" parent="."]
 layout_mode = 1

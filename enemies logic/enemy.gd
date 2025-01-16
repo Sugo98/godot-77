@@ -106,5 +106,5 @@ func can_attack(slot) -> bool:
 			not stun)
 
 func update_label():
-	ui.update_hp(hp, data.max_hp)
+	ui.update_hp(hp)
 	ui.update_atk(turn_atk)
