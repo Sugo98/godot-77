@@ -58,7 +58,7 @@ func load_level(data : LevelData) -> void:
 	level.game_manager = self
 	actual_stop = level
 	main_canvas.add_child(level)
-	main_canvas.move_child(level, 1)
+	main_canvas.move_child(level, -1)
 	heroes_manager.prepare_for_level()
 	main_menu.pause_button.show()
 

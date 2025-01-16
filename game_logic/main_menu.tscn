@@ -328,11 +328,6 @@ theme = ExtResource("2_dlwf6")
 theme_override_font_sizes/font_size = 32
 text = "RESET"
 
-[node name="Settings Menu#LanguageSection" type="HBoxContainer" parent="."]
-layout_mode = 2
-theme_override_constants/separation = 20
-alignment = 1
-
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_sp5x1")
 bus = &"Music"

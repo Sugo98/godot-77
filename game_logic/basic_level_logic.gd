@@ -384,6 +384,7 @@ func check_end() -> bool:
 		return (road <= 0)
 
 func start_playng_music():
+	back_ground_music.process_mode = Node.PROCESS_MODE_ALWAYS
 	back_ground_music.stream = data.soundtrack
 	back_ground_music.play()
 

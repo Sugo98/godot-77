@@ -32,6 +32,12 @@ position = Vector2(1617, 500)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_2g250")
 
+[node name="HeroZone" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0.215686, 0.752941)
+scale = Vector2(960, 1080)
+texture = ExtResource("3_uxtmc")
+centered = false
+
 [node name="MerchantSlots" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -203,12 +209,6 @@ size_flags_horizontal = 3
 theme = ExtResource("5_kegug")
 theme_override_font_sizes/font_size = 30
 text = "Confirm"
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 0, 0.752941)
-scale = Vector2(960, 1080)
-texture = ExtResource("3_uxtmc")
-centered = false
 
 [connection signal="child_order_changed" from="MerchantSlots/PanelContainer" to="MerchantSlots/PanelContainer" method="face_leaves"]
 [connection signal="child_order_changed" from="MerchantSlots/PanelContainer2" to="MerchantSlots/PanelContainer2" method="face_leaves"]
