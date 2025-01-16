@@ -25,6 +25,12 @@ func _ready() -> void:
 	sfx_bus = AudioServer.get_bus_index("SFX")
 	prepare_menu()
 	_on_slow_animation_pressed()
+	default_volume()
+
+func default_volume() -> void:
+	%MasterSlider.value = 0.01
+	%MusicSlider.value = 1
+	%SFXSlider.value = 1
 
 func prepare_menu() :
 	settings_menu.hide()
@@ -69,19 +75,11 @@ func _on_reset_pressed() -> void:
 	%MusicSlider.value = 1
 	%SFXSlider.value = 1
 
-
-func _on_debug_pressed() -> void:
-	sfx_stream_player.play()
-	$AudioStreamPlayer2.play()
-
-
 func _on_en_lan_pressed() -> void:
 	TranslationServer.set_locale("en")
 
-
 func _on_it_lan_pressed() -> void:
 	TranslationServer.set_locale("it")
-
 
 func _on_slow_animation_pressed() -> void:
 	Utils.basic_wait_time = Global.slow_animation_time
@@ -101,3 +99,6 @@ func _on_fast_animation_pressed() -> void:
 	animation_buttons["slow"].theme_type_variation = "Inactive"
 	animation_buttons["medium"].theme_type_variation = "Inactive"
 	animation_buttons["fast"].theme_type_variation = ""
+
+func _on_sfx_pressed() -> void:
+	sfx_stream_player.play()

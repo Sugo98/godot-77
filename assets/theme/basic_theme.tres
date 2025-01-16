@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=20 format=3 uid="uid://bionh2bhlri40"]
+[gd_resource type="Theme" load_steps=22 format=3 uid="uid://bionh2bhlri40"]
 
 [ext_resource type="Texture2D" uid="uid://brnsw1jnkors8" path="res://assets/theme/Bridge.png" id="1_ghjwu"]
 [ext_resource type="FontFile" uid="uid://bhign6v57q280" path="res://assets/theme/fonts/Helvetica-Bold.ttf" id="2_goq6r"]
@@ -10,6 +10,8 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gw8pl"]
 texture = ExtResource("1_ghjwu")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l8srp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h1fci"]
 bg_color = Color(0.57, 0.307895, 0.0627, 1)
@@ -25,6 +27,10 @@ border_width_top = 10
 border_width_right = 10
 border_width_bottom = 10
 border_color = Color(0.898039, 0.666667, 0.45098, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_63304"]
 content_margin_left = 4.0
@@ -64,8 +70,12 @@ corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5k1du"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xpchb"]
-bg_color = Color(0.360704, 0.186286, 0.0248739, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3432p"]
+bg_color = Color(0.137255, 0.0588235, 0.00392157, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
 border_color = Color(0.9, 0.6675, 0.45, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
@@ -106,12 +116,24 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3pjnb"]
+bg_color = Color(0.333333, 0.172549, 0.0196078, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.898039, 0.666667, 0.45098, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [resource]
 BrokenBridge/base_type = &"PanelContainer"
 BrokenBridge/styles/panel = SubResource("StyleBoxTexture_gw8pl")
 Button/font_sizes/font_size = 64
 Button/fonts/font = ExtResource("2_goq6r")
-Button/styles/focus = SubResource("StyleBoxFlat_h1fci")
+Button/styles/focus = SubResource("StyleBoxEmpty_l8srp")
 Button/styles/hover = ExtResource("3_fsd0t")
 Button/styles/normal = SubResource("StyleBoxFlat_h1fci")
 Button/styles/pressed = SubResource("StyleBoxFlat_xmjy1")
@@ -120,6 +142,7 @@ HSlider/icons/grabber = ExtResource("4_8yhgg")
 HSlider/icons/grabber_disabled = ExtResource("4_8yhgg")
 HSlider/icons/grabber_highlight = ExtResource("4_8yhgg")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_63304")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_63304")
 HSlider/styles/slider = SubResource("StyleBoxFlat_7vvcl")
 HeaderLarge/font_sizes/font_size = 48
 HeaderLarge/fonts/font = ExtResource("2_goq6r")
@@ -127,7 +150,7 @@ HeaderMedium/fonts/font = ExtResource("2_goq6r")
 Inactive/base_type = &"Button"
 Inactive/styles/hover = SubResource("StyleBoxFlat_y71iw")
 Inactive/styles/normal = SubResource("StyleBoxEmpty_5k1du")
-Inactive/styles/pressed = SubResource("StyleBoxFlat_xpchb")
+Inactive/styles/pressed = SubResource("StyleBoxFlat_3432p")
 Label/font_sizes/font_size = 32
 MarginContainer/constants/margin_bottom = 8
 MarginContainer/constants/margin_left = 8
@@ -141,6 +164,7 @@ SmallButton/font_sizes/font_size = 32
 SmallButton/fonts/font = ExtResource("4_84x2b")
 SmallButton/styles/hover = SubResource("StyleBoxFlat_m038l")
 SmallButton/styles/normal = SubResource("StyleBoxFlat_wbp36")
+SmallButton/styles/pressed = SubResource("StyleBoxFlat_3pjnb")
 Title/base_type = &"Label"
 Title/font_sizes/font_size = 128
 Title/fonts/font = ExtResource("4_b38xd")

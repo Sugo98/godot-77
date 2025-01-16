@@ -16,7 +16,7 @@ func _ready():
 	stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	if data :
 		texture = data.texture
-		tooltip_text = "%s\n%s" % [data.name, data.description]
+		tooltip_text = "%s\n%s" % [tr(data.name), tr(data.description)]
 
 func can_be_placed(slot : DiceSlot.Type):
 	if data.jolly:

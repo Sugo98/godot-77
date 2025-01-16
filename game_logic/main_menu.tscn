@@ -231,8 +231,8 @@ layout_mode = 2
 [node name="Settings Menu_LanguageSection#Label" type="Label" parent="SettingMenu/Settings Menu/Language/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "LANGUAGE
-"
+text = "LANGUAGE_LABEL"
+horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="SettingMenu/Settings Menu/Language/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -299,6 +299,10 @@ bus = &"SFX"
 [connection signal="pressed" from="SettingMenu/Settings Menu/GameSettings/GameSetting/HBoxContainer/PanelContainer/SlowAnimation" to="." method="_on_slow_animation_pressed"]
 [connection signal="pressed" from="SettingMenu/Settings Menu/GameSettings/GameSetting/HBoxContainer/PanelContainer/MediumAnimation" to="." method="_on_medium_animation_pressed"]
 [connection signal="pressed" from="SettingMenu/Settings Menu/GameSettings/GameSetting/HBoxContainer/PanelContainer/FastAnimation" to="." method="_on_fast_animation_pressed"]
+[connection signal="value_changed" from="SettingMenu/Settings Menu/AudioSettings/AudioSetting/HBoxContainer/MasterSlider" to="." method="_on_master_slider_value_changed"]
+[connection signal="value_changed" from="SettingMenu/Settings Menu/AudioSettings/AudioSetting/HBoxContainer2/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="pressed" from="SettingMenu/Settings Menu/AudioSettings/AudioSetting/HBoxContainer3/MarginContainer/SFX" to="." method="_on_sfx_pressed"]
+[connection signal="value_changed" from="SettingMenu/Settings Menu/AudioSettings/AudioSetting/HBoxContainer3/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
 [connection signal="pressed" from="SettingMenu/Settings Menu/Language/VBoxContainer/HBoxContainer/HBoxContainer/Settings Menu_LanguageSection#EN_lan" to="." method="_on_en_lan_pressed"]
 [connection signal="pressed" from="SettingMenu/Settings Menu/Language/VBoxContainer/HBoxContainer/HBoxContainer/Settings Menu_LanguageSection#IT_lan" to="." method="_on_it_lan_pressed"]
 [connection signal="pressed" from="SettingMenu/Settings Menu/CloseButtons/HBoxContainer/Close" to="." method="_on_close_pressed"]
