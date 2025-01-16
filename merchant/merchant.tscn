@@ -28,7 +28,7 @@ texture = ExtResource("3_uxtmc")
 centered = false
 
 [node name="Diceomancer" type="Sprite2D" parent="."]
-position = Vector2(1628, 488)
+position = Vector2(1617, 500)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_2g250")
 
@@ -46,56 +46,56 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="MerchantSlots"]
-custom_minimum_size = Vector2(96, 96)
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 0
-offset_left = 196.0
-offset_top = 34.0
-offset_right = 292.0
-offset_bottom = 130.0
+offset_left = 225.0
+offset_top = -81.0
+offset_right = 353.0
+offset_bottom = 47.0
 theme = ExtResource("5_kegug")
 script = ExtResource("2_3iqb7")
 type = 6
 
 [node name="PanelContainer2" type="PanelContainer" parent="MerchantSlots"]
-custom_minimum_size = Vector2(96, 96)
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 0
-offset_left = 500.0
-offset_top = 74.0
-offset_right = 596.0
-offset_bottom = 170.0
+offset_left = 433.0
+offset_top = 81.0
+offset_right = 561.0
+offset_bottom = 209.0
 theme = ExtResource("5_kegug")
 script = ExtResource("2_3iqb7")
 type = 6
 
 [node name="PanelContainer3" type="PanelContainer" parent="MerchantSlots"]
-custom_minimum_size = Vector2(96, 96)
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 0
-offset_left = 106.0
-offset_top = 250.0
-offset_right = 202.0
-offset_bottom = 346.0
+offset_left = 186.0
+offset_top = 202.0
+offset_right = 314.0
+offset_bottom = 330.0
 theme = ExtResource("5_kegug")
 script = ExtResource("2_3iqb7")
 type = 6
 
 [node name="PanelContainer4" type="PanelContainer" parent="MerchantSlots"]
-custom_minimum_size = Vector2(96, 96)
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 0
-offset_left = 324.0
-offset_top = 186.0
-offset_right = 420.0
-offset_bottom = 282.0
+offset_left = 504.0
+offset_top = 326.0
+offset_right = 632.0
+offset_bottom = 454.0
 theme = ExtResource("5_kegug")
 script = ExtResource("2_3iqb7")
 type = 6
 
 [node name="PanelContainer5" type="PanelContainer" parent="MerchantSlots"]
-custom_minimum_size = Vector2(96, 96)
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 0
-offset_left = 430.0
-offset_top = 350.0
-offset_right = 526.0
-offset_bottom = 446.0
+offset_left = 230.0
+offset_top = 442.0
+offset_right = 358.0
+offset_bottom = 570.0
 theme = ExtResource("5_kegug")
 script = ExtResource("2_3iqb7")
 type = 6
@@ -109,84 +109,111 @@ offset_bottom = 61.0
 
 [node name="Label" type="Label" parent="Prices"]
 layout_mode = 0
-offset_left = 1296.0
-offset_top = 416.0
-offset_right = 1340.0
-offset_bottom = 458.0
-theme_override_font_sizes/font_size = 30
+offset_left = 1344.0
+offset_top = 317.0
+offset_right = 1388.0
+offset_bottom = 359.0
+theme = ExtResource("5_kegug")
 text = "A"
 
 [node name="Label2" type="Label" parent="Prices"]
 layout_mode = 0
-offset_left = 1614.0
-offset_top = 460.0
-offset_right = 1658.0
-offset_bottom = 502.0
-theme_override_font_sizes/font_size = 30
+offset_left = 1566.0
+offset_top = 483.0
+offset_right = 1610.0
+offset_bottom = 525.0
+theme = ExtResource("5_kegug")
 text = "B"
 
 [node name="Label3" type="Label" parent="Prices"]
 layout_mode = 0
-offset_left = 1207.0
-offset_top = 642.0
-offset_right = 1251.0
-offset_bottom = 684.0
-theme_override_font_sizes/font_size = 30
+offset_left = 1306.0
+offset_top = 610.0
+offset_right = 1350.0
+offset_bottom = 652.0
+theme = ExtResource("5_kegug")
 text = "C"
 
 [node name="Label4" type="Label" parent="Prices"]
 layout_mode = 0
-offset_left = 1429.0
-offset_top = 569.0
-offset_right = 1473.0
-offset_bottom = 611.0
-theme_override_font_sizes/font_size = 30
+offset_left = 1628.0
+offset_top = 725.0
+offset_right = 1672.0
+offset_bottom = 767.0
+theme = ExtResource("5_kegug")
 text = "D"
 
 [node name="Label5" type="Label" parent="Prices"]
 layout_mode = 0
-offset_left = 1533.0
-offset_top = 734.0
-offset_right = 1577.0
-offset_bottom = 776.0
-theme_override_font_sizes/font_size = 30
+offset_left = 1350.0
+offset_top = 852.0
+offset_right = 1394.0
+offset_bottom = 894.0
+theme = ExtResource("5_kegug")
 text = "5"
 
 [node name="Balance" type="Label" parent="."]
 layout_mode = 0
 offset_left = 1042.0
-offset_top = 264.0
+offset_top = 154.0
 offset_right = 1232.0
-offset_bottom = 334.0
+offset_bottom = 224.0
 theme_override_font_sizes/font_size = 50
 text = "Balance"
-
-[node name="Confirm" type="Button" parent="."]
-layout_mode = 0
-offset_left = 1293.0
-offset_top = 880.0
-offset_right = 1493.0
-offset_bottom = 980.0
-theme_override_font_sizes/font_size = 30
-text = "Confirm"
-
-[node name="Reset" type="Button" parent="."]
-layout_mode = 0
-offset_left = 1061.0
-offset_top = 880.0
-offset_right = 1261.0
-offset_bottom = 980.0
-theme_override_font_sizes/font_size = 30
-text = "Reset"
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_vryq3")
 bus = &"Music"
+
+[node name="ReferenceRect" type="ReferenceRect" parent="."]
+layout_mode = 0
+offset_right = 960.0
+offset_bottom = 1080.0
+border_width = 10.0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -614.0
+offset_top = -179.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_left = 36
+theme_override_constants/margin_top = 36
+theme_override_constants/margin_right = 36
+theme_override_constants/margin_bottom = 36
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Reset" type="Button" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("5_kegug")
+theme_override_font_sizes/font_size = 30
+text = "Reset"
+
+[node name="Confirm" type="Button" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("5_kegug")
+theme_override_font_sizes/font_size = 30
+text = "Confirm"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.752941)
+scale = Vector2(960, 1080)
+texture = ExtResource("3_uxtmc")
+centered = false
 
 [connection signal="child_order_changed" from="MerchantSlots/PanelContainer" to="MerchantSlots/PanelContainer" method="face_leaves"]
 [connection signal="child_order_changed" from="MerchantSlots/PanelContainer2" to="MerchantSlots/PanelContainer2" method="face_leaves"]
 [connection signal="child_order_changed" from="MerchantSlots/PanelContainer3" to="MerchantSlots/PanelContainer3" method="face_leaves"]
 [connection signal="child_order_changed" from="MerchantSlots/PanelContainer4" to="MerchantSlots/PanelContainer4" method="face_leaves"]
 [connection signal="child_order_changed" from="MerchantSlots/PanelContainer5" to="MerchantSlots/PanelContainer5" method="face_leaves"]
-[connection signal="pressed" from="Confirm" to="." method="_on_confirm_pressed"]
-[connection signal="pressed" from="Reset" to="." method="reset_market"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Reset" to="." method="reset_market"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Confirm" to="." method="_on_confirm_pressed"]

@@ -60,6 +60,7 @@ func load_level(data : LevelData) -> void:
 	main_canvas.add_child(level)
 	main_canvas.move_child(level, 1)
 	heroes_manager.prepare_for_level()
+	main_menu.pause_button.show()
 
 func load_merchant(data : MerchantData) -> void:
 	var merchant : Merchant = merchant_scene.instantiate()
@@ -70,6 +71,7 @@ func load_merchant(data : MerchantData) -> void:
 	main_canvas.add_child(merchant)
 	main_canvas.move_child(heroes_manager,-1)
 	heroes_manager.prepare_for_merchant()
+	main_menu.pause_button.hide()
 	
 func quit_game():
 	actual_stop.queue_free()
