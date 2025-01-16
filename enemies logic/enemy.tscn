@@ -1,15 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://yvwkwgojt1ab"]
+[gd_scene load_steps=5 format=3 uid="uid://yvwkwgojt1ab"]
 
+[ext_resource type="PackedScene" uid="uid://dohoy271usm4w" path="res://enemies logic/ui.tscn" id="2_o6w53"]
 [ext_resource type="Script" path="res://enemies logic/enemy.gd" id="2_xixe7"]
 [ext_resource type="AudioStream" uid="uid://cmvpunesy6b3t" path="res://assets/sound fx/hitHurt.wav" id="3_nsnlr"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_h7076"]
 
-[node name="Enemy" type="Node2D" node_paths=PackedStringArray("hp_label", "ui", "attack_label", "sprite2D", "attack_sfx")]
+[node name="Enemy" type="Node2D" node_paths=PackedStringArray("ui", "sprite2D", "attack_sfx")]
 script = ExtResource("2_xixe7")
-hp_label = NodePath("UI/HPLabel")
 ui = NodePath("UI")
-attack_label = NodePath("UI/AttackLabel")
 sprite2D = NodePath("Sprite2D")
 attack_sfx = NodePath("AttackSFX")
 
@@ -18,42 +17,9 @@ position = Vector2(0, -57)
 scale = Vector2(0.3, 0.3)
 texture = SubResource("CompressedTexture2D_h7076")
 
-[node name="UI" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="HPLabel" type="Label" parent="UI"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -67.0
-offset_top = -217.0
-offset_right = 28.0
-offset_bottom = -175.0
-grow_horizontal = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 30
-text = "HP 2/2
-"
-horizontal_alignment = 1
-
-[node name="AttackLabel" type="Label" parent="UI"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -64.0
-offset_top = -187.0
-offset_right = 25.0
-offset_bottom = -145.0
-grow_horizontal = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 30
-text = "ATK: 1"
-horizontal_alignment = 1
+[node name="UI" parent="." instance=ExtResource("2_o6w53")]
+offset_top = -209.0
+offset_bottom = -169.0
 
 [node name="AttackSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_nsnlr")

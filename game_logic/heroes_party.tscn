@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ojh8x0lm12fe"]
+[gd_scene load_steps=9 format=3 uid="uid://ojh8x0lm12fe"]
 
 [ext_resource type="Script" path="res://game_logic/hero_party_manager.gd" id="1_6rxhw"]
 [ext_resource type="PackedScene" uid="uid://d10hgb5arwxkb" path="res://game_logic/heros_ui.tscn" id="2_1v2m8"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c1s0sxxrjxw0v" path="res://assets/heroes/maga DEF.png" id="5_hk1u8"]
 [ext_resource type="Texture2D" uid="uid://c0yr0uw61pg1n" path="res://assets/heroes/eroe ranger 1.png" id="6_tpl4r"]
 [ext_resource type="Texture2D" uid="uid://c2i4hqf6i2g3d" path="res://assets/background/white.png" id="7_c4i2j"]
+[ext_resource type="Texture2D" uid="uid://durtgnhf7luho" path="res://assets/background/layout.png" id="8_y1bwo"]
 
 [node name="HeroesParty" type="Node" node_paths=PackedStringArray("heroes_ui", "heroes_container", "caravan")]
 script = ExtResource("1_6rxhw")
@@ -18,42 +19,48 @@ heroes_container = NodePath("Heroes")
 caravan = NodePath("Caravan")
 
 [node name="HeroesUI" parent="." instance=ExtResource("2_1v2m8")]
-offset_left = 569.0
-offset_top = 86.0
-offset_right = 895.0
-offset_bottom = 266.0
+offset_left = 650.0
+offset_top = 53.0
+offset_right = 976.0
+offset_bottom = 233.0
 
 [node name="Heroes" type="Node" parent="."]
 
 [node name="Fighter" parent="Heroes" instance=ExtResource("3_q2okv")]
-offset_left = 64.0
-offset_top = 55.0
-offset_right = 64.0
-offset_bottom = 247.0
+anchors_preset = 0
+anchor_right = 0.0
+offset_right = 0.0
+grow_horizontal = 1
 character_class = 1
 hero_texture = ExtResource("4_lhd3d")
 
 [node name="Wizard" parent="Heroes" instance=ExtResource("3_q2okv")]
-offset_left = 64.0
-offset_top = 290.0
-offset_right = 64.0
-offset_bottom = 482.0
+anchors_preset = 0
+anchor_right = 0.0
+offset_top = 270.0
+offset_right = 0.0
+offset_bottom = 540.0
+grow_horizontal = 1
 character_class = 2
 hero_texture = ExtResource("5_hk1u8")
 
 [node name="Ranger" parent="Heroes" instance=ExtResource("3_q2okv")]
-offset_left = 64.0
-offset_top = 542.0
-offset_right = 64.0
-offset_bottom = 734.0
+anchors_preset = 0
+anchor_right = 0.0
+offset_top = 540.0
+offset_right = 0.0
+offset_bottom = 810.0
+grow_horizontal = 1
 character_class = 3
 hero_texture = ExtResource("6_tpl4r")
 
 [node name="MasterMind" parent="Heroes" instance=ExtResource("3_q2okv")]
-offset_left = 64.0
-offset_top = 795.0
-offset_right = 64.0
-offset_bottom = 987.0
+anchors_preset = 0
+anchor_right = 0.0
+offset_top = 810.0
+offset_right = 0.0
+offset_bottom = 1080.0
+grow_horizontal = 1
 character_class = 4
 hero_texture = ExtResource("4_lhd3d")
 
@@ -62,9 +69,16 @@ hero_texture = ExtResource("4_lhd3d")
 [node name="Sprite2D" type="Sprite2D" parent="Caravan"]
 modulate = Color(0.39, 0.19448, 0.0234, 1)
 z_index = -5
-position = Vector2(842, 458)
-scale = Vector2(400, 300)
+position = Vector2(882.5, 476)
+scale = Vector2(481, 406)
 texture = ExtResource("7_c4i2j")
 
 [node name="FeedbackPosition" type="Marker2D" parent="Caravan"]
-position = Vector2(929, 238)
+position = Vector2(879, 430)
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -10
+texture_filter = 1
+scale = Vector2(160, 135)
+texture = ExtResource("8_y1bwo")
+centered = false

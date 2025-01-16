@@ -71,7 +71,7 @@ func show_slots():
 			slot.hide()
 	if not data.boss_level:
 		for slot : DiceSlot in road_slots:
-			if slot.get_index() < data.road_slots:
+			if 2-slot.get_index() < data.road_slots:
 				slot.show()
 				if  data.broken_bridge : slot.theme_type_variation = "BrokenBridge"
 			else:
@@ -285,8 +285,8 @@ func update_danger():
 		while danger > 0:
 			spawn_random_enemy()
 
-func wait_time(t):
-	animation_timer.set_wait_time(t)
+func wait_time(time):
+	animation_timer.set_wait_time(time)
 	animation_timer.start()
 	await animation_timer.timeout
 	return

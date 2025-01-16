@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://btf6snukdg0gw"]
+[gd_scene load_steps=8 format=3 uid="uid://btf6snukdg0gw"]
 
 [ext_resource type="Script" path="res://merchant/merchant.gd" id="1_67ih7"]
 [ext_resource type="Texture2D" uid="uid://bc24ducsvaw7f" path="res://assets/heroes/dadomante DEF.png" id="2_2g250"]
 [ext_resource type="Script" path="res://dice_logic/dice_slot.gd" id="2_3iqb7"]
 [ext_resource type="Texture2D" uid="uid://6cwir5ejve6h" path="res://assets/background/star.png" id="2_hpy1a"]
 [ext_resource type="Texture2D" uid="uid://c2i4hqf6i2g3d" path="res://assets/background/white.png" id="3_uxtmc"]
+[ext_resource type="Theme" uid="uid://ypak5t8xrvk8" path="res://assets/theme/slot_dice.tres" id="5_kegug"]
 [ext_resource type="AudioStream" uid="uid://b7dhfmnidc1gy" path="res://assets/music/Level 1 (Loop).ogg" id="6_vryq3"]
 
 [node name="Merchant" type="Control"]
@@ -51,6 +52,7 @@ offset_left = 196.0
 offset_top = 34.0
 offset_right = 292.0
 offset_bottom = 130.0
+theme = ExtResource("5_kegug")
 script = ExtResource("2_3iqb7")
 type = 6
 
@@ -61,6 +63,7 @@ offset_left = 500.0
 offset_top = 74.0
 offset_right = 596.0
 offset_bottom = 170.0
+theme = ExtResource("5_kegug")
 script = ExtResource("2_3iqb7")
 type = 6
 
@@ -71,6 +74,7 @@ offset_left = 106.0
 offset_top = 250.0
 offset_right = 202.0
 offset_bottom = 346.0
+theme = ExtResource("5_kegug")
 script = ExtResource("2_3iqb7")
 type = 6
 
@@ -81,6 +85,7 @@ offset_left = 324.0
 offset_top = 186.0
 offset_right = 420.0
 offset_bottom = 282.0
+theme = ExtResource("5_kegug")
 script = ExtResource("2_3iqb7")
 type = 6
 
@@ -91,6 +96,7 @@ offset_left = 430.0
 offset_top = 350.0
 offset_right = 526.0
 offset_bottom = 446.0
+theme = ExtResource("5_kegug")
 script = ExtResource("2_3iqb7")
 type = 6
 

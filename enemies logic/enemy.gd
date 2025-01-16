@@ -1,9 +1,7 @@
 class_name Enemy extends Node2D
 
-@export var data: EnemyData
-@export var hp_label: Label
+var data: EnemyData
 @export var ui : Control
-@export var attack_label: Label
 @export var sprite2D: Sprite2D
 @export var attack_sfx : AudioStreamPlayer
 
@@ -29,6 +27,7 @@ func _ready():
 	tween = create_tween()
 	update_label()
 	eneter_animation()
+	ui.init(data.attack, data.max_hp)
 
 func reset_turn():
 	if not is_alive:
@@ -40,10 +39,6 @@ func reset_turn():
 	tween.tween_property(self, "modulate", Color.WHITE, 0)
 	set_stun(false)
 	update_label()
-
-func update_label():
-	hp_label.text = "HP: " + str(hp) + "/" + str(data.max_hp)
-	attack_label.text = "ATK: " + str(data.attack)
 
 func inflict_damage(damage:int, _type:String) -> bool: #return true if the enemy is killed
 	while( shield and damage):
@@ -109,3 +104,7 @@ func can_attack(slot) -> bool:
 	return (is_alive and
 			slot == dice_slots.back() and
 			not stun)
+
+func update_label():
+	ui.update_hp(hp, data.max_hp)
+	ui.update_atk(turn_atk)

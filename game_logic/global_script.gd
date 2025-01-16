@@ -27,3 +27,6 @@ const food_consumption : int = 2
 const fast_animation_time : float = 0.25
 const medium_animation_time : float = 0.5
 const slow_animation_time : float = 1
+
+const hp_green_color := Color.GREEN
+const hp_red_color := Color.RED
