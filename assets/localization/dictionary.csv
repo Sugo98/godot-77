@@ -2,6 +2,8 @@ key,en,it
 START_GAME,START GAME,AVVIA PARTITA
 SETTINGS_UPP,SETTINGS,IMPOSTAZIONI
 SETTINGS_LOW,Settings,Impostazioni
+RESUME_GAME,RESUME,RIPRENDI
+QUIT_GAME,QUIT,ABBANDONA
 LANGUAGE_LABEL,LANGUAGE,LINGUA
 GAME_SETTINGS,Game Settings,Impostazioni di gioco
 ANIMATION_SPEED,"Animation
@@ -15,15 +17,14 @@ MUSIC,Music,Musica
 CLOSE,Close,Chiudi
 RESET,Reset,Ripristina
 DISTANCE,Distance,Distanza
-SOLVE_TURN,"Solve
-Turn","Risolvi
-Turno"
+SOLVE_TURN,Done,Fatto
 LANGUAGE_SETTINGS,Language Selection,Seleziona Lingua
 LANGUAGE,Language,Lingua
 ENGLISH,English,English
 ITALIAN,Italiano,Italiano
 MASTER,Master,Principale
 SFX,SFX,Effetti
+PAUSE_BUTTON,Pause,
 FOOD ,Food,Cibo
 WOOD ,Wood,Legno
 BALANCE,Balance,Bilancio

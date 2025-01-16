@@ -14,6 +14,6 @@ level_scene = ExtResource("3_7l85e")
 merchant_scene = ExtResource("4_x8sid")
 heroes_manager_scene = ExtResource("4_jdtd5")
 main_canvas = NodePath("MainCanvas")
-journey = ExtResource("6_72ei4")
+journey_data = ExtResource("6_72ei4")
 
 [node name="MainCanvas" type="CanvasLayer" parent="."]

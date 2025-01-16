@@ -58,7 +58,7 @@ func _ready() -> void:
 
 func show_slots(): 
 	for slot : DiceSlot in wood_slots:
-		if slot.get_index() < data.wood_slots:
+		if 1 - slot.get_index() < data.wood_slots:
 			slot.show()
 			if data.mod_wood : slot.theme_type_variation = "Plus_1"
 		else:
@@ -205,7 +205,6 @@ func solve_road_slots():
 			decrase_road(x)
 
 		face.hide()
-		print("Face Hide")
 		await wait_time(t)
 
 func decrase_road(x):
@@ -217,10 +216,7 @@ func next_level():
 	game_manager.go_to_next_level()
 
 func reset_turn():
-	print(danger_multiplier)
 	danger_multiplier = move_toward(danger_multiplier, data.danger_multiplier_max, data.danger_multiplier_step)
-	
-	print(danger_multiplier)
 	heroes_manager.reset_turn()
 	for slot in enemy_slots:
 		if not active_enemies.has(slot):
@@ -285,12 +281,9 @@ func update_danger():
 		freeze = false
 		return
 	danger += int( (data.base_danger + randi_range(0, data.random_danger) ) * danger_multiplier )
-	print(danger)
 	if danger >= danger_threshold:
 		while danger > 0:
 			spawn_random_enemy()
-		print(danger)
-		print("brekpoint")
 
 func wait_time(t):
 	animation_timer.set_wait_time(t)
