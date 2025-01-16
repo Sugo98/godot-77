@@ -3,27 +3,28 @@ class_name HeroesUI extends Control
 @export var max_health : int = 10
 @export var max_food : int = 20
 
-@onready var health_label: Label = $Health
-@onready var food_label: Label = $Food
-@onready var wood_label: Label = $Wood
-@onready var xp_label: Label = $XP
+@export var health_bar: ProgressBar
+@export var health_label : Label
+@export var food_bar: ProgressBar
+@export var food_label : Label
+@export var wood_label: Label
+@export var xp_label: Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
+	health_bar.max_value = max_health
+	food_bar.max_value = max_food
 
 func update_health(x:int):
-	health_label.text = "HP: " + str(x) + "/" + str(max_health)
+	health_bar.value = x
+	health_label.text = tr("HEALTH_BAR_LABEL") + ": " + str(x) # + "/" + str(max_health)
 
 func update_food(x:int):
-	food_label.text = tr("FOOD") + ": " + str(x) + "/" + str(max_food)
+	food_bar.value = x
+	food_label.text = tr("FOOD_BAR_LABEL") + ": " + str(x) # + "/" + str(max_food)
 
 func update_wood(x:int):
-	wood_label.text = tr("WOOD") + ": " + str(x)
+	wood_label.text = str(x)
 
 func update_xp(x:int):
-	xp_label.text = "XP: " + str(x)
+	xp_label.text = str(x)

@@ -16,9 +16,13 @@ func init(atk, max_hp, food, wood, shield) -> void:
 		new_rect.size_flags_horizontal = SIZE_EXPAND_FILL
 		hp_bar.add_child(new_rect)
 	update_atk(atk)
+	
 	food_steal_icon.set_visible( food )
+	food_steal_icon.tooltip_text = "%s\n%s" % [tr("STEAL_FOOD"), tr("STEAL_FOOD_DESC")]
 	wood_steal_icon.set_visible( wood )
+	wood_steal_icon.tooltip_text = "%s\n%s" % [tr("STEAL_WOOD"), tr("STEAL_WOOD_DESC")]
 	shield_icon.set_visible( shield )
+	shield_icon.tooltip_text = "%s\n%s" % [tr("ENEMY_SHIELD"), tr("ENEMY_SHIELD_DESC")]
 
 func update_hp(x):
 	for i  in hp_bar.get_child_count():

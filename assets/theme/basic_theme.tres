@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=22 format=3 uid="uid://bionh2bhlri40"]
+[gd_resource type="Theme" load_steps=23 format=3 uid="uid://bionh2bhlri40"]
 
 [ext_resource type="Texture2D" uid="uid://brnsw1jnkors8" path="res://assets/theme/Bridge.png" id="1_ghjwu"]
 [ext_resource type="FontFile" uid="uid://bhign6v57q280" path="res://assets/theme/fonts/Helvetica-Bold.ttf" id="2_goq6r"]
@@ -137,6 +137,18 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gxbyp"]
+bg_color = Color(0, 0, 0, 0.752941)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(1, 1, 1, 1)
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+
 [resource]
 BrokenBridge/base_type = &"PanelContainer"
 BrokenBridge/styles/panel = SubResource("StyleBoxTexture_gw8pl")
@@ -177,4 +189,5 @@ SmallButton/styles/pressed = SubResource("StyleBoxFlat_3pjnb")
 Title/base_type = &"Label"
 Title/font_sizes/font_size = 128
 Title/fonts/font = ExtResource("4_b38xd")
+TooltipPanel/styles/panel = SubResource("StyleBoxFlat_gxbyp")
 VBoxContainer/constants/separation = 16

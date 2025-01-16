@@ -15,7 +15,8 @@ const offset_x = 100
 @onready var caravan_slots_container: Control = $CaravanSlots
 @onready var back_ground_music: AudioStreamPlayer = $BackGroundMusic
 
-@onready var road_label: Label = $RoadLabel
+@export var road_label: Label
+@export var road_progress_bar : ProgressBar
 @onready var animation_timer: Timer = $AnimationTimer
 @onready var blocker: Control = $Blocker
 
@@ -41,6 +42,7 @@ var freeze : bool
 func init(d : LevelData):
 	data = d
 	road = data.length_of_the_road
+	road_progress_bar.max_value = road
 	danger = data.starting_danger
 	danger_threshold = data.danger_threshold
 	danger_multiplier = 1.0
@@ -209,7 +211,8 @@ func solve_road_slots():
 
 func decrase_road(x):
 	road -= x
-	road_label.text = tr("DISTANCE") + ": " + str(road)
+	road_progress_bar.value = road_progress_bar.max_value - road
+	road_label.text = tr("DISTANCE_LABEL") + ": " + str(road)
 
 func next_level():
 	await wait_time(0.5)

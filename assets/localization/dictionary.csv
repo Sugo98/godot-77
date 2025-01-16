@@ -16,7 +16,7 @@ AUDIO_SETTINGS,Audio Settings,Impostazioni Audio
 MUSIC,Music,Musica
 CLOSE,Close,Chiudi
 RESET,Reset,Ripristina
-DISTANCE,Distance,Distanza
+DISTANCE_LABEL,Remaining,Rimanente
 SOLVE_TURN,Done,Fatto
 LANGUAGE_SETTINGS,Language Selection,Seleziona Lingua
 LANGUAGE,Language,Lingua
@@ -33,53 +33,69 @@ SHIELD ,Shield,Scudo
 SPIKES ,Spikes,Spine
 NOT_ENOUGH_WOOD,Not Enough Wood,Legno Insufficiente
 ALEMBIC_1,Alembic 1,Alambicco 1
-ALEMBIC_1_DESC,Reduces by 1 the attack of all monsters,Riduce di 1 l’attacco di tutti i mostri
+ALEMBIC_1_DESC,Reduces by 1 the attack of all Enemies,Riduce di 1 l’attacco di tutti i Nemici
 ALEMBIC_2,Alembic 2,Alambicco 2
-ALEMBIC_2_DESC,Reduces by 2 the attack of all monsters,Riduce di 2 l’attacco di tutti i mostri
+ALEMBIC_2_DESC,Reduces by 2 the attack of all Enemies,Riduce di 2 l’attacco di tutti i Nemici
 ANIMAL_COMPANION_1,Animal Companion 1,Compagno Animale 1
-ANIMAL_COMPANION_1_DESC,"Deals 1 damage and gathers 1 food, can be placed on a food slot","Infligge 1 danno e raccoglie 1 cibo, può essere piazzato in uno spazio cibo"
+ANIMAL_COMPANION_1_DESC,"Deals 1 damage and gathers 1 Food,
+can be also placed on a Food Slot","Infligge 1 danno e raccoglie 1 Cibo,
+può anche essere piazzato in uno Spazio Cibo"
 ANIMAL_COMPANION_2,Animal Companion 2,Compagno Animale 2
-ANIMAL_COMPANION_1_DESC,"Deals 2 damages and gathers 2 foods, can be placed on a food slot","Infligge 2 danni e raccoglie 2 cibi, può essere piazzato in uno spazio cibo"
+ANIMAL_COMPANION_1_DESC,"Deals 2 damages and gathers 2 Food,
+Can be also placed on a Food Slot","Infligge 2 danni e raccoglie 2 Cibo,
+Può anche essere piazzato in uno Spazio Cibo"
 CARROT_1,Carrot 1,Carota 1
-CARROT_1_DESC,Can be placed only in a wood space but gathers 1 additional food,Può essere piazzato solo in uno spazio legno ma raccoglie anche 1 cibo
+CARROT_1_DESC,"Can be placed only in a Wood Slot
+and gathers 1 Wood and 1 Food","Può essere piazzato solo in uno Spazio Legno
+e raccoglie 1 Legno e 1 Cibo"
 CARROT_2,Carrot 2,Carota 2
-CARROT_2_DESC,Can be placed only in a wood space but gathers 2 additional foods,Può essere piazzato solo in uno spazio legno ma raccoglie anche 2 cibi
+CARROT_2_DESC,"Can be placed only in a Wood Slot
+and gathers 2 Wood and 1 Food","Può essere piazzato solo in uno Spazio Legno
+e raccoglie 2 Legno e 1 Cibo"
 CLUB_1,Club 1,Mazza 1
-CLUB_1_DESC,Deals 1 damage and stuns enemies,Infligge 1 danno e stordisce i nemici
+CLUB_1_DESC,Deals 1 damage and stuns an Enemy,Infligge 1 danno e stordisce un Nemico
 CLUB_2,Club 2,Mazza 2
-CLUB_2_DESC,Deals 2 damages and stuns enemies,Infligge 2 danni e stordisce i nemici
-CUPCAKE_1,Cupcake 1,Muffin 1
-CUPCAKE_1_DESC,"Can be placed in any space, on the caravan counts as a shield","Può essere piazzato in qualsiasi spazio, sulla carovana conta come scudo"
-CUPCAKE_2,Cupcake 2,Muffin 2
-CUPCAKE_2_DESC,"Can be placed in any space, on the caravan counts as a shield","Può essere piazzato in qualsiasi spazio, sulla carovana conta come scudo"
+CLUB_2_DESC,Deals 2 damages and stuns an Enemy,Infligge 2 danni e stordisce un Nemico
+CUPCAKE_1,Cupcake 1,Dolcetto 1
+CUPCAKE_1_DESC,"Can be placed in any Slot,
+On the caravan counts as a Shield","Può essere piazzato in qualsiasi Spazio,
+Sulla Carovana conta come Scudo"
+CUPCAKE_2,Cupcake 2,Dolcetto 2
+CUPCAKE_2_DESC,"Can be placed in any Slot,
+On the caravan counts as a Shield","Può essere piazzato in qualsiasi Spazio,
+Sulla Carovana conta come Scudo"
 FIREBALL_1,Fireball 1,Palla di fuoco 1
-FIREBALL_1_DESC,Deals 1 damage to each enemy,Infligge 1 danno a tutti i nemici
+FIREBALL_1_DESC,Deals 1 damage to each Enemy,Infligge 1 danno a tutti i Nemici
 FIREBALL_2,Fireball 2,Palla di fuoco 2
-FIREBALL_2_DESC,Deals 2 damages to each enemy,Infligge 2 danni a tutti i nemici
+FIREBALL_2_DESC,Deals 2 damages to each Enemy,Infligge 2 danni a tutti i Nemici
 FOOD_1,Food 1,Legno 1
-FOOD_1_DESC,Gathers 1 food,Raccoglie 1 cibo
+FOOD_1_DESC,Gathers 1 Food,Raccoglie 1 Cibo
 FOOD_2,Food 2,Legno 2
-FOOD_2_DESC,Gathers 2 foods,Raccoglie 2 cibi
+FOOD_2_DESC,Gathers 2 Food,Raccoglie 2 Cibo
 FOOD_3,Food 3,Legno 3
-FOOD_3_DESC,Gathers 3 foods,Raccoglie 3 cibi
+FOOD_3_DESC,Gathers 3 Food,Raccoglie 3 Cibo
 FOOD_WOOD_1,Food / Wood 1,Cibo / Legno 1
-FOOD_WOOD_1_DESC,Can be used either as 1 food or as 1 wood,Può essere usato come 1 cibo o come 1 legno
+FOOD_WOOD_1_DESC,Can be used either as 1 Food or as 1 Wood,Può essere usato come 1 Cibo o come 1 Legno
 FOOD_WOOD_2,Food / Wood 2,Cibo / Legno 2
-FOOD_WOOD_2_DESC,Can be used either as 2 foods or as 2 woods,Può essere usato come 2 cibi o come 2 legni
+FOOD_WOOD_2_DESC,Can be used either as 2 Food or as 2 Wood,Può essere usato come 2 Cibo o come 2 Legno
 GEARS_1,Gears 1,Ingranaggi 1
-GEARS_1_DESC,Behaves as 1 wheel but discunts by 1 any wood cost,Si comporta come 1 ruota ma sconta di 1 ogni eventuale costo in legno
+GEARS_1_DESC,Behaves as 1 Wheel but discounts by 1 any Wood Cost,Si comporta come 1 Ruota ma sconta di 1 ogni eventuale Costo in Legno
 GEARS_2,Gears 2,Ingranaggi 2
-GEARS_2_DESC,Behaves as 2 wheels but discunts by 1 any wood cost,Si comporta come 2 ruot2 ma sconta di 1 ogni eventuale costo in legno
+GEARS_2_DESC,Behaves as 2 Wheels but discounts by 1 any Wood Cost,Si comporta come 2 Ruote ma sconta di 1 ogni eventuale Costo in Legno
 SHIELD_1,Shield 1,Scudo 1
-SHIELD_1_DESC,Protects from 1 damge,Protegge da 1 danno
+SHIELD_1_DESC,Protects from 1 damage this turn,Protegge da 1 danno questo turno
 SHIELD_2,Shield 2,Scudo 2
-SHIELD_2_DESC,Protects from 2 damges,protegge da 2 danni
+SHIELD_2_DESC,Protects from 2 damages this turn,protegge da 2 danni questo turno
 SHIELD_3,Shield 3,Scudo 3
-SHIELD_3_DESC,Protects from 3 damges,Protegge da 3 danni
+SHIELD_3_DESC,Protects from 3 damages this turn,Protegge da 3 danni questo turno
 SPIKES_1,Spikes 1,Spine 1
-SPIKES_1_DESC,Protects from 1 damge and deals 1 damage to the attacking enemy,Protegge da 1 danno e infligge 1 danno al mostro attaccante
+SPIKES_1_DESC,"Protects from 1 damage this turn
+and deals 1 damage to the each attacking Enemy","Protegge da 1 danno questo turno
+e infligge 1 danno ad ogni mostro attaccante"
 SPIKES_2,Spikes 2,Spine 2
-SPIKES_2_DESC,Protects from 2 damges and deals 2 damages to the attacking enemy,Protegge da 2 danni e infligge 2 danni al mostro attaccante
+SPIKES_2_DESC,"Protects from 2 damages this turn
+and deals 2 damages to the each attacking Enemy","Protegge da 2 danni questo turno
+e infligge 2 danni ad ogni mostro attaccante"
 SWORD_1,Sword 1,Spada 1
 SWORD_1_DESC,Deals 1 damage ,Infligge 1 danno 
 SWORD_2,Sword 2,Spada 2
@@ -87,18 +103,40 @@ SWORD_2_DESC,Deals 2 damages ,Infligge 2 danni
 SWORD_3,Sword 3,Spada 3
 SWORD_3_DESC,Deals 3 damages ,Infligge 3 danni
 SWORD_SHIELD_1,Sword / Shield 1,Spada / Scudo 1
-SWORD_SHIELD_1_DESC,Can be used either as 1 sword or as 1 shield,Può essere usato come 1 spada o come 1 scudo
+SWORD_SHIELD_1_DESC,Can be used either as 1 Sword or as 1 Shield,Può essere usato come 1 Spada o come 1 Scudo
 SWORD_SHIELD_2,Sword / Shield 2,Spada / Scudo 2
-SWORD_SHIELD_2_DESC,Can be used either as 2 swords or as 2 shields,Può essere usato come 2 spade o come 2 scudi
+SWORD_SHIELD_2_DESC,Can be used either as 2 Swords or as 2 Shields,Può essere usato come 2 Spade o come 2 Scudi
 ICE_WALL,Ice Wall,Muro di Ghiaccio
-ICE_WALL_DESC,"Blocks all attacks, enemies and allies","Blocca tutti gli attacchi, nemici e alleati"
+ICE_WALL_DESC,"Blocks all attacks, both enemies and allies","Blocca tutti gli attacchi, nemici e alleati"
 WHEEL_1,Wheel 1,Ruota 1
-WHEEL_1_DESC,Advances of 1 on the road or consume wood to repair the caravan,Avanza di 1 sulla strada o consuma legno per riparare la carovana
+WHEEL_1_DESC,"If placed on a Road Slot advances by 1
+If placed on a Caravan Slot it consume
+3 Wood to repair the Caravan by 1 Health Point","Se piazzata sulla strada avanza di 1
+Se piazzata sulla carovana consuma 3 Legno
+Per riparare la Carovana di 1 Punto Salute"
 WHEEL_2,Wheel 2,Ruota 2
-WHEEL_2_DESC,Advances of 2 on the road or consume wood to repair the caravan,Avanza di 2 sulla strada o consuma legno per riparare la carovana
+WHEEL_2_DESC,"If placed on a Road Slot advances by 2
+If placed on a Caravan Slot it consume
+3 Wood to repair the Caravan by 2 Health Point","Se piazzata sulla strada avanza di 2
+Se piazzata sulla carovana consuma 3 Legno
+Per riparare la Carovana di 2 Punto Salute"
 WOOD_1,Wood 1,Legno 1
-WOOD_1_DESC,Gathers 1 wood,Raccoglie 1 legno
+WOOD_1_DESC,Gathers 1 Wood,Raccoglie 1 Legno
 WOOD_2,Wood 2,Legno 2
-WOOD_2_DESC,Gathers 2 woods,Raccoglie 2 legni
+WOOD_2_DESC,Gathers 2 Wood,Raccoglie 2 Legno
 WOOD_3,Wood 3,Legno 3
-WOOD_3_DESC,Gathers 3 woods,Raccoglie 3 legni
+WOOD_3_DESC,Gathers 3 Wood,Raccoglie 3 Legno
+STEAL_FOOD,Food Thief,Ladro di Cibo
+STEAL_FOOD_DESC,"If this Enemy attack,
+It will steal you 1 Food","Se questo Nemico attacca,
+Ruba 1 Cibo"
+STEAL_WOOD,Wood Thief,Ladro di Legno
+STEAL_WOOD_DESC,"If this Enemy attack,
+It will steal you 1 Wood","Se questo Nemico attacca,
+Ruba 1 Legno"
+ENEMY_SHIELD,Shield,Scudo
+ENEMY_SHIELD_DESC,"This Enemy Ignore the
+first damage each turn","Questo Nemico ignora il
+primo danno di ogni turno"
+HEALTH_BAR_LABEL,Health,Salute
+FOOD_BAR_LABEL,Food,Cibo

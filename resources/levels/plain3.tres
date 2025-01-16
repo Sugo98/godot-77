@@ -1,7 +1,6 @@
-[gd_resource type="Resource" script_class="LevelData" load_steps=6 format=3 uid="uid://dpnw1nmfj80fk"]
+[gd_resource type="Resource" script_class="LevelData" load_steps=5 format=3 uid="uid://dpnw1nmfj80fk"]
 
 [ext_resource type="Script" path="res://resources/enemies/enemies_data.gd" id="1_j1vhv"]
-[ext_resource type="Texture2D" uid="uid://cugtgmme47bro" path="res://assets/background/DEBUG_BG.png" id="1_ocoys"]
 [ext_resource type="Resource" uid="uid://drxka0jtjtgqw" path="res://resources/enemies/dragon.tres" id="3_udxhi"]
 [ext_resource type="Script" path="res://resources/levels/level_data.gd" id="4_umx4s"]
 [ext_resource type="AudioStream" uid="uid://boppptxo32qo2" path="res://assets/music/Town_-_Enchanted_Village.ogg" id="5_emswa"]
@@ -10,7 +9,6 @@
 script = ExtResource("4_umx4s")
 name = "Plain 1"
 description = ""
-back_ground_texture = ExtResource("1_ocoys")
 length_of_the_road = 0
 boss_level = true
 enemy = Array[ExtResource("1_j1vhv")]([])
