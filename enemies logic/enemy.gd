@@ -27,7 +27,7 @@ func _ready():
 	tween = create_tween()
 	update_label()
 	eneter_animation()
-	ui.init(data.attack, data.max_hp)
+	ui.init(data.attack, data.max_hp, data.steal_food, data.steal_wood, data.shield)
 	if data.size > 0:
 		ui.position.y -= 100
 		

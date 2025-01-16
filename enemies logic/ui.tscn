@@ -1,15 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://dohoy271usm4w"]
+[gd_scene load_steps=7 format=3 uid="uid://dohoy271usm4w"]
 
 [ext_resource type="Script" path="res://enemies logic/enemy_ui.gd" id="1_yr1xw"]
 [ext_resource type="Theme" uid="uid://ch3snagd0dl8g" path="res://assets/theme/ui_theme.tres" id="2_q05r2"]
 [ext_resource type="Texture2D" uid="uid://c3pxqdn77puke" path="res://assets/theme/sword.png" id="3_jn8y2"]
+[ext_resource type="Texture2D" uid="uid://bkk8bg4o6mop7" path="res://assets/theme/food.png" id="4_r7q0e"]
+[ext_resource type="Texture2D" uid="uid://cfabqc87cgph0" path="res://assets/theme/wood.png" id="5_h0xa2"]
+[ext_resource type="Texture2D" uid="uid://bm4qncu1sej5q" path="res://assets/theme/shield.png" id="6_8qsdx"]
 
-[node name="UI" type="Control" node_paths=PackedStringArray("hp_bar", "attack_label")]
+[node name="UI" type="Control" node_paths=PackedStringArray("hp_bar", "attack_label", "food_steal_icon", "wood_steal_icon", "shield_icon")]
 layout_mode = 3
 anchors_preset = 0
+offset_left = 1.0
+offset_top = -3.0
+offset_right = 1.0
+offset_bottom = -3.0
 script = ExtResource("1_yr1xw")
 hp_bar = NodePath("HP/HpBar")
-attack_label = NodePath("PanelContainer/MarginContainer/HBoxContainer/AttackLabel")
+attack_label = NodePath("HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/AttackLabel")
+food_steal_icon = NodePath("HBoxContainer/FoodSteal")
+wood_steal_icon = NodePath("HBoxContainer/WoodSteal")
+shield_icon = NodePath("HBoxContainer/Shield")
 
 [node name="HP" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(80, 0)
@@ -32,32 +42,37 @@ layout_mode = 2
 theme = ExtResource("2_q05r2")
 alignment = 1
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -35.0
-offset_top = -47.0
-offset_right = 39.0
+offset_left = -36.0
+offset_top = -53.0
+offset_right = 37.0
+offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_constants/separation = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
 theme = ExtResource("2_q05r2")
 theme_type_variation = &"AtkPanel"
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/PanelContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/PanelContainer/MarginContainer/HBoxContainer"]
 modulate = Color(0.2, 0.0823529, 0.0823529, 1)
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
@@ -65,7 +80,7 @@ texture = ExtResource("3_jn8y2")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="AttackLabel" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer"]
+[node name="AttackLabel" type="Label" parent="HBoxContainer/PanelContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_q05r2")
@@ -73,3 +88,57 @@ theme_override_font_sizes/font_size = 30
 text = ": 1"
 horizontal_alignment = 1
 vertical_alignment = 2
+
+[node name="FoodSteal" type="PanelContainer" parent="HBoxContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("2_q05r2")
+theme_type_variation = &"AtkPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/FoodSteal"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/FoodSteal/MarginContainer"]
+modulate = Color(0.2, 0.0823529, 0.0823529, 1)
+layout_mode = 2
+texture = ExtResource("4_r7q0e")
+
+[node name="WoodSteal" type="PanelContainer" parent="HBoxContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("2_q05r2")
+theme_type_variation = &"AtkPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/WoodSteal"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/WoodSteal/MarginContainer"]
+modulate = Color(0.2, 0.0823529, 0.0823529, 1)
+layout_mode = 2
+texture = ExtResource("5_h0xa2")
+
+[node name="Shield" type="PanelContainer" parent="HBoxContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("2_q05r2")
+theme_type_variation = &"DefPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Shield"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Shield/MarginContainer"]
+modulate = Color(0.0470588, 0.0980392, 0.145098, 1)
+layout_mode = 2
+texture = ExtResource("6_8qsdx")
