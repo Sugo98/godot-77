@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="LevelData" load_steps=5 format=3 uid="uid://c5psbamdgasq7"]
 
 [ext_resource type="Script" path="res://resources/enemies/enemies_data.gd" id="1_5jvxm"]
-[ext_resource type="Resource" uid="uid://dncssya7ud4yx" path="res://resources/enemies/troll.tres" id="2_k7cio"]
+[ext_resource type="Resource" uid="uid://dncssya7ud4yx" path="res://resources/enemies/kingfroggo.tres" id="2_k7cio"]
 [ext_resource type="Script" path="res://resources/levels/level_data.gd" id="4_uiqia"]
 [ext_resource type="AudioStream" uid="uid://boppptxo32qo2" path="res://assets/music/Town_-_Enchanted_Village.ogg" id="5_cbdn5"]
 

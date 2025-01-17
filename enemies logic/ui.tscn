@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dohoy271usm4w"]
+[gd_scene load_steps=8 format=3 uid="uid://dohoy271usm4w"]
 
 [ext_resource type="Script" path="res://enemies logic/enemy_ui.gd" id="1_yr1xw"]
 [ext_resource type="Theme" uid="uid://ch3snagd0dl8g" path="res://assets/theme/ui_theme.tres" id="2_q05r2"]
@@ -6,6 +6,20 @@
 [ext_resource type="Texture2D" uid="uid://bkk8bg4o6mop7" path="res://assets/theme/food.png" id="4_r7q0e"]
 [ext_resource type="Texture2D" uid="uid://cfabqc87cgph0" path="res://assets/theme/wood.png" id="5_h0xa2"]
 [ext_resource type="Texture2D" uid="uid://bm4qncu1sej5q" path="res://assets/theme/shield.png" id="6_8qsdx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_doopy"]
+bg_color = Color(0.0627451, 0.160784, 0.152941, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.0627451, 0.160784, 0.152941, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 8.0
+expand_margin_right = 8.0
 
 [node name="UI" type="Control" node_paths=PackedStringArray("hp_bar", "attack_label", "food_steal_icon", "wood_steal_icon", "shield_icon")]
 layout_mode = 3
@@ -36,6 +50,7 @@ offset_bottom = -58.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("2_q05r2")
+theme_override_styles/panel = SubResource("StyleBoxFlat_doopy")
 
 [node name="HpBar" type="HBoxContainer" parent="HP"]
 layout_mode = 2

@@ -38,11 +38,13 @@ func parse_heroes():
 		heroes.append(hero as Dice)
 
 func prepare_for_level():
+	heroes_ui.position = Vector2(650,50)
 	for hero in heroes:
 		hero.prepare_for_level()
 	caravan.new_level()
 
 func prepare_for_merchant():
+	heroes_ui.position = Vector2(1000,50)
 	for hero in heroes:
 		hero.prepare_for_merchant()
 	caravan.hide()

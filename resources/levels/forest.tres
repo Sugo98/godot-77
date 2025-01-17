@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://resources/enemies/enemies_data.gd" id="1_0onpo"]
 [ext_resource type="Script" path="res://resources/levels/level_data.gd" id="1_rqwrv"]
 [ext_resource type="Resource" uid="uid://delt0qchgjv4n" path="res://resources/enemies/wolf.tres" id="2_abe1t"]
-[ext_resource type="Resource" uid="uid://dvgh36dfckm3n" path="res://resources/enemies/pbm1.tres" id="2_gpb6o"]
+[ext_resource type="Resource" uid="uid://dvgh36dfckm3n" path="res://resources/enemies/frog.tres" id="2_gpb6o"]
 [ext_resource type="Resource" uid="uid://dk8nkp1gblgwu" path="res://resources/enemies/bat.tres" id="3_vatw8"]
 
 [resource]

@@ -82,7 +82,7 @@ func show_slots():
 		road_slots_container.hide()
 		road_progress_bar.hide()
 		enemy_slots_container.position += Vector2.DOWN * 150
-		enemy_pivots_container.position += Vector2.DOWN * 100
+		enemy_pivots_container.position += Vector2.DOWN * 75
 
 func fill_array():
 	enemy_slots = parse_slots(enemy_slots_container)
@@ -264,12 +264,13 @@ func spawn_big_enemy(enemy_data : EnemyData):
 	var new_enemy : Enemy = enemy_scene.instantiate()
 	new_enemy.init(enemy_data)
 	var size = enemy_data.size
-	enemy_pivots[0].add_child(new_enemy)
+	var x0 = 1 if size == 1 else 0
+	enemy_pivots[x0].add_child(new_enemy)
 	new_enemy.reset_turn()
 	for i in range(size+1):
-		enemy_slots[i].show()
-		new_enemy.dice_slots.append(enemy_slots[i])
-		active_enemies[ enemy_slots[i] ] = new_enemy
+		enemy_slots[i+x0].show()
+		new_enemy.dice_slots.append(enemy_slots[i+x0])
+		active_enemies[ enemy_slots[i+x0] ] = new_enemy
 	new_enemy.position.x += offset_x * size
 	await wait_time(t)
 	return
@@ -397,6 +398,7 @@ func set_basic_wait_time():
 		active_enemies[slot].t = t
 
 func clear_ui():
+	set_basic_wait_time()
 	var tween = create_tween().set_parallel(true)
 	tween.tween_property(enemy_slots_container, "modulate:a", 0, t)
 	tween.tween_property(wood_slots_container, "modulate:a", 0, t)

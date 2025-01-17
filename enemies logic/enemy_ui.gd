@@ -27,7 +27,7 @@ func init(atk, max_hp, food, wood, shield) -> void:
 func update_hp(x):
 	for i  in hp_bar.get_child_count():
 		var rect = hp_bar.get_child(i)
-		rect.color = Global.luigi_green_light if i < x else Global.luigi_red_light 
+		rect.color = Global.luigi_green_light if i < x else Global.luigi_green_dark 
 	pass
 
 func update_atk(x):

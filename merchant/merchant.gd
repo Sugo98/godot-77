@@ -1,10 +1,10 @@
 class_name Merchant extends Control
 
-@onready var market_slots: Control = $MerchantSlots
-@onready var prices_labels: Control = $Prices
-@onready var balance_label: Label = $Balance
+@export var market_slots: Array[DiceSlot]
+@export var prices_labels: Array[Label]
+@export var balance_label: Label
 @export var confirm_button: Button
-@onready var background_music: AudioStreamPlayer = $BackgroundMusic
+@export var background_music: AudioStreamPlayer
 
 @export var star_texture : Texture
 @onready var night_sky: Node2D = $NightSky
@@ -22,7 +22,7 @@ func init(d : MerchantData):
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	for i in range(market_slots.get_child_count()):
+	for i in range(market_slots.size()):
 		var new_face = DiceFace.new()
 		var is_a_duplicate := true
 		var face_data : FaceData
@@ -31,7 +31,7 @@ func _ready() -> void:
 			is_a_duplicate = check_if_is_a_duplicate(face_data)
 		new_face.init(face_data)
 		selling_faces.append(new_face)
-		market_slots.get_child(i).shopkeeper = self
+		market_slots[i].shopkeeper = self
 	shopping_is_ended = false
 	background_music.play()
 	create_night_sky()
@@ -43,12 +43,12 @@ func check_if_is_a_duplicate(face_data : FaceData) -> bool:
 	return false
 
 func reset_market():
-	for i in range(market_slots.get_child_count()):
+	for i in range(market_slots.size()):
 		if not selling_faces[i].is_inside_tree():
-			market_slots.get_child(i).add_child(selling_faces[i])
-		selling_faces[i].reparent(market_slots.get_child(i))
+			market_slots[i].add_child(selling_faces[i])
+		selling_faces[i].reparent(market_slots[i])
 		selling_faces[i].draggable = true
-		prices_labels.get_child(i).text = "XP: " + str(selling_faces[i].data.xp_cost) 
+		prices_labels[i].text = str(selling_faces[i].data.xp_cost) 
 	
 	heroes_manager.prepare_for_merchant()
 	balance = 0
@@ -69,7 +69,7 @@ func update_balance():
 	if not confirm_button:
 		return
 	confirm_button.disabled = balance > heroes_manager.xp
-	balance_label.text = tr("BALANCE") + ": " + str(balance)
+	balance_label.text = tr("TOTAL_COST") + ": " + str(balance)
 
 func create_night_sky():
 	for i in range(400):
