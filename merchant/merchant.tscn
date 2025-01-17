@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://btf6snukdg0gw"]
+[gd_scene load_steps=15 format=3 uid="uid://btf6snukdg0gw"]
 
 [ext_resource type="Script" path="res://merchant/merchant.gd" id="1_67ih7"]
 [ext_resource type="Texture2D" uid="uid://bc24ducsvaw7f" path="res://assets/heroes/dadomante DEF.png" id="2_2g250"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://b7dhfmnidc1gy" path="res://assets/music/merchant.ogg" id="6_vryq3"]
 [ext_resource type="Texture2D" uid="uid://hy8qtfxwacq0" path="res://assets/theme/xp.png" id="7_lx3xv"]
 [ext_resource type="Theme" uid="uid://ch3snagd0dl8g" path="res://assets/theme/ui_theme.tres" id="8_huipa"]
+[ext_resource type="Texture2D" uid="uid://b4sqdmmpp5vlg" path="res://assets/theme/shadow2.png" id="10_ikdg1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v5xcl"]
 bg_color = Color(1, 1, 1, 0.12549)
@@ -42,7 +43,7 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
-[node name="Merchant" type="Control" node_paths=PackedStringArray("market_slots", "prices_labels", "balance_label", "confirm_button", "background_music")]
+[node name="Merchant" type="Control" node_paths=PackedStringArray("market_slots", "prices_labels", "balance_label", "confirm_button", "background_music", "shadow", "fader", "blocker")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -56,7 +57,12 @@ prices_labels = [NodePath("MerchantSlots/FaceContainer/Cost1/MarginContainer/HBo
 balance_label = NodePath("TotalCost/MarginContainer/HBoxContainer/TotalCost")
 confirm_button = NodePath("Panel/HBoxContainer/Confirm")
 background_music = NodePath("BackgroundMusic")
+shadow = NodePath("Shadow")
+fader = NodePath("Fader")
+blocker = NodePath("Blocker")
 star_texture = ExtResource("2_tn6wo")
+roll_offset = 50.0
+roll_time = 1.0
 
 [node name="NightSky" type="Node2D" parent="."]
 
@@ -327,6 +333,7 @@ border_width = 10.0
 metadata/_edit_lock_ = true
 
 [node name="Panel" type="PanelContainer" parent="."]
+z_index = 10
 layout_mode = 2
 offset_left = 1342.0
 offset_top = 937.0
@@ -384,6 +391,29 @@ theme_override_colors/font_color = Color(0.227451, 0.498039, 0.733333, 1)
 theme_override_font_sizes/font_size = 50
 text = "Total:  20"
 horizontal_alignment = 1
+
+[node name="Fader" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+z_index = 10
+scale = Vector2(1920, 1080)
+texture = ExtResource("3_uxtmc")
+centered = false
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.752941)
+z_index = 5
+position = Vector2(960, 540)
+scale = Vector2(1.956, 1.1)
+texture = ExtResource("10_ikdg1")
+
+[node name="Blocker" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [connection signal="child_order_changed" from="MerchantSlots/FaceContainer/PanelContainer" to="MerchantSlots/FaceContainer/PanelContainer" method="face_leaves"]
 [connection signal="child_order_changed" from="MerchantSlots/FaceContainer2/PanelContainer2" to="MerchantSlots/FaceContainer2/PanelContainer2" method="face_leaves"]

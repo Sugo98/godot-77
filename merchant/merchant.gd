@@ -5,9 +5,16 @@ class_name Merchant extends Control
 @export var balance_label: Label
 @export var confirm_button: Button
 @export var background_music: AudioStreamPlayer
+@export var shadow : Sprite2D
+@export var fader : Sprite2D
+@export var blocker : Control
 
 @export var star_texture : Texture
 @onready var night_sky: Node2D = $NightSky
+
+@export_category("Rolling Around")
+@export var roll_offset : float
+@export var roll_time : float
 
 var game_manager : GameManager
 var heroes_manager : HeroesManager
@@ -35,7 +42,9 @@ func _ready() -> void:
 	shopping_is_ended = false
 	start_back_ground_music()
 	create_night_sky()
+	fade_in()
 	reset_market()
+	roll_around()
 
 func check_if_is_a_duplicate(face_data : FaceData) -> bool:
 	for face in selling_faces:
@@ -55,7 +64,9 @@ func reset_market():
 	update_balance()
 
 func _on_confirm_pressed() -> void:
+	blocker.show()
 	shopping_is_ended = true
+	await fade_out()
 	heroes_manager.after_shopping(balance)
 	game_manager.go_to_next_level()
 
@@ -92,3 +103,33 @@ func start_back_ground_music():
 	var tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
 	tween.tween_property(background_music, "volume_db", 0, 1)
 	background_music.play()
+
+func fade_in():
+	var tween = create_tween()
+	tween.tween_property(fader, "modulate:a", 0, Utils.basic_wait_time)
+
+func fade_out():
+	var tween = create_tween()
+	tween.tween_property(fader, "modulate:a", 1, Utils.basic_wait_time)
+	await tween.finished
+	await get_tree().create_timer(Utils.basic_wait_time/4).timeout
+
+func roll_around():
+	roll_around_x()
+	roll_around_y()
+
+func roll_around_x():
+	while(true):
+		var new_offset = randf_range(-roll_offset,roll_offset)
+		var time = randf_range(0.7,1)
+		var tween = create_tween().set_trans(Tween.TRANS_QUAD)
+		tween.tween_property(shadow, "offset:x", new_offset, time)
+		await tween.finished
+		
+func roll_around_y():
+	while(true):
+		var new_offset = randf_range(-roll_offset,roll_offset)
+		var time = randf_range(0.7,1)
+		var tween = create_tween().set_trans(Tween.TRANS_QUAD)
+		tween.tween_property(shadow, "offset:y", new_offset, time)
+		await tween.finished
