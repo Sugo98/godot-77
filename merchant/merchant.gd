@@ -3,7 +3,7 @@ class_name Merchant extends Control
 @onready var market_slots: Control = $MerchantSlots
 @onready var prices_labels: Control = $Prices
 @onready var balance_label: Label = $Balance
-@onready var confirm_button: Button = $Confirm
+@export var confirm_button: Button
 @onready var background_music: AudioStreamPlayer = $BackgroundMusic
 
 @export var star_texture : Texture

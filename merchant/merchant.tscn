@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://btf6snukdg0gw"]
+[gd_scene load_steps=11 format=3 uid="uid://btf6snukdg0gw"]
 
 [ext_resource type="Script" path="res://merchant/merchant.gd" id="1_67ih7"]
 [ext_resource type="Texture2D" uid="uid://bc24ducsvaw7f" path="res://assets/heroes/dadomante DEF.png" id="2_2g250"]
@@ -14,7 +14,21 @@ border_width_right = 128
 border_color = Color(1, 1, 1, 0)
 border_blend = true
 
-[node name="Merchant" type="Control"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nt16i"]
+bg_color = Color(1, 0.901961, 0.427451, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vysbi"]
+bg_color = Color(0.227451, 0.498039, 0.733333, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="Merchant" type="Control" node_paths=PackedStringArray("confirm_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,6 +37,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_67ih7")
+confirm_button = NodePath("Panel/HBoxContainer/Confirm")
 star_texture = ExtResource("2_hpy1a")
 
 [node name="NightSky" type="Node2D" parent="."]
@@ -183,37 +198,28 @@ offset_right = 960.0
 offset_bottom = 1080.0
 border_width = 10.0
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -614.0
-offset_top = -179.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_constants/margin_left = 36
-theme_override_constants/margin_top = 36
-theme_override_constants/margin_right = 36
-theme_override_constants/margin_bottom = 36
+[node name="Panel" type="PanelContainer" parent="."]
+layout_mode = 2
+offset_left = 1342.0
+offset_top = 937.0
+offset_right = 1884.0
+offset_bottom = 1044.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
 layout_mode = 2
 
-[node name="Reset" type="Button" parent="MarginContainer/HBoxContainer"]
+[node name="Reset" type="Button" parent="Panel/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("5_kegug")
 theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_nt16i")
 text = "Reset"
 
-[node name="Confirm" type="Button" parent="MarginContainer/HBoxContainer"]
+[node name="Confirm" type="Button" parent="Panel/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("5_kegug")
 theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_vysbi")
 text = "Confirm"
 
 [connection signal="child_order_changed" from="MerchantSlots/PanelContainer" to="MerchantSlots/PanelContainer" method="face_leaves"]
@@ -221,5 +227,5 @@ text = "Confirm"
 [connection signal="child_order_changed" from="MerchantSlots/PanelContainer3" to="MerchantSlots/PanelContainer3" method="face_leaves"]
 [connection signal="child_order_changed" from="MerchantSlots/PanelContainer4" to="MerchantSlots/PanelContainer4" method="face_leaves"]
 [connection signal="child_order_changed" from="MerchantSlots/PanelContainer5" to="MerchantSlots/PanelContainer5" method="face_leaves"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/Reset" to="." method="reset_market"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/Confirm" to="." method="_on_confirm_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/Reset" to="." method="reset_market"]
+[connection signal="pressed" from="Panel/HBoxContainer/Confirm" to="." method="_on_confirm_pressed"]

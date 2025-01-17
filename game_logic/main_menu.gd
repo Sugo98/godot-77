@@ -113,14 +113,14 @@ func _on_it_lan_pressed() -> void:
 
 func _on_slow_animation_pressed() -> void:
 	Utils.basic_wait_time = Global.slow_animation_time
-	animation_buttons["slow"].theme_type_variation = ""
+	animation_buttons["slow"].theme_type_variation = "SmallButton"
 	animation_buttons["medium"].theme_type_variation = "Inactive"
 	animation_buttons["fast"].theme_type_variation = "Inactive"
 
 func _on_medium_animation_pressed() -> void:
 	Utils.basic_wait_time = Global.medium_animation_time
 	animation_buttons["slow"].theme_type_variation = "Inactive"
-	animation_buttons["medium"].theme_type_variation = ""
+	animation_buttons["medium"].theme_type_variation = "SmallButton"
 	animation_buttons["fast"].theme_type_variation = "Inactive"
 
 
@@ -128,7 +128,7 @@ func _on_fast_animation_pressed() -> void:
 	Utils.basic_wait_time = Global.fast_animation_time
 	animation_buttons["slow"].theme_type_variation = "Inactive"
 	animation_buttons["medium"].theme_type_variation = "Inactive"
-	animation_buttons["fast"].theme_type_variation = ""
+	animation_buttons["fast"].theme_type_variation = "SmallButton"
 
 func _on_sfx_pressed() -> void:
 	sfx_stream_player.play()

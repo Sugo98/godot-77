@@ -1,10 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://tkb6vimwhpij"]
+[gd_scene load_steps=9 format=3 uid="uid://tkb6vimwhpij"]
 
 [ext_resource type="Script" path="res://game_logic/basic_level_logic.gd" id="1_n52b6"]
 [ext_resource type="PackedScene" uid="uid://yvwkwgojt1ab" path="res://enemies logic/enemy.tscn" id="2_beh15"]
 [ext_resource type="Script" path="res://dice_logic/dice_slot.gd" id="2_ghtwx"]
 [ext_resource type="Theme" uid="uid://ypak5t8xrvk8" path="res://assets/theme/slot_dice.tres" id="3_nj3nf"]
 [ext_resource type="Theme" uid="uid://ch3snagd0dl8g" path="res://assets/theme/ui_theme.tres" id="6_tdu6w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dpa7i"]
+bg_color = Color(0.227451, 0.498039, 0.733333, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_blnkl"]
 bg_color = Color(0.2, 0.180392, 0.0862745, 1)
@@ -321,6 +328,7 @@ offset_bottom = 1044.0
 [node name="SolveTurn" type="Button" parent="PanelContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxFlat_dpa7i")
 text = "SOLVE_TURN"
 clip_text = true
 

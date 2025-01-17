@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c5mfo6eaopvch"]
+[gd_scene load_steps=19 format=3 uid="uid://c5mfo6eaopvch"]
 
 [ext_resource type="Script" path="res://game_logic/main_menu.gd" id="1_m3nt4"]
 [ext_resource type="Theme" uid="uid://bionh2bhlri40" path="res://assets/theme/basic_theme.tres" id="2_dlwf6"]
@@ -6,6 +6,90 @@
 [ext_resource type="Texture2D" uid="uid://cbnogbts0wqhf" path="res://assets/theme/Play.png" id="3_76h3j"]
 [ext_resource type="AudioStream" uid="uid://cmvpunesy6b3t" path="res://assets/sound fx/hitHurt.wav" id="3_wk7ht"]
 [ext_resource type="Texture2D" uid="uid://bu4lgl2lvjrin" path="res://assets/theme/Pause.png" id="5_xggq4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_le8wn"]
+bg_color = Color(0.227451, 0.498039, 0.733333, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yymnn"]
+bg_color = Color(1, 0.901961, 0.427451, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y05g8"]
+bg_color = Color(1, 0.901961, 0.427451, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a8wku"]
+bg_color = Color(1, 0.419608, 0.419608, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ugyyt"]
+bg_color = Color(0.309804, 0.803922, 0.768627, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_saxc3"]
+bg_color = Color(1, 0.901961, 0.427451, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j1w7f"]
+bg_color = Color(1, 0.419608, 0.419608, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_offha"]
+bg_color = Color(0.227451, 0.498039, 0.733333, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wonup"]
+bg_color = Color(1, 0.419608, 0.419608, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fmrak"]
+bg_color = Color(0.309804, 0.803922, 0.768627, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_emsq7"]
+bg_color = Color(0.227451, 0.498039, 0.733333, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6qll"]
+bg_color = Color(1, 0.901961, 0.427451, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [node name="MainMenu" type="Control" node_paths=PackedStringArray("title", "game_menu", "settings_menu", "pause_menu", "pause_button", "music_stream_player", "sfx_stream_player", "blocker")]
 z_index = 10
@@ -63,6 +147,7 @@ custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 theme = ExtResource("2_dlwf6")
 theme_type_variation = &"MainMenuButton"
+theme_override_styles/hover = SubResource("StyleBoxFlat_le8wn")
 text = "START_GAME"
 
 [node name="Option" type="Button" parent="GameMenu/Game Menu"]
@@ -70,6 +155,7 @@ custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 theme = ExtResource("2_dlwf6")
 theme_type_variation = &"MainMenuButton"
+theme_override_styles/hover = SubResource("StyleBoxFlat_yymnn")
 text = "SETTINGS_UPP"
 
 [node name="PauseMenu" type="PanelContainer" parent="."]
@@ -88,6 +174,7 @@ custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 theme = ExtResource("2_dlwf6")
 theme_type_variation = &"MainMenuButton"
+theme_override_styles/hover = SubResource("StyleBoxFlat_le8wn")
 text = "RESUME_GAME"
 
 [node name="Option" type="Button" parent="PauseMenu/Game Menu"]
@@ -95,6 +182,7 @@ custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 theme = ExtResource("2_dlwf6")
 theme_type_variation = &"MainMenuButton"
+theme_override_styles/hover = SubResource("StyleBoxFlat_y05g8")
 text = "SETTINGS_UPP"
 
 [node name="QuitGame" type="Button" parent="PauseMenu/Game Menu"]
@@ -102,6 +190,7 @@ custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 theme = ExtResource("2_dlwf6")
 theme_type_variation = &"MainMenuButton"
+theme_override_styles/hover = SubResource("StyleBoxFlat_a8wku")
 text = "QUIT_GAME"
 
 [node name="SettingMenu" type="PanelContainer" parent="."]
@@ -130,6 +219,7 @@ horizontal_alignment = 1
 
 [node name="GameSettings" type="MarginContainer" parent="SettingMenu/Settings Menu"]
 layout_mode = 2
+theme = ExtResource("2_dlwf6")
 
 [node name="GameSetting" type="VBoxContainer" parent="SettingMenu/Settings Menu/GameSettings"]
 layout_mode = 2
@@ -160,21 +250,27 @@ size_flags_stretch_ratio = 3.0
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+theme_type_variation = &"SmallButton"
 theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxFlat_ugyyt")
 text = "SLOW"
 
 [node name="MediumAnimation" type="Button" parent="SettingMenu/Settings Menu/GameSettings/GameSetting/HBoxContainer/PanelContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+theme_type_variation = &"SmallButton"
 theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxFlat_saxc3")
 text = "MEDIUM"
 
 [node name="FastAnimation" type="Button" parent="SettingMenu/Settings Menu/GameSettings/GameSetting/HBoxContainer/PanelContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+theme_type_variation = &"SmallButton"
 theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxFlat_j1w7f")
 text = "FAST"
 
 [node name="AudioSettings" type="MarginContainer" parent="SettingMenu/Settings Menu"]
@@ -245,6 +341,7 @@ theme = ExtResource("2_dlwf6")
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"SmallButton"
+theme_override_styles/hover = SubResource("StyleBoxFlat_offha")
 text = "SFX"
 
 [node name="SFXSlider" type="HSlider" parent="SettingMenu/Settings Menu/AudioSettings/AudioSetting/HBoxContainer3"]
@@ -290,14 +387,18 @@ size_flags_stretch_ratio = 3.0
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_type_variation = &"SmallButton"
 theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxFlat_wonup")
 text = "ENGLISH"
 
 [node name="Settings Menu_LanguageSection#IT_lan" type="Button" parent="SettingMenu/Settings Menu/Language/VBoxContainer/HBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_type_variation = &"SmallButton"
 theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxFlat_fmrak")
 text = "ITALIAN"
 
 [node name="CloseButtons" type="MarginContainer" parent="SettingMenu/Settings Menu"]
@@ -317,7 +418,9 @@ custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_dlwf6")
+theme_type_variation = &"SmallButton"
 theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxFlat_emsq7")
 text = "CLOSE"
 
 [node name="Reset" type="Button" parent="SettingMenu/Settings Menu/CloseButtons/HBoxContainer"]
@@ -325,7 +428,9 @@ custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_dlwf6")
+theme_type_variation = &"SmallButton"
 theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxFlat_i6qll")
 text = "RESET"
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
@@ -354,6 +459,7 @@ grow_vertical = 0
 [node name="PauseButton" type="Button" parent="PauseButton"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_a8wku")
 icon = ExtResource("5_xggq4")
 icon_alignment = 1
 expand_icon = true
