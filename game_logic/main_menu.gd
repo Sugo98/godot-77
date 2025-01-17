@@ -8,7 +8,7 @@ var game_manager : GameManager
 @export var pause_menu : PanelContainer
 @export var pause_button : PanelContainer
 @export var music_stream_player: AudioStreamPlayer
-@export var sfx_stream_player : AudioStreamPlayer
+@export var sfx_stream : Array[AudioStreamPlayer]
 @export var blocker : ColorRect
 @export var caravan : Node2D
 
@@ -36,9 +36,9 @@ func _ready() -> void:
 	default_volume()
 
 func default_volume() -> void:
-	%MasterSlider.value = 0.01
-	%MusicSlider.value = 1
-	%SFXSlider.value = 1
+	%MasterSlider.value = 0.75
+	%MusicSlider.value = 0.75
+	%SFXSlider.value = 0.75
 
 func prepare_main_menu() :
 	pause = false
@@ -106,9 +106,8 @@ func _on_close_pressed() -> void:
 
 
 func _on_reset_pressed() -> void:
-	%MasterSlider.value = 1
-	%MusicSlider.value = 1
-	%SFXSlider.value = 1
+	default_volume()
+	_on_slow_animation_pressed()
 
 func _on_en_lan_pressed() -> void:
 	TranslationServer.set_locale("en")
@@ -136,7 +135,7 @@ func _on_fast_animation_pressed() -> void:
 	animation_buttons["fast"].theme_type_variation = "SmallButton"
 
 func _on_sfx_pressed() -> void:
-	sfx_stream_player.play()
+	sfx_stream[randi_range(0,sfx_stream.size()-1)].play()
 
 
 func _on_pause_button_pressed() -> void:

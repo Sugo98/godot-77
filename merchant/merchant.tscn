@@ -352,6 +352,7 @@ text = "CONFIRM"
 
 [node name="TotalCost" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(300, 90)
+layout_mode = 0
 offset_left = 1000.0
 offset_top = 300.0
 offset_right = 1316.0

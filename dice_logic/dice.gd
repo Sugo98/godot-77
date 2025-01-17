@@ -49,6 +49,7 @@ func _process(_delta: float) -> void:
 func free_all_slots():
 	for face in faces:
 		face.show()
+		face.modulate = Color.WHITE
 		var parent = face.get_parent()
 		if parent:
 			parent.remove_child(face)

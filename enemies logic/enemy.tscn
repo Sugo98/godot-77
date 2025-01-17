@@ -1,16 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://yvwkwgojt1ab"]
+[gd_scene load_steps=7 format=3 uid="uid://yvwkwgojt1ab"]
 
 [ext_resource type="PackedScene" uid="uid://dohoy271usm4w" path="res://enemies logic/ui.tscn" id="2_o6w53"]
 [ext_resource type="Script" path="res://enemies logic/enemy.gd" id="2_xixe7"]
-[ext_resource type="AudioStream" uid="uid://cmvpunesy6b3t" path="res://assets/sound fx/hitHurt.wav" id="3_nsnlr"]
+[ext_resource type="AudioStream" uid="uid://djw7tpomki4ui" path="res://assets/sound fx/Punch 2_2.wav" id="3_v8i4x"]
+[ext_resource type="AudioStream" uid="uid://cwvj1ei5tt7tc" path="res://assets/sound fx/Sword Swing 8_1.wav" id="4_5ldaa"]
+[ext_resource type="AudioStream" uid="uid://c8s4tnc641ptg" path="res://assets/sound fx/Stab 1_2.wav" id="6_exjd0"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_h7076"]
 
-[node name="Enemy" type="Node2D" node_paths=PackedStringArray("ui", "sprite2D", "attack_sfx")]
+[node name="Enemy" type="Node2D" node_paths=PackedStringArray("ui", "sprite2D", "sounds")]
 script = ExtResource("2_xixe7")
 ui = NodePath("UI")
 sprite2D = NodePath("Sprite2D")
-attack_sfx = NodePath("AttackSFX")
+sounds = [NodePath("AudioEffects/MonsterAttack"), NodePath("AudioEffects/HeroAttack"), null, NodePath("AudioEffects/SpikeAttack"), null]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -57)
@@ -21,6 +23,16 @@ texture = SubResource("CompressedTexture2D_h7076")
 offset_top = -230.0
 offset_bottom = -190.0
 
-[node name="AttackSFX" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_nsnlr")
+[node name="AudioEffects" type="Node" parent="."]
+
+[node name="MonsterAttack" type="AudioStreamPlayer" parent="AudioEffects"]
+stream = ExtResource("3_v8i4x")
+bus = &"SFX"
+
+[node name="HeroAttack" type="AudioStreamPlayer" parent="AudioEffects"]
+stream = ExtResource("4_5ldaa")
+bus = &"SFX"
+
+[node name="SpikeAttack" type="AudioStreamPlayer" parent="AudioEffects"]
+stream = ExtResource("6_exjd0")
 bus = &"SFX"

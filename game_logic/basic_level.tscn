@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://tkb6vimwhpij"]
+[gd_scene load_steps=11 format=3 uid="uid://tkb6vimwhpij"]
 
 [ext_resource type="Script" path="res://game_logic/basic_level_logic.gd" id="1_n52b6"]
 [ext_resource type="PackedScene" uid="uid://yvwkwgojt1ab" path="res://enemies logic/enemy.tscn" id="2_beh15"]
 [ext_resource type="Script" path="res://dice_logic/dice_slot.gd" id="2_ghtwx"]
 [ext_resource type="Theme" uid="uid://ypak5t8xrvk8" path="res://assets/theme/slot_dice.tres" id="3_nj3nf"]
 [ext_resource type="Theme" uid="uid://ch3snagd0dl8g" path="res://assets/theme/ui_theme.tres" id="6_tdu6w"]
+[ext_resource type="AudioStream" uid="uid://gra311r3acyh" path="res://assets/sound fx/MMO_Game_Magic_Designed_Fire_Whoosh_02.wav" id="6_xa1au"]
+[ext_resource type="AudioStream" uid="uid://bmdnknsscfqri" path="res://assets/sound fx/MMO_Game_Magic_Designed_Ice_Area_02.wav" id="7_egpeb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dpa7i"]
 bg_color = Color(0.227451, 0.498039, 0.733333, 1)
@@ -32,7 +34,7 @@ corner_radius_top_right = 23
 corner_radius_bottom_right = 23
 corner_radius_bottom_left = 23
 
-[node name="BasicLevel" type="Control" node_paths=PackedStringArray("road_label", "road_progress_bar")]
+[node name="BasicLevel" type="Control" node_paths=PackedStringArray("road_label", "road_progress_bar", "sfx")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -43,6 +45,7 @@ mouse_filter = 2
 script = ExtResource("1_n52b6")
 road_label = NodePath("Road/DistanceLabel")
 road_progress_bar = NodePath("Road")
+sfx = [NodePath("Node/Fireball"), NodePath("Node/Icewall")]
 enemy_scene = ExtResource("2_beh15")
 metadata/_edit_use_anchors_ = true
 
@@ -404,6 +407,16 @@ theme_override_colors/font_outline_color = Color(0.2, 0.180392, 0.0862745, 1)
 theme_override_constants/outline_size = 12
 text = "DISTANCE_LABEL"
 horizontal_alignment = 1
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Fireball" type="AudioStreamPlayer" parent="Node"]
+stream = ExtResource("6_xa1au")
+bus = &"SFX"
+
+[node name="Icewall" type="AudioStreamPlayer" parent="Node"]
+stream = ExtResource("7_egpeb")
+bus = &"SFX"
 
 [connection signal="pressed" from="PanelContainer/SolveTurn" to="." method="solve_turn"]
 [connection signal="pressed" from="Button" to="." method="next_level"]

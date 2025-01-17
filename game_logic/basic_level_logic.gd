@@ -17,6 +17,7 @@ const offset_x = 100
 
 @export var road_label: Label
 @export var road_progress_bar : ProgressBar
+@export var sfx : Array[AudioStreamPlayer]
 @onready var animation_timer: Timer = $AnimationTimer
 @onready var blocker: Control = $Blocker
 
@@ -276,7 +277,7 @@ func spawn_big_enemy(enemy_data : EnemyData):
 	return
 
 func kill_enemy(enemy : Enemy):
-	var slots = enemy.dice_slots
+	#var slots = enemy.dice_slots
 	heroes_manager.gain_xp(enemy.data.xp_value)
 	await enemy.kill()
 
@@ -300,7 +301,8 @@ func cast_fire_ball(x:int) -> void:
 		var enemy : Enemy = active_enemies[slot]
 		if enemy.dice_slots.back() == slot:
 			if enemy.inflict_damage(x, "fire"): kill_enemy(enemy)
-	await wait_time(t*4)
+	sfx[0].play()
+	await wait_time(2*t)
 
 func there_is_wall_ice() -> bool:
 	for slot:DiceSlot in enemy_slots:
@@ -309,6 +311,7 @@ func there_is_wall_ice() -> bool:
 		var face : DiceFace = slot.get_child(0)
 		if face.data.wall_ice:
 			slot.remove_child(face)
+			sfx[1].play()
 			return true
 	return false
 
@@ -362,7 +365,6 @@ func enemy_attack(enemy : Enemy):
 	if dmg: heroes_manager.suffer_damage(dmg)
 	check_spikes(enemy)
 	await enemy_steal(enemy)
-	await wait_time(t)
 
 func check_spikes(enemy : Enemy):
 	var spikes = heroes_manager.spikes
@@ -372,14 +374,14 @@ func check_spikes(enemy : Enemy):
 func enemy_steal(enemy : Enemy):
 	var x = enemy.data.steal_food
 	if x:
-		await wait_time(t)
 		heroes_manager.increase_food(-x)
 		Utils.create_text_feedback("-" + str(x) + " " + tr("FOOD"), heroes_manager.caravan_position)
+		await wait_time(t)
 	x = enemy.data.steal_wood
 	if x:
-		await wait_time(t)
 		heroes_manager.increase_wood(-x)
 		Utils.create_text_feedback("-" + str(x) + " " + tr("WOOD"), heroes_manager.caravan_position)
+		await wait_time(t)
 
 func check_end() -> bool:
 	if data.boss_level:

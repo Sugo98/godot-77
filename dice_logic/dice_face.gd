@@ -80,6 +80,7 @@ func come_back_home():
 			return
 
 func freeze_animation():
+	var time = Utils.basic_wait_time
 	var tween = get_tree().create_tween()
-	tween.tween_property(self, "modulate", Color.DODGER_BLUE ,0.2)
+	tween.tween_property(self, "modulate", Color.DODGER_BLUE , time)
 	
