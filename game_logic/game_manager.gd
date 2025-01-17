@@ -43,13 +43,19 @@ func start_new_game() -> void:
 
 func go_to_next_level():
 	if actual_stop:
+		if actual_stop.data is LevelData: await heroes_manager.next_level()
 		actual_stop.queue_free()
+		print("NEXT")
+	if journey_stops.is_empty():
+		end_game()
+		return
 	var next_stop = journey_stops.front()
 	if next_stop is LevelData:
 		load_level(next_stop)
 	if next_stop is MerchantData:
 		load_merchant(next_stop)
 	journey_stops.pop_front()
+	
 
 func load_level(data : LevelData) -> void:
 	var level : LevelLogic = level_scene.instantiate()
@@ -80,3 +86,6 @@ func quit_game():
 	actual_stop = null
 	heroes_manager.queue_free()
 	load_menu()
+
+func end_game():
+	print("end_game")

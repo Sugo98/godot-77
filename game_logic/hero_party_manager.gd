@@ -40,7 +40,7 @@ func parse_heroes():
 func prepare_for_level():
 	for hero in heroes:
 		hero.prepare_for_level()
-	caravan.show()
+	caravan.new_level()
 
 func prepare_for_merchant():
 	for hero in heroes:
@@ -119,3 +119,6 @@ func can_repair_bridge(cost : int, pos) -> bool:
 		wood -= cost
 		update_all_labels()
 		return true
+
+func next_level():
+	await caravan.do_the_animation()

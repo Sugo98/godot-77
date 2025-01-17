@@ -10,6 +10,7 @@ var game_manager : GameManager
 @export var music_stream_player: AudioStreamPlayer
 @export var sfx_stream_player : AudioStreamPlayer
 @export var blocker : ColorRect
+@export var caravan : Node2D
 
 @onready var animation_buttons = {
 	"slow" : %SlowAnimation,
@@ -48,7 +49,10 @@ func prepare_main_menu() :
 	pause_menu.hide()
 	pause_button.hide()
 	blocker.hide()
+	caravan.show()
+	caravan.do_the_shake()
 	music_stream_player.play()
+
 
 func prepare_for_game():
 	pause = false
@@ -56,6 +60,7 @@ func prepare_for_game():
 	game_menu.hide()
 	settings_menu.hide()
 	pause_menu.hide()
+	caravan.hide()
 	pause_button.show()
 	%PauseButton.icon = pause_icon[ int(pause) ]
 	title.hide()
@@ -143,6 +148,7 @@ func _on_pause_button_pressed() -> void:
 
 
 func _on_resume_game_pressed() -> void:
+	settings_menu.hide()
 	_on_pause_button_pressed()
 
 

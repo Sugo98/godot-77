@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c5mfo6eaopvch"]
+[gd_scene load_steps=20 format=3 uid="uid://c5mfo6eaopvch"]
 
 [ext_resource type="Script" path="res://game_logic/main_menu.gd" id="1_m3nt4"]
 [ext_resource type="Theme" uid="uid://bionh2bhlri40" path="res://assets/theme/basic_theme.tres" id="2_dlwf6"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cbnogbts0wqhf" path="res://assets/theme/Play.png" id="3_76h3j"]
 [ext_resource type="AudioStream" uid="uid://cmvpunesy6b3t" path="res://assets/sound fx/hitHurt.wav" id="3_wk7ht"]
 [ext_resource type="Texture2D" uid="uid://bu4lgl2lvjrin" path="res://assets/theme/Pause.png" id="5_xggq4"]
+[ext_resource type="PackedScene" uid="uid://beporjlmlp4qr" path="res://game_logic/caravan.tscn" id="7_3n5pj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_le8wn"]
 bg_color = Color(0.227451, 0.498039, 0.733333, 1)
@@ -91,7 +92,7 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[node name="MainMenu" type="Control" node_paths=PackedStringArray("title", "game_menu", "settings_menu", "pause_menu", "pause_button", "music_stream_player", "sfx_stream_player", "blocker")]
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("title", "game_menu", "settings_menu", "pause_menu", "pause_button", "music_stream_player", "sfx_stream_player", "blocker", "caravan")]
 z_index = 10
 layout_mode = 3
 anchors_preset = 15
@@ -109,6 +110,7 @@ pause_button = NodePath("PauseButton")
 music_stream_player = NodePath("Music")
 sfx_stream_player = NodePath("SFX")
 blocker = NodePath("Blocker")
+caravan = NodePath("Caravan")
 pause_icon = Array[Texture2D]([ExtResource("5_xggq4"), ExtResource("3_76h3j")])
 
 [node name="Blocker" type="ColorRect" parent="."]
@@ -194,6 +196,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_a8wku")
 text = "QUIT_GAME"
 
 [node name="SettingMenu" type="PanelContainer" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 997.0
 offset_top = 85.0
@@ -463,6 +466,9 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_a8wku")
 icon = ExtResource("5_xggq4")
 icon_alignment = 1
 expand_icon = true
+
+[node name="Caravan" parent="." instance=ExtResource("7_3n5pj")]
+position = Vector2(1409, 564)
 
 [connection signal="pressed" from="GameMenu/Game Menu/StartGame" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="GameMenu/Game Menu/Option" to="." method="open_settings"]

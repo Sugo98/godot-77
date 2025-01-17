@@ -28,5 +28,7 @@ const fast_animation_time : float = 0.25
 const medium_animation_time : float = 0.5
 const slow_animation_time : float = 1
 
-const hp_green_color := Color("4fcdc4")
-const hp_red_color := Color("ff6b6b")
+const luigi_green_light := Color("4fcdc4")
+const luigi_red_dark := Color("331515")
+const luigi_red_light := Color("ff6b6b")
+const luigi_brown_drak := Color("231b19")

@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://du7fsdcx1ljr1" path="res://assets/heroes/guerriera DEF.png" id="4_lhd3d"]
 [ext_resource type="Texture2D" uid="uid://c1s0sxxrjxw0v" path="res://assets/heroes/maga DEF.png" id="5_hk1u8"]
 [ext_resource type="Texture2D" uid="uid://c0yr0uw61pg1n" path="res://assets/heroes/eroe ranger 1.png" id="6_tpl4r"]
-[ext_resource type="Texture2D" uid="uid://c2i4hqf6i2g3d" path="res://assets/background/white.png" id="7_c4i2j"]
 [ext_resource type="Texture2D" uid="uid://byx8dlamupa55" path="res://assets/heroes/inventore DEF.png" id="7_pelfd"]
+[ext_resource type="PackedScene" uid="uid://beporjlmlp4qr" path="res://game_logic/caravan.tscn" id="8_udspx"]
 
 [node name="HeroesParty" type="Node" node_paths=PackedStringArray("heroes_ui", "heroes_container", "caravan")]
 script = ExtResource("1_6rxhw")
@@ -64,14 +64,4 @@ grow_horizontal = 1
 character_class = 4
 hero_texture = ExtResource("7_pelfd")
 
-[node name="Caravan" type="Node2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="Caravan"]
-modulate = Color(0.39, 0.19448, 0.0234, 1)
-z_index = -5
-position = Vector2(882.5, 476)
-scale = Vector2(481, 406)
-texture = ExtResource("7_c4i2j")
-
-[node name="FeedbackPosition" type="Marker2D" parent="Caravan"]
-position = Vector2(879, 430)
+[node name="Caravan" parent="." instance=ExtResource("8_udspx")]

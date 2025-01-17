@@ -1,13 +1,13 @@
 [gd_resource type="Theme" load_steps=13 format=3 uid="uid://ypak5t8xrvk8"]
 
-[ext_resource type="Texture2D" uid="uid://brnsw1jnkors8" path="res://assets/theme/Bridge.png" id="1_0djd8"]
+[ext_resource type="Texture2D" uid="uid://dxeqywj8d8pyw" path="res://assets/theme/DiceSlot_Bridge.png" id="1_pfv2u"]
 [ext_resource type="FontFile" uid="uid://bhign6v57q280" path="res://assets/theme/fonts/Helvetica-Bold.ttf" id="2_ahv41"]
-[ext_resource type="Texture2D" uid="uid://cnv0tp1gakj37" path="res://assets/theme/Plain.png" id="2_m1n0k"]
-[ext_resource type="Texture2D" uid="uid://bfksoisqamyys" path="res://assets/theme/Plus_1.png" id="3_wo822"]
+[ext_resource type="Texture2D" uid="uid://o7tgtniabtct" path="res://assets/theme/DiceSlot.png" id="3_cqs3a"]
 [ext_resource type="FontFile" uid="uid://cm3w42cepax0g" path="res://assets/theme/fonts/Goudy Mediaeval DemiBold.ttf" id="4_6e2yv"]
+[ext_resource type="Texture2D" uid="uid://bl17h08cwrnts" path="res://assets/theme/DiceSlot_plus1.png" id="4_18i5s"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gw8pl"]
-texture = ExtResource("1_0djd8")
+texture = ExtResource("1_pfv2u")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i1802"]
 
@@ -51,10 +51,10 @@ expand_margin_right = 4.0
 expand_margin_bottom = 4.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lgjuj"]
-texture = ExtResource("2_m1n0k")
+texture = ExtResource("3_cqs3a")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c56e0"]
-texture = ExtResource("3_wo822")
+texture = ExtResource("4_18i5s")
 
 [resource]
 BrokenBridge/base_type = &"PanelContainer"
