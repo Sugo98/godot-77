@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3 uid="uid://drxka0jtjtgqw"]
 
 [ext_resource type="Script" path="res://resources/enemies/enemies_data.gd" id="1_uqarl"]
-[ext_resource type="Texture2D" uid="uid://cms1ewjqj8yhv" path="res://assets/enemies/dragon.png" id="2_n600o"]
+[ext_resource type="Texture2D" uid="uid://bkbev7wgfqhga" path="res://assets/enemies/drago DEF.png" id="2_eyarf"]
 
 [resource]
 script = ExtResource("1_uqarl")
 name = "Orchetto"
-texture = ExtResource("2_n600o")
+texture = ExtResource("2_eyarf")
 size = 2
 max_hp = 18
 attack = 3

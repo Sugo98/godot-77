@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3 uid="uid://c4er4h6rh0vk"]
 
 [ext_resource type="Script" path="res://resources/enemies/enemies_data.gd" id="1_ykowt"]
-[ext_resource type="Texture2D" uid="uid://bdykur86hxyl3" path="res://assets/enemies/beaver.png" id="2_3q8vs"]
+[ext_resource type="Texture2D" uid="uid://cox1jyowlc3fg" path="res://assets/enemies/castoro DEF.png" id="2_rs7xc"]
 
 [resource]
 script = ExtResource("1_ykowt")
 name = "Castoro"
-texture = ExtResource("2_3q8vs")
+texture = ExtResource("2_rs7xc")
 size = 0
 max_hp = 3
 attack = 1

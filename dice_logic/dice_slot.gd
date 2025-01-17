@@ -41,5 +41,5 @@ func set_hero_owner(o : Global.CharacterClass) -> void :
 	hero_owner = o
 
 func face_leaves():
-	if shopkeeper and get_child_count() == 0:
-		shopkeeper.face_leaves(get_index())
+	if shopkeeper and get_child_count() == 0 and get_parent():
+		shopkeeper.face_leaves(get_parent().get_index())

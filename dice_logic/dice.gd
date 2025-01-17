@@ -11,10 +11,14 @@ var faces : Array[DiceFace]
 @export var slots_for_merchant: HBoxContainer
 @export var sprite_2d : TextureRect
 
+@export var dice_roll_sfx : Node
+var roll_sfx : Array[AudioStreamPlayer]
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	faces.resize(6)
 	load_basic_dice()
+	load_sfx_array()
 	sprite_2d.texture = hero_texture
 
 func prepare_for_level():
@@ -42,9 +46,9 @@ func load_basic_dice():
 	last_face.init( load(Global.sixth_face[ character_class ]) )
 	faces[5] = last_face
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
+func load_sfx_array():
+	for sound in dice_roll_sfx.get_children():
+		roll_sfx.append(sound)
 
 func free_all_slots():
 	for face in faces:
@@ -57,14 +61,18 @@ func free_all_slots():
 func roll_dice():
 	var result = range(6)
 	result.shuffle()
+	play_roll_dice_sfx()
 	add_faces_to_slots([result[0], result[1]])
+	for slot in dice_slots.get_children():
+		slot.get_child(0).roll_animation()
 
 func add_faces_to_slots(f: Array[int]):
 	free_all_slots()
 	var child = 0
 	for i in f:
 		faces[i].draggable = true
-		dice_slots.get_child(child).add_child(faces[i])
+		var slot = dice_slots.get_child(child)
+		slot.add_child(faces[i])
 		child += 1
 
 func load_for_merchant():
@@ -92,3 +100,11 @@ func call_home_other_face(data):
 func save_new_dice():
 	for i in range(6):
 		faces[i] = slots_for_merchant.get_child(i).get_child(0)
+
+func play_roll_dice_sfx():
+	var sfx = roll_sfx[randi()%roll_sfx.size()]
+	sfx.volume_db = -10
+	sfx.pitch_scale = randf_range(0.8, 1.2)
+	var delay = randf_range(0,0.5)
+	await get_tree().create_timer(delay).timeout
+	sfx.play()

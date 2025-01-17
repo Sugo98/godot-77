@@ -5,6 +5,7 @@ var square_side = 64
 
 func _ready() -> void:
 	theme_type_variation = "TextFeedback"
+	z_index = 3	
 	set_anchors_and_offsets_preset(Control.PRESET_CENTER)
 	set_horizontal_alignment(HORIZONTAL_ALIGNMENT_CENTER)
 

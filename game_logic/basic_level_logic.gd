@@ -180,7 +180,7 @@ func solve_enemies_slots():
 func solve_single_enemy_slots():
 	for slot in active_enemies:
 		var enemy : Enemy = active_enemies[slot]
-		if slot.get_child_count(): #if there is a dice
+		if slot.get_child_count() and enemy.is_alive: #if there is a dice
 			var face = slot.get_child(0)
 			await resolve_attack_dice(face, enemy)
 		#counter_attack
@@ -278,8 +278,8 @@ func spawn_big_enemy(enemy_data : EnemyData):
 
 func kill_enemy(enemy : Enemy):
 	#var slots = enemy.dice_slots
-	heroes_manager.gain_xp(enemy.data.xp_value)
 	await enemy.kill()
+	heroes_manager.gain_xp(enemy.data.xp_value)
 
 func update_danger():
 	if freeze:
@@ -365,6 +365,7 @@ func enemy_attack(enemy : Enemy):
 	if dmg: heroes_manager.suffer_damage(dmg)
 	check_spikes(enemy)
 	await enemy_steal(enemy)
+	await wait_time(t)
 
 func check_spikes(enemy : Enemy):
 	var spikes = heroes_manager.spikes
@@ -385,7 +386,9 @@ func enemy_steal(enemy : Enemy):
 
 func check_end() -> bool:
 	if data.boss_level:
-		return active_enemies.is_empty()
+		for slot in active_enemies:
+			if active_enemies[slot].is_alive: return false
+		return true
 	else:
 		return (road <= 0)
 

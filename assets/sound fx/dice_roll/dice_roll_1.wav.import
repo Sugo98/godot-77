@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d3a1sjmhs14hl"
+path="res://.godot/imported/dice_roll_1.wav-c7d11f3646e8542dacc12bed2380d118.sample"
+
+[deps]
+
+source_file="res://assets/sound fx/dice_roll/dice_roll_1.wav"
+dest_files=["res://.godot/imported/dice_roll_1.wav-c7d11f3646e8542dacc12bed2380d118.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

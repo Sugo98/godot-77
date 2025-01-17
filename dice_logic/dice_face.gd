@@ -2,10 +2,12 @@ class_name DiceFace
 extends TextureRect
 
 var data : FaceData
+var equivalent_rect : TextureRect
 
 var dice_owner : Dice
 var hero_owner : Global.CharacterClass
 var draggable : bool = true
+var root : Window
 
 func init(d: FaceData) -> void:
 	data = d
@@ -17,6 +19,17 @@ func _ready():
 	if data :
 		texture = data.texture
 		tooltip_text = "%s\n%s" % [tr(data.name), tr(data.description)]
+		prepare_equivalen_rect()
+	root = get_tree().get_root()
+
+func prepare_equivalen_rect():
+	equivalent_rect = TextureRect.new()
+	equivalent_rect.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	equivalent_rect.size = Vector2.ONE * 128
+	equivalent_rect.pivot_offset = Vector2.ONE * 64
+	equivalent_rect.texture = texture
+	equivalent_rect.modulate.a = 1
+	equivalent_rect.z_index = 3
 
 func can_be_placed(slot : DiceSlot.Type):
 	if data.jolly:
@@ -84,3 +97,9 @@ func freeze_animation():
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "modulate", Color.DODGER_BLUE , time)
 	
+
+func roll_animation():
+	self_modulate.a = 0
+	await get_tree().process_frame
+	await Utils.roll_animation(equivalent_rect, global_position)
+	self_modulate.a = 1

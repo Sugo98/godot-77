@@ -14,7 +14,6 @@ var stun: bool
 var shield : int
 var is_alive: bool = true
 var t : float = Utils.basic_wait_time
-var tween : Tween
 
 func init(d: EnemyData) -> void:
 	data = d
@@ -24,7 +23,6 @@ func _ready():
 		return
 	sprite2D.texture = data.texture
 	hp = data.max_hp
-	tween = create_tween()
 	update_label()
 	eneter_animation()
 	ui.init(data.attack, data.max_hp, data.steal_food, data.steal_wood, data.shield)
@@ -38,7 +36,7 @@ func reset_turn():
 		return
 	turn_atk = data.attack
 	shield = data.shield
-	if not tween.is_valid(): tween = create_tween()
+	var tween = create_tween()
 	tween.tween_property(sprite2D, "modulate", Color.WHITE, t)
 	set_stun(false)
 	update_label()
@@ -56,11 +54,11 @@ func inflict_damage(damage:int, type:String) -> bool: #return true if the enemy 
 
 
 func freeze_animation():
-	if not tween.is_valid(): tween = create_tween()
+	var tween = create_tween()
 	tween.tween_property(sprite2D, "modulate", Color.STEEL_BLUE,t)
 
 func add_smoke(x:int):
-	if not tween.is_valid(): tween = create_tween()
+	var tween = create_tween()
 	tween.tween_property(sprite2D, "modulate",Color.DIM_GRAY,t)
 	tween.tween_property(sprite2D, "modulate",Color.WHITE,t)
 	turn_atk -= x
@@ -69,7 +67,7 @@ func add_smoke(x:int):
 
 func kill() -> void :
 	is_alive = false
-	if not tween.is_valid(): tween = create_tween()
+	var tween = create_tween()
 	tween.tween_property(sprite2D, "modulate:a", 0 ,t)
 	await tween.finished
 	Utils.create_text_feedback("+" + str(data.xp_value) + " XP",global_position)
@@ -79,7 +77,7 @@ func kill() -> void :
 
 func attack() -> int:
 	var time = t/5
-	if not tween.is_valid(): tween = create_tween()
+	var tween = create_tween()
 	tween.tween_property(sprite2D, "position:x", -attack_animation_x ,time)
 	tween.tween_property(sprite2D, "position:x", 0 ,time)
 	play_attack_sfx(time)
@@ -87,7 +85,7 @@ func attack() -> int:
 	return turn_atk
 
 func red_flash() -> void:
-	if not tween.is_valid(): tween = create_tween()
+	var tween = create_tween()
 	tween.tween_property(sprite2D, "modulate", Color.RED ,t/3)
 	tween.tween_property(sprite2D, "modulate", Color.WHITE , t/3)
 
@@ -95,7 +93,7 @@ func eneter_animation() -> void:
 	var time = t/2
 	sprite2D.position.x = 50
 	sprite2D.modulate.a = 0
-	if not tween.is_valid(): tween = create_tween()
+	var tween = create_tween()
 	tween.tween_property(sprite2D, "position:x", 0 ,time)
 	tween.parallel().tween_property(sprite2D, "modulate:a", 1 ,time)
 

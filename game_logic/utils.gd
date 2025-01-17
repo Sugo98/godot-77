@@ -19,3 +19,13 @@ func create_text_feedback(text : String, position : Vector2):
 	new_feedback.init(text, position)
 
 var basic_wait_time : float = 0.5
+
+func roll_animation(face : TextureRect, pos : Vector2):
+	face.global_position = pos
+	main_canvas.add_child(face)
+	face.rotation = - PI * 3
+	var tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
+	var time = ( 1 + randf() ) * basic_wait_time
+	tween.tween_property(face,"rotation",0, time)
+	await tween.finished
+	main_canvas.remove_child(face)

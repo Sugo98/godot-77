@@ -12,7 +12,7 @@
 script = ExtResource("2_xixe7")
 ui = NodePath("UI")
 sprite2D = NodePath("Sprite2D")
-sounds = [NodePath("AudioEffects/MonsterAttack"), NodePath("AudioEffects/HeroAttack"), null, NodePath("AudioEffects/SpikeAttack"), null]
+sounds = [NodePath("AudioEffects/MonsterAttack"), NodePath("AudioEffects/HeroAttack"), NodePath("AudioEffects/SpikeAttack")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -57)
