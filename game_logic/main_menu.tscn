@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://game_logic/main_menu.gd" id="1_m3nt4"]
 [ext_resource type="Theme" uid="uid://bionh2bhlri40" path="res://assets/theme/basic_theme.tres" id="2_dlwf6"]
-[ext_resource type="AudioStream" uid="uid://bs3v4l4ecfx3r" path="res://assets/music/Town_-_Castle_Gates.ogg" id="2_sp5x1"]
+[ext_resource type="AudioStream" uid="uid://bs3v4l4ecfx3r" path="res://assets/music/main_menu.ogg" id="2_sp5x1"]
 [ext_resource type="Texture2D" uid="uid://cbnogbts0wqhf" path="res://assets/theme/Play.png" id="3_76h3j"]
 [ext_resource type="Texture2D" uid="uid://bu4lgl2lvjrin" path="res://assets/theme/Pause.png" id="5_xggq4"]
 [ext_resource type="AudioStream" uid="uid://djw7tpomki4ui" path="res://assets/sound fx/Punch 2_2.wav" id="6_xo1j7"]

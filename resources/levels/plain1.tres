@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://l1ku40fmuggn" path="res://resources/enemies/demonoculus.tres" id="2_on5ee"]
 [ext_resource type="Resource" uid="uid://dvgh36dfckm3n" path="res://resources/enemies/frog.tres" id="3_kbwjx"]
 [ext_resource type="Script" path="res://resources/levels/level_data.gd" id="4_vjvg1"]
-[ext_resource type="AudioStream" uid="uid://boppptxo32qo2" path="res://assets/music/Town_-_Enchanted_Village.ogg" id="5_n27o5"]
+[ext_resource type="AudioStream" uid="uid://boppptxo32qo2" path="res://assets/music/plain_1.ogg" id="5_n27o5"]
 
 [resource]
 script = ExtResource("4_vjvg1")

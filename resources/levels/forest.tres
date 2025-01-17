@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="LevelData" load_steps=6 format=3 uid="uid://bqpl571qkgwsx"]
+[gd_resource type="Resource" script_class="LevelData" load_steps=7 format=3 uid="uid://bqpl571qkgwsx"]
 
 [ext_resource type="Script" path="res://resources/enemies/enemies_data.gd" id="1_0onpo"]
 [ext_resource type="Script" path="res://resources/levels/level_data.gd" id="1_rqwrv"]
 [ext_resource type="Resource" uid="uid://delt0qchgjv4n" path="res://resources/enemies/wolf.tres" id="2_abe1t"]
 [ext_resource type="Resource" uid="uid://dvgh36dfckm3n" path="res://resources/enemies/frog.tres" id="2_gpb6o"]
 [ext_resource type="Resource" uid="uid://dk8nkp1gblgwu" path="res://resources/enemies/bat.tres" id="3_vatw8"]
+[ext_resource type="AudioStream" uid="uid://flq1sj2dxv5" path="res://assets/music/forest.ogg" id="6_ulxed"]
 
 [resource]
 script = ExtResource("1_rqwrv")
@@ -29,3 +30,4 @@ mod_food = 1
 road_obstacle = 0
 broken_bridge = false
 dragon_level = false
+soundtrack = ExtResource("6_ulxed")

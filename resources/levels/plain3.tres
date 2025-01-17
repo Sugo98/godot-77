@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://resources/enemies/enemies_data.gd" id="1_j1vhv"]
 [ext_resource type="Resource" uid="uid://drxka0jtjtgqw" path="res://resources/enemies/dragon.tres" id="3_udxhi"]
+[ext_resource type="AudioStream" uid="uid://crltu123igjlp" path="res://assets/music/dragon.ogg" id="4_hqgw1"]
 [ext_resource type="Script" path="res://resources/levels/level_data.gd" id="4_umx4s"]
-[ext_resource type="AudioStream" uid="uid://boppptxo32qo2" path="res://assets/music/Town_-_Enchanted_Village.ogg" id="5_emswa"]
 
 [resource]
 script = ExtResource("4_umx4s")
@@ -28,4 +28,4 @@ mod_food = 0
 road_obstacle = 0
 broken_bridge = false
 dragon_level = false
-soundtrack = ExtResource("5_emswa")
+soundtrack = ExtResource("4_hqgw1")

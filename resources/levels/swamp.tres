@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="LevelData" load_steps=6 format=3 uid="uid://bd71cnmmq5sw2"]
+[gd_resource type="Resource" script_class="LevelData" load_steps=7 format=3 uid="uid://bd71cnmmq5sw2"]
 
 [ext_resource type="Script" path="res://resources/enemies/enemies_data.gd" id="1_w1voo"]
 [ext_resource type="Resource" uid="uid://di25an6yjvkqu" path="res://resources/enemies/sbm1.tres" id="2_bdae0"]
 [ext_resource type="Script" path="res://resources/levels/level_data.gd" id="3_tmbrf"]
 [ext_resource type="Resource" uid="uid://dk8nkp1gblgwu" path="res://resources/enemies/bat.tres" id="4_5y4vs"]
 [ext_resource type="Resource" uid="uid://brcausig1ijvi" path="res://resources/enemies/orchetto.tres" id="5_l25db"]
+[ext_resource type="AudioStream" uid="uid://bmhq21omowe77" path="res://assets/music/swamp.ogg" id="6_37e1m"]
 
 [resource]
 script = ExtResource("3_tmbrf")
@@ -29,3 +30,4 @@ mod_food = 1
 road_obstacle = 1
 broken_bridge = false
 dragon_level = false
+soundtrack = ExtResource("6_37e1m")

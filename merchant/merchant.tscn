@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bjl5tow7l1xn7" path="res://assets/background/xp.png" id="2_tn6wo"]
 [ext_resource type="Texture2D" uid="uid://c2i4hqf6i2g3d" path="res://assets/background/white.png" id="3_uxtmc"]
 [ext_resource type="Theme" uid="uid://ypak5t8xrvk8" path="res://assets/theme/slot_dice.tres" id="5_kegug"]
-[ext_resource type="AudioStream" uid="uid://b7dhfmnidc1gy" path="res://assets/music/Level 1 (Loop).ogg" id="6_vryq3"]
+[ext_resource type="AudioStream" uid="uid://b7dhfmnidc1gy" path="res://assets/music/merchant.ogg" id="6_vryq3"]
 [ext_resource type="Texture2D" uid="uid://hy8qtfxwacq0" path="res://assets/theme/xp.png" id="7_lx3xv"]
 [ext_resource type="Theme" uid="uid://ch3snagd0dl8g" path="res://assets/theme/ui_theme.tres" id="8_huipa"]
 

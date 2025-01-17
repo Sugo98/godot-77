@@ -135,7 +135,7 @@ STEAL_WOOD_DESC,"If this Enemy attack,
 It will steal you 1 Wood","Se questo Nemico attacca,
 Ruba 1 Legno"
 ENEMY_SHIELD,Shield,Scudo
-ENEMY_SHIELD_DESC,"This Enemy Ignore the
+ENEMY_SHIELD_DESC,"This Enemy ignore the
 first damage each turn","Questo Nemico ignora il
 primo danno di ogni turno"
 HEALTH_BAR_LABEL,Health,Salute

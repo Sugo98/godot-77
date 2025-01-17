@@ -1,12 +1,11 @@
-[gd_resource type="Resource" script_class="LevelData" load_steps=8 format=3 uid="uid://buq0vkbg12j3d"]
+[gd_resource type="Resource" script_class="LevelData" load_steps=7 format=3 uid="uid://buq0vkbg12j3d"]
 
 [ext_resource type="Script" path="res://resources/enemies/enemies_data.gd" id="1_nyan5"]
 [ext_resource type="Resource" uid="uid://p4lax3an5o0y" path="res://resources/enemies/orchetto_corazzato.tres" id="3_kjilk"]
 [ext_resource type="Resource" uid="uid://b8w5ojo0122h5" path="res://resources/enemies/dbm1.tres" id="3_owsrq"]
-[ext_resource type="Resource" uid="uid://brcausig1ijvi" path="res://resources/enemies/orchetto.tres" id="3_xu4un"]
 [ext_resource type="Resource" uid="uid://vy04pu6vbjto" path="res://resources/enemies/dbm2.tres" id="4_csaym"]
 [ext_resource type="Script" path="res://resources/levels/level_data.gd" id="4_x8qa4"]
-[ext_resource type="AudioStream" uid="uid://boppptxo32qo2" path="res://assets/music/Town_-_Enchanted_Village.ogg" id="5_527c2"]
+[ext_resource type="AudioStream" uid="uid://f668y1u7et" path="res://assets/music/desert.ogg" id="6_5armt"]
 
 [resource]
 script = ExtResource("4_x8qa4")
@@ -16,7 +15,7 @@ length_of_the_road = 8
 boss_level = false
 enemy = Array[ExtResource("1_nyan5")]([ExtResource("3_kjilk"), ExtResource("3_owsrq"), ExtResource("4_csaym")])
 enemy_probability = Array[int]([1, 1, 1])
-initial_enemy = Array[ExtResource("1_nyan5")]([ExtResource("3_xu4un"), ExtResource("3_xu4un")])
+initial_enemy = Array[ExtResource("1_nyan5")]([ExtResource("3_owsrq"), ExtResource("4_csaym")])
 starting_danger = 0
 base_danger = 15
 random_danger = 10
@@ -31,4 +30,4 @@ mod_food = 0
 road_obstacle = 0
 broken_bridge = false
 dragon_level = false
-soundtrack = ExtResource("5_527c2")
+soundtrack = ExtResource("6_5armt")
