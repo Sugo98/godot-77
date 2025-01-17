@@ -31,4 +31,6 @@ func update_hp(x):
 	pass
 
 func update_atk(x):
-	if x>0: attack_label.text = ": " + str(x)
+	if x<0: x=0
+	attack_label.text = ": " + str(x)
+	

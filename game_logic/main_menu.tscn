@@ -139,7 +139,7 @@ offset_right = 896.0
 offset_bottom = 247.0
 theme = ExtResource("2_dlwf6")
 theme_type_variation = &"Title"
-text = "A Dice Journey"
+text = "A Dicey Journey"
 
 [node name="GameMenu" type="PanelContainer" parent="."]
 layout_mode = 0

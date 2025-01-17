@@ -106,6 +106,11 @@ func play_attack_sfx(delay : float):
 func set_stun(value : bool) -> void:
 	stun = value
 
+func reduce_attack(x : int) -> void:
+	turn_atk -= x
+	if turn_atk < 0 : set_stun(true)
+	update_label()
+
 func can_attack(slot) -> bool:
 	return (is_alive and
 			slot == dice_slots.back() and

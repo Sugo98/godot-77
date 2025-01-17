@@ -358,7 +358,8 @@ func resolve_attack_dice(face:DiceFace, enemy:Enemy) :
 	face.hide()
 	var damage = face.data.sword + face.data.jolly
 	if face.data.stun:
-		enemy.set_stun(true)
+		if enemy.size == 0: enemy.set_stun(true)
+		else: enemy.reduce_attack(1)
 	if face.data.food:
 		Utils.create_text_feedback("+" + str(face.data.food) + " " + tr("FOOD"), face.global_position)
 		heroes_manager.increase_food(face.data.food)

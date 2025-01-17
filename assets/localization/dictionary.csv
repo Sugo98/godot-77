@@ -41,8 +41,8 @@ ANIMAL_COMPANION_1_DESC,"Deals 1 damage and gathers 1 Food,
 can be also placed on a Food Slot","Infligge 1 danno e raccoglie 1 Cibo,
 può anche essere piazzato in uno Spazio Cibo"
 ANIMAL_COMPANION_2,Animal Companion 2,Compagno Animale 2
-ANIMAL_COMPANION_2_DESC,"Deals 2 damages and gathers 2 Food,
-Can be also placed on a Food Slot","Infligge 2 danni e raccoglie 2 Cibo,
+ANIMAL_COMPANION_2_DESC,"Deals 2 damages and gathers 1 Food,
+Can be also placed on a Food Slot","Infligge 2 danni e raccoglie 1 Cibo,
 Può anche essere piazzato in uno Spazio Cibo"
 CARROT_1,Carrot 1,Carota 1
 CARROT_1_DESC,"Can be placed only in a Wood Slot
@@ -53,9 +53,13 @@ CARROT_2_DESC,"Can be placed only in a Wood Slot
 and gathers 2 Wood and 1 Food","Può essere piazzato solo in uno Spazio Legno
 e raccoglie 2 Legno e 1 Cibo"
 CLUB_1,Club 1,Mazza 1
-CLUB_1_DESC,Deals 1 damage and stuns an Enemy,Infligge 1 danno e stordisce un Nemico
+CLUB_1_DESC,"Deals 1 damage. Stuns a Small Enemy or
+reduce the attack of a Large Enemy by 1","Infligge 1 danno, Stordisce un Nemico Piccolo
+o stordisce un Nemico Grande"
 CLUB_2,Club 2,Mazza 2
-CLUB_2_DESC,Deals 2 damages and stuns an Enemy,Infligge 2 danni e stordisce un Nemico
+CLUB_2_DESC,"Deals 2 damages. Stuns a Small Enemy or
+reduce the attack of a Large Enemy by 1","Infligge 2 danno, Stordisce un Nemico Piccolo
+o stordisce un Nemico Grande"
 CUPCAKE_1,Cupcake 1,Dolcetto 1
 CUPCAKE_1_DESC,"Can be placed in any Slot,
 On the caravan counts as a Shield","Può essere piazzato in qualsiasi Spazio,
@@ -94,8 +98,8 @@ and deals 1 damage to the each attacking Enemy","Protegge da 1 danno questo turn
 e infligge 1 danno ad ogni mostro attaccante"
 SPIKES_2,Spikes 2,Spine 2
 SPIKES_2_DESC,"Protects from 2 damages this turn
-and deals 2 damages to the each attacking Enemy","Protegge da 2 danni questo turno
-e infligge 2 danni ad ogni mostro attaccante"
+and deals 1 damages to the each attacking Enemy","Protegge da 2 danni questo turno
+e infligge 1 danni ad ogni mostro attaccante"
 SWORD_1,Sword 1,Spada 1
 SWORD_1_DESC,Deals 1 damage ,Infligge 1 danno 
 SWORD_2,Sword 2,Spada 2
