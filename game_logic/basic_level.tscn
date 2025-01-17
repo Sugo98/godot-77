@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://tkb6vimwhpij"]
+[gd_scene load_steps=12 format=3 uid="uid://tkb6vimwhpij"]
 
 [ext_resource type="Script" path="res://game_logic/basic_level_logic.gd" id="1_n52b6"]
 [ext_resource type="PackedScene" uid="uid://yvwkwgojt1ab" path="res://enemies logic/enemy.tscn" id="2_beh15"]
@@ -7,6 +7,7 @@
 [ext_resource type="Theme" uid="uid://ch3snagd0dl8g" path="res://assets/theme/ui_theme.tres" id="6_tdu6w"]
 [ext_resource type="AudioStream" uid="uid://gra311r3acyh" path="res://assets/sound fx/MMO_Game_Magic_Designed_Fire_Whoosh_02.wav" id="6_xa1au"]
 [ext_resource type="AudioStream" uid="uid://bmdnknsscfqri" path="res://assets/sound fx/MMO_Game_Magic_Designed_Ice_Area_02.wav" id="7_egpeb"]
+[ext_resource type="Texture2D" uid="uid://b8x6w2jw5uw05" path="res://assets/theme/obstacle.png" id="8_buql5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dpa7i"]
 bg_color = Color(0.227451, 0.498039, 0.733333, 1)
@@ -34,7 +35,7 @@ corner_radius_top_right = 23
 corner_radius_bottom_right = 23
 corner_radius_bottom_left = 23
 
-[node name="BasicLevel" type="Control" node_paths=PackedStringArray("road_label", "road_progress_bar", "sfx")]
+[node name="BasicLevel" type="Control" node_paths=PackedStringArray("road_label", "road_progress_bar", "sfx", "obstacle")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -46,6 +47,7 @@ script = ExtResource("1_n52b6")
 road_label = NodePath("Road/DistanceLabel")
 road_progress_bar = NodePath("Road")
 sfx = [NodePath("Node/Fireball"), NodePath("Node/Icewall")]
+obstacle = NodePath("Obstacle")
 enemy_scene = ExtResource("2_beh15")
 metadata/_edit_use_anchors_ = true
 
@@ -417,6 +419,28 @@ bus = &"SFX"
 [node name="Icewall" type="AudioStreamPlayer" parent="Node"]
 stream = ExtResource("7_egpeb")
 bus = &"SFX"
+
+[node name="Obstacle" type="PanelContainer" parent="."]
+visible = false
+offset_left = 1250.0
+offset_top = 554.0
+offset_right = 1346.0
+offset_bottom = 650.0
+theme = ExtResource("6_tdu6w")
+theme_type_variation = &"AtkPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="Obstacle"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="TextureRect" type="TextureRect" parent="Obstacle/MarginContainer"]
+modulate = Color(0.2, 0.0823529, 0.0823529, 1)
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = ExtResource("8_buql5")
 
 [connection signal="pressed" from="PanelContainer/SolveTurn" to="." method="solve_turn"]
 [connection signal="pressed" from="Button" to="." method="next_level"]

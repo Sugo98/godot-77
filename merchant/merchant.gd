@@ -33,7 +33,7 @@ func _ready() -> void:
 		selling_faces.append(new_face)
 		market_slots[i].shopkeeper = self
 	shopping_is_ended = false
-	background_music.play()
+	start_back_ground_music()
 	create_night_sky()
 	reset_market()
 
@@ -85,3 +85,10 @@ func create_night_sky():
 		var v = 0.9
 		new_star.modulate = Color.from_hsv(h,s,v,1)
 		night_sky.add_child(new_star)
+
+
+func start_back_ground_music():
+	background_music.volume_db = -80
+	var tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+	tween.tween_property(background_music, "volume_db", 0, 1)
+	background_music.play()

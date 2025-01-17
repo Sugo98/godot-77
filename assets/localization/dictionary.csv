@@ -140,3 +140,5 @@ first damage each turn","Questo Nemico ignora il
 primo danno di ogni turno"
 HEALTH_BAR_LABEL,Health,Salute
 FOOD_BAR_LABEL,Food,Cibo
+ROAD_OBSTACLE,Rough Terrain,Terreno Impervio
+ROAD_OBSTACLE_DESC,The first Wheel played each turn is ignored,Ignora la prima Ruota giocata di ogni turno

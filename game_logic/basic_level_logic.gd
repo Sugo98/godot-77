@@ -20,6 +20,7 @@ const offset_x = 100
 @export var sfx : Array[AudioStreamPlayer]
 @onready var animation_timer: Timer = $AnimationTimer
 @onready var blocker: Control = $Blocker
+@export var obstacle : PanelContainer
 
 var enemy_slots : Array[DiceSlot]
 var enemy_pivots: Array[Node]
@@ -72,6 +73,10 @@ func show_slots():
 			if data.mod_food : slot.theme_type_variation = "Plus_1"
 		else:
 			slot.hide()
+	if data.road_obstacle:
+		obstacle.show()
+		obstacle.tooltip_text = "%s\n%s" % [tr("ROAD_OBSTACLE"), tr("ROAD_OBSTACLE_DESC")]
+	
 	if not data.boss_level:
 		for slot : DiceSlot in road_slots:
 			if 2-slot.get_index() < data.road_slots:
@@ -412,4 +417,5 @@ func clear_ui():
 	tween.tween_property(road_slots_container, "modulate:a", 0, t)
 	tween.tween_property(caravan_slots_container, "modulate:a", 0, t)
 	tween.tween_property(road_progress_bar, "modulate:a",0,t)
+	tween.tween_property(obstacle, "modulate:a",0,t)
 	await wait_time(t)
