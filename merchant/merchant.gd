@@ -77,8 +77,11 @@ func create_night_sky():
 		new_star.texture = star_texture
 		new_star.global_position.x = randi_range(0,1920)
 		new_star.global_position.y = randi_range(0,1080)
-		new_star.scale.x = randf_range(0.08,0.12)
-		new_star.scale.y = randf_range(0.08,0.12)
+		var dim = randf_range(0.1,0.4)
+		new_star.scale = Vector2.ONE * dim
 		new_star.rotation = randi_range(0,90)
-		new_star.modulate = Color.from_hsv(randf(), 0.1, 0.9,1)
+		var h = randf()
+		var s = randf() *0.33
+		var v = 0.9
+		new_star.modulate = Color.from_hsv(h,s,v,1)
 		night_sky.add_child(new_star)

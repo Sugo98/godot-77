@@ -399,10 +399,12 @@ func set_basic_wait_time():
 
 func clear_ui():
 	set_basic_wait_time()
+	blocker.show()
 	var tween = create_tween().set_parallel(true)
 	tween.tween_property(enemy_slots_container, "modulate:a", 0, t)
 	tween.tween_property(wood_slots_container, "modulate:a", 0, t)
 	tween.tween_property(food_slots_container, "modulate:a", 0, t)
 	tween.tween_property(road_slots_container, "modulate:a", 0, t)
 	tween.tween_property(caravan_slots_container, "modulate:a", 0, t)
+	tween.tween_property(road_progress_bar, "modulate:a",0,t)
 	await wait_time(t)
