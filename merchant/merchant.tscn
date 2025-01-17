@@ -213,14 +213,14 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 30
 theme_override_styles/hover = SubResource("StyleBoxFlat_nt16i")
-text = "Reset"
+text = "RESET"
 
 [node name="Confirm" type="Button" parent="Panel/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 30
 theme_override_styles/hover = SubResource("StyleBoxFlat_vysbi")
-text = "Confirm"
+text = "CONFIRM"
 
 [connection signal="child_order_changed" from="MerchantSlots/PanelContainer" to="MerchantSlots/PanelContainer" method="face_leaves"]
 [connection signal="child_order_changed" from="MerchantSlots/PanelContainer2" to="MerchantSlots/PanelContainer2" method="face_leaves"]
