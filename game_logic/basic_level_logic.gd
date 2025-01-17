@@ -21,6 +21,7 @@ const offset_x = 100
 @onready var animation_timer: Timer = $AnimationTimer
 @onready var blocker: Control = $Blocker
 @export var obstacle : PanelContainer
+@export var desert_icon : PanelContainer
 
 var enemy_slots : Array[DiceSlot]
 var enemy_pivots: Array[Node]
@@ -76,7 +77,9 @@ func show_slots():
 	if data.road_obstacle:
 		obstacle.show()
 		obstacle.tooltip_text = "%s\n%s" % [tr("ROAD_OBSTACLE"), tr("ROAD_OBSTACLE_DESC")]
-	
+	if data.food_consumption > 2:
+		desert_icon.show()
+		desert_icon.tooltip_text = "%s\n%s" % [tr("DESERT_ICON"), tr("DESERT_ICON_DESC")]
 	if not data.boss_level:
 		for slot : DiceSlot in road_slots:
 			if 2-slot.get_index() < data.road_slots:
@@ -124,8 +127,8 @@ func solve_turn():
 	blocker.hide()
 
 func solve_hunger():
-	heroes_manager.eat(Global.food_consumption)
-	Utils.create_text_feedback("-" + str(Global.food_consumption) + " " + tr("FOOD"), heroes_manager.caravan_position)
+	heroes_manager.eat(data.food_consumption)
+	Utils.create_text_feedback("-" + str(data.food_consumption) + " " + tr("FOOD"), heroes_manager.caravan_position)
 	await wait_time(t)
 
 func solve_wood_slots():
@@ -358,8 +361,10 @@ func resolve_attack_dice(face:DiceFace, enemy:Enemy) :
 	face.hide()
 	var damage = face.data.sword + face.data.jolly
 	if face.data.stun:
-		if enemy.size == 0: enemy.set_stun(true)
-		else: enemy.reduce_attack(1)
+		if enemy.data.size == 0:
+			enemy.set_stun(true)
+		else:
+			enemy.reduce_attack(1)
 	if face.data.food:
 		Utils.create_text_feedback("+" + str(face.data.food) + " " + tr("FOOD"), face.global_position)
 		heroes_manager.increase_food(face.data.food)

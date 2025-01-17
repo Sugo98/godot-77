@@ -36,7 +36,7 @@ func _ready() -> void:
 	default_volume()
 
 func default_volume() -> void:
-	%MasterSlider.value = 0.75
+	%MasterSlider.value = 0.5
 	%MusicSlider.value = 0.75
 	%SFXSlider.value = 0.75
 

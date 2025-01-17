@@ -13,6 +13,7 @@ name = "Desert"
 description = ""
 length_of_the_road = 8
 boss_level = false
+food_consumption = 3
 enemy = Array[ExtResource("1_nyan5")]([ExtResource("3_kjilk"), ExtResource("3_owsrq"), ExtResource("4_csaym")])
 enemy_probability = Array[int]([1, 1, 1])
 initial_enemy = Array[ExtResource("1_nyan5")]([ExtResource("3_owsrq"), ExtResource("4_csaym")])

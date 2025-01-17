@@ -7,6 +7,7 @@ class_name LevelData extends Resource
 @export_category("Necessary Road")
 @export var length_of_the_road : int
 @export var boss_level : bool
+@export var food_consumption : int = 2
 
 @export_category("Enemy")
 @export var enemy : Array[EnemyData]

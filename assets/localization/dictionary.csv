@@ -72,20 +72,22 @@ FIREBALL_1,Fireball 1,Palla di fuoco 1
 FIREBALL_1_DESC,Deals 1 damage to each Enemy,Infligge 1 danno a tutti i Nemici
 FIREBALL_2,Fireball 2,Palla di fuoco 2
 FIREBALL_2_DESC,Deals 2 damages to each Enemy,Infligge 2 danni a tutti i Nemici
-FOOD_1,Food 1,Legno 1
+FOOD_1,Food 1,Cibo 1
 FOOD_1_DESC,Gathers 1 Food,Raccoglie 1 Cibo
-FOOD_2,Food 2,Legno 2
+FOOD_2,Food 2,Cibo 2
 FOOD_2_DESC,Gathers 2 Food,Raccoglie 2 Cibo
-FOOD_3,Food 3,Legno 3
+FOOD_3,Food 3,Cibo 3
 FOOD_3_DESC,Gathers 3 Food,Raccoglie 3 Cibo
 FOOD_WOOD_1,Food / Wood 1,Cibo / Legno 1
 FOOD_WOOD_1_DESC,Can be used either as 1 Food or as 1 Wood,Può essere usato come 1 Cibo o come 1 Legno
 FOOD_WOOD_2,Food / Wood 2,Cibo / Legno 2
 FOOD_WOOD_2_DESC,Can be used either as 2 Food or as 2 Wood,Può essere usato come 2 Cibo o come 2 Legno
 GEARS_1,Gears 1,Ingranaggi 1
-GEARS_1_DESC,Behaves as 1 Wheel but discounts by 1 any Wood Cost,Si comporta come 1 Ruota ma sconta di 1 ogni eventuale Costo in Legno
+GEARS_1_DESC,Behaves as 1 Wheel but discounts by 1 any Wood Cost,"Si comporta come 1 Ruota ma sconta
+di 1 ogni eventuale Costo in Legno"
 GEARS_2,Gears 2,Ingranaggi 2
-GEARS_2_DESC,Behaves as 2 Wheels but discounts by 1 any Wood Cost,Si comporta come 2 Ruote ma sconta di 1 ogni eventuale Costo in Legno
+GEARS_2_DESC,Behaves as 2 Wheels but discounts by 1 any Wood Cost,"Si comporta come 2 Ruote ma sconta
+di 1 ogni eventuale Costo in Legno"
 SHIELD_1,Shield 1,Scudo 1
 SHIELD_1_DESC,Protects from 1 damage this turn,Protegge da 1 danno questo turno
 SHIELD_2,Shield 2,Scudo 2
@@ -146,3 +148,5 @@ HEALTH_BAR_LABEL,Health,Salute
 FOOD_BAR_LABEL,Food,Cibo
 ROAD_OBSTACLE,Rough Terrain,Terreno Impervio
 ROAD_OBSTACLE_DESC,The first Wheel played each turn is ignored,Ignora la prima Ruota giocata di ogni turno
+DESERT_ICON,Desert,Desert
+DESERT_ICON_DESC,In this level you consume 3 Food each turn,In questo livello consumi 3 cibo ogni turno
