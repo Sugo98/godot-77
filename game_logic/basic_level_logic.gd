@@ -80,7 +80,7 @@ func show_slots():
 				slot.hide()
 	else:
 		road_slots_container.hide()
-		road_label.hide()
+		road_progress_bar.hide()
 		enemy_slots_container.position += Vector2.DOWN * 150
 		enemy_pivots_container.position += Vector2.DOWN * 100
 
@@ -395,3 +395,12 @@ func set_basic_wait_time():
 	t = Utils.basic_wait_time
 	for slot in active_enemies:
 		active_enemies[slot].t = t
+
+func clear_ui():
+	var tween = create_tween().set_parallel(true)
+	tween.tween_property(enemy_slots_container, "modulate:a", 0, t)
+	tween.tween_property(wood_slots_container, "modulate:a", 0, t)
+	tween.tween_property(food_slots_container, "modulate:a", 0, t)
+	tween.tween_property(road_slots_container, "modulate:a", 0, t)
+	tween.tween_property(caravan_slots_container, "modulate:a", 0, t)
+	await wait_time(t)

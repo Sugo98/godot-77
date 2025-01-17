@@ -43,7 +43,9 @@ func start_new_game() -> void:
 
 func go_to_next_level():
 	if actual_stop:
-		if actual_stop.data is LevelData: await heroes_manager.next_level()
+		if actual_stop.data is LevelData:
+			await actual_stop.clear_ui()
+			await heroes_manager.next_level()
 		actual_stop.queue_free()
 		print("NEXT")
 	if journey_stops.is_empty():
