@@ -62,11 +62,15 @@ reduce the attack of a Large Enemy by 1","Infligge 2 danno, Stordisce un Nemico 
 o stordisce un Nemico Grande"
 CUPCAKE_1,Cupcake 1,Dolcetto 1
 CUPCAKE_1_DESC,"Can be placed in any Slot,
+count 1 for the corresponding action.
 On the caravan counts as a Shield","Può essere piazzato in qualsiasi Spazio,
+vale 1 per l’azione corrispondente
 Sulla Carovana conta come Scudo"
 CUPCAKE_2,Cupcake 2,Dolcetto 2
 CUPCAKE_2_DESC,"Can be placed in any Slot,
+count 2 for the corresponding action.
 On the caravan counts as a Shield","Può essere piazzato in qualsiasi Spazio,
+vale 2 per l’azione corrispondente.
 Sulla Carovana conta come Scudo"
 FIREBALL_1,Fireball 1,Palla di fuoco 1
 FIREBALL_1_DESC,Deals 1 damage to each Enemy,Infligge 1 danno a tutti i Nemici
@@ -150,3 +154,5 @@ ROAD_OBSTACLE,Rough Terrain,Terreno Impervio
 ROAD_OBSTACLE_DESC,The first Wheel played each turn is ignored,Ignora la prima Ruota giocata di ogni turno
 DESERT_ICON,Desert,Desert
 DESERT_ICON_DESC,In this level you consume 3 Food each turn,In questo livello consumi 3 cibo ogni turno
+BROKEN_BRIDGE,Broken Bridge,Ponte Rotto
+BROKEN_BRIDGE_DESC,Each Dice placed here consume 2 Wood,Ogni Dado piazzato qui consuma 2 Legno

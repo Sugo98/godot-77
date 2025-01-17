@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_255qf")
-name = "Cupcake 1"
+name = "CUPCAKE_2"
 description = "CUPCAKE_2_DESC"
 texture = ExtResource("2_e1hyy")
 character_class = 2

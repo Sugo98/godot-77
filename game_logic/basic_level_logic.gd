@@ -22,6 +22,7 @@ const offset_x = 100
 @onready var blocker: Control = $Blocker
 @export var obstacle : PanelContainer
 @export var desert_icon : PanelContainer
+@export var bridge_icon : PanelContainer
 
 var enemy_slots : Array[DiceSlot]
 var enemy_pivots: Array[Node]
@@ -80,11 +81,13 @@ func show_slots():
 	if data.food_consumption > 2:
 		desert_icon.show()
 		desert_icon.tooltip_text = "%s\n%s" % [tr("DESERT_ICON"), tr("DESERT_ICON_DESC")]
+	if data.broken_bridge:
+		bridge_icon.show()
+		bridge_icon.tooltip_text = "%s\n%s" % [tr("BROKEN_BRIDGE"), tr("BROKEN_BRIDGE_DESC")]
 	if not data.boss_level:
 		for slot : DiceSlot in road_slots:
 			if 2-slot.get_index() < data.road_slots:
 				slot.show()
-				if  data.broken_bridge : slot.theme_type_variation = "BrokenBridge"
 			else:
 				slot.hide()
 	else:

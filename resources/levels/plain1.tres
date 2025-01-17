@@ -12,6 +12,7 @@ name = "Plain 1"
 description = ""
 length_of_the_road = 6
 boss_level = false
+food_consumption = 2
 enemy = Array[ExtResource("1_8wblf")]([ExtResource("2_on5ee"), ExtResource("3_kbwjx")])
 enemy_probability = Array[int]([6, 4])
 initial_enemy = Array[ExtResource("1_8wblf")]([ExtResource("2_on5ee"), ExtResource("2_on5ee")])
