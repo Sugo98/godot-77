@@ -63,15 +63,19 @@ func _ready() -> void:
 	back_ground_music.play()
 
 func show_slots(): 
+	for slot : DiceSlot in caravan_slots:
+		slot.tooltip_text = tr("CARAVAN_SLOT")
 	for slot : DiceSlot in wood_slots:
 		if 1 - slot.get_index() < data.wood_slots:
 			slot.show()
+			slot.tooltip_text = tr("WOOD_SLOT")
 			if data.mod_wood : slot.theme_type_variation = "Plus_1"
 		else:
 			slot.hide()
 	for slot : DiceSlot in food_slots:
 		if slot.get_index() < data.food_slots:
 			slot.show()
+			slot.tooltip_text = tr("FOOD_SLOT")
 			if data.mod_food : slot.theme_type_variation = "Plus_1"
 		else:
 			slot.hide()
@@ -88,6 +92,7 @@ func show_slots():
 		for slot : DiceSlot in road_slots:
 			if 2-slot.get_index() < data.road_slots:
 				slot.show()
+				slot.tooltip_text = tr("ROAD_SLOT")
 			else:
 				slot.hide()
 	else:
@@ -267,6 +272,7 @@ func spawn_enemy(enemy_data : EnemyData):
 			pivot.add_child(new_enemy)
 			new_enemy.reset_turn()
 			enemy_slots[i].show()
+			enemy_slots[i].tooltip_text = tr("ENEMY_SLOT")
 			new_enemy.dice_slots.append(slot)
 			active_enemies[ slot ] = new_enemy
 			await wait_time(t)

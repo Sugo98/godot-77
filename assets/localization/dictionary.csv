@@ -17,6 +17,7 @@ MUSIC,Music,Musica
 CLOSE,Close,Chiudi
 RESET,Reset,Ripristina
 DISTANCE_LABEL,Remaining,Rimanente
+DISTANCE,Distance,Distanza
 SOLVE_TURN,Done,Fatto
 LANGUAGE_SETTINGS,Language Selection,Seleziona Lingua
 LANGUAGE,Language,Lingua
@@ -41,13 +42,13 @@ ALEMBIC_1_DESC,Reduces by 1 the attack of all Enemies,Riduce di 1 l’attacco di
 ALEMBIC_2,Alembic 2,Alambicco 2
 ALEMBIC_2_DESC,Reduces by 2 the attack of all Enemies,Riduce di 2 l’attacco di tutti i Nemici
 ANIMAL_COMPANION_1,Animal Companion 1,Compagno Animale 1
-ANIMAL_COMPANION_1_DESC,"Deals 1 damage and gathers 1 Food,
-can be also placed on a Food Slot","Infligge 1 danno e raccoglie 1 Cibo,
-può anche essere piazzato in uno Spazio Cibo"
+ANIMAL_COMPANION_1_DESC,"On an Enemy Slot: Deals 1 damage and gathers 1 Food.
+On a Food Slot just gathers the food","Su uno Spazio Nemico: Infligge 1 danno e Raccoglie 1 Cibo
+Su uno Spazio Cibo Raccoglie solo il Cibo"
 ANIMAL_COMPANION_2,Animal Companion 2,Compagno Animale 2
-ANIMAL_COMPANION_2_DESC,"Deals 2 damages and gathers 1 Food,
-Can be also placed on a Food Slot","Infligge 2 danni e raccoglie 1 Cibo,
-Può anche essere piazzato in uno Spazio Cibo"
+ANIMAL_COMPANION_2_DESC,"On an Enemy Slot: Deals 2 damages and gathers 1 Food.
+On a Food Slot just gathers the food","Su uno Spazio Nemico: Infligge 2 danni e Raccoglie 1 Cibo
+Su uno Spazio Cibo Raccoglie solo il Cibo"
 CARROT_1,Carrot 1,Carota 1
 CARROT_1_DESC,"Can be placed only in a Wood Slot
 and gathers 1 Wood and 1 Food","Può essere piazzato solo in uno Spazio Legno
@@ -58,12 +59,12 @@ and gathers 2 Wood and 1 Food","Può essere piazzato solo in uno Spazio Legno
 e raccoglie 2 Legno e 1 Cibo"
 CLUB_1,Club 1,Mazza 1
 CLUB_1_DESC,"Deals 1 damage. Stuns a Small Enemy or
-reduce the attack of a Large Enemy by 1","Infligge 1 danno, Stordisce un Nemico Piccolo
-o stordisce un Nemico Grande"
+reduces the attack of a Large Enemy by 1","Infligge 1 danno, Stordisce un Nemico Piccolo
+o Riduce di 1 l’attacco di un Nemico Grande"
 CLUB_2,Club 2,Mazza 2
 CLUB_2_DESC,"Deals 2 damages. Stuns a Small Enemy or
-reduce the attack of a Large Enemy by 1","Infligge 2 danno, Stordisce un Nemico Piccolo
-o stordisce un Nemico Grande"
+Reduces the attack of a Large Enemy by 1","Infligge 2 danni, Stordisce un Nemico Piccolo
+o Riduce di 1 l’attacco di un Nemico Grande"
 CUPCAKE_1,Cupcake 1,Dolcetto 1
 CUPCAKE_1_DESC,"Can be placed in any Slot,
 count 1 for the corresponding action.
@@ -133,7 +134,7 @@ WHEEL_2_DESC,"If placed on a Road Slot advances by 2
 If placed on a Caravan Slot it consume
 3 Wood to repair the Caravan by 2 Health Point","Se piazzata sulla strada avanza di 2
 Se piazzata sulla carovana consuma 3 Legno
-Per riparare la Carovana di 2 Punto Salute"
+Per riparare la Carovana di 2 Punti Salute"
 WOOD_1,Wood 1,Legno 1
 WOOD_1_DESC,Gathers 1 Wood,Raccoglie 1 Legno
 WOOD_2,Wood 2,Legno 2
@@ -156,7 +157,16 @@ HEALTH_BAR_LABEL,Health,Salute
 FOOD_BAR_LABEL,Food,Cibo
 ROAD_OBSTACLE,Rough Terrain,Terreno Impervio
 ROAD_OBSTACLE_DESC,The first Wheel played each turn is ignored,Ignora la prima Ruota giocata di ogni turno
-DESERT_ICON,Desert,Desert
+DESERT_ICON,Desert,Deserto
 DESERT_ICON_DESC,In this level you consume 3 Food each turn,In questo livello consumi 3 cibo ogni turno
 BROKEN_BRIDGE,Broken Bridge,Ponte Rotto
 BROKEN_BRIDGE_DESC,Each Dice placed here consume 2 Wood,Ogni Dado piazzato qui consuma 2 Legno
+WOOD_SLOT,Place a Dice here to collect Wood,Piazza un Dado qui per raccogliere Legno
+FOOD_SLOT,Place a Dice here to collect Food,Piazza un Dado qui per raccogliere Cibo
+ROAD_SLOT,"Place a Wheel or a Gear here
+To advance on the Road","Piazza una Ruota o un Ingranaggio qui
+Per avanzare lungo la Strada"
+CARAVAN_SLOT,"Place a Shield here to defend the Caravan
+Or a Wheel to repair it","Piazza uno Scudo qui per difendere la carovana
+O una Ruota per ripararla"
+ENEMY_SLOT,Place a dice here to fight the Enemy,Piazza un Dado qui per combattere il Nemico
