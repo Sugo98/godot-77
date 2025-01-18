@@ -37,6 +37,7 @@ WIZARD_CLASS_NAME,Wizard,Mago
 RANGER_CLASS_NAME,Ranger,Guardaboschi
 INVENTOR_CLASS_NAME,Inventor,Inventore
 NOT_ENOUGH_WOOD,Not Enough Wood,Legno Insufficiente
+MAX_HEALTH_REACHED,The Caravan is already in perfect conditions,La Carovana è già in perfette condizioni
 ALEMBIC_1,Alembic 1,Alambicco 1
 ALEMBIC_1_DESC,Reduces by 1 the attack of all Enemies,Riduce di 1 l’attacco di tutti i Nemici
 ALEMBIC_2,Alembic 2,Alambicco 2

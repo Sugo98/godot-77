@@ -105,12 +105,15 @@ func repair(x, discount:bool, pos):
 	if wood < c:
 		Utils.create_text_feedback(tr("NOT_ENOUGH_WOOD"), pos)
 		return
-	wood -= c
-	health += x
-	update_all_labels()
-	Utils.create_text_feedback("-" + str(c) + " " + tr("WOOD"), pos)
-	await get_tree().create_timer(0.3).timeout
-	Utils.create_text_feedback("+" + str(x) + " "  + "HP", pos)
+	if health < max_health:
+		wood -= c
+		health += x
+		update_all_labels()
+		Utils.create_text_feedback("-" + str(c) + " " + tr("WOOD"), pos)
+		await get_tree().create_timer(0.3).timeout
+		Utils.create_text_feedback("+" + str(x) + " "  + "HP", pos)
+	else:
+		Utils.create_text_feedback(tr("MAX_HEALTH_REACHED"), pos)
 
 func can_repair_bridge(cost : int, pos) -> bool:
 	if wood < cost:

@@ -222,7 +222,7 @@ func solve_road_slots():
 				x -= 1
 			Utils.create_text_feedback("-" + str(x) + " " + tr("DISTANCE"), slot.global_position)
 			decrase_road(x)
-
+		
 		face.hide()
 		await wait_time(t)
 
