@@ -127,3 +127,9 @@ func can_repair_bridge(cost : int, pos) -> bool:
 
 func next_level():
 	await caravan.do_the_animation()
+
+func check_game_over() -> bool:
+	print(food, " ", health)
+	if food <= 0: return true
+	if health <= 0: return true
+	return false

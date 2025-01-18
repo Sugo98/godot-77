@@ -7,9 +7,34 @@ RESUME_GAME,RESUME,RIPRENDI
 QUIT_GAME,QUIT,ABBANDONA
 LANGUAGE_LABEL,LANGUAGE,LINGUA
 GAME_SETTINGS,Game Settings,Impostazioni di gioco
+BACK_TO_MENU,BACK TO MENU,RITORNA AL MENU
 ANIMATION_SPEED,"Animation
 Speed","Velocità
 Animazioni"
+GAME_END_QUOTE_1,"CONGRATULATIONS!!!
+
+You arrived at the end
+of this Journey","COMPLIMENTI!!!
+
+Sei arrivato alla fine
+di questo viaggio"
+GAME_END_QUOTE_2,but remember:,ma ricorda:
+GAME_END_QUOTE_3,when something ends…,quando qualcosa finisce…
+GAME_END_QUOTE_4,something new is about to begin,qualcosa di nuovo sta per cominciare
+THANK_YOU_FOR_PLAYING,"THANK YOU
+FOR PLAYING","GRAZIE
+PER AVER GIOCATO"
+ROLL_CREDITS,"PROGRAMMING:
+Palantir98, Sugo98
+ART:
+Nucciol
+
+Music assets by ","PROGRAMMAZIONE:
+Palantir98, Sugo98
+GRAFICA:
+Nucciol
+
+Assets musicali di "
 SLOW,Slow,Lenta
 MEDIUM,Medium,Media
 FAST,Fast,Veloce

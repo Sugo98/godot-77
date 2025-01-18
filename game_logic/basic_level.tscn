@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://tkb6vimwhpij"]
+[gd_scene load_steps=15 format=3 uid="uid://tkb6vimwhpij"]
 
 [ext_resource type="Script" path="res://game_logic/basic_level_logic.gd" id="1_n52b6"]
 [ext_resource type="PackedScene" uid="uid://yvwkwgojt1ab" path="res://enemies logic/enemy.tscn" id="2_beh15"]
@@ -37,7 +37,19 @@ corner_radius_top_right = 23
 corner_radius_bottom_right = 23
 corner_radius_bottom_left = 23
 
-[node name="BasicLevel" type="Control" node_paths=PackedStringArray("road_label", "road_progress_bar", "sfx", "obstacle", "desert_icon", "bridge_icon")]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1qq4t"]
+bg_color = Color(1, 0.419608, 0.419608, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.2, 0.0823529, 0.0823529, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="BasicLevel" type="Control" node_paths=PackedStringArray("road_label", "road_progress_bar", "sfx", "obstacle", "desert_icon", "bridge_icon", "you_died", "lose_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -52,6 +64,8 @@ sfx = [NodePath("Node/Fireball"), NodePath("Node/Icewall")]
 obstacle = NodePath("Obstacle")
 desert_icon = NodePath("DesertIcon")
 bridge_icon = NodePath("BrokenBridge")
+you_died = NodePath("YouDied")
+lose_button = NodePath("MainMenuAfetrLose")
 enemy_scene = ExtResource("2_beh15")
 metadata/_edit_use_anchors_ = true
 
@@ -350,21 +364,10 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_dpa7i")
 text = "SOLVE_TURN"
 clip_text = true
 
-[node name="Blocker" type="Control" parent="."]
-visible = false
-z_index = 5
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
 [node name="BackGroundMusic" type="AudioStreamPlayer" parent="."]
 bus = &"Music"
 
 [node name="Button" type="Button" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 1720.0
 offset_top = 562.0
@@ -492,6 +495,47 @@ modulate = Color(0.2, 0.0823529, 0.0823529, 1)
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 texture = ExtResource("9_6hka6")
+
+[node name="Blocker" type="Control" parent="."]
+visible = false
+z_index = 5
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="YouDied" type="ColorRect" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+z_index = 10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.0823529, 0.0823529, 1)
+
+[node name="MainMenuAfetrLose" type="Button" parent="."]
+visible = false
+z_index = 11
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -339.0
+offset_top = -81.0
+offset_right = 339.0
+offset_bottom = 81.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.2, 0.0823529, 0.0823529, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_1qq4t")
+text = "BACK_TO_MENU"
 
 [connection signal="pressed" from="PanelContainer/SolveTurn" to="." method="solve_turn"]
 [connection signal="pressed" from="Button" to="." method="next_level"]

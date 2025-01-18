@@ -4,6 +4,7 @@ class_name GameManager extends Node
 @export var level_scene : PackedScene
 @export var merchant_scene : PackedScene
 @export var heroes_manager_scene : PackedScene
+@export var end_game_scene : PackedScene
 @export var main_canvas : CanvasLayer
 
 @export var journey_data : Journey
@@ -13,6 +14,7 @@ var actual_stop : Node
 var heroes_manager : HeroesManager
 
 var main_menu : MainMenu 
+var end_game_screen : EndGameScreen
 
 func check_warnings():
 	var warnings : Array = []
@@ -25,6 +27,8 @@ func _ready() -> void:
 	check_warnings()
 	main_menu = main_menu_scene.instantiate()
 	main_menu.game_manager = self
+	end_game_screen = end_game_scene.instantiate()
+	end_game_screen.game_manager = self
 	main_canvas.add_child(main_menu)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -47,6 +51,7 @@ func go_to_next_level():
 			await actual_stop.clear_ui()
 			await heroes_manager.next_level()
 		actual_stop.queue_free()
+		actual_stop = null
 	if journey_stops.is_empty():
 		end_game()
 		return
@@ -82,10 +87,13 @@ func load_merchant(data : MerchantData) -> void:
 	main_menu.pause_button.hide()
 	
 func quit_game():
-	actual_stop.queue_free()
+	if actual_stop:
+		actual_stop.queue_free()
 	actual_stop = null
-	heroes_manager.queue_free()
+	if heroes_manager:
+		heroes_manager.queue_free()
+	main_canvas.remove_child(end_game_screen)
 	load_menu()
 
 func end_game():
-	print("end_game")
+	main_canvas.add_child(end_game_screen)

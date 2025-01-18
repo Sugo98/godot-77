@@ -23,6 +23,8 @@ const offset_x = 100
 @export var obstacle : PanelContainer
 @export var desert_icon : PanelContainer
 @export var bridge_icon : PanelContainer
+@export var you_died : ColorRect
+@export var lose_button : Button
 
 var enemy_slots : Array[DiceSlot]
 var enemy_pivots: Array[Node]
@@ -127,6 +129,9 @@ func solve_turn():
 	await solve_caravan_slots()
 	await solve_enemies_slots()
 	await solve_road_slots()
+	if heroes_manager.check_game_over():
+		game_over()
+		return
 	if check_end():
 		await next_level()
 	else:
@@ -232,6 +237,7 @@ func decrase_road(x):
 	road_label.text = tr("DISTANCE_LABEL") + ": " + str(road)
 
 func next_level():
+	blocker.show()
 	await wait_time(0.5)
 	game_manager.go_to_next_level()
 
@@ -434,3 +440,14 @@ func clear_ui():
 	tween.tween_property(road_progress_bar, "modulate:a",0,t)
 	tween.tween_property(obstacle, "modulate:a",0,t)
 	await wait_time(t)
+
+func game_over():
+	you_died.show()
+	blocker.show()
+	print("hello")
+	var tween = create_tween()
+	tween.tween_property(you_died, "modulate:a", 0.9, 2)
+	await  tween.finished
+	lose_button.show()
+	await lose_button.pressed
+	game_manager.quit_game()

@@ -1,0 +1,163 @@
+[gd_scene load_steps=6 format=3 uid="uid://bi2rnee80yylu"]
+
+[ext_resource type="Script" path="res://game_logic/end_game.gd" id="1_0lanf"]
+[ext_resource type="Texture2D" uid="uid://bjl5tow7l1xn7" path="res://assets/background/xp.png" id="2_vnuuw"]
+[ext_resource type="Theme" uid="uid://bionh2bhlri40" path="res://assets/theme/basic_theme.tres" id="3_jhfgu"]
+[ext_resource type="FontFile" uid="uid://bhign6v57q280" path="res://assets/theme/fonts/Helvetica-Bold.ttf" id="4_2mr74"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qhcga"]
+bg_color = Color(0.227451, 0.498039, 0.733333, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="EndGame" type="ColorRect" node_paths=PackedStringArray("star_container", "fader", "quote", "thanks", "credits", "back_button")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0.0941176, 1)
+script = ExtResource("1_0lanf")
+star_container = NodePath("StarContainer")
+star_texture = ExtResource("2_vnuuw")
+fader = NodePath("Fader")
+quote = NodePath("VBoxContainer")
+thanks = NodePath("Thanks")
+credits = NodePath("Credits")
+back_button = NodePath("PanelContainer")
+
+[node name="StarContainer" type="Node2D" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -362.5
+offset_top = -349.0
+offset_right = 362.5
+offset_bottom = -141.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="BackToMenu" type="Button" parent="PanelContainer"]
+layout_mode = 2
+theme = ExtResource("3_jhfgu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qhcga")
+text = "BACK_TO_MENU"
+
+[node name="Fader" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -272.0
+offset_top = -256.0
+offset_right = 273.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 24
+
+[node name="Quote1" type="Label" parent="VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0.0941176, 1)
+theme_override_constants/outline_size = 48
+theme_override_fonts/font = ExtResource("4_2mr74")
+theme_override_font_sizes/font_size = 50
+text = "GAME_END_QUOTE_1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quote2" type="Label" parent="VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0.0941176, 1)
+theme_override_constants/outline_size = 48
+theme_override_fonts/font = ExtResource("4_2mr74")
+theme_override_font_sizes/font_size = 50
+text = "GAME_END_QUOTE_2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quote3" type="Label" parent="VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0.0941176, 1)
+theme_override_constants/outline_size = 48
+theme_override_fonts/font = ExtResource("4_2mr74")
+theme_override_font_sizes/font_size = 50
+text = "GAME_END_QUOTE_3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quote4" type="Label" parent="VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0.0941176, 1)
+theme_override_constants/outline_size = 48
+theme_override_fonts/font = ExtResource("4_2mr74")
+theme_override_font_sizes/font_size = 50
+text = "GAME_END_QUOTE_4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Thanks" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -958.0
+offset_top = -342.0
+offset_right = -130.0
+offset_bottom = -281.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0.0941176, 1)
+theme_override_constants/outline_size = 48
+theme_override_fonts/font = ExtResource("4_2mr74")
+theme_override_font_sizes/font_size = 60
+text = "THANK_YOU_FOR_PLAYING"
+horizontal_alignment = 2
+
+[node name="Credits" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -437.0
+offset_top = -160.0
+offset_right = -130.0
+offset_bottom = 313.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0.0941176, 1)
+theme_override_constants/outline_size = 48
+theme_override_fonts/font = ExtResource("4_2mr74")
+theme_override_font_sizes/font_size = 40
+text = "ROLL_CREDITS"
+horizontal_alignment = 2
+
+[connection signal="pressed" from="PanelContainer/BackToMenu" to="." method="_on_back_to_menu_pressed"]
