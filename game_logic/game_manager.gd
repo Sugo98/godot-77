@@ -47,7 +47,6 @@ func go_to_next_level():
 			await actual_stop.clear_ui()
 			await heroes_manager.next_level()
 		actual_stop.queue_free()
-		print("NEXT")
 	if journey_stops.is_empty():
 		end_game()
 		return
@@ -57,7 +56,6 @@ func go_to_next_level():
 	if next_stop is MerchantData:
 		load_merchant(next_stop)
 	journey_stops.pop_front()
-	
 
 func load_level(data : LevelData) -> void:
 	var level : LevelLogic = level_scene.instantiate()

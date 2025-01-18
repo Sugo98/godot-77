@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://beporjlmlp4qr"]
 
 [ext_resource type="Script" path="res://game_logic/caravan_animation.gd" id="1_gn41v"]
-[ext_resource type="Texture2D" uid="uid://c2i4hqf6i2g3d" path="res://assets/background/white.png" id="2_yh7as"]
+[ext_resource type="Texture2D" uid="uid://cmvehuhjxir1v" path="res://assets/caravan/carrettino ridimensionato.png" id="2_rkb5t"]
 
 [node name="Caravan" type="Node2D" node_paths=PackedStringArray("caravan_sprite")]
 position = Vector2(945, 531)
@@ -17,9 +17,7 @@ shaking_rotation = 2.0
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.39, 0.19448, 0.0234, 1)
-scale = Vector2(481, 406)
-texture = ExtResource("2_yh7as")
+texture = ExtResource("2_rkb5t")
 
 [node name="FeedbackPosition" type="Marker2D" parent="."]
 position = Vector2(0, -104)

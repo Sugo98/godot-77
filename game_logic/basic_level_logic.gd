@@ -56,7 +56,7 @@ func _ready() -> void:
 	show_slots()
 	spawn_initial_enemy()
 	decrase_road(0) #update road label
-	start_playng_music()
+	start_playing_music()
 	blocker.hide()
 	background.texture = data.back_ground_texture
 	back_ground_music.stream = data.soundtrack
@@ -412,7 +412,7 @@ func check_end() -> bool:
 	else:
 		return (road <= 0)
 
-func start_playng_music():
+func start_playing_music():
 	back_ground_music.process_mode = Node.PROCESS_MODE_ALWAYS
 	back_ground_music.stream = data.soundtrack
 	back_ground_music.play()
