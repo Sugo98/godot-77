@@ -1,4 +1,4 @@
-extends Panel
+class_name Tutorial extends ColorRect
 
 @onready var previous: Button = $Previous
 @onready var next: Button = $Next
@@ -6,17 +6,24 @@ extends Panel
 @onready var page_control: Control = $PageControl
 
 @onready var starting_index : int = 0
+var pages : Array[Node]
 
 func _ready() -> void:
-	var pages = page_control.get_children()
+	pages = page_control.get_children()
+
+func hide_all_pages():
 	for page in pages:
 		page.hide()
+
+func open_tutorial() -> void:
+	show()
+	starting_index = 0
+	hide_all_pages()
 	pages[starting_index].show()
 	previous.disabled = true
 	next.disabled = false
 
 func _on_previous_button_down() -> void:
-	var pages = page_control.get_children()
 	pages[starting_index].hide()
 	starting_index -= 1
 	pages[starting_index].show()
@@ -25,7 +32,6 @@ func _on_previous_button_down() -> void:
 	next.disabled = false
 
 func _on_next_button_down() -> void:
-	var pages = page_control.get_children()
 	pages[starting_index].hide()
 	starting_index += 1
 	pages[starting_index].show()
@@ -34,4 +40,6 @@ func _on_next_button_down() -> void:
 	previous.disabled = false
 
 func _on_close_button_down() -> void:
-	starting_index = 1
+	starting_index = 0
+	hide_all_pages()
+	hide()

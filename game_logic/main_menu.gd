@@ -11,6 +11,7 @@ var game_manager : GameManager
 @export var sfx_stream : Array[AudioStreamPlayer]
 @export var blocker : ColorRect
 @export var caravan : Node2D
+@export var tutorial : Tutorial
 
 @onready var animation_buttons = {
 	"slow" : %SlowAnimation,
@@ -40,15 +41,23 @@ func default_volume() -> void:
 	%MusicSlider.value = 0.75
 	%SFXSlider.value = 0.75
 
-func prepare_main_menu() :
-	pause = false
-	get_tree().set_pause(pause)
-	title.show()
-	game_menu.show()
+
+func hide_everything():
+	title.hide()
+	game_menu.hide()
 	settings_menu.hide()
 	pause_menu.hide()
 	pause_button.hide()
 	blocker.hide()
+	caravan.hide()
+	tutorial.hide()
+
+func prepare_main_menu() :
+	pause = false
+	get_tree().set_pause(pause)
+	hide_everything()
+	title.show()
+	game_menu.show()
 	caravan.show()
 	caravan.do_the_shake()
 	music_stream_player.play()
@@ -57,13 +66,9 @@ func prepare_main_menu() :
 func prepare_for_game():
 	pause = false
 	get_tree().set_pause(pause)
-	game_menu.hide()
-	settings_menu.hide()
-	pause_menu.hide()
-	caravan.hide()
+	hide_everything()
 	pause_button.show()
 	%PauseButton.icon = pause_icon[ int(pause) ]
-	title.hide()
 
 func _on_start_game_pressed() -> void:
 	game_manager.start_new_game()
@@ -139,6 +144,7 @@ func _on_sfx_pressed() -> void:
 
 
 func _on_pause_button_pressed() -> void:
+	hide_everything() # SE qualcosa non si vede è qua il problema
 	pause_button.show()
 	pause = not pause
 	get_tree().set_pause(pause)
@@ -148,9 +154,13 @@ func _on_pause_button_pressed() -> void:
 
 
 func _on_resume_game_pressed() -> void:
-	settings_menu.hide()
+	hide_everything()
 	_on_pause_button_pressed()
 
 
 func _on_quit_game_pressed() -> void:
 	game_manager.quit_game()
+
+
+func _on_how_to_play_pressed() -> void:
+	tutorial.open_tutorial()

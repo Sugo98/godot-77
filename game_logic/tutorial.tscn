@@ -9,12 +9,13 @@
 [ext_resource type="Texture2D" uid="uid://byx8dlamupa55" path="res://assets/heroes/inventore DEF.png" id="4_qdvuw"]
 [ext_resource type="Texture2D" uid="uid://bnre3voy4rnnp" path="res://assets/tutorial/level.png" id="7_wlm5s"]
 
-[node name="Tutorial" type="Panel"]
+[node name="Tutorial" type="ColorRect"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0, 0, 0, 0.752941)
 script = ExtResource("1_k3yv4")
 
 [node name="PageControl" type="Control" parent="."]
@@ -140,8 +141,7 @@ offset_left = 1096.0
 offset_top = 35.0
 offset_right = 1785.0
 offset_bottom = 357.0
-text = "PAGE2_TEXT1
-"
+text = "PAGE2_TEXT1"
 
 [node name="PAGE2_TEXT2" type="RichTextLabel" parent="PageControl/Page2"]
 layout_mode = 0
