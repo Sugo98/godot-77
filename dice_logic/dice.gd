@@ -10,6 +10,7 @@ var faces : Array[DiceFace]
 @export var dice_slots: BoxContainer
 @export var slots_for_merchant: HBoxContainer
 @export var sprite_2d : TextureRect
+@export var class_label : Label
 
 @export var dice_roll_sfx : Node
 var roll_sfx : Array[AudioStreamPlayer]
@@ -33,6 +34,7 @@ func prepare_for_merchant():
 	level_stuff.set_visible(false)
 	set_slots_owner(slots_for_merchant)
 	load_for_merchant()
+	class_label_name()
 
 func load_basic_dice():
 	var i = 0
@@ -108,3 +110,7 @@ func play_roll_dice_sfx():
 	var delay = randf_range(0,0.5)
 	await get_tree().create_timer(delay).timeout
 	sfx.play()
+
+func class_label_name():
+	var s = Utils.get_class_name(character_class)
+	class_label.text = tr(s)

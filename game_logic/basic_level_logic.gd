@@ -131,7 +131,7 @@ func solve_turn():
 
 func solve_hunger():
 	heroes_manager.eat(data.food_consumption)
-	Utils.create_text_feedback("-" + str(data.food_consumption) + " " + tr("FOOD"), heroes_manager.caravan_position)
+	Utils.create_text_feedback("-" + str(data.food_consumption) + " " + tr("FOOD_NAME"), heroes_manager.caravan_position)
 	await wait_time(t)
 
 func solve_wood_slots():
@@ -141,11 +141,11 @@ func solve_wood_slots():
 		var face : DiceFace = slot.get_child(0)
 		var x = face.data.wood + face.data.jolly + data.mod_wood
 		if x < 0 : x = 0
-		Utils.create_text_feedback("+" + str(x) + " " + tr("WOOD"), slot.global_position)
+		Utils.create_text_feedback("+" + str(x) + " " + tr("WOOD_NAME"), slot.global_position)
 		heroes_manager.increase_wood(x)
 		if face.data.carrot:
 			await wait_time(t/2)
-			Utils.create_text_feedback("+" + str(1) + " " + tr("FOOD"), slot.global_position)
+			Utils.create_text_feedback("+" + str(1) + " " + tr("FOOD_NAME"), slot.global_position)
 			heroes_manager.increase_food(1)
 		face.hide()
 		await wait_time(t)
@@ -157,7 +157,7 @@ func solve_food_slots():
 		var face : DiceFace = slot.get_child(0)
 		var x = face.data.food + face.data.jolly + data.mod_food
 		if x < 0 : x = 0
-		Utils.create_text_feedback("+" + str(x) + " " + tr("FOOD"), slot.global_position)
+		Utils.create_text_feedback("+" + str(x) + " " + tr("FOOD_NAME"), slot.global_position)
 		face.hide()
 		heroes_manager.increase_food(x)
 		await wait_time(t)
@@ -369,7 +369,7 @@ func resolve_attack_dice(face:DiceFace, enemy:Enemy) :
 		else:
 			enemy.reduce_attack(1)
 	if face.data.food:
-		Utils.create_text_feedback("+" + str(face.data.food) + " " + tr("FOOD"), face.global_position)
+		Utils.create_text_feedback("+" + str(face.data.food) + " " + tr("FOOD_NAME"), face.global_position)
 		heroes_manager.increase_food(face.data.food)
 	if enemy.inflict_damage(damage, "sword"): await kill_enemy(enemy)
 	await wait_time(t)
@@ -390,12 +390,12 @@ func enemy_steal(enemy : Enemy):
 	var x = enemy.data.steal_food
 	if x:
 		heroes_manager.increase_food(-x)
-		Utils.create_text_feedback("-" + str(x) + " " + tr("FOOD"), heroes_manager.caravan_position)
+		Utils.create_text_feedback("-" + str(x) + " " + tr("FOOD_NAME"), heroes_manager.caravan_position)
 		await wait_time(t)
 	x = enemy.data.steal_wood
 	if x:
 		heroes_manager.increase_wood(-x)
-		Utils.create_text_feedback("-" + str(x) + " " + tr("WOOD"), heroes_manager.caravan_position)
+		Utils.create_text_feedback("-" + str(x) + " " + tr("WOOD_NAME"), heroes_manager.caravan_position)
 		await wait_time(t)
 
 func check_end() -> bool:

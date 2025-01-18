@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://e3w2l0sl2g7m"]
+[gd_scene load_steps=16 format=3 uid="uid://e3w2l0sl2g7m"]
 
 [ext_resource type="Script" path="res://dice_logic/dice.gd" id="1_5jc4y"]
 [ext_resource type="Script" path="res://dice_logic/dice_slot.gd" id="2_qx407"]
 [ext_resource type="Theme" uid="uid://ypak5t8xrvk8" path="res://assets/theme/slot_dice.tres" id="2_ul5lb"]
+[ext_resource type="Theme" uid="uid://bionh2bhlri40" path="res://assets/theme/basic_theme.tres" id="3_hg3gv"]
 [ext_resource type="Texture2D" uid="uid://c0yr0uw61pg1n" path="res://assets/heroes/eroe ranger 1.png" id="3_tfa44"]
 [ext_resource type="AudioStream" uid="uid://d3a1sjmhs14hl" path="res://assets/sound fx/dice_roll/dice_roll_1.wav" id="5_wngue"]
 [ext_resource type="AudioStream" uid="uid://4wtpc23mvhec" path="res://assets/sound fx/dice_roll/dice_roll_2.wav" id="6_nyhi1"]
@@ -16,7 +17,7 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gc3jb"]
 
-[node name="Dice" type="Control" node_paths=PackedStringArray("level_stuff", "merchant_stuff", "dice_slots", "slots_for_merchant", "sprite_2d", "dice_roll_sfx")]
+[node name="Dice" type="Control" node_paths=PackedStringArray("level_stuff", "merchant_stuff", "dice_slots", "slots_for_merchant", "sprite_2d", "class_label", "dice_roll_sfx")]
 custom_minimum_size = Vector2(0, 270)
 layout_mode = 3
 anchors_preset = 10
@@ -30,30 +31,40 @@ script = ExtResource("1_5jc4y")
 level_stuff = NodePath("Level")
 merchant_stuff = NodePath("Merchant")
 dice_slots = NodePath("Level/HBoxContainer/DiceSlots")
-slots_for_merchant = NodePath("Merchant/SlotsForMerchants")
+slots_for_merchant = NodePath("Merchant/HBoxContainer/SlotsForMerchants")
 sprite_2d = NodePath("Level/HBoxContainer/PanelContainer/Sprite2D")
+class_label = NodePath("Merchant/HBoxContainer/HeroClass")
 dice_roll_sfx = NodePath("DiceRollSFX")
 
 [node name="Merchant" type="MarginContainer" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -72.0
-offset_right = 824.0
-offset_bottom = 72.0
+offset_top = -102.5
+offset_right = 884.0
+offset_bottom = 102.5
 grow_vertical = 2
 theme_override_constants/margin_left = 36
 theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 0
 
-[node name="SlotsForMerchants" type="HBoxContainer" parent="Merchant"]
+[node name="HBoxContainer" type="VBoxContainer" parent="Merchant"]
+layout_mode = 2
+
+[node name="HeroClass" type="Label" parent="Merchant/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_hg3gv")
+theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 60
+text = "HERO_CLASS"
+
+[node name="SlotsForMerchants" type="HBoxContainer" parent="Merchant/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="PanelContainer" type="PanelContainer" parent="Merchant/SlotsForMerchants"]
+[node name="PanelContainer" type="PanelContainer" parent="Merchant/HBoxContainer/SlotsForMerchants"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_vertical = 4
@@ -61,7 +72,7 @@ theme = ExtResource("2_ul5lb")
 script = ExtResource("2_qx407")
 is_shopping = true
 
-[node name="PanelContainer2" type="PanelContainer" parent="Merchant/SlotsForMerchants"]
+[node name="PanelContainer2" type="PanelContainer" parent="Merchant/HBoxContainer/SlotsForMerchants"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_vertical = 4
@@ -69,7 +80,7 @@ theme = ExtResource("2_ul5lb")
 script = ExtResource("2_qx407")
 is_shopping = true
 
-[node name="PanelContainer3" type="PanelContainer" parent="Merchant/SlotsForMerchants"]
+[node name="PanelContainer3" type="PanelContainer" parent="Merchant/HBoxContainer/SlotsForMerchants"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_vertical = 4
@@ -77,7 +88,7 @@ theme = ExtResource("2_ul5lb")
 script = ExtResource("2_qx407")
 is_shopping = true
 
-[node name="PanelContainer4" type="PanelContainer" parent="Merchant/SlotsForMerchants"]
+[node name="PanelContainer4" type="PanelContainer" parent="Merchant/HBoxContainer/SlotsForMerchants"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_vertical = 4
@@ -85,7 +96,7 @@ theme = ExtResource("2_ul5lb")
 script = ExtResource("2_qx407")
 is_shopping = true
 
-[node name="PanelContainer5" type="PanelContainer" parent="Merchant/SlotsForMerchants"]
+[node name="PanelContainer5" type="PanelContainer" parent="Merchant/HBoxContainer/SlotsForMerchants"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_vertical = 4
@@ -93,7 +104,7 @@ theme = ExtResource("2_ul5lb")
 script = ExtResource("2_qx407")
 is_shopping = true
 
-[node name="PanelContainer6" type="PanelContainer" parent="Merchant/SlotsForMerchants"]
+[node name="PanelContainer6" type="PanelContainer" parent="Merchant/HBoxContainer/SlotsForMerchants"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_vertical = 4
@@ -102,6 +113,7 @@ script = ExtResource("2_qx407")
 is_shopping = true
 
 [node name="Level" type="MarginContainer" parent="."]
+visible = false
 layout_mode = 1
 offset_right = 640.0
 offset_bottom = 270.0

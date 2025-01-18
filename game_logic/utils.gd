@@ -29,3 +29,12 @@ func roll_animation(face : TextureRect, pos : Vector2):
 	tween.tween_property(face,"rotation",0, time)
 	await tween.finished
 	main_canvas.remove_child(face)
+
+func get_class_name(character_class : Global.CharacterClass) -> String :
+	var s
+	match character_class:
+		Global.CharacterClass.Fighter: s = "FIGHTER_CLASS_NAME"
+		Global.CharacterClass.Wizard: s = "WIZARD_CLASS_NAME"
+		Global.CharacterClass.Ranger: s = "RANGER_CLASS_NAME"
+		Global.CharacterClass.MasterMind: s = "INVENTOR_CLASS_NAME"
+	return s

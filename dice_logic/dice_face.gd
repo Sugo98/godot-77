@@ -18,7 +18,10 @@ func _ready():
 	stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	if data :
 		texture = data.texture
-		tooltip_text = "%s\n%s" % [tr(data.name), tr(data.description)]
+		var title = tr(data.name)
+		if data.character_class != Global.CharacterClass.Any:
+			title += " (" + tr(Utils.get_class_name(data.character_class)) + ")"
+		tooltip_text = "%s\n%s" % [title, tr(data.description)]
 		prepare_equivalen_rect()
 	root = get_tree().get_root()
 

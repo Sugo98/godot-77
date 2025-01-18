@@ -24,13 +24,17 @@ ENGLISH,English,English
 ITALIAN,Italiano,Italiano
 MASTER,Master,Principale
 SFX,SFX,Effetti
-PAUSE_BUTTON,Pause,
-FOOD ,Food,Cibo
-WOOD ,Wood,Legno
+PAUSE_BUTTON,Pause,Pausa
+FOOD_NAME,FOOD,CIBO
+WOOD_NAME,WOOD ,LEGNO
 TOTAL_COST,Total,Totale
 CONFIRM,Confirm,Conferma
 SHIELD ,Shield,Scudo
 SPIKES ,Spikes,Spine
+FIGHTER_CLASS_NAME,Warrior,Guerriera
+WIZARD_CLASS_NAME,Wizard,Mago
+RANGER_CLASS_NAME,Ranger,Guardaboschi
+INVENTOR_CLASS_NAME,Inventor,Inventore
 NOT_ENOUGH_WOOD,Not Enough Wood,Legno Insufficiente
 ALEMBIC_1,Alembic 1,Alambicco 1
 ALEMBIC_1_DESC,Reduces by 1 the attack of all Enemies,Riduce di 1 l’attacco di tutti i Nemici

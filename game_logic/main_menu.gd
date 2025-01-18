@@ -139,6 +139,7 @@ func _on_sfx_pressed() -> void:
 
 
 func _on_pause_button_pressed() -> void:
+	pause_button.show()
 	pause = not pause
 	get_tree().set_pause(pause)
 	%PauseButton.icon = pause_icon[ int(pause) ]
