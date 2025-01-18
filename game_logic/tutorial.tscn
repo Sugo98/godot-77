@@ -1,0 +1,531 @@
+[gd_scene load_steps=9 format=3 uid="uid://63fkkbtdlema"]
+
+[ext_resource type="Texture2D" uid="uid://du7fsdcx1ljr1" path="res://assets/heroes/guerriera DEF.png" id="1_7sja0"]
+[ext_resource type="Script" path="res://game_logic/tutorial.gd" id="1_k3yv4"]
+[ext_resource type="Theme" uid="uid://ch3snagd0dl8g" path="res://assets/theme/ui_theme.tres" id="1_semaq"]
+[ext_resource type="Texture2D" uid="uid://c1s0sxxrjxw0v" path="res://assets/heroes/maga DEF.png" id="2_nw56y"]
+[ext_resource type="Texture2D" uid="uid://c0yr0uw61pg1n" path="res://assets/heroes/eroe ranger 1.png" id="3_4fnma"]
+[ext_resource type="Theme" uid="uid://bionh2bhlri40" path="res://assets/theme/basic_theme.tres" id="3_ureg4"]
+[ext_resource type="Texture2D" uid="uid://byx8dlamupa55" path="res://assets/heroes/inventore DEF.png" id="4_qdvuw"]
+[ext_resource type="Texture2D" uid="uid://bnre3voy4rnnp" path="res://assets/tutorial/level.png" id="7_wlm5s"]
+
+[node name="Tutorial" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k3yv4")
+
+[node name="PageControl" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Page1" type="Control" parent="PageControl"]
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="PAGE1_TEXT1" type="RichTextLabel" parent="PageControl/Page1"]
+layout_mode = 0
+offset_left = 386.0
+offset_top = 90.0
+offset_right = 1374.0
+offset_bottom = 664.0
+theme = ExtResource("1_semaq")
+text = "PAGE1_TEXT1"
+
+[node name="Warrior" type="Sprite2D" parent="PageControl/Page1"]
+position = Vector2(192, 371)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_7sja0")
+
+[node name="Label" type="Label" parent="PageControl/Page1/Warrior"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1248.0
+offset_top = -444.0
+offset_right = 409.0
+offset_bottom = -303.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_ureg4")
+theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 140
+text = "FIGHTER_CLASS_NAME"
+horizontal_alignment = 1
+
+[node name="Mage" type="Sprite2D" parent="PageControl/Page1"]
+position = Vector2(528, 817)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_nw56y")
+
+[node name="Label2" type="Label" parent="PageControl/Page1/Mage"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1248.0
+offset_top = -479.0
+offset_right = 409.0
+offset_bottom = -338.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_ureg4")
+theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 140
+text = "WIZARD_CLASS_NAME"
+horizontal_alignment = 1
+
+[node name="Ranger" type="Sprite2D" parent="PageControl/Page1"]
+position = Vector2(1580, 476)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_4fnma")
+
+[node name="Label3" type="Label" parent="PageControl/Page1/Ranger"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1248.0
+offset_top = -494.0
+offset_right = 409.0
+offset_bottom = -353.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_ureg4")
+theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 140
+text = "RANGER_CLASS_NAME"
+horizontal_alignment = 1
+
+[node name="Inventor" type="Sprite2D" parent="PageControl/Page1"]
+position = Vector2(1457, 810)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_qdvuw")
+
+[node name="Label4" type="Label" parent="PageControl/Page1/Inventor"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1301.0
+offset_top = -469.0
+offset_right = 462.0
+offset_bottom = -328.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_ureg4")
+theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 140
+text = "INVENTOR_CLASS_NAME"
+horizontal_alignment = 1
+
+[node name="Page2" type="Control" parent="PageControl"]
+visible = false
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="PAGE2_TEXT1" type="RichTextLabel" parent="PageControl/Page2"]
+layout_mode = 0
+offset_left = 1096.0
+offset_top = 35.0
+offset_right = 1785.0
+offset_bottom = 357.0
+text = "PAGE2_TEXT1
+"
+
+[node name="PAGE2_TEXT2" type="RichTextLabel" parent="PageControl/Page2"]
+layout_mode = 0
+offset_left = 1098.0
+offset_top = 355.0
+offset_right = 1767.0
+offset_bottom = 547.0
+text = "PAGE2_TEXT2"
+
+[node name="HeroZone" type="Panel" parent="PageControl/Page2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Page3" type="Control" parent="PageControl"]
+visible = false
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="PAGE3_TEXT1" type="RichTextLabel" parent="PageControl/Page3"]
+layout_mode = 0
+offset_left = 713.0
+offset_top = 60.0
+offset_right = 1030.0
+offset_bottom = 173.0
+text = "PAGE3_TEXT1"
+
+[node name="Sprite2D" type="Sprite2D" parent="PageControl/Page3"]
+position = Vector2(913, 498)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_wlm5s")
+
+[node name="PAGE3_TEXT2" type="RichTextLabel" parent="PageControl/Page3"]
+layout_mode = 0
+offset_left = 670.0
+offset_top = 887.0
+offset_right = 1038.0
+offset_bottom = 990.0
+text = "PAGE3_TEXT2"
+
+[node name="Page3_1" type="Control" parent="PageControl"]
+visible = false
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="PAGE3_TEXT1" type="RichTextLabel" parent="PageControl/Page3_1"]
+layout_mode = 0
+offset_left = 713.0
+offset_top = 60.0
+offset_right = 1030.0
+offset_bottom = 173.0
+text = "PAGE3_TEXT1"
+
+[node name="Sprite2D" type="Sprite2D" parent="PageControl/Page3_1"]
+position = Vector2(913, 498)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_wlm5s")
+
+[node name="PAGE3_TEXT2" type="RichTextLabel" parent="PageControl/Page3_1"]
+layout_mode = 0
+offset_left = 670.0
+offset_top = 887.0
+offset_right = 1038.0
+offset_bottom = 990.0
+text = "PAGE3_TEXT2"
+
+[node name="PAGE3_TEXT3" type="Label" parent="PageControl/Page3_1"]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 416.0
+offset_right = 317.0
+offset_bottom = 509.0
+text = "PAGE3_TEXT3"
+
+[node name="Page3_2" type="Control" parent="PageControl"]
+visible = false
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="PAGE3_TEXT1" type="RichTextLabel" parent="PageControl/Page3_2"]
+layout_mode = 0
+offset_left = 713.0
+offset_top = 60.0
+offset_right = 1030.0
+offset_bottom = 173.0
+text = "PAGE3_TEXT1"
+
+[node name="Sprite2D" type="Sprite2D" parent="PageControl/Page3_2"]
+position = Vector2(913, 498)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_wlm5s")
+
+[node name="PAGE3_TEXT2" type="RichTextLabel" parent="PageControl/Page3_2"]
+layout_mode = 0
+offset_left = 670.0
+offset_top = 887.0
+offset_right = 1038.0
+offset_bottom = 990.0
+text = "PAGE3_TEXT2"
+
+[node name="PAGE3_TEXT4" type="Label" parent="PageControl/Page3_2"]
+layout_mode = 0
+offset_left = 746.0
+offset_top = 383.0
+offset_right = 968.0
+offset_bottom = 416.0
+text = "PAGE3_TEXT4"
+
+[node name="Page3_3" type="Control" parent="PageControl"]
+visible = false
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="PAGE3_TEXT1" type="RichTextLabel" parent="PageControl/Page3_3"]
+layout_mode = 0
+offset_left = 713.0
+offset_top = 60.0
+offset_right = 1030.0
+offset_bottom = 173.0
+text = "PAGE3_TEXT1"
+
+[node name="Sprite2D" type="Sprite2D" parent="PageControl/Page3_3"]
+position = Vector2(913, 498)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_wlm5s")
+
+[node name="PAGE3_TEXT2" type="RichTextLabel" parent="PageControl/Page3_3"]
+layout_mode = 0
+offset_left = 675.0
+offset_top = 950.0
+offset_right = 1043.0
+offset_bottom = 1053.0
+text = "PAGE3_TEXT2"
+
+[node name="PAGE3_TEXT5" type="Label" parent="PageControl/Page3_3"]
+layout_mode = 0
+offset_left = 657.0
+offset_top = 842.0
+offset_right = 879.0
+offset_bottom = 875.0
+text = "PAGE3_TEXT5"
+
+[node name="Page3_4" type="Control" parent="PageControl"]
+visible = false
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="PAGE3_TEXT1" type="RichTextLabel" parent="PageControl/Page3_4"]
+layout_mode = 0
+offset_left = 713.0
+offset_top = 60.0
+offset_right = 1030.0
+offset_bottom = 173.0
+text = "PAGE3_TEXT1"
+
+[node name="Sprite2D" type="Sprite2D" parent="PageControl/Page3_4"]
+position = Vector2(913, 498)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_wlm5s")
+
+[node name="PAGE3_TEXT2" type="RichTextLabel" parent="PageControl/Page3_4"]
+layout_mode = 0
+offset_left = 670.0
+offset_top = 887.0
+offset_right = 1038.0
+offset_bottom = 990.0
+text = "PAGE3_TEXT2"
+
+[node name="PAGE3_TEXT6" type="Label" parent="PageControl/Page3_4"]
+layout_mode = 0
+offset_left = 993.0
+offset_top = 837.0
+offset_right = 1215.0
+offset_bottom = 870.0
+text = "PAGE3_TEXT6"
+
+[node name="Page3_5" type="Control" parent="PageControl"]
+visible = false
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="PAGE3_TEXT1" type="RichTextLabel" parent="PageControl/Page3_5"]
+layout_mode = 0
+offset_left = 713.0
+offset_top = 60.0
+offset_right = 1030.0
+offset_bottom = 173.0
+text = "PAGE3_TEXT1"
+
+[node name="Sprite2D" type="Sprite2D" parent="PageControl/Page3_5"]
+position = Vector2(913, 498)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_wlm5s")
+
+[node name="PAGE3_TEXT2" type="RichTextLabel" parent="PageControl/Page3_5"]
+layout_mode = 0
+offset_left = 670.0
+offset_top = 887.0
+offset_right = 1038.0
+offset_bottom = 990.0
+text = "PAGE3_TEXT2"
+
+[node name="PAGE3_TEXT7" type="Label" parent="PageControl/Page3_5"]
+layout_mode = 0
+offset_left = 1270.0
+offset_top = 257.0
+offset_right = 1492.0
+offset_bottom = 290.0
+text = "PAGE3_TEXT7"
+
+[node name="Page3_6" type="Control" parent="PageControl"]
+visible = false
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="PAGE3_TEXT1" type="RichTextLabel" parent="PageControl/Page3_6"]
+layout_mode = 0
+offset_left = 713.0
+offset_top = 60.0
+offset_right = 1030.0
+offset_bottom = 173.0
+text = "PAGE3_TEXT1"
+
+[node name="Sprite2D" type="Sprite2D" parent="PageControl/Page3_6"]
+position = Vector2(913, 498)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_wlm5s")
+
+[node name="PAGE3_TEXT2" type="RichTextLabel" parent="PageControl/Page3_6"]
+layout_mode = 0
+offset_left = 670.0
+offset_top = 887.0
+offset_right = 1038.0
+offset_bottom = 990.0
+text = "PAGE3_TEXT2"
+
+[node name="PAGE3_TEXT8" type="Label" parent="PageControl/Page3_6"]
+layout_mode = 0
+offset_left = 1535.0
+offset_top = 602.0
+offset_right = 1757.0
+offset_bottom = 635.0
+text = "PAGE3_TEXT8"
+
+[node name="Page4" type="Control" parent="PageControl"]
+visible = false
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="PAGE4_TEXT1" type="RichTextLabel" parent="PageControl/Page4"]
+layout_mode = 0
+offset_left = 227.0
+offset_top = 207.0
+offset_right = 791.0
+offset_bottom = 373.0
+text = "PAGE4_TEXT1"
+
+[node name="PAGE4_TEXT2" type="RichTextLabel" parent="PageControl/Page4"]
+layout_mode = 0
+offset_left = 325.0
+offset_top = 438.0
+offset_right = 834.0
+offset_bottom = 604.0
+text = "PAGE4_TEXT2"
+
+[node name="PAGE4_TEXT3" type="RichTextLabel" parent="PageControl/Page4"]
+layout_mode = 0
+offset_left = 473.0
+offset_top = 726.0
+offset_right = 1002.0
+offset_bottom = 867.0
+text = "PAGE4_TEXT3"
+
+[node name="Page5" type="Control" parent="PageControl"]
+visible = false
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PageControl/Page5"]
+layout_mode = 0
+offset_left = 562.0
+offset_top = 66.0
+offset_right = 1338.0
+offset_bottom = 1000.0
+
+[node name="PAGE5_TEXT1" type="RichTextLabel" parent="PageControl/Page5/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "PAGE5_TEXT1"
+
+[node name="PAGE5_TEXT2" type="RichTextLabel" parent="PageControl/Page5/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "PAGE5_TEXT2"
+
+[node name="PAGE5_TEXT3" type="RichTextLabel" parent="PageControl/Page5/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "PAGE5_TEXT3"
+
+[node name="PAGE5_TEXT4" type="RichTextLabel" parent="PageControl/Page5/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "PAGE5_TEXT4"
+
+[node name="PAGE5_TEXT5" type="RichTextLabel" parent="PageControl/Page5/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "PAGE5_TEXT5"
+
+[node name="PAGE5_TEXT6" type="RichTextLabel" parent="PageControl/Page5/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "PAGE5_TEXT6"
+
+[node name="PAGE5_TEXT7" type="RichTextLabel" parent="PageControl/Page5/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "PAGE5_TEXT7"
+
+[node name="Page6" type="Control" parent="PageControl"]
+visible = false
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PageControl/Page6"]
+layout_mode = 0
+offset_left = 643.0
+offset_top = 116.0
+offset_right = 1192.0
+offset_bottom = 890.0
+
+[node name="PAGE6_TEXT1" type="RichTextLabel" parent="PageControl/Page6/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "PAGE6_TEXT1"
+
+[node name="PAGE6_TEXT2" type="RichTextLabel" parent="PageControl/Page6/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "PAGE6_TEXT2"
+
+[node name="PAGE6_TEXT3" type="RichTextLabel" parent="PageControl/Page6/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "PAGE6_TEXT3"
+
+[node name="PAGE6_TEXT4" type="RichTextLabel" parent="PageControl/Page6/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "PAGE6_TEXT4"
+
+[node name="Previous" type="Button" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 968.0
+offset_right = 190.0
+offset_bottom = 1048.0
+disabled = true
+
+[node name="Next" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1723.0
+offset_top = 963.0
+offset_right = 1873.0
+offset_bottom = 1043.0
+
+[node name="Close" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1724.0
+offset_top = 30.0
+offset_right = 1874.0
+offset_bottom = 110.0
+
+[connection signal="button_down" from="Previous" to="." method="_on_previous_button_down"]
+[connection signal="button_down" from="Next" to="." method="_on_next_button_down"]
+[connection signal="button_down" from="Close" to="." method="_on_close_button_down"]
