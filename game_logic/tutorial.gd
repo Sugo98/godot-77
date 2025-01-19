@@ -1,8 +1,8 @@
 class_name Tutorial extends ColorRect
 
-@onready var previous: Button = $Previous
-@onready var next: Button = $Next
-@onready var close: Button = $Close
+@export var previous: Button
+@export var next: Button
+@export var close: Button
 @onready var page_control: Control = $PageControl
 
 @onready var starting_index : int = 0
