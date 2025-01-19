@@ -1,10 +1,12 @@
-[gd_scene load_steps=26 format=3 uid="uid://c5mfo6eaopvch"]
+[gd_scene load_steps=28 format=3 uid="uid://c5mfo6eaopvch"]
 
 [ext_resource type="Script" path="res://game_logic/main_menu.gd" id="1_m3nt4"]
 [ext_resource type="Theme" uid="uid://bionh2bhlri40" path="res://assets/theme/basic_theme.tres" id="2_dlwf6"]
 [ext_resource type="AudioStream" uid="uid://bs3v4l4ecfx3r" path="res://assets/music/main_menu.ogg" id="2_sp5x1"]
 [ext_resource type="Texture2D" uid="uid://cbnogbts0wqhf" path="res://assets/theme/Play.png" id="3_76h3j"]
+[ext_resource type="Texture2D" uid="uid://b1tdmp2ukigl6" path="res://assets/background/strada lunga.png" id="5_esskg"]
 [ext_resource type="Texture2D" uid="uid://bu4lgl2lvjrin" path="res://assets/theme/Pause.png" id="5_xggq4"]
+[ext_resource type="Script" path="res://game_logic/long_road.gd" id="6_e0gxb"]
 [ext_resource type="AudioStream" uid="uid://djw7tpomki4ui" path="res://assets/sound fx/Punch 2_2.wav" id="6_xo1j7"]
 [ext_resource type="PackedScene" uid="uid://beporjlmlp4qr" path="res://game_logic/caravan.tscn" id="7_3n5pj"]
 [ext_resource type="AudioStream" uid="uid://cwvj1ei5tt7tc" path="res://assets/sound fx/Sword Swing 8_1.wav" id="8_sf6a2"]
@@ -130,6 +132,20 @@ pause_icon = Array[Texture2D]([ExtResource("5_xggq4"), ExtResource("3_76h3j")])
 position = Vector2(1409, 564)
 shaking_time = 0.2
 
+[node name="Sprite2D2" type="Sprite2D" parent="Caravan"]
+z_index = -10
+position = Vector2(511, -24)
+texture = ExtResource("5_esskg")
+script = ExtResource("6_e0gxb")
+speed = 200.0
+
+[node name="Sprite2D3" type="Sprite2D" parent="Caravan"]
+z_index = -10
+position = Vector2(4349, -24)
+texture = ExtResource("5_esskg")
+script = ExtResource("6_e0gxb")
+speed = 200.0
+
 [node name="Blocker" type="ColorRect" parent="."]
 visible = false
 layout_mode = 1
@@ -230,6 +246,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_a8wku")
 text = "QUIT_GAME"
 
 [node name="SettingMenu" type="PanelContainer" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 997.0
 offset_top = 85.0
