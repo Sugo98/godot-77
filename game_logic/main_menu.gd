@@ -161,6 +161,8 @@ func _on_resume_game_pressed() -> void:
 func _on_quit_game_pressed() -> void:
 	game_manager.quit_game()
 
+func game_won():
+	pause_button.hide()
 
 func _on_how_to_play_pressed() -> void:
 	tutorial.open_tutorial()

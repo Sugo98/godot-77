@@ -4,8 +4,8 @@ class_name EndGameScreen extends ColorRect
 @export var star_texture : Texture2D
 @export var fader : ColorRect
 @export var quote : VBoxContainer
-@export var thanks : Label
-@export var credits : Label
+@export var thanks : VBoxContainer
+@export var credits : VBoxContainer
 @export var back_button : PanelContainer
 var game_manager : GameManager
 

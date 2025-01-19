@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://tkb6vimwhpij"]
+[gd_scene load_steps=16 format=3 uid="uid://tkb6vimwhpij"]
 
 [ext_resource type="Script" path="res://game_logic/basic_level_logic.gd" id="1_n52b6"]
 [ext_resource type="PackedScene" uid="uid://yvwkwgojt1ab" path="res://enemies logic/enemy.tscn" id="2_beh15"]
@@ -38,6 +38,18 @@ corner_radius_bottom_right = 23
 corner_radius_bottom_left = 23
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1qq4t"]
+bg_color = Color(0.2, 0.0823529, 0.0823529, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.2, 0.0823529, 0.0823529, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nkpf8"]
 bg_color = Color(1, 0.419608, 0.419608, 1)
 border_width_left = 8
 border_width_top = 8
@@ -518,8 +530,24 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.2, 0.0823529, 0.0823529, 1)
 
+[node name="Label" type="Label" parent="YouDied"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 264.0
+offset_bottom = 454.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.2, 0.0823529, 0.0823529, 1)
+theme_override_constants/outline_size = 32
+theme_override_font_sizes/font_size = 96
+text = "GAME_OVER_TEXT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="MainMenuAfetrLose" type="Button" parent="."]
 visible = false
+modulate = Color(1, 1, 1, 0)
 z_index = 11
 layout_mode = 1
 anchors_preset = 8
@@ -533,8 +561,11 @@ offset_right = 339.0
 offset_bottom = 81.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_hover_color = Color(1, 0.419608, 0.419608, 1)
 theme_override_colors/font_outline_color = Color(0.2, 0.0823529, 0.0823529, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_1qq4t")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1qq4t")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1qq4t")
+theme_override_styles/normal = SubResource("StyleBoxFlat_nkpf8")
 text = "BACK_TO_MENU"
 
 [connection signal="pressed" from="PanelContainer/SolveTurn" to="." method="solve_turn"]

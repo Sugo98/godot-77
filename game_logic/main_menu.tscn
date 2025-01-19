@@ -230,7 +230,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_a8wku")
 text = "QUIT_GAME"
 
 [node name="SettingMenu" type="PanelContainer" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 997.0
 offset_top = 85.0

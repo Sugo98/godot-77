@@ -38,9 +38,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -362.5
+offset_left = -748.0
 offset_top = -349.0
-offset_right = 362.5
+offset_right = -23.0
 offset_bottom = -141.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -120,19 +120,31 @@ text = "GAME_END_QUOTE_4"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Thanks" type="Label" parent="."]
+[node name="Thanks" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -958.0
-offset_top = -342.0
-offset_right = -130.0
-offset_bottom = -281.0
+offset_left = -937.0
+offset_top = -406.0
+offset_right = -109.0
+offset_bottom = -126.0
 grow_horizontal = 0
 grow_vertical = 2
+theme_override_constants/separation = 64
+alignment = 2
+
+[node name="Title" type="Label" parent="Thanks"]
+layout_mode = 2
+theme = ExtResource("3_jhfgu")
+theme_type_variation = &"Title"
+text = "A Dicey Journey"
+horizontal_alignment = 1
+
+[node name="Thanks" type="Label" parent="Thanks"]
+layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0.0941176, 1)
 theme_override_constants/outline_size = 48
 theme_override_fonts/font = ExtResource("4_2mr74")
@@ -140,24 +152,54 @@ theme_override_font_sizes/font_size = 60
 text = "THANK_YOU_FOR_PLAYING"
 horizontal_alignment = 2
 
-[node name="Credits" type="Label" parent="."]
+[node name="Credits" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -437.0
-offset_top = -160.0
-offset_right = -130.0
-offset_bottom = 313.0
+offset_left = -937.0
+offset_top = -20.0
+offset_right = -109.0
+offset_bottom = 523.0
 grow_horizontal = 0
 grow_vertical = 2
+
+[node name="Credits1" type="Label" parent="Credits"]
+layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0.0941176, 1)
 theme_override_constants/outline_size = 48
 theme_override_fonts/font = ExtResource("4_2mr74")
 theme_override_font_sizes/font_size = 40
-text = "ROLL_CREDITS"
+text = "ROLL_CREDITS_1"
+horizontal_alignment = 2
+
+[node name="Credits2" type="Label" parent="Credits"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0.0941176, 1)
+theme_override_constants/outline_size = 48
+theme_override_fonts/font = ExtResource("4_2mr74")
+theme_override_font_sizes/font_size = 40
+text = "ROLL_CREDITS_2"
+horizontal_alignment = 2
+
+[node name="Credits3" type="Label" parent="Credits"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0.0941176, 1)
+theme_override_constants/outline_size = 48
+theme_override_fonts/font = ExtResource("4_2mr74")
+theme_override_font_sizes/font_size = 40
+text = "ROLL_CREDITS_3"
+horizontal_alignment = 2
+
+[node name="Credits4" type="Label" parent="Credits"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0.0941176, 1)
+theme_override_constants/outline_size = 48
+theme_override_fonts/font = ExtResource("4_2mr74")
+theme_override_font_sizes/font_size = 40
+text = "ROLL_CREDITS_4"
 horizontal_alignment = 2
 
 [connection signal="pressed" from="PanelContainer/BackToMenu" to="." method="_on_back_to_menu_pressed"]

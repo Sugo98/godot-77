@@ -96,4 +96,5 @@ func quit_game():
 	load_menu()
 
 func end_game():
+	main_menu.game_won()
 	main_canvas.add_child(end_game_screen)

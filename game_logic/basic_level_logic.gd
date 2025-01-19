@@ -444,10 +444,12 @@ func clear_ui():
 func game_over():
 	you_died.show()
 	blocker.show()
-	print("hello")
 	var tween = create_tween()
 	tween.tween_property(you_died, "modulate:a", 0.9, 2)
 	await  tween.finished
+	await  wait_time(1)
 	lose_button.show()
+	tween = create_tween()
+	tween.tween_property(lose_button, "modulate:a", 1, 1)
 	await lose_button.pressed
 	game_manager.quit_game()

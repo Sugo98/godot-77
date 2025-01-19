@@ -24,17 +24,20 @@ GAME_END_QUOTE_4,something new is about to begin,qualcosa di nuovo sta per comin
 THANK_YOU_FOR_PLAYING,"THANK YOU
 FOR PLAYING","GRAZIE
 PER AVER GIOCATO"
-ROLL_CREDITS,"PROGRAMMING:
-Palantir98, Sugo98
-ART:
-Nucciol
-
-Music assets by ","PROGRAMMAZIONE:
-Palantir98, Sugo98
-GRAFICA:
-Nucciol
-
-Assets musicali di "
+ROLL_CREDITS_1,"PROGRAMMING:
+Palantir98, Sugo98","PROGRAMMAZIONE:
+Palantir98, Sugo99"
+ROLL_CREDITS_2,"UI:
+Sugo98","UI:
+Sugo99"
+ROLL_CREDITS_3,"GRAPHICS ART:
+Nucciol","ARTE E GRAFICA:
+Nucciol"
+ROLL_CREDITS_4,"
+Music assets
+made by Joel Steudler","
+Assets Musicali
+realizzati da Joel Steudler"
 SLOW,Slow,Lenta
 MEDIUM,Medium,Media
 FAST,Fast,Veloce
@@ -230,3 +233,4 @@ PAGE6_TEXT1,"Of course, during their journey heroes will gain experience by defe
 PAGE6_TEXT2,At the end of each level you will meet a mysterious figure: the Dice-o-mancer!,Alla fine di ogni livello incontrerete una figura misteriosa: il Dadomante!
 PAGE6_TEXT3,Here you can exchange experience points for new actions to transform your dice and improve your heroes.,Qui potrai scambiare i punti esperienza con nuove azioni per trasformare i tuoi dadi e migliorare gli eroi.
 PAGE6_TEXT4,"Moreover, he will give you some hints on your next steps, so be sure to listen to him!","Inoltre, egli vi darà qualche indizio riguardo ai prossimi passi, quindi ascoltatelo attentamente!"
+GAME_OVER_TEXT,GAME OVER,GAME OVER

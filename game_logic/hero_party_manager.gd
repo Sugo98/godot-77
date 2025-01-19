@@ -63,8 +63,6 @@ func update_all_labels():
 
 func eat(x : int):
 	food -= x
-	if food < 0 :
-		print("game over")
 	update_all_labels()
 
 func increase_food(x):
@@ -129,7 +127,6 @@ func next_level():
 	await caravan.do_the_animation()
 
 func check_game_over() -> bool:
-	print(food, " ", health)
 	if food <= 0: return true
 	if health <= 0: return true
 	return false
