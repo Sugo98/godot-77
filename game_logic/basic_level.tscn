@@ -403,14 +403,6 @@ clip_text = true
 [node name="BackGroundMusic" type="AudioStreamPlayer" parent="."]
 bus = &"Music"
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 1720.0
-offset_top = 562.0
-offset_right = 1885.0
-offset_bottom = 643.0
-text = "SKIP"
-
 [node name="Road" type="ProgressBar" parent="."]
 custom_minimum_size = Vector2(400, 48)
 layout_mode = 1
@@ -547,4 +539,3 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_nkpf8")
 text = "BACK_TO_MENU"
 
 [connection signal="pressed" from="PanelContainer/SolveTurn" to="." method="solve_turn"]
-[connection signal="pressed" from="Button" to="." method="next_level"]
