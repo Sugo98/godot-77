@@ -61,9 +61,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -551.0
+offset_left = -725.0
 offset_top = -110.0
-offset_right = 551.0
+offset_right = 725.0
 offset_bottom = 107.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -578,6 +578,7 @@ border_width = 8.0
 editor_only = false
 
 [node name="Page3_7" type="Control" parent="PageControl"]
+visible = false
 anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
@@ -732,7 +733,6 @@ text = "THIS_IS_IMPORTANT"
 horizontal_alignment = 1
 
 [node name="Page6" type="Control" parent="PageControl"]
-visible = false
 anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
@@ -744,30 +744,34 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -433.0
-offset_top = -367.0
-offset_right = 433.0
-offset_bottom = 367.0
+offset_left = -520.0
+offset_top = -200.0
+offset_right = 520.0
+offset_bottom = 201.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 32
 
 [node name="PAGE6_TEXT1" type="RichTextLabel" parent="PageControl/Page6/VBoxContainer"]
-custom_minimum_size = Vector2(0, 160)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 48
 text = "PAGE6_TEXT1"
+fit_content = true
+scroll_active = false
 
 [node name="PAGE6_TEXT2" type="RichTextLabel" parent="PageControl/Page6/VBoxContainer"]
-custom_minimum_size = Vector2(0, 160)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 48
 text = "PAGE6_TEXT2"
+fit_content = true
+scroll_active = false
 
 [node name="PAGE6_TEXT3" type="RichTextLabel" parent="PageControl/Page6/VBoxContainer"]
-custom_minimum_size = Vector2(0, 160)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 48
 text = "PAGE6_TEXT3"
+fit_content = true
+scroll_active = false
 
 [node name="MarginContainer3" type="MarginContainer" parent="PageControl/Page6/VBoxContainer"]
 layout_mode = 2
