@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="LevelData" load_steps=5 format=3 uid="uid://c5psbamdgasq7"]
+[gd_resource type="Resource" script_class="LevelData" load_steps=6 format=3 uid="uid://c5psbamdgasq7"]
 
 [ext_resource type="Script" path="res://resources/enemies/enemies_data.gd" id="1_5jvxm"]
+[ext_resource type="Texture2D" uid="uid://d2g0y5ei4n5o0" path="res://assets/background/Acquitrino King Froggo DEF.png" id="1_7altf"]
 [ext_resource type="Resource" uid="uid://dncssya7ud4yx" path="res://resources/enemies/kingfroggo.tres" id="2_k7cio"]
 [ext_resource type="AudioStream" uid="uid://b0kxrh5dsrvsi" path="res://assets/music/kingfroggo.ogg" id="4_inp1c"]
 [ext_resource type="Script" path="res://resources/levels/level_data.gd" id="4_uiqia"]
@@ -9,6 +10,7 @@
 script = ExtResource("4_uiqia")
 name = "Plain 1"
 description = ""
+back_ground_texture = ExtResource("1_7altf")
 length_of_the_road = 0
 boss_level = true
 food_consumption = 2

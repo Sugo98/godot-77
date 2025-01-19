@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="LevelData" load_steps=7 format=3 uid="uid://bd71cnmmq5sw2"]
+[gd_resource type="Resource" script_class="LevelData" load_steps=8 format=3 uid="uid://bd71cnmmq5sw2"]
 
+[ext_resource type="Texture2D" uid="uid://bq8a17dlukdri" path="res://assets/background/3.Palude DEF.png" id="1_q4ngd"]
 [ext_resource type="Script" path="res://resources/enemies/enemies_data.gd" id="1_w1voo"]
 [ext_resource type="Resource" uid="uid://di25an6yjvkqu" path="res://resources/enemies/sbm1.tres" id="2_bdae0"]
 [ext_resource type="Script" path="res://resources/levels/level_data.gd" id="3_tmbrf"]
@@ -11,6 +12,7 @@
 script = ExtResource("3_tmbrf")
 name = "Swamp"
 description = "A dark swamp appears before you"
+back_ground_texture = ExtResource("1_q4ngd")
 length_of_the_road = 4
 boss_level = false
 food_consumption = 2

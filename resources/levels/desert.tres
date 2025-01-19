@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="LevelData" load_steps=7 format=3 uid="uid://buq0vkbg12j3d"]
+[gd_resource type="Resource" script_class="LevelData" load_steps=8 format=3 uid="uid://buq0vkbg12j3d"]
 
+[ext_resource type="Texture2D" uid="uid://cmeuoay5y3atv" path="res://assets/background/Deserto DEF.png" id="1_88mk7"]
 [ext_resource type="Script" path="res://resources/enemies/enemies_data.gd" id="1_nyan5"]
 [ext_resource type="Resource" uid="uid://p4lax3an5o0y" path="res://resources/enemies/orchetto_corazzato.tres" id="3_kjilk"]
 [ext_resource type="Resource" uid="uid://b8w5ojo0122h5" path="res://resources/enemies/dbm1.tres" id="3_owsrq"]
@@ -11,6 +12,7 @@
 script = ExtResource("4_x8qa4")
 name = "Desert"
 description = ""
+back_ground_texture = ExtResource("1_88mk7")
 length_of_the_road = 8
 boss_level = false
 food_consumption = 3

@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://tkb6vimwhpij"]
+[gd_scene load_steps=17 format=3 uid="uid://tkb6vimwhpij"]
 
 [ext_resource type="Script" path="res://game_logic/basic_level_logic.gd" id="1_n52b6"]
 [ext_resource type="PackedScene" uid="uid://yvwkwgojt1ab" path="res://enemies logic/enemy.tscn" id="2_beh15"]
 [ext_resource type="Script" path="res://dice_logic/dice_slot.gd" id="2_ghtwx"]
+[ext_resource type="Texture2D" uid="uid://dxf4jw245brbb" path="res://assets/background/pianura DEF.png" id="3_3hacd"]
 [ext_resource type="Theme" uid="uid://ypak5t8xrvk8" path="res://assets/theme/slot_dice.tres" id="3_nj3nf"]
 [ext_resource type="Theme" uid="uid://ch3snagd0dl8g" path="res://assets/theme/ui_theme.tres" id="6_tdu6w"]
 [ext_resource type="AudioStream" uid="uid://gra311r3acyh" path="res://assets/sound fx/MMO_Game_Magic_Designed_Fire_Whoosh_02.wav" id="6_xa1au"]
@@ -84,6 +85,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -10
 texture_filter = 1
+texture = ExtResource("3_3hacd")
 centered = false
 
 [node name="EnemyZone" type="Control" parent="."]
@@ -99,6 +101,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="EnemySlots" type="Control" parent="EnemyZone"]
+modulate = Color(1, 0.501961, 0.501961, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -243,6 +246,7 @@ script = ExtResource("2_ghtwx")
 type = 2
 
 [node name="RoadSlots" type="Control" parent="."]
+modulate = Color(0.533333, 0.533333, 0.533333, 1)
 z_index = 1
 layout_mode = 1
 anchors_preset = 15
@@ -264,9 +268,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -344.0
-offset_top = -16.0
+offset_top = -120.0
 offset_right = -216.0
-offset_bottom = 112.0
+offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_nj3nf")
@@ -282,9 +286,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -152.0
-offset_top = -16.0
+offset_top = -120.0
 offset_right = -24.0
-offset_bottom = 112.0
+offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_nj3nf")
@@ -300,9 +304,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 40.0
-offset_top = -16.0
+offset_top = -120.0
 offset_right = 168.0
-offset_bottom = 112.0
+offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_nj3nf")
@@ -315,10 +319,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 640.0
-offset_top = 270.0
-offset_right = -800.0
-offset_bottom = -405.0
+offset_left = 605.0
+offset_top = 156.0
+offset_right = -835.0
+offset_bottom = -519.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -396,9 +400,9 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -566.0
-offset_top = 38.0
+offset_top = 166.0
 offset_right = -166.0
-offset_bottom = 86.0
+offset_bottom = 214.0
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_blnkl")
@@ -443,9 +447,9 @@ bus = &"SFX"
 visible = false
 layout_mode = 0
 offset_left = 1250.0
-offset_top = 554.0
+offset_top = 704.0
 offset_right = 1346.0
-offset_bottom = 650.0
+offset_bottom = 800.0
 theme = ExtResource("6_tdu6w")
 theme_type_variation = &"AtkPanel"
 
@@ -466,9 +470,9 @@ texture = ExtResource("8_buql5")
 visible = false
 layout_mode = 0
 offset_left = 1310.0
-offset_top = 674.0
+offset_top = 571.0
 offset_right = 1406.0
-offset_bottom = 770.0
+offset_bottom = 667.0
 theme = ExtResource("6_tdu6w")
 theme_type_variation = &"AtkPanel"
 

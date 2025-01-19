@@ -65,3 +65,4 @@ character_class = 4
 hero_texture = ExtResource("7_pelfd")
 
 [node name="Caravan" parent="." instance=ExtResource("8_udspx")]
+position = Vector2(869, 531)
