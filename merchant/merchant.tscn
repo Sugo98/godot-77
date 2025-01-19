@@ -400,6 +400,7 @@ texture = ExtResource("3_uxtmc")
 centered = false
 
 [node name="Shadow" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(0, 0, 0, 0.752941)
 z_index = 5
 position = Vector2(960, 540)

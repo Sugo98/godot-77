@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://63fkkbtdlema"]
+[gd_scene load_steps=15 format=3 uid="uid://63fkkbtdlema"]
 
 [ext_resource type="Texture2D" uid="uid://du7fsdcx1ljr1" path="res://assets/heroes/guerriera DEF.png" id="1_7sja0"]
 [ext_resource type="Script" path="res://game_logic/tutorial.gd" id="1_k3yv4"]
@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://c0yr0uw61pg1n" path="res://assets/heroes/eroe ranger 1.png" id="3_4fnma"]
 [ext_resource type="Theme" uid="uid://bionh2bhlri40" path="res://assets/theme/basic_theme.tres" id="3_ureg4"]
 [ext_resource type="Texture2D" uid="uid://byx8dlamupa55" path="res://assets/heroes/inventore DEF.png" id="4_qdvuw"]
-[ext_resource type="Texture2D" uid="uid://bnre3voy4rnnp" path="res://assets/tutorial/level.png" id="7_wlm5s"]
+[ext_resource type="Texture2D" uid="uid://ouvowikrwd3p" path="res://assets/tutorial/TutorialMerch-eng.png" id="7_ssby4"]
+[ext_resource type="Texture2D" uid="uid://u46e3o1rhdu4" path="res://assets/tutorial/Tutorial1-eng.png" id="8_tp45m"]
+[ext_resource type="Texture2D" uid="uid://dalrj5i8c8qvw" path="res://assets/tutorial/Tutorial2-eng.png" id="9_6fuax"]
 [ext_resource type="Texture2D" uid="uid://5k0tfayae743" path="res://assets/theme/Left.png" id="9_o5rqk"]
 [ext_resource type="Texture2D" uid="uid://cbnogbts0wqhf" path="res://assets/theme/Play.png" id="10_4wuu3"]
 
@@ -183,6 +185,11 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="Sprite2D" type="Sprite2D" parent="PageControl/Page2"]
+position = Vector2(577, 553)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("7_ssby4")
+
 [node name="Page3" type="Control" parent="PageControl"]
 visible = false
 anchors_preset = 0
@@ -205,7 +212,7 @@ text = "PAGE3_TEXT1"
 [node name="Sprite2D" type="Sprite2D" parent="PageControl/Page3"]
 position = Vector2(913, 498)
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("7_wlm5s")
+texture = ExtResource("8_tp45m")
 
 [node name="PAGE3_TEXT2" type="RichTextLabel" parent="PageControl/Page3"]
 layout_mode = 1
@@ -229,7 +236,7 @@ offset_bottom = 1080.0
 [node name="Sprite2D" type="Sprite2D" parent="PageControl/Page3_1"]
 position = Vector2(913, 498)
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("7_wlm5s")
+texture = ExtResource("8_tp45m")
 
 [node name="PAGE3_TEXT3" type="Label" parent="PageControl/Page3_1"]
 layout_mode = 0
@@ -284,16 +291,16 @@ offset_bottom = 1080.0
 [node name="Sprite2D" type="Sprite2D" parent="PageControl/Page3_2"]
 position = Vector2(913, 498)
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("7_wlm5s")
+texture = ExtResource("8_tp45m")
 
 [node name="PAGE3_TEXT4" type="Label" parent="PageControl/Page3_2"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -218.0
+offset_left = -251.0
 offset_top = 579.0
-offset_right = 117.0
+offset_right = 84.0
 offset_bottom = 628.0
 grow_horizontal = 2
 theme_type_variation = &"TutorialLabel"
@@ -329,9 +336,9 @@ text = "PAGE3_TEXT2"
 
 [node name="ReferenceRect" type="ReferenceRect" parent="PageControl/Page3_2"]
 layout_mode = 0
-offset_left = 760.0
+offset_left = 720.0
 offset_top = 341.0
-offset_right = 1046.0
+offset_right = 1006.0
 offset_bottom = 566.0
 border_width = 8.0
 editor_only = false
@@ -345,7 +352,7 @@ offset_bottom = 1080.0
 [node name="Sprite2D" type="Sprite2D" parent="PageControl/Page3_3"]
 position = Vector2(913, 498)
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("7_wlm5s")
+texture = ExtResource("8_tp45m")
 
 [node name="PAGE3_TEXT5" type="Label" parent="PageControl/Page3_3"]
 layout_mode = 1
@@ -408,7 +415,7 @@ offset_bottom = 1080.0
 [node name="Sprite2D" type="Sprite2D" parent="PageControl/Page3_4"]
 position = Vector2(913, 498)
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("7_wlm5s")
+texture = ExtResource("8_tp45m")
 
 [node name="PAGE3_TEXT6" type="Label" parent="PageControl/Page3_4"]
 layout_mode = 1
@@ -471,7 +478,7 @@ offset_bottom = 1080.0
 [node name="Sprite2D" type="Sprite2D" parent="PageControl/Page3_5"]
 position = Vector2(913, 498)
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("7_wlm5s")
+texture = ExtResource("9_6fuax")
 
 [node name="PAGE3_TEXT7" type="RichTextLabel" parent="PageControl/Page3_5"]
 layout_mode = 0
@@ -531,7 +538,7 @@ offset_bottom = 1080.0
 [node name="Sprite2D" type="Sprite2D" parent="PageControl/Page3_6"]
 position = Vector2(913, 498)
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("7_wlm5s")
+texture = ExtResource("9_6fuax")
 
 [node name="PAGE3_TEXT1" type="RichTextLabel" parent="PageControl/Page3_6"]
 layout_mode = 1
@@ -570,10 +577,10 @@ text = "PAGE3_TEXT8"
 
 [node name="ReferenceRect" type="ReferenceRect" parent="PageControl/Page3_6"]
 layout_mode = 0
-offset_left = 1153.0
-offset_top = 517.0
-offset_right = 1449.0
-offset_bottom = 663.0
+offset_left = 1131.0
+offset_top = 506.0
+offset_right = 1427.0
+offset_bottom = 652.0
 border_width = 8.0
 editor_only = false
 
@@ -586,7 +593,7 @@ offset_bottom = 1080.0
 [node name="Sprite2D" type="Sprite2D" parent="PageControl/Page3_7"]
 position = Vector2(913, 498)
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("7_wlm5s")
+texture = ExtResource("9_6fuax")
 
 [node name="PAGE3_TEXT1" type="RichTextLabel" parent="PageControl/Page3_7"]
 layout_mode = 1
@@ -733,6 +740,7 @@ text = "THIS_IS_IMPORTANT"
 horizontal_alignment = 1
 
 [node name="Page6" type="Control" parent="PageControl"]
+visible = false
 anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0

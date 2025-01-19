@@ -32,4 +32,9 @@ theme/custom_font="res://assets/theme/fonts/Helvetica.ttf"
 
 [internationalization]
 
+locale/translation_remaps={
+"res://assets/tutorial/Tutorial1-eng.png": PackedStringArray("res://assets/tutorial/Tutorial1-ita.png:it_IT"),
+"res://assets/tutorial/Tutorial2-eng.png": PackedStringArray("res://assets/tutorial/Tutorial2-ita.png:it_IT"),
+"res://assets/tutorial/TutorialMerch-eng.png": PackedStringArray("res://assets/tutorial/TutorialMerch-ita.png:it_IT")
+}
 locale/translations=PackedStringArray("res://assets/localization/dictionary.en.translation", "res://assets/localization/dictionary.it.translation")
