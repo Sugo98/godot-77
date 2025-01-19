@@ -124,11 +124,13 @@ FOOD_WOOD_1_DESC,Can be used either as 1 Food or as 1 Wood,Può essere usato com
 FOOD_WOOD_2,Food / Wood 2,Cibo / Legno 2
 FOOD_WOOD_2_DESC,Can be used either as 2 Food or as 2 Wood,Può essere usato come 2 Cibo o come 2 Legno
 GEARS_1,Gears 1,Ingranaggi 1
-GEARS_1_DESC,Behaves as 1 Wheel but discounts by 1 any Wood Cost,"Si comporta come 1 Ruota ma sconta
-di 1 ogni eventuale Costo in Legno"
+GEARS_1_DESC,"Behaves as 1 Wheel,
+moreover discounts by 1 any Wood Cost","Si comporta come 1 Ruota, Inoltre
+sconta di 1 ogni eventuale Costo in Legno"
 GEARS_2,Gears 2,Ingranaggi 2
-GEARS_2_DESC,Behaves as 2 Wheels but discounts by 1 any Wood Cost,"Si comporta come 2 Ruote ma sconta
-di 1 ogni eventuale Costo in Legno"
+GEARS_2_DESC,"Behaves as 2 Wheels,
+moreover discounts by 1 any Wood Cost","Si comporta come 2 Ruote inoltre
+sconta di 1 ogni eventuale Costo in Legno"
 SHIELD_1,Shield 1,Scudo 1
 SHIELD_1_DESC,Protects from 1 damage this turn,Protegge da 1 danno questo turno
 SHIELD_2,Shield 2,Scudo 2
@@ -236,7 +238,7 @@ PAGE4_TEXT1,"There is no time limit, so take your time to plan your decisions.",
 PAGE4_TEXT2,In case you want to change a Die you placed you can simply right click on it to return it to its original place.,Per cambiare il piazzamento di un Dado è sufficiente fare click destro per farlo tornare alla sua posizione originale.
 PAGE4_TEXT3,"When you are ready, press “Done” to resolve the actions.",Quando sei pronto premi “Fatto” per risolvere le azioni.
 PAGE5_TEXT1,Actions will resolve in this specific order:,Le azioni si risolveranno in quest’ordine specifico:
-PAGE5_TEXT2,- First you will lose 2 Foods (heroes need to eat!),"- Per prima cosa perderai 2 Cibo
+PAGE5_TEXT2,- First you will consume 2 Foods (heroes need to eat!),"- Per prima cosa consumerai 2 Cibo
   (gli eroi hanno bisogno di mangiare!)"
 PAGE5_TEXT3,- Then Wood Slots will resolve,- Poi si risolveranno gli Slot Legno
 PAGE5_TEXT4,- Then Food Slots,- Poi gli Slot Cibo

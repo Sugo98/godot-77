@@ -8,7 +8,7 @@ extends Control
 
 func init(atk, max_hp, food, wood, shield) -> void:
 	var container = hp_bar.get_parent()
-	container.size = Vector2( max_hp * 32 + 32  , 32)
+	container.size = Vector2( max_hp * 32 + 16, 32)
 	container.position.x = (-container.size.x/2)
 	for i in range(max_hp):
 		var new_rect = ColorRect.new()
