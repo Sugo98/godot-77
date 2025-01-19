@@ -74,9 +74,9 @@ script = ExtResource("1_n52b6")
 road_label = NodePath("Road/DistanceLabel")
 road_progress_bar = NodePath("Road")
 sfx = [NodePath("Node/Fireball"), NodePath("Node/Icewall")]
-obstacle_icon = NodePath("Obstacle")
+obstacle_icon = NodePath("RoadSlots/Obstacle")
 desert_icon = NodePath("DesertIcon")
-bridge_icon = NodePath("BrokenBridge")
+bridge_icon = NodePath("RoadSlots/BrokenBridge")
 you_died = NodePath("YouDied")
 lose_button = NodePath("MainMenuAfetrLose")
 enemy_scene = ExtResource("2_beh15")
@@ -249,69 +249,86 @@ theme = ExtResource("3_nj3nf")
 script = ExtResource("2_ghtwx")
 type = 2
 
-[node name="RoadSlots" type="Control" parent="."]
+[node name="RoadSlots" type="HBoxContainer" parent="."]
 z_index = 1
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1280.0
-offset_top = 540.0
-offset_bottom = -270.0
-grow_horizontal = 2
+anchor_bottom = 0.5
+offset_left = -509.0
+offset_top = 13.0
+offset_right = -174.0
+offset_bottom = 141.0
+grow_horizontal = 0
 grow_vertical = 2
 mouse_filter = 2
+alignment = 1
+
+[node name="Obstacle" type="PanelContainer" parent="RoadSlots"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 4
+theme = ExtResource("6_tdu6w")
+theme_type_variation = &"AtkPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="RoadSlots/Obstacle"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="TextureRect" type="TextureRect" parent="RoadSlots/Obstacle/MarginContainer"]
+modulate = Color(0.2, 0.0823529, 0.0823529, 1)
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = ExtResource("8_buql5")
+
+[node name="BrokenBridge" type="PanelContainer" parent="RoadSlots"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 4
+theme = ExtResource("6_tdu6w")
+theme_type_variation = &"AtkPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="RoadSlots/BrokenBridge"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="TextureRect" type="TextureRect" parent="RoadSlots/BrokenBridge/MarginContainer"]
+modulate = Color(0.2, 0.0823529, 0.0823529, 1)
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = ExtResource("9_7yw6d")
 
 [node name="Road" type="PanelContainer" parent="RoadSlots"]
+visible = false
 custom_minimum_size = Vector2(128, 128)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -344.0
-offset_top = -120.0
-offset_right = -216.0
-offset_bottom = 8.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
+size_flags_horizontal = 6
 theme = ExtResource("3_nj3nf")
 script = ExtResource("2_ghtwx")
 type = 5
 
 [node name="Road2" type="PanelContainer" parent="RoadSlots"]
 custom_minimum_size = Vector2(128, 128)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -152.0
-offset_top = -120.0
-offset_right = -24.0
-offset_bottom = 8.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
+size_flags_horizontal = 6
 theme = ExtResource("3_nj3nf")
 script = ExtResource("2_ghtwx")
 type = 5
 
 [node name="Road3" type="PanelContainer" parent="RoadSlots"]
 custom_minimum_size = Vector2(128, 128)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 40.0
-offset_top = -120.0
-offset_right = 168.0
-offset_bottom = 8.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
+size_flags_horizontal = 6
 theme = ExtResource("3_nj3nf")
 script = ExtResource("2_ghtwx")
 type = 5
@@ -445,52 +462,6 @@ bus = &"SFX"
 [node name="Icewall" type="AudioStreamPlayer" parent="Node"]
 stream = ExtResource("7_egpeb")
 bus = &"SFX"
-
-[node name="Obstacle" type="PanelContainer" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 1135.0
-offset_top = 572.0
-offset_right = 1231.0
-offset_bottom = 668.0
-theme = ExtResource("6_tdu6w")
-theme_type_variation = &"AtkPanel"
-
-[node name="MarginContainer" type="MarginContainer" parent="Obstacle"]
-layout_mode = 2
-theme_override_constants/margin_left = 4
-theme_override_constants/margin_top = 4
-theme_override_constants/margin_right = 4
-theme_override_constants/margin_bottom = 4
-
-[node name="TextureRect" type="TextureRect" parent="Obstacle/MarginContainer"]
-modulate = Color(0.2, 0.0823529, 0.0823529, 1)
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-texture = ExtResource("8_buql5")
-
-[node name="BrokenBridge" type="PanelContainer" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 1310.0
-offset_top = 571.0
-offset_right = 1406.0
-offset_bottom = 667.0
-theme = ExtResource("6_tdu6w")
-theme_type_variation = &"AtkPanel"
-
-[node name="MarginContainer" type="MarginContainer" parent="BrokenBridge"]
-layout_mode = 2
-theme_override_constants/margin_left = 4
-theme_override_constants/margin_top = 4
-theme_override_constants/margin_right = 4
-theme_override_constants/margin_bottom = 4
-
-[node name="TextureRect" type="TextureRect" parent="BrokenBridge/MarginContainer"]
-modulate = Color(0.2, 0.0823529, 0.0823529, 1)
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-texture = ExtResource("9_7yw6d")
 
 [node name="DesertIcon" type="PanelContainer" parent="."]
 visible = false

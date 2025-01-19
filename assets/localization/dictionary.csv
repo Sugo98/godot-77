@@ -20,7 +20,7 @@ Sei arrivato alla fine
 di questo viaggio"
 GAME_END_QUOTE_2,but remember:,ma ricorda:
 GAME_END_QUOTE_3,when something ends…,quando qualcosa finisce…
-GAME_END_QUOTE_4,something new is about to begin,qualcosa di nuovo sta per cominciare
+GAME_END_QUOTE_4,something new is about to begin!,qualcosa di nuovo sta per cominciare!
 THANK_YOU_FOR_PLAYING,"THANK YOU
 FOR PLAYING","GRAZIE
 PER AVER GIOCATO"
@@ -31,8 +31,8 @@ ROLL_CREDITS_2,"UI:
 Sugo98","UI:
 Sugo99"
 ROLL_CREDITS_3,"GRAPHICS ART:
-Nucciol","ARTE E GRAFICA:
-Nucciol"
+Luigi Filippelli","ARTE E GRAFICA:
+Luigi Filippelli"
 ROLL_CREDITS_4,"
 Music assets
 made by Joel Steudler","
@@ -64,7 +64,7 @@ CONFIRM,Confirm,Conferma
 SHIELD ,Shield,Scudo
 SPIKES ,Spikes,Spine
 FIGHTER_CLASS_NAME,Warrior,Guerriera
-WIZARD_CLASS_NAME,Wizard,Mago
+WIZARD_CLASS_NAME,Wizard,Maga
 RANGER_CLASS_NAME,Ranger,Guardaboschi
 INVENTOR_CLASS_NAME,Inventor,Inventore
 NOT_ENOUGH_WOOD,Not Enough Wood,Legno Insufficiente
@@ -75,11 +75,11 @@ ALEMBIC_2,Alembic 2,Alambicco 2
 ALEMBIC_2_DESC,Reduces by 2 the attack of all Enemies,Riduce di 2 l’attacco di tutti i Nemici
 ANIMAL_COMPANION_1,Animal Companion 1,Compagno Animale 1
 ANIMAL_COMPANION_1_DESC,"On an Enemy Slot: Deals 1 damage and gathers 1 Food.
-On a Food Slot just gathers the food","Su uno Spazio Nemico: Infligge 1 danno e Raccoglie 1 Cibo
+On a Food Slot just gathers the food","Su uno Spazio Nemico: Infligge 1 danno e raccoglie 1 Cibo
 Su uno Spazio Cibo Raccoglie solo il Cibo"
 ANIMAL_COMPANION_2,Animal Companion 2,Compagno Animale 2
 ANIMAL_COMPANION_2_DESC,"On an Enemy Slot: Deals 2 damages and gathers 1 Food.
-On a Food Slot just gathers the food","Su uno Spazio Nemico: Infligge 2 danni e Raccoglie 1 Cibo
+On a Food Slot just gathers the food","Su uno Spazio Nemico: Infligge 2 danni e raccoglie 1 Cibo
 Su uno Spazio Cibo Raccoglie solo il Cibo"
 CARROT_1,Carrot 1,Carota 1
 CARROT_1_DESC,"Can be placed only in a Wood Slot
@@ -202,32 +202,36 @@ CARAVAN_SLOT,"Place a Shield here to defend the Caravan
 Or a Wheel to repair it","Piazza uno Scudo qui per difendere la carovana
 O una Ruota per ripararla"
 ENEMY_SLOT,Place a Dice here to fight the Enemy,Piazza un Dado qui per combattere il Nemico
-PAGE1_TEXT1,"[center] This is the story of party of heroes embarked on a dangerous journey.
+PAGE1_TEXT1,"[center] This is the story of a party of heroes embarked on a dangerous journey.
 They must travel the lands and protect their convoy from evil monsters while gathering enough food to avoid starvation… [/center]","[center] Questa è la storia di un gruppo di eroi coinvolti in un pericoloso viaggio.
-devono attraversare il regno e proteggere la carovana da mostri malvagi e raccogliere cibo a sufficienza per sopravvivere… [/center]"
-PAGE2_TEXT1,"The Heroes can perform actions represented by the faces of a six-sided die.
+Devono attraversare il regno e proteggere la carovana da mostri malvagi e raccogliere cibo a sufficienza per sopravvivere… [/center]"
+PAGE2_TEXT1,"The Heroes can perform actions represented by the faces of a six-sided Die.
 
 Some actions are simple and can be performed by everyone.
 
 Other, instead, are specific of a certain class and only one Hero can perform them.
 
-On each turn, each Hero roll two copy of their own Die but can choose only one action to perform.","Gli Eroi possono compiere azioni rappresentate dalle facce di un dado.
+On each turn, each Hero roll two copy of their own Die but can choose only one action to perform.","Gli Eroi possono compiere azioni rappresentate dalle facce di un Dado.
 
 Alcune azioni sono semplici e possono essere eseguite da tutti.
 
 Altre, invece, sono specifiche di una certa classe e solo un Eroe può compierle.
 
-Ad ogni turno, ogni Eroe lancia due copie del suo Dado, ma può scegliere una sola delle due azioni da eseguire"
+Ad ogni turno, ogni Eroe lancia due copie del suo Dado, ma può scegliere una sola delle due azioni da eseguire."
 PAGE3_TEXT1,[center] Each scenery will have this structure: [/center],[center] Ogni scenario avrà questa struttura: [/center]
-PAGE3_TEXT2,"[center] To perform an action, simply drag one Die on a slot where it can be used [/center]","[center] Per compiere un’azione, è sufficiente trascinare un Dado su uno slot dove può essere usato [/center]"
-PAGE3_TEXT3,"On the left, the Heroes and their Dice","Sulla sinistra, gli Eroi e i loro Dadi"
+PAGE3_TEXT2,"[center] To perform an action, simply drag one Die on a slot where it can be used. [/center]","[center] Per compiere un’azione, è sufficiente trascinare un Dado su uno slot dove può essere usato. [/center]"
+PAGE3_TEXT3,"On the left, the Heroes and their Dice.","Sulla sinistra, gli Eroi e i loro Dadi."
 PAGE3_TEXT4,"These are the Caravan Slots.
 Shields and Wheels can be used here.","Questi sono gli Slot Carovana.
 Scudi e Ruote possono essere usati qui."
 PAGE3_TEXT5,"These are the Wood Slots, where Wood can be gathered.","Questi sono gli Slot Legno, dove si può raccogliere il Legno."
 PAGE3_TEXT6,"These are the Food Slots, where Food can be gathered.","Questi sono gli Slot Cibo, dove si può raccogliere il Cibo."
-PAGE3_TEXT7,[center] These are the Enemy Slots. Attacks Dice like a Sword can be placed here to damage the corresponding opponent. [/center],[center] Questi sono gli Slot Nemico. Dadi attacco come una Spada possono essere usati qui per danneggiare il nemico corrispondente [/center]
-PAGE3_TEXT8,[center] These are the Road Slots. Use a Wheel here to advance. Complete the Road to go to the next stage. [/center],[center] Questi sono gli Slot Strada. Usa una Ruota per avanzare. Completa la Strada per proseguire al prossimo scenario [/center]
+PAGE3_TEXT7,"[center]
+These are the Enemy Slots. Attacks Dice like a Sword can be placed here to damage the corresponding opponent. [/center]","[center]
+Questi sono gli Slot Nemico. Dadi attacco come una Spada possono essere usati qui per danneggiare il nemico corrispondente. [/center]"
+PAGE3_TEXT8,"[center]
+These are the Road Slots. Use a Wheel here to advance. Complete the Road to go to the next stage. [/center]","[center]
+Questi sono gli Slot Strada. Usa una Ruota per avanzare. Completa la Strada per proseguire al prossimo scenario. [/center]"
 PAGE4_TEXT1,"There is no time limit, so take your time to plan your decisions.","Non c’è limite di tempo, quindi fai con calma e prendi bene le tue decisioni."
 PAGE4_TEXT2,In case you want to change a Die you placed you can simply right click on it to return it to its original place.,Per cambiare il piazzamento di un Dado è sufficiente fare click destro per farlo tornare alla sua posizione originale.
 PAGE4_TEXT3,"When you are ready, press “Done” to resolve the actions.",Quando sei pronto premi “Fatto” per risolvere le azioni.
@@ -244,3 +248,4 @@ PAGE6_TEXT2,At the end of each level you will meet a mysterious figure: the Dice
 PAGE6_TEXT3,Here you can exchange experience points for new Faces to transform your Dice and improve your Heroes.,Qui potrai scambiare Punti Esperienza con nuove Facce per trasformare i tuoi Dadi e migliorare gli Eroi.
 GAME_OVER_TEXT,GAME OVER,GAME OVER
 END_TUTORIAL,END TUTORIAL,CONCLUDI TUTORIAL
+THIS_IS_IMPORTANT,IMPORTANT,IMPORTANTE

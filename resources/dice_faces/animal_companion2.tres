@@ -6,8 +6,7 @@
 [resource]
 script = ExtResource("1_7odx8")
 name = "ANIMAL_COMPANION_2"
-description = "ANIMAL_COMPANION_2_DESC
-"
+description = "ANIMAL_COMPANION_2_DESC"
 texture = ExtResource("2_45hyl")
 character_class = 3
 xp_cost = 5

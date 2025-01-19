@@ -70,6 +70,7 @@ func show_slots():
 	for slot : DiceSlot in wood_slots:
 		if 1 - slot.get_index() < data.wood_slots:
 			slot.show()
+			if data.food_consumption > 2: slot.self_modulate = Color.BURLYWOOD
 			slot.tooltip_text = tr("WOOD_SLOT")
 			if data.mod_wood : slot.theme_type_variation = "Plus_1"
 		else:
@@ -77,6 +78,7 @@ func show_slots():
 	for slot : DiceSlot in food_slots:
 		if slot.get_index() < data.food_slots:
 			slot.show()
+			if data.food_consumption > 2: slot.self_modulate = Color.BURLYWOOD
 			slot.tooltip_text = tr("FOOD_SLOT")
 			if data.mod_food : slot.theme_type_variation = "Plus_1"
 		else:
@@ -91,9 +93,11 @@ func show_slots():
 		bridge_icon.show()
 		bridge_icon.tooltip_text = "%s\n%s" % [tr("BROKEN_BRIDGE"), tr("BROKEN_BRIDGE_DESC")]
 	if not data.boss_level:
-		for slot : DiceSlot in road_slots:
-			if 2-slot.get_index() < data.road_slots:
+		for i in range (road_slots.size()):
+			var slot = road_slots[i]
+			if i < data.road_slots:
 				slot.show()
+				if data.food_consumption > 2: slot.self_modulate = Color.BURLYWOOD
 				slot.tooltip_text = tr("ROAD_SLOT")
 			else:
 				slot.hide()
@@ -114,7 +118,8 @@ func fill_array():
 func parse_slots(slots_container) -> Array[DiceSlot]:
 	var array : Array[DiceSlot]
 	for slot in slots_container.get_children():
-		array.append( slot as DiceSlot)
+		if slot is DiceSlot:
+			array.append( slot as DiceSlot)
 	return array
 
 func debug_spawn_enemy():

@@ -400,7 +400,6 @@ border_width = 8.0
 editor_only = false
 
 [node name="Page3_4" type="Control" parent="PageControl"]
-visible = false
 anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
@@ -476,9 +475,9 @@ texture = ExtResource("7_wlm5s")
 [node name="PAGE3_TEXT7" type="RichTextLabel" parent="PageControl/Page3_5"]
 layout_mode = 0
 offset_left = 1303.0
-offset_top = 274.0
+offset_top = 223.0
 offset_right = 1719.0
-offset_bottom = 675.0
+offset_bottom = 624.0
 bbcode_enabled = true
 text = "PAGE3_TEXT7"
 
@@ -516,6 +515,11 @@ offset_right = 1252.0
 offset_bottom = 509.0
 border_width = 8.0
 editor_only = false
+
+[node name="MarginContainer" type="MarginContainer" parent="PageControl/Page3_5"]
+layout_mode = 0
+offset_right = 17.0
+offset_bottom = 16.0
 
 [node name="Page3_6" type="Control" parent="PageControl"]
 visible = false
@@ -556,10 +560,10 @@ text = "PAGE3_TEXT2"
 
 [node name="PAGE3_TEXT7" type="RichTextLabel" parent="PageControl/Page3_6"]
 layout_mode = 0
-offset_left = 1240.0
-offset_top = 312.0
-offset_right = 1719.0
-offset_bottom = 675.0
+offset_left = 1256.0
+offset_top = 270.0
+offset_right = 1735.0
+offset_bottom = 633.0
 bbcode_enabled = true
 text = "PAGE3_TEXT8"
 
@@ -708,7 +712,27 @@ layout_mode = 2
 theme_type_variation = &"HeaderLarge"
 text = "PAGE5_TEXT7"
 
+[node name="Important" type="Label" parent="PageControl/Page5"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -877.0
+offset_top = -467.0
+offset_right = 429.0
+offset_bottom = -338.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_ureg4")
+theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 128
+text = "THIS_IS_IMPORTANT"
+horizontal_alignment = 1
+
 [node name="Page6" type="Control" parent="PageControl"]
+visible = false
 anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
