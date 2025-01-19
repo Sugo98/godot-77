@@ -8,6 +8,7 @@ var dice_owner : Dice
 var hero_owner : Global.CharacterClass
 var draggable : bool = true
 var root : Window
+var border = ReferenceRect
 
 func init(d: FaceData) -> void:
 	data = d
@@ -23,7 +24,17 @@ func _ready():
 			title += " (" + tr(Utils.get_class_name(data.character_class)) + ")"
 		tooltip_text = "%s\n%s" % [title, tr(data.description)]
 		prepare_equivalen_rect()
+	prepare_border()
 	root = get_tree().get_root()
+
+func prepare_border():
+	border = ReferenceRect.new()
+	border.editor_only = false
+	border.size = Vector2.ONE * 128
+	border.pivot_offset = Vector2.ONE * 64
+	border.border_width = 8
+	add_child(border)
+	
 
 func prepare_equivalen_rect():
 	equivalent_rect = TextureRect.new()
@@ -33,6 +44,12 @@ func prepare_equivalen_rect():
 	equivalent_rect.texture = texture
 	equivalent_rect.modulate.a = 1
 	equivalent_rect.z_index = 3
+	var equivalent_border = ReferenceRect.new()
+	equivalent_border.editor_only = false
+	equivalent_border.size = Vector2.ONE * 128
+	equivalent_border.pivot_offset = Vector2.ONE * 64
+	equivalent_border.border_width = 8
+	equivalent_rect.add_child(equivalent_border)
 
 func can_be_placed(slot : DiceSlot.Type):
 	if data.jolly:
@@ -104,5 +121,5 @@ func freeze_animation():
 func roll_animation():
 	self_modulate.a = 0
 	await get_tree().process_frame
-	await Utils.roll_animation(equivalent_rect, global_position)
+	await Utils.roll_animation(equivalent_rect, border, global_position)
 	self_modulate.a = 1
