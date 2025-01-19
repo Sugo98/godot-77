@@ -328,6 +328,7 @@ bbcode_enabled = true
 text = "PAGE3_TEXT2"
 
 [node name="ReferenceRect" type="ReferenceRect" parent="PageControl/Page3_2"]
+layout_mode = 0
 offset_left = 760.0
 offset_top = 341.0
 offset_right = 1046.0
@@ -390,6 +391,7 @@ bbcode_enabled = true
 text = "PAGE3_TEXT2"
 
 [node name="ReferenceRect" type="ReferenceRect" parent="PageControl/Page3_3"]
+layout_mode = 0
 offset_left = 704.0
 offset_top = 602.0
 offset_right = 960.0
@@ -452,6 +454,7 @@ bbcode_enabled = true
 text = "PAGE3_TEXT2"
 
 [node name="ReferenceRect" type="ReferenceRect" parent="PageControl/Page3_4"]
+layout_mode = 0
 offset_left = 964.0
 offset_top = 655.0
 offset_right = 1219.0
@@ -506,6 +509,7 @@ bbcode_enabled = true
 text = "PAGE3_TEXT2"
 
 [node name="ReferenceRect" type="ReferenceRect" parent="PageControl/Page3_5"]
+layout_mode = 0
 offset_left = 984.0
 offset_top = 169.0
 offset_right = 1252.0
@@ -551,6 +555,7 @@ bbcode_enabled = true
 text = "PAGE3_TEXT2"
 
 [node name="PAGE3_TEXT7" type="RichTextLabel" parent="PageControl/Page3_6"]
+layout_mode = 0
 offset_left = 1240.0
 offset_top = 312.0
 offset_right = 1719.0
@@ -559,6 +564,7 @@ bbcode_enabled = true
 text = "PAGE3_TEXT8"
 
 [node name="ReferenceRect" type="ReferenceRect" parent="PageControl/Page3_6"]
+layout_mode = 0
 offset_left = 1153.0
 offset_top = 517.0
 offset_right = 1449.0
@@ -604,6 +610,7 @@ bbcode_enabled = true
 text = "PAGE3_TEXT2"
 
 [node name="ReferenceRect" type="ReferenceRect" parent="PageControl/Page3_7"]
+layout_mode = 0
 offset_left = 1181.0
 offset_top = 686.0
 offset_right = 1391.0

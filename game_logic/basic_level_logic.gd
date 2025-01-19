@@ -20,7 +20,7 @@ const offset_x = 100
 @export var sfx : Array[AudioStreamPlayer]
 @onready var animation_timer: Timer = $AnimationTimer
 @onready var blocker: Control = $Blocker
-@export var obstacle : PanelContainer
+@export var obstacle_icon : PanelContainer
 @export var desert_icon : PanelContainer
 @export var bridge_icon : PanelContainer
 @export var you_died : ColorRect
@@ -82,8 +82,8 @@ func show_slots():
 		else:
 			slot.hide()
 	if data.road_obstacle:
-		obstacle.show()
-		obstacle.tooltip_text = "%s\n%s" % [tr("ROAD_OBSTACLE"), tr("ROAD_OBSTACLE_DESC")]
+		obstacle_icon.show()
+		obstacle_icon.tooltip_text = "%s\n%s" % [tr("ROAD_OBSTACLE"), tr("ROAD_OBSTACLE_DESC")]
 	if data.food_consumption > 2:
 		desert_icon.show()
 		desert_icon.tooltip_text = "%s\n%s" % [tr("DESERT_ICON"), tr("DESERT_ICON_DESC")]
@@ -438,7 +438,7 @@ func clear_ui():
 	tween.tween_property(road_slots_container, "modulate:a", 0, t)
 	tween.tween_property(caravan_slots_container, "modulate:a", 0, t)
 	tween.tween_property(road_progress_bar, "modulate:a",0,t)
-	tween.tween_property(obstacle, "modulate:a",0,t)
+	tween.tween_property(obstacle_icon, "modulate:a",0,t)
 	await wait_time(t)
 
 func game_over():

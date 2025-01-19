@@ -21,3 +21,4 @@ func do_the_animation():
 	tween.tween_property(self, "position:y", position.y-up_to, t/2)
 	tween.tween_property(self, "modulate:a", 0, t)
 	await tween.finished
+	queue_free()

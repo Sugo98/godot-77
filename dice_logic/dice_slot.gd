@@ -27,6 +27,8 @@ func _drop_data(_at_position: Vector2, data: Variant):
 		var item = get_child(0)
 		if item == data:
 			return
+		if not is_shopping and data.hero_owner == item.hero_owner:
+			return false 
 		if is_shopping:
 			item.get_parent().remove_child(item)
 		else:
