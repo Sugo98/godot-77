@@ -28,6 +28,12 @@ func prepare_for_level():
 	set_slots_owner(dice_slots)
 	set_faces_owner()
 	roll_dice()
+	#await get_tree().process_frame
+	#update_face_border_color()
+#
+#func update_face_border_color():
+	#for face in faces:
+		#face.update_rect_color()
 
 func prepare_for_merchant():
 	merchant_stuff.set_visible(true)
@@ -91,6 +97,7 @@ func set_faces_owner():
 	for face in faces:
 		face.set_hero_owner(character_class)
 		face.dice_owner = self
+		#face.update_rect_color()
 
 func call_home_other_face(data):
 	for face in faces:

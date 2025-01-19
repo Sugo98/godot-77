@@ -13,6 +13,7 @@ var border = ReferenceRect
 func init(d: FaceData) -> void:
 	data = d
 	if data : hero_owner = data.character_class
+	prepare_border()
 
 func _ready():
 	expand_mode = TextureRect.EXPAND_IGNORE_SIZE
@@ -24,7 +25,7 @@ func _ready():
 			title += " (" + tr(Utils.get_class_name(data.character_class)) + ")"
 		tooltip_text = "%s\n%s" % [title, tr(data.description)]
 		prepare_equivalen_rect()
-	prepare_border()
+	update_rect_color()
 	root = get_tree().get_root()
 
 func prepare_border():
@@ -33,6 +34,7 @@ func prepare_border():
 	border.size = Vector2.ONE * 128
 	border.pivot_offset = Vector2.ONE * 64
 	border.border_width = 8
+	border.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(border)
 	
 
@@ -50,6 +52,23 @@ func prepare_equivalen_rect():
 	equivalent_border.pivot_offset = Vector2.ONE * 64
 	equivalent_border.border_width = 8
 	equivalent_rect.add_child(equivalent_border)
+
+func update_rect_color():
+	var border_color : Color
+	match hero_owner:
+		Global.CharacterClass.Any:
+			border_color = Color.WHITE
+		Global.CharacterClass.Fighter:
+			border_color = Global.luigi_red_light
+		Global.CharacterClass.Wizard:
+			border_color = Global.luigi_blue_light
+		Global.CharacterClass.Ranger:
+			border_color = Global.luigi_green_light
+		Global.CharacterClass.MasterMind:
+			border_color = Global.luigi_yellow_light
+	border.border_color = border_color
+	if equivalent_rect:
+		equivalent_rect.get_child(0).border_color = border_color
 
 func can_be_placed(slot : DiceSlot.Type):
 	if data.jolly:
@@ -97,6 +116,7 @@ func make_drag_preview(at_position: Vector2):
 
 func set_hero_owner(o : Global.CharacterClass) -> void :
 	hero_owner = o
+	update_rect_color()
 
 func _gui_input(event):
 	if event is InputEventMouseButton:
