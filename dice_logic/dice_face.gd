@@ -57,7 +57,7 @@ func update_rect_color():
 	var border_color : Color
 	match hero_owner:
 		Global.CharacterClass.Any:
-			border_color = Color.WHITE
+			border_color = Color.DARK_GRAY
 		Global.CharacterClass.Fighter:
 			border_color = Global.luigi_red_light
 		Global.CharacterClass.Wizard:

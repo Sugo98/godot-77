@@ -60,6 +60,7 @@ func prepare_main_menu() :
 	game_menu.show()
 	caravan.show()
 	caravan.do_the_shake()
+	caravan.rotate_wheels(2)
 	music_stream_player.play()
 
 

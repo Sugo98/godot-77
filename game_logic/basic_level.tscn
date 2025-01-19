@@ -62,7 +62,7 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
-[node name="BasicLevel" type="Control" node_paths=PackedStringArray("road_label", "road_progress_bar", "sfx", "desert_icon", "bridge_icon", "you_died", "lose_button")]
+[node name="BasicLevel" type="Control" node_paths=PackedStringArray("road_label", "road_progress_bar", "sfx", "obstacle_icon", "desert_icon", "bridge_icon", "you_died", "lose_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -74,6 +74,7 @@ script = ExtResource("1_n52b6")
 road_label = NodePath("Road/DistanceLabel")
 road_progress_bar = NodePath("Road")
 sfx = [NodePath("Node/Fireball"), NodePath("Node/Icewall")]
+obstacle_icon = NodePath("Obstacle")
 desert_icon = NodePath("DesertIcon")
 bridge_icon = NodePath("BrokenBridge")
 you_died = NodePath("YouDied")
@@ -100,7 +101,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="EnemySlots" type="Control" parent="EnemyZone"]
-modulate = Color(1, 0.501961, 0.501961, 1)
+modulate = Color(1, 1, 1, 0.992157)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -111,6 +112,7 @@ mouse_filter = 2
 
 [node name="Enemy" type="PanelContainer" parent="EnemyZone/EnemySlots"]
 visible = false
+self_modulate = Color(1, 0.501961, 0.501961, 1)
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 0
 offset_left = 45.0
@@ -123,6 +125,7 @@ type = 1
 
 [node name="Enemy2" type="PanelContainer" parent="EnemyZone/EnemySlots"]
 visible = false
+self_modulate = Color(1, 0.501961, 0.501961, 1)
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 0
 offset_left = 244.0
@@ -135,6 +138,7 @@ type = 1
 
 [node name="Enemy3" type="PanelContainer" parent="EnemyZone/EnemySlots"]
 visible = false
+self_modulate = Color(1, 0.501961, 0.501961, 1)
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 0
 offset_left = 425.0
@@ -147,6 +151,7 @@ type = 1
 
 [node name="Enemy4" type="PanelContainer" parent="EnemyZone/EnemySlots"]
 visible = false
+self_modulate = Color(1, 0.501961, 0.501961, 1)
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 0
 offset_left = 626.0
@@ -245,7 +250,6 @@ script = ExtResource("2_ghtwx")
 type = 2
 
 [node name="RoadSlots" type="Control" parent="."]
-modulate = Color(0.533333, 0.533333, 0.533333, 1)
 z_index = 1
 layout_mode = 1
 anchors_preset = 15
@@ -445,10 +449,10 @@ bus = &"SFX"
 [node name="Obstacle" type="PanelContainer" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 1250.0
-offset_top = 704.0
-offset_right = 1346.0
-offset_bottom = 800.0
+offset_left = 1135.0
+offset_top = 572.0
+offset_right = 1231.0
+offset_bottom = 668.0
 theme = ExtResource("6_tdu6w")
 theme_type_variation = &"AtkPanel"
 

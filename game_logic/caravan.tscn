@@ -1,12 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://beporjlmlp4qr"]
+[gd_scene load_steps=5 format=3 uid="uid://beporjlmlp4qr"]
 
 [ext_resource type="Script" path="res://game_logic/caravan_animation.gd" id="1_gn41v"]
-[ext_resource type="Texture2D" uid="uid://cmvehuhjxir1v" path="res://assets/caravan/carrettino ridimensionato.png" id="2_rkb5t"]
+[ext_resource type="Texture2D" uid="uid://bjro32v1hd752" path="res://assets/caravan/carrettino corpo.png" id="2_d7tyv"]
+[ext_resource type="Texture2D" uid="uid://dwud11rq0pujw" path="res://assets/caravan/carrettino ruota anteriore.png" id="3_jbsr3"]
+[ext_resource type="Texture2D" uid="uid://bpa75igwksm3n" path="res://assets/caravan/carrettino ruota posteriore.png" id="4_fjes3"]
 
-[node name="Caravan" type="Node2D" node_paths=PackedStringArray("caravan_sprite")]
+[node name="Caravan" type="Node2D" node_paths=PackedStringArray("caravan_sprite", "wheel_1", "wheel_2")]
 position = Vector2(945, 531)
 script = ExtResource("1_gn41v")
 caravan_sprite = NodePath("Sprite2D")
+wheel_1 = NodePath("Wheel1")
+wheel_2 = NodePath("Wheel2")
 going_backward = 100
 destination = 2400
 time_1 = 1.0
@@ -14,10 +18,19 @@ time_2 = 3.0
 shaking_offset = 15.0
 shaking_time = 0.1
 shaking_rotation = 2.0
+rotation_time = 1.0
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_rkb5t")
+texture = ExtResource("2_d7tyv")
 
 [node name="FeedbackPosition" type="Marker2D" parent="."]
 position = Vector2(0, -104)
+
+[node name="Wheel1" type="Sprite2D" parent="."]
+position = Vector2(76, 41)
+texture = ExtResource("3_jbsr3")
+
+[node name="Wheel2" type="Sprite2D" parent="."]
+position = Vector2(-126, 41)
+texture = ExtResource("4_fjes3")

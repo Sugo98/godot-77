@@ -1,6 +1,10 @@
 extends Node2D
 
 @export var caravan_sprite : Sprite2D
+@export var wheel_1 : Sprite2D
+@export var wheel_2 : Sprite2D
+
+
 @export var going_backward : int
 @export var destination : int
 @export var time_1 : float
@@ -8,6 +12,7 @@ extends Node2D
 @export var shaking_offset : float
 @export var shaking_time :float
 @export var shaking_rotation : float
+@export var rotation_time : float
 var stand_position : Vector2
 var basic_time : float
 
@@ -23,6 +28,7 @@ func new_level():
 
 func do_the_animation():
 	do_the_shake()
+	rotate_wheels(1)
 	basic_time = Utils.basic_wait_time
 	var tween = create_tween()
 	tween.set_trans(Tween.TRANS_SINE)
@@ -38,4 +44,13 @@ func do_the_shake():
 		var tween = create_tween()
 		tween.tween_property(caravan_sprite, "position", new_offset, shaking_time)
 		tween.set_parallel().tween_property(caravan_sprite, "rotation", new_rotation, shaking_time)
+		await tween.finished
+
+func rotate_wheels(x : float):
+	while(visible):
+		wheel_1.rotation = 0
+		wheel_2.rotation = 0
+		var tween = create_tween().set_parallel()
+		tween.tween_property(wheel_1, "rotation", 2*PI, rotation_time * x)
+		tween.tween_property(wheel_2, "rotation", 2*PI, rotation_time * x)
 		await tween.finished
