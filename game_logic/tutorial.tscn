@@ -237,7 +237,7 @@ offset_left = 330.0
 offset_top = 845.0
 offset_right = 665.0
 offset_bottom = 938.0
-theme_type_variation = &"HeaderLarge"
+theme_type_variation = &"TutorialLabel"
 text = "PAGE3_TEXT3"
 
 [node name="PAGE3_TEXT1" type="RichTextLabel" parent="PageControl/Page3_1"]
@@ -296,7 +296,7 @@ offset_top = 579.0
 offset_right = 117.0
 offset_bottom = 628.0
 grow_horizontal = 2
-theme_type_variation = &"HeaderMedium"
+theme_type_variation = &"TutorialLabel"
 theme_override_constants/outline_size = 24
 text = "PAGE3_TEXT4"
 horizontal_alignment = 1
@@ -360,7 +360,7 @@ offset_right = 40.0
 offset_bottom = 354.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_type_variation = &"HeaderLarge"
+theme_type_variation = &"TutorialLabel"
 text = "PAGE3_TEXT5"
 horizontal_alignment = 1
 
@@ -400,6 +400,7 @@ border_width = 8.0
 editor_only = false
 
 [node name="Page3_4" type="Control" parent="PageControl"]
+visible = false
 anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
@@ -422,7 +423,7 @@ offset_right = 326.0
 offset_bottom = 354.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_type_variation = &"HeaderLarge"
+theme_type_variation = &"TutorialLabel"
 text = "PAGE3_TEXT6"
 horizontal_alignment = 1
 
@@ -577,7 +578,6 @@ border_width = 8.0
 editor_only = false
 
 [node name="Page3_7" type="Control" parent="PageControl"]
-visible = false
 anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
@@ -635,7 +635,7 @@ offset_right = -527.0
 offset_bottom = -197.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_type_variation = &"HeaderMedium"
+theme_type_variation = &"TutorialLabel"
 text = "PAGE4_TEXT3"
 horizontal_alignment = 2
 
@@ -652,7 +652,7 @@ offset_right = -527.0
 offset_bottom = -157.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_type_variation = &"HeaderMedium"
+theme_type_variation = &"TutorialLabel"
 text = "PAGE4_TEXT1"
 horizontal_alignment = 2
 
