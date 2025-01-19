@@ -40,6 +40,8 @@ func _ready() -> void:
 		selling_faces.append(new_face)
 		market_slots[i].shopkeeper = self
 	shopping_is_ended = false
+	for slot in market_slots:
+		slot.is_shopping = true
 	start_back_ground_music()
 	create_night_sky()
 	fade_in()

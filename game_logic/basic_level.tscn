@@ -383,7 +383,6 @@ clip_text = true
 bus = &"Music"
 
 [node name="Button" type="Button" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 1720.0
 offset_top = 562.0

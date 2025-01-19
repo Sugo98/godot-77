@@ -83,7 +83,7 @@ func set_hero_owner(o : Global.CharacterClass) -> void :
 
 func _gui_input(event):
 	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
+		if event.button_index == MOUSE_BUTTON_RIGHT and event.pressed and not get_parent().is_shopping:
 			come_back_home()
 
 func come_back_home():
