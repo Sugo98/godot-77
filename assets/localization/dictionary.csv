@@ -200,9 +200,9 @@ FOOD_SLOT,Place a Dice here to collect Food,Piazza un Dado qui per raccogliere C
 ROAD_SLOT,"Place a Wheel or a Gear here
 To advance on the Road","Piazza una Ruota o un Ingranaggio qui
 Per avanzare lungo la Strada"
-CARAVAN_SLOT,"Place a Shield here to defend the Caravan
-Or a Wheel to repair it","Piazza uno Scudo qui per difendere la carovana
-O una Ruota per ripararla"
+CARAVAN_SLOT,"Place a Shield here to defend the Caravan this turn
+Or a Wheel to spend 3 Wood and repair it","Piazza uno Scudo qui per difendere la Carovana questo turno
+oppure una Ruota per spendere 3 Legno e ripararla"
 ENEMY_SLOT,Place a Dice here to fight the Enemy,Piazza un Dado qui per combattere il Nemico
 PAGE1_TEXT1,"[center] This is the story of a party of heroes embarked on a dangerous journey.
 They must travel the lands and protect their convoy from evil monsters while gathering enough food to avoid starvation… [/center]","[center] Questa è la storia di un gruppo di eroi coinvolti in un pericoloso viaggio.

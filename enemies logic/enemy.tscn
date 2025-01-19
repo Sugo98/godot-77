@@ -1,18 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://yvwkwgojt1ab"]
+[gd_scene load_steps=8 format=3 uid="uid://yvwkwgojt1ab"]
 
 [ext_resource type="PackedScene" uid="uid://dohoy271usm4w" path="res://enemies logic/ui.tscn" id="2_o6w53"]
 [ext_resource type="Script" path="res://enemies logic/enemy.gd" id="2_xixe7"]
 [ext_resource type="AudioStream" uid="uid://djw7tpomki4ui" path="res://assets/sound fx/Punch 2_2.wav" id="3_v8i4x"]
 [ext_resource type="AudioStream" uid="uid://cwvj1ei5tt7tc" path="res://assets/sound fx/Sword Swing 8_1.wav" id="4_5ldaa"]
 [ext_resource type="AudioStream" uid="uid://c8s4tnc641ptg" path="res://assets/sound fx/Stab 1_2.wav" id="6_exjd0"]
+[ext_resource type="Texture2D" uid="uid://7x6c81kj6qdj" path="res://assets/enemies/Stun.png" id="6_nn06j"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_h7076"]
 
-[node name="Enemy" type="Node2D" node_paths=PackedStringArray("ui", "sprite2D", "sounds")]
+[node name="Enemy" type="Node2D" node_paths=PackedStringArray("ui", "sprite2D", "sounds", "stun_animation")]
 script = ExtResource("2_xixe7")
 ui = NodePath("UI")
 sprite2D = NodePath("Sprite2D")
 sounds = [NodePath("AudioEffects/MonsterAttack"), NodePath("AudioEffects/HeroAttack"), NodePath("AudioEffects/SpikeAttack")]
+stun_animation = NodePath("Stun")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -57)
@@ -36,3 +38,8 @@ bus = &"SFX"
 [node name="SpikeAttack" type="AudioStreamPlayer" parent="AudioEffects"]
 stream = ExtResource("6_exjd0")
 bus = &"SFX"
+
+[node name="Stun" type="Sprite2D" parent="."]
+position = Vector2(0, -121)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_nn06j")

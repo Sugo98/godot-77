@@ -4,6 +4,7 @@ var data: EnemyData
 @export var ui : Control
 @export var sprite2D: Sprite2D
 @export var sounds : Array[AudioStreamPlayer]
+@export var stun_animation : Sprite2D
 
 @export var attack_animation_x : int = 75
 
@@ -104,6 +105,7 @@ func play_attack_sfx(delay : float):
 	attack_sfx.play()
 
 func set_stun(value : bool) -> void:
+	stun_animation.set_visible(value)
 	stun = value
 
 func reduce_attack(x : int) -> void:
